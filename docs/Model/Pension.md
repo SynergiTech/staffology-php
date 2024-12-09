@@ -1,0 +1,47 @@
+# # Pension
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**employee** | [**\SynergiTech\Staffology\Model\Item**](Item.md) |  | [optional]
+**contributionLevelType** | [**\SynergiTech\Staffology\Model\PensionContributionLevelType**](PensionContributionLevelType.md) |  | [optional]
+**endDate** | **\DateTime** | The date the employee left the scheme | [optional]
+**endReason** | [**\SynergiTech\Staffology\Model\PensionEndReason**](PensionEndReason.md) |  | [optional]
+**joinReason** | [**\SynergiTech\Staffology\Model\PensionJoinReason**](PensionJoinReason.md) |  | [optional]
+**startPayRunEntryId** | **int** | [readonly] Holds the Id for the payroll that the employee joined the scheme | [optional]
+**endPayRunEntryId** | **int** | [readonly] Holds the Id for the payroll that the employee left the scheme | [optional]
+**startReportingType** | [**\SynergiTech\Staffology\Model\PensionReportingType**](PensionReportingType.md) |  | [optional]
+**endReportingType** | [**\SynergiTech\Staffology\Model\PensionReportingType**](PensionReportingType.md) |  | [optional]
+**pensionOpeningBalances** | [**\SynergiTech\Staffology\Model\PensionOpeningBalances**](PensionOpeningBalances.md) |  | [optional]
+**reasonForLeaving** | **string** | If a value is provided for EndDate then this is the reason for leaving the employee left the scheme | [optional]
+**id** | **string** | [readonly] The unique id of the object | [optional] [readonly]
+**pensionSchemeId** | **string** |  | [optional]
+**pensionScheme** | [**\SynergiTech\Staffology\Model\PensionScheme**](PensionScheme.md) |  | [optional]
+**workerGroupId** | **string** |  | [optional]
+**workerGroup** | [**\SynergiTech\Staffology\Model\WorkerGroup**](WorkerGroup.md) |  | [optional]
+**startDate** | **\DateTime** |  | [optional]
+**memberReferenceNumber** | **string** |  | [optional]
+**overrideContributions** | **bool** | If this is set to true then the Contributions levels set for the WorkerGroup will be replaced with the values provided here | [optional]
+**employeeContribution** | **float** | The amount the employee contributes towards the pension. Could be a percentage or a fixed amount depending on EmployeeContributionIsPercentage.  This is read-only if OverrideContributions is false | [optional]
+**employeeContributionIsPercentage** | **bool** | Determines whether the Value of the EmployeeContribution is a fixed amount or a percentage, | [optional]
+**employerContribution** | **float** | The amount the employer contributes towards the pension. Could be a percentage or a fixed amount depending on EmployerContributionIsPercentage.  This is read-only if OverrideContributions is false | [optional]
+**employerContributionIsPercentage** | **bool** | Determines whether the Value of the EmployerContribution is a fixed amount or a percentage, | [optional]
+**employerContributionTopUpPercentage** | **float** | Increase Employer Contribution by this percentage of the Employee Contribution | [optional]
+**isAeQualifyingScheme** | **bool** | [readonly] Whether or not the associated PensionScheme is a Qualifying Scheme for AutoEnrolment | [optional]
+**isTeachersPension** | **bool** | [readonly] Whether or not the associated PensionScheme is a Teachers&#39; Pension (determined by its CsvFormat) | [optional]
+**aeStatusAtJoining** | [**\SynergiTech\Staffology\Model\AeStatus**](AeStatus.md) |  | [optional]
+**externalEmployeeId** | **string** | [readonly] | [optional]
+**additionalVoluntaryContribution** | **float** | Any additional voluntary amount the employer contributes towards the pension. Could be a percentage or a fixed amount depending on AvcIsPercentage. | [optional]
+**avcIsPercentage** | **bool** | Determines whether the Value of the Additional Voluntary Contribution is a fixed amount or a percentage, | [optional]
+**exitViaProvider** | **bool** |  | [optional] [readonly]
+**teachersPensionDetails** | [**\SynergiTech\Staffology\Model\TeachersPensionDetails**](TeachersPensionDetails.md) |  | [optional]
+**forcedTier** | **string** | If the WorkerGroup ContributionLevelType is a Tiered Scheme then you can specify the name of the tier to force the employee on to.  If none is specified then the Tier is determined by the earnings in the period | [optional]
+**forceEnrolment** | **bool** | If the PensionScheme is connected to an ExternalDataProvider that supports enrolment then setting this to true will force this employee to be enrolled with the next submission. | [optional]
+**employerContributionIncludesNiSaving** | **bool** | Employer Contribution includes the Employers NI saving | [optional]
+**employerContributionNiSavingPercentage** | **float** | Increase Employer Contribution by this percentage of the Employers NI saving | [optional]
+**fiftyFiftySchemeMember** | **bool** | if an employee as a member of the 50/50 LGPS scheme, they can enable contribution to 50% of the normal contributions. | [optional]
+**associatedEmployeeRoles** | [**\SynergiTech\Staffology\Model\Item[]**](Item.md) | The list of employee roles associated with the pension membership | [optional]
+**autoEnrolled** | **bool** | [readonly] Is True if the employee joined this Pension due to an AutoEnrolment action | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

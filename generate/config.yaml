@@ -1,0 +1,9 @@
+additionalProperties:
+  artifactVersion: 1.0.0
+  composerPackageName: synergitech/staffology-php
+  developerOrganization: "Synergi Tech"
+  developerOrganizationUrl: https://synergi.tech
+  invokerPackage: SynergiTech\Staffology
+  licenseName: MIT
+  packageName: Staffology-PHP
+  variableNamingConvention: camelCase

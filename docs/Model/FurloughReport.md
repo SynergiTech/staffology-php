@@ -1,0 +1,47 @@
+# # FurloughReport
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**maxClaimPerEmployee** | **float** |  | [optional]
+**percentageOfNIAndPensionToClaim** | **float** |  | [optional]
+**govtContribRate** | **float** |  | [optional]
+**companyName** | **string** |  | [optional]
+**employerReference** | **string** |  | [optional]
+**companyCrn** | **string** |  | [optional]
+**ctUtr** | **string** |  | [optional]
+**saUtr** | **string** |  | [optional]
+**claimPeriodStartDate** | **\DateTime** |  | [optional] [readonly]
+**claimPeriodEndDate** | **\DateTime** |  | [optional] [readonly]
+**numberOfEmployeesBeingFurloughed** | **int** |  | [optional]
+**totalClaimAmount** | **float** |  | [optional] [readonly]
+**totalGrossPay** | **float** |  | [optional]
+**amountClaimedForGrossPayToEmployeesOnFurloughForThePeriod** | **float** |  | [optional]
+**amountClaimedForEmployerNICsContributionsForFurloughedEmployees** | **float** |  | [optional]
+**amountClaimedForEmployersAutoEnrolmentPensionCostsForFurloughedEmployees** | **float** |  | [optional]
+**lines** | [**\SynergiTech\Staffology\Model\FurloughReportLine[]**](FurloughReportLine.md) |  | [optional]
+**bankAccountNumber** | **string** |  | [optional]
+**bankSortCode** | **string** |  | [optional]
+**bankAccountHoldersFirstName** | **string** |  | [optional]
+**bankAccountHoldersLastName** | **string** |  | [optional]
+**bankAccountHoldersAddress** | **string** |  | [optional]
+**buildingSocietyRollNumber** | **string** |  | [optional]
+**companyAddress** | **string** |  | [optional]
+**contactName** | **string** |  | [optional]
+**contactNumber** | **string** |  | [optional]
+**employer** | [**\SynergiTech\Staffology\Model\Item**](Item.md) |  | [optional]
+**payPeriod** | [**\SynergiTech\Staffology\Model\PayPeriods**](PayPeriods.md) |  | [optional]
+**ordinal** | **int** |  | [optional]
+**period** | **int** |  | [optional]
+**periodTo** | **int** |  | [optional]
+**startPeriodName** | **string** |  | [optional]
+**endPeriodName** | **string** |  | [optional]
+**startDate** | **\DateTime** |  | [optional]
+**endDate** | **\DateTime** |  | [optional]
+**report** | [**\SynergiTech\Staffology\Model\Report**](Report.md) |  | [optional]
+**taxYear** | [**\SynergiTech\Staffology\Model\TaxYear**](TaxYear.md) |  | [optional]
+**title** | **string** |  | [optional]
+**isDraft** | **bool** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
