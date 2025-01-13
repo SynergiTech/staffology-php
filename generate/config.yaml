@@ -1,3 +1,4 @@
+templateDir: /local/generate/template
 additionalProperties:
   artifactVersion: 1.0.0
   composerPackageName: synergitech/staffology-php
