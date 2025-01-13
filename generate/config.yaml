@@ -7,3 +7,10 @@ additionalProperties:
   licenseName: MIT
   packageName: Staffology-PHP
   variableNamingConvention: camelCase
+files:
+  Configuration.mustache:
+    templateType: SupportingFiles
+    destinationFilename: src/Configuration.php
+  ObjectSerializer.mustache:
+    templateType: SupportingFiles
+    destinationFilename: src/ObjectSerializer.php
