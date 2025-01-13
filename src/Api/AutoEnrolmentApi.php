@@ -357,8 +357,8 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function assessAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['assessAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -412,8 +412,8 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function assessAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['assessAutoEnrolment'][0]
     ): Request
     {
@@ -638,9 +638,9 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function deleteAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -682,9 +682,9 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteAutoEnrolment'][0]
     ): Request
     {
@@ -910,7 +910,7 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function emailAllLettersAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['emailAllLettersAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -950,7 +950,7 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function emailAllLettersAutoEnrolmentRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['emailAllLettersAutoEnrolment'][0]
     ): Request
     {
@@ -1238,9 +1238,9 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function emailLetterAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['emailLetterAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -1295,9 +1295,9 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function emailLetterAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['emailLetterAutoEnrolment'][0]
     ): Request
     {
@@ -1615,9 +1615,9 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function getAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -1672,9 +1672,9 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getAutoEnrolment'][0]
     ): Request
     {
@@ -1985,8 +1985,8 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function getLastAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['getLastAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -2040,8 +2040,8 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getLastAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['getLastAutoEnrolment'][0]
     ): Request
     {
@@ -2351,10 +2351,10 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function getLetterAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $accept = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?string $accept = null,
         string $contentType = self::contentTypes['getLetterAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -2410,10 +2410,10 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getLetterAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $accept = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?string $accept = null,
         string $contentType = self::contentTypes['getLetterAutoEnrolment'][0]
     ): Request
     {
@@ -2729,8 +2729,8 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function listAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['listAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -2784,8 +2784,8 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['listAutoEnrolment'][0]
     ): Request
     {
@@ -3010,9 +3010,9 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function markLetterAsSentAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['markLetterAsSentAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -3054,9 +3054,9 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function markLetterAsSentAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['markLetterAsSentAutoEnrolment'][0]
     ): Request
     {
@@ -3282,7 +3282,7 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function markLettersAsSentAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['markLettersAsSentAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -3322,7 +3322,7 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function markLettersAsSentAutoEnrolmentRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['markLettersAsSentAutoEnrolment'][0]
     ): Request
     {
@@ -3596,7 +3596,7 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function pendingLettersAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['pendingLettersAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -3649,7 +3649,7 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pendingLettersAutoEnrolmentRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['pendingLettersAutoEnrolment'][0]
     ): Request
     {
@@ -3923,7 +3923,7 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function pendingLettersCountAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['pendingLettersCountAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -3976,7 +3976,7 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pendingLettersCountAutoEnrolmentRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['pendingLettersCountAutoEnrolment'][0]
     ): Request
     {
@@ -4250,7 +4250,7 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function pendingPostponementLettersAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['pendingPostponementLettersAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -4303,7 +4303,7 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pendingPostponementLettersAutoEnrolmentRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['pendingPostponementLettersAutoEnrolment'][0]
     ): Request
     {
@@ -4584,8 +4584,8 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function reenrolAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $cyclicalReenrolmentDate = null,
+        string $employerId,
+        ?\DateTime $cyclicalReenrolmentDate = null,
         string $contentType = self::contentTypes['reenrolAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -4639,8 +4639,8 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function reenrolAutoEnrolmentRequest(
-        $employerId,
-        $cyclicalReenrolmentDate = null,
+        string $employerId,
+        ?\DateTime $cyclicalReenrolmentDate = null,
         string $contentType = self::contentTypes['reenrolAutoEnrolment'][0]
     ): Request
     {
@@ -4980,15 +4980,15 @@ class AutoEnrolmentApi
      * @return PromiseInterface
      */
     public function setStateAutoEnrolmentAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $state = null,
-        $status = null,
-        $stateDate = null,
-        $pensionId = null,
-        $workerGroupId = null,
-        $startActionAlreadyReported = false,
-        $endActionAlreadyReported = false,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\AeEmployeeState $state = null,
+        ?\SynergiTech\Staffology\Model\AeStatus $status = null,
+        ?\DateTime $stateDate = null,
+        ?string $pensionId = null,
+        ?string $workerGroupId = null,
+        ?bool $startActionAlreadyReported = false,
+        ?bool $endActionAlreadyReported = false,
         string $contentType = self::contentTypes['setStateAutoEnrolment'][0]
     ): PromiseInterface
     {
@@ -5049,15 +5049,15 @@ class AutoEnrolmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setStateAutoEnrolmentRequest(
-        $employerId,
-        $employeeId,
-        $state = null,
-        $status = null,
-        $stateDate = null,
-        $pensionId = null,
-        $workerGroupId = null,
-        $startActionAlreadyReported = false,
-        $endActionAlreadyReported = false,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\AeEmployeeState $state = null,
+        ?\SynergiTech\Staffology\Model\AeStatus $status = null,
+        ?\DateTime $stateDate = null,
+        ?string $pensionId = null,
+        ?string $workerGroupId = null,
+        ?bool $startActionAlreadyReported = false,
+        ?bool $endActionAlreadyReported = false,
         string $contentType = self::contentTypes['setStateAutoEnrolment'][0]
     ): Request
     {
@@ -5093,7 +5093,7 @@ class AutoEnrolmentApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $state,
+            $state?->value,
             'state', // param base name
             'AeEmployeeState', // openApiType
             'form', // style
@@ -5102,7 +5102,7 @@ class AutoEnrolmentApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $status,
+            $status?->value,
             'status', // param base name
             'AeStatus', // openApiType
             'form', // style

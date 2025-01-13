@@ -333,8 +333,8 @@ class TermCalendarApi
      * @return PromiseInterface
      */
     public function createTermCalendarAsyncWithHttpInfo(
-        $employerId,
-        $contractTermCalendarRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractTermCalendarRequest $contractTermCalendarRequest = null,
         string $contentType = self::contentTypes['createTermCalendar'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class TermCalendarApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createTermCalendarRequest(
-        $employerId,
-        $contractTermCalendarRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractTermCalendarRequest $contractTermCalendarRequest = null,
         string $contentType = self::contentTypes['createTermCalendar'][0]
     ): Request
     {
@@ -600,8 +600,8 @@ class TermCalendarApi
      * @return PromiseInterface
      */
     public function deleteTermCalendarAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteTermCalendar'][0]
     ): PromiseInterface
     {
@@ -642,8 +642,8 @@ class TermCalendarApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteTermCalendarRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteTermCalendar'][0]
     ): Request
     {
@@ -939,8 +939,8 @@ class TermCalendarApi
      * @return PromiseInterface
      */
     public function getTermCalendarAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getTermCalendar'][0]
     ): PromiseInterface
     {
@@ -994,8 +994,8 @@ class TermCalendarApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getTermCalendarRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getTermCalendar'][0]
     ): Request
     {
@@ -1284,7 +1284,7 @@ class TermCalendarApi
      * @return PromiseInterface
      */
     public function indexTermCalendarAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexTermCalendar'][0]
     ): PromiseInterface
     {
@@ -1337,7 +1337,7 @@ class TermCalendarApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexTermCalendarRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexTermCalendar'][0]
     ): Request
     {
@@ -1625,9 +1625,9 @@ class TermCalendarApi
      * @return PromiseInterface
      */
     public function updateTermCalendarAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $contractTermCalendarRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractTermCalendarRequest $contractTermCalendarRequest = null,
         string $contentType = self::contentTypes['updateTermCalendar'][0]
     ): PromiseInterface
     {
@@ -1682,9 +1682,9 @@ class TermCalendarApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateTermCalendarRequest(
-        $employerId,
-        $id,
-        $contractTermCalendarRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractTermCalendarRequest $contractTermCalendarRequest = null,
         string $contentType = self::contentTypes['updateTermCalendar'][0]
     ): Request
     {

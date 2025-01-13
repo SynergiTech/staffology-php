@@ -350,13 +350,13 @@ class AuditApi
      * @return PromiseInterface
      */
     public function employerAuditListAuditAsyncWithHttpInfo(
-        $employerId,
-        $entity = null,
-        $entityId = null,
-        $fromDate = null,
-        $toDate = null,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\EntityType $entity = null,
+        ?string $entityId = null,
+        ?\DateTime $fromDate = null,
+        ?\DateTime $toDate = null,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['employerAuditListAudit'][0]
     ): PromiseInterface
     {
@@ -415,13 +415,13 @@ class AuditApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employerAuditListAuditRequest(
-        $employerId,
-        $entity = null,
-        $entityId = null,
-        $fromDate = null,
-        $toDate = null,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\EntityType $entity = null,
+        ?string $entityId = null,
+        ?\DateTime $fromDate = null,
+        ?\DateTime $toDate = null,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['employerAuditListAudit'][0]
     ): Request
     {
@@ -449,7 +449,7 @@ class AuditApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $entity,
+            $entity?->value,
             'entity', // param base name
             'EntityType', // openApiType
             'form', // style

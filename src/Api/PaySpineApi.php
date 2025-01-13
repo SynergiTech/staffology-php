@@ -316,7 +316,7 @@ class PaySpineApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractAllowanceGradesResponse
+     * @return \SynergiTech\Staffology\Model\ContractAllowanceGradesResponse
      */
     public function createAllowanceGradesPaySpine(
         string $employerId,
@@ -509,10 +509,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createAllowanceGradesPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $contractAllowanceGradesRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        ?\SynergiTech\Staffology\Model\ContractAllowanceGradesRequest $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['createAllowanceGradesPaySpine'][0]
     ): PromiseInterface
     {
@@ -568,10 +568,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createAllowanceGradesPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $contractAllowanceGradesRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        ?\SynergiTech\Staffology\Model\ContractAllowanceGradesRequest $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['createAllowanceGradesPaySpine'][0]
     ): Request
     {
@@ -710,7 +710,7 @@ class PaySpineApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractLondonAllowanceResponse
+     * @return \SynergiTech\Staffology\Model\ContractLondonAllowanceResponse
      */
     public function createLondonAllowancePaySpine(
         string $employerId,
@@ -897,9 +897,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createLondonAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $contractLondonAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        ?\SynergiTech\Staffology\Model\ContractLondonAllowanceRequest $contractLondonAllowanceRequest = null,
         string $contentType = self::contentTypes['createLondonAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -954,9 +954,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createLondonAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $contractLondonAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        ?\SynergiTech\Staffology\Model\ContractLondonAllowanceRequest $contractLondonAllowanceRequest = null,
         string $contentType = self::contentTypes['createLondonAllowancePaySpine'][0]
     ): Request
     {
@@ -1087,7 +1087,7 @@ class PaySpineApi
         string $employerId,
         string $paySpineId,
         string $allowanceId,
-        ?array $contractAllowanceGradesRequest = null,
+        array $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['createMultipleAllowanceGradesPaySpine'][0]
     ): array
     {
@@ -1114,7 +1114,7 @@ class PaySpineApi
         string $employerId,
         string $paySpineId,
         string $allowanceId,
-        ?array $contractAllowanceGradesRequest = null,
+        array $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['createMultipleAllowanceGradesPaySpine'][0]
     ): array
     {
@@ -1247,7 +1247,7 @@ class PaySpineApi
         string $employerId,
         string $paySpineId,
         string $allowanceId,
-        ?array $contractAllowanceGradesRequest = null,
+        array $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['createMultipleAllowanceGradesPaySpine'][0]
     ): PromiseInterface
     {
@@ -1274,10 +1274,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createMultipleAllowanceGradesPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $contractAllowanceGradesRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        array $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['createMultipleAllowanceGradesPaySpine'][0]
     ): PromiseInterface
     {
@@ -1333,10 +1333,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createMultipleAllowanceGradesPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $contractAllowanceGradesRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        array $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['createMultipleAllowanceGradesPaySpine'][0]
     ): Request
     {
@@ -1480,7 +1480,7 @@ class PaySpineApi
     public function createMultiplePaySpine(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpinalPointRequest = null,
+        array $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['createMultiplePaySpine'][0]
     ): array
     {
@@ -1505,7 +1505,7 @@ class PaySpineApi
     public function createMultiplePaySpineWithHttpInfo(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpinalPointRequest = null,
+        array $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['createMultiplePaySpine'][0]
     ): array
     {
@@ -1636,7 +1636,7 @@ class PaySpineApi
     public function createMultiplePaySpineAsync(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpinalPointRequest = null,
+        array $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['createMultiplePaySpine'][0]
     ): PromiseInterface
     {
@@ -1662,9 +1662,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createMultiplePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $contractSpinalPointRequest = null,
+        string $employerId,
+        string $paySpineId,
+        array $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['createMultiplePaySpine'][0]
     ): PromiseInterface
     {
@@ -1719,9 +1719,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createMultiplePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $contractSpinalPointRequest = null,
+        string $employerId,
+        string $paySpineId,
+        array $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['createMultiplePaySpine'][0]
     ): Request
     {
@@ -1850,7 +1850,7 @@ class PaySpineApi
     public function createMultipleSpineAllowancePaySpine(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpineAllowanceRequest = null,
+        array $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['createMultipleSpineAllowancePaySpine'][0]
     ): array
     {
@@ -1875,7 +1875,7 @@ class PaySpineApi
     public function createMultipleSpineAllowancePaySpineWithHttpInfo(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpineAllowanceRequest = null,
+        array $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['createMultipleSpineAllowancePaySpine'][0]
     ): array
     {
@@ -2006,7 +2006,7 @@ class PaySpineApi
     public function createMultipleSpineAllowancePaySpineAsync(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpineAllowanceRequest = null,
+        array $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['createMultipleSpineAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -2032,9 +2032,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createMultipleSpineAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $contractSpineAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        array $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['createMultipleSpineAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -2089,9 +2089,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createMultipleSpineAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $contractSpineAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        array $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['createMultipleSpineAllowancePaySpine'][0]
     ): Request
     {
@@ -2214,7 +2214,7 @@ class PaySpineApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractPaySpineResponse
+     * @return \SynergiTech\Staffology\Model\ContractPaySpineResponse
      */
     public function createPaySpine(
         string $employerId,
@@ -2395,8 +2395,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $contractPaySpineRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractPaySpineRequest $contractPaySpineRequest = null,
         string $contentType = self::contentTypes['createPaySpine'][0]
     ): PromiseInterface
     {
@@ -2450,8 +2450,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPaySpineRequest(
-        $employerId,
-        $contractPaySpineRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractPaySpineRequest $contractPaySpineRequest = null,
         string $contentType = self::contentTypes['createPaySpine'][0]
     ): Request
     {
@@ -2560,7 +2560,7 @@ class PaySpineApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractPaySpineGradeResponse
+     * @return \SynergiTech\Staffology\Model\ContractPaySpineGradeResponse
      */
     public function createPaySpineGradePaySpine(
         string $employerId,
@@ -2747,9 +2747,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createPaySpineGradePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $contractPaySpineGradeRequest = null,
+        string $employerId,
+        string $paySpineId,
+        ?\SynergiTech\Staffology\Model\ContractPaySpineGradeRequest $contractPaySpineGradeRequest = null,
         string $contentType = self::contentTypes['createPaySpineGradePaySpine'][0]
     ): PromiseInterface
     {
@@ -2804,9 +2804,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPaySpineGradePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $contractPaySpineGradeRequest = null,
+        string $employerId,
+        string $paySpineId,
+        ?\SynergiTech\Staffology\Model\ContractPaySpineGradeRequest $contractPaySpineGradeRequest = null,
         string $contentType = self::contentTypes['createPaySpineGradePaySpine'][0]
     ): Request
     {
@@ -2930,7 +2930,7 @@ class PaySpineApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractSpinalPointResponse
+     * @return \SynergiTech\Staffology\Model\ContractSpinalPointResponse
      */
     public function createSpinalPointPaySpine(
         string $employerId,
@@ -3117,9 +3117,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createSpinalPointPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $contractSpinalPointRequest = null,
+        string $employerId,
+        string $paySpineId,
+        ?\SynergiTech\Staffology\Model\ContractSpinalPointRequest $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['createSpinalPointPaySpine'][0]
     ): PromiseInterface
     {
@@ -3174,9 +3174,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createSpinalPointPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $contractSpinalPointRequest = null,
+        string $employerId,
+        string $paySpineId,
+        ?\SynergiTech\Staffology\Model\ContractSpinalPointRequest $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['createSpinalPointPaySpine'][0]
     ): Request
     {
@@ -3300,7 +3300,7 @@ class PaySpineApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractSpineAllowanceResponse
+     * @return \SynergiTech\Staffology\Model\ContractSpineAllowanceResponse
      */
     public function createSpineAllowancePaySpine(
         string $employerId,
@@ -3487,9 +3487,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function createSpineAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $contractSpineAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        ?\SynergiTech\Staffology\Model\ContractSpineAllowanceRequest $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['createSpineAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -3544,9 +3544,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createSpineAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $contractSpineAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        ?\SynergiTech\Staffology\Model\ContractSpineAllowanceRequest $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['createSpineAllowancePaySpine'][0]
     ): Request
     {
@@ -3779,9 +3779,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deleteAllAllowanceGradesPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
         string $contentType = self::contentTypes['deleteAllAllowanceGradesPaySpine'][0]
     ): PromiseInterface
     {
@@ -3823,9 +3823,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAllAllowanceGradesPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
         string $contentType = self::contentTypes['deleteAllAllowanceGradesPaySpine'][0]
     ): Request
     {
@@ -4058,8 +4058,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deleteAllSpinalPointsPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['deleteAllSpinalPointsPaySpine'][0]
     ): PromiseInterface
     {
@@ -4100,8 +4100,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAllSpinalPointsPaySpineRequest(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['deleteAllSpinalPointsPaySpine'][0]
     ): Request
     {
@@ -4319,8 +4319,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deleteAllSpineAllowancesPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['deleteAllSpineAllowancesPaySpine'][0]
     ): PromiseInterface
     {
@@ -4361,8 +4361,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAllSpineAllowancesPaySpineRequest(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['deleteAllSpineAllowancesPaySpine'][0]
     ): Request
     {
@@ -4594,10 +4594,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deleteAllowanceGradePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $allowanceGradeId,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        string $allowanceGradeId,
         string $contentType = self::contentTypes['deleteAllowanceGradePaySpine'][0]
     ): PromiseInterface
     {
@@ -4640,10 +4640,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAllowanceGradePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $allowanceGradeId,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        string $allowanceGradeId,
         string $contentType = self::contentTypes['deleteAllowanceGradePaySpine'][0]
     ): Request
     {
@@ -4898,9 +4898,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deleteLondonAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $londonAllowanceId,
+        string $employerId,
+        string $paySpineId,
+        string $londonAllowanceId,
         string $contentType = self::contentTypes['deleteLondonAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -4942,9 +4942,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteLondonAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $londonAllowanceId,
+        string $employerId,
+        string $paySpineId,
+        string $londonAllowanceId,
         string $contentType = self::contentTypes['deleteLondonAllowancePaySpine'][0]
     ): Request
     {
@@ -5177,8 +5177,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deletePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePaySpine'][0]
     ): PromiseInterface
     {
@@ -5219,8 +5219,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePaySpineRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePaySpine'][0]
     ): Request
     {
@@ -5445,9 +5445,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deletePaySpineGradePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $payGradeId,
+        string $employerId,
+        string $paySpineId,
+        string $payGradeId,
         string $contentType = self::contentTypes['deletePaySpineGradePaySpine'][0]
     ): PromiseInterface
     {
@@ -5489,9 +5489,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePaySpineGradePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $payGradeId,
+        string $employerId,
+        string $paySpineId,
+        string $payGradeId,
         string $contentType = self::contentTypes['deletePaySpineGradePaySpine'][0]
     ): Request
     {
@@ -5731,9 +5731,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deleteSpinalPointPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $spinalPointId,
+        string $employerId,
+        string $paySpineId,
+        string $spinalPointId,
         string $contentType = self::contentTypes['deleteSpinalPointPaySpine'][0]
     ): PromiseInterface
     {
@@ -5775,9 +5775,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteSpinalPointPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $spinalPointId,
+        string $employerId,
+        string $paySpineId,
+        string $spinalPointId,
         string $contentType = self::contentTypes['deleteSpinalPointPaySpine'][0]
     ): Request
     {
@@ -6017,9 +6017,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function deleteSpineAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceid,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceid,
         string $contentType = self::contentTypes['deleteSpineAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -6061,9 +6061,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteSpineAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceid,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceid,
         string $contentType = self::contentTypes['deleteSpineAllowancePaySpine'][0]
     ): Request
     {
@@ -6388,10 +6388,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getAllowanceGradePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $allowanceGradeId,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        string $allowanceGradeId,
         string $contentType = self::contentTypes['getAllowanceGradePaySpine'][0]
     ): PromiseInterface
     {
@@ -6447,10 +6447,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAllowanceGradePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $allowanceGradeId,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        string $allowanceGradeId,
         string $contentType = self::contentTypes['getAllowanceGradePaySpine'][0]
     ): Request
     {
@@ -6783,9 +6783,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getAllowanceGradesPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
         string $contentType = self::contentTypes['getAllowanceGradesPaySpine'][0]
     ): PromiseInterface
     {
@@ -6840,9 +6840,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAllowanceGradesPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
         string $contentType = self::contentTypes['getAllowanceGradesPaySpine'][0]
     ): Request
     {
@@ -7195,14 +7195,14 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getAnnualValueFromSalaryFormulaPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $employeeId = null,
-        $paySpineGradeId = null,
-        $spinalPointId = null,
-        $londonAllowanceType = null,
-        $effectiveFrom = null,
-        $workingPatternId = null,
+        string $employerId,
+        string $id,
+        ?string $employeeId = null,
+        ?string $paySpineGradeId = null,
+        ?string $spinalPointId = null,
+        ?int $londonAllowanceType = null,
+        ?\DateTime $effectiveFrom = null,
+        ?string $workingPatternId = null,
         string $contentType = self::contentTypes['getAnnualValueFromSalaryFormulaPaySpine'][0]
     ): PromiseInterface
     {
@@ -7262,14 +7262,14 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAnnualValueFromSalaryFormulaPaySpineRequest(
-        $employerId,
-        $id,
-        $employeeId = null,
-        $paySpineGradeId = null,
-        $spinalPointId = null,
-        $londonAllowanceType = null,
-        $effectiveFrom = null,
-        $workingPatternId = null,
+        string $employerId,
+        string $id,
+        ?string $employeeId = null,
+        ?string $paySpineGradeId = null,
+        ?string $spinalPointId = null,
+        ?int $londonAllowanceType = null,
+        ?\DateTime $effectiveFrom = null,
+        ?string $workingPatternId = null,
         string $contentType = self::contentTypes['getAnnualValueFromSalaryFormulaPaySpine'][0]
     ): Request
     {
@@ -7625,8 +7625,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getLondonAllowanceListPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['getLondonAllowanceListPaySpine'][0]
     ): PromiseInterface
     {
@@ -7680,8 +7680,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getLondonAllowanceListPaySpineRequest(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['getLondonAllowanceListPaySpine'][0]
     ): Request
     {
@@ -7984,9 +7984,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getLondonAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $londonAllowanceId,
+        string $employerId,
+        string $paySpineId,
+        string $londonAllowanceId,
         string $contentType = self::contentTypes['getLondonAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -8041,9 +8041,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getLondonAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $londonAllowanceId,
+        string $employerId,
+        string $paySpineId,
+        string $londonAllowanceId,
         string $contentType = self::contentTypes['getLondonAllowancePaySpine'][0]
     ): Request
     {
@@ -8354,8 +8354,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getPaySpine'][0]
     ): PromiseInterface
     {
@@ -8409,8 +8409,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPaySpineRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getPaySpine'][0]
     ): Request
     {
@@ -8706,8 +8706,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getPaySpineGradeListPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['getPaySpineGradeListPaySpine'][0]
     ): PromiseInterface
     {
@@ -8761,8 +8761,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPaySpineGradeListPaySpineRequest(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['getPaySpineGradeListPaySpine'][0]
     ): Request
     {
@@ -9065,9 +9065,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getPaySpineGradePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $payGradeId,
+        string $employerId,
+        string $paySpineId,
+        string $payGradeId,
         string $contentType = self::contentTypes['getPaySpineGradePaySpine'][0]
     ): PromiseInterface
     {
@@ -9122,9 +9122,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPaySpineGradePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $payGradeId,
+        string $employerId,
+        string $paySpineId,
+        string $payGradeId,
         string $contentType = self::contentTypes['getPaySpineGradePaySpine'][0]
     ): Request
     {
@@ -9435,8 +9435,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getSpinalPointListPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['getSpinalPointListPaySpine'][0]
     ): PromiseInterface
     {
@@ -9490,8 +9490,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getSpinalPointListPaySpineRequest(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['getSpinalPointListPaySpine'][0]
     ): Request
     {
@@ -9794,9 +9794,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getSpinalPointPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $spinalPointId,
+        string $employerId,
+        string $paySpineId,
+        string $spinalPointId,
         string $contentType = self::contentTypes['getSpinalPointPaySpine'][0]
     ): PromiseInterface
     {
@@ -9851,9 +9851,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getSpinalPointPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $spinalPointId,
+        string $employerId,
+        string $paySpineId,
+        string $spinalPointId,
         string $contentType = self::contentTypes['getSpinalPointPaySpine'][0]
     ): Request
     {
@@ -10164,8 +10164,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getSpineAllowanceListPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['getSpineAllowanceListPaySpine'][0]
     ): PromiseInterface
     {
@@ -10219,8 +10219,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getSpineAllowanceListPaySpineRequest(
-        $employerId,
-        $paySpineId,
+        string $employerId,
+        string $paySpineId,
         string $contentType = self::contentTypes['getSpineAllowanceListPaySpine'][0]
     ): Request
     {
@@ -10523,9 +10523,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function getSpineAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceid,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceid,
         string $contentType = self::contentTypes['getSpineAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -10580,9 +10580,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getSpineAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceid,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceid,
         string $contentType = self::contentTypes['getSpineAllowancePaySpine'][0]
     ): Request
     {
@@ -10893,8 +10893,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function importCsvPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $file = null,
+        string $employerId,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importCsvPaySpine'][0]
     ): PromiseInterface
     {
@@ -10948,8 +10948,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importCsvPaySpineRequest(
-        $employerId,
-        $file = null,
+        string $employerId,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importCsvPaySpine'][0]
     ): Request
     {
@@ -11245,8 +11245,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function importCsvPaySpinePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $file = null,
+        string $employerId,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importCsvPaySpinePaySpine'][0]
     ): PromiseInterface
     {
@@ -11300,8 +11300,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importCsvPaySpinePaySpineRequest(
-        $employerId,
-        $file = null,
+        string $employerId,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importCsvPaySpinePaySpine'][0]
     ): Request
     {
@@ -11597,8 +11597,8 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function importPayspineGradeCsvPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $file = null,
+        string $employerId,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importPayspineGradeCsvPaySpine'][0]
     ): PromiseInterface
     {
@@ -11652,8 +11652,8 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importPayspineGradeCsvPaySpineRequest(
-        $employerId,
-        $file = null,
+        string $employerId,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importPayspineGradeCsvPaySpine'][0]
     ): Request
     {
@@ -11942,7 +11942,7 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function indexPaySpineAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexPaySpine'][0]
     ): PromiseInterface
     {
@@ -11995,7 +11995,7 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexPaySpineRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexPaySpine'][0]
     ): Request
     {
@@ -12297,11 +12297,11 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updateAllowanceGradePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $allowanceGradeId,
-        $contractAllowanceGradesRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        string $allowanceGradeId,
+        ?\SynergiTech\Staffology\Model\ContractAllowanceGradesRequest $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['updateAllowanceGradePaySpine'][0]
     ): PromiseInterface
     {
@@ -12358,11 +12358,11 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAllowanceGradePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $allowanceGradeId,
-        $contractAllowanceGradesRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        string $allowanceGradeId,
+        ?\SynergiTech\Staffology\Model\ContractAllowanceGradesRequest $contractAllowanceGradesRequest = null,
         string $contentType = self::contentTypes['updateAllowanceGradePaySpine'][0]
     ): Request
     {
@@ -12710,10 +12710,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updateLondonAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $londonAllowanceId,
-        $contractLondonAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $londonAllowanceId,
+        ?\SynergiTech\Staffology\Model\ContractLondonAllowanceRequest $contractLondonAllowanceRequest = null,
         string $contentType = self::contentTypes['updateLondonAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -12769,10 +12769,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateLondonAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $londonAllowanceId,
-        $contractLondonAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $londonAllowanceId,
+        ?\SynergiTech\Staffology\Model\ContractLondonAllowanceRequest $contractLondonAllowanceRequest = null,
         string $contentType = self::contentTypes['updateLondonAllowancePaySpine'][0]
     ): Request
     {
@@ -12918,7 +12918,7 @@ class PaySpineApi
         string $employerId,
         string $paySpineId,
         string $allowanceId,
-        ?array $contractAllowanceGradesUpdateRequest = null,
+        array $contractAllowanceGradesUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleAllowanceGradesPaySpine'][0]
     ): array
     {
@@ -12945,7 +12945,7 @@ class PaySpineApi
         string $employerId,
         string $paySpineId,
         string $allowanceId,
-        ?array $contractAllowanceGradesUpdateRequest = null,
+        array $contractAllowanceGradesUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleAllowanceGradesPaySpine'][0]
     ): array
     {
@@ -13078,7 +13078,7 @@ class PaySpineApi
         string $employerId,
         string $paySpineId,
         string $allowanceId,
-        ?array $contractAllowanceGradesUpdateRequest = null,
+        array $contractAllowanceGradesUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleAllowanceGradesPaySpine'][0]
     ): PromiseInterface
     {
@@ -13105,10 +13105,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updateMultipleAllowanceGradesPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $contractAllowanceGradesUpdateRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        array $contractAllowanceGradesUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleAllowanceGradesPaySpine'][0]
     ): PromiseInterface
     {
@@ -13164,10 +13164,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateMultipleAllowanceGradesPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceId,
-        $contractAllowanceGradesUpdateRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceId,
+        array $contractAllowanceGradesUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleAllowanceGradesPaySpine'][0]
     ): Request
     {
@@ -13311,7 +13311,7 @@ class PaySpineApi
     public function updateMultiplePaySpine(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpinalPointUpdateRequest = null,
+        array $contractSpinalPointUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultiplePaySpine'][0]
     ): array
     {
@@ -13336,7 +13336,7 @@ class PaySpineApi
     public function updateMultiplePaySpineWithHttpInfo(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpinalPointUpdateRequest = null,
+        array $contractSpinalPointUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultiplePaySpine'][0]
     ): array
     {
@@ -13467,7 +13467,7 @@ class PaySpineApi
     public function updateMultiplePaySpineAsync(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpinalPointUpdateRequest = null,
+        array $contractSpinalPointUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultiplePaySpine'][0]
     ): PromiseInterface
     {
@@ -13493,9 +13493,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updateMultiplePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $contractSpinalPointUpdateRequest = null,
+        string $employerId,
+        string $paySpineId,
+        array $contractSpinalPointUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultiplePaySpine'][0]
     ): PromiseInterface
     {
@@ -13550,9 +13550,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateMultiplePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $contractSpinalPointUpdateRequest = null,
+        string $employerId,
+        string $paySpineId,
+        array $contractSpinalPointUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultiplePaySpine'][0]
     ): Request
     {
@@ -13681,7 +13681,7 @@ class PaySpineApi
     public function updateMultipleSpineAllowancePaySpine(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpineAllowanceUpdateRequest = null,
+        array $contractSpineAllowanceUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleSpineAllowancePaySpine'][0]
     ): array
     {
@@ -13706,7 +13706,7 @@ class PaySpineApi
     public function updateMultipleSpineAllowancePaySpineWithHttpInfo(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpineAllowanceUpdateRequest = null,
+        array $contractSpineAllowanceUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleSpineAllowancePaySpine'][0]
     ): array
     {
@@ -13837,7 +13837,7 @@ class PaySpineApi
     public function updateMultipleSpineAllowancePaySpineAsync(
         string $employerId,
         string $paySpineId,
-        ?array $contractSpineAllowanceUpdateRequest = null,
+        array $contractSpineAllowanceUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleSpineAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -13863,9 +13863,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updateMultipleSpineAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $contractSpineAllowanceUpdateRequest = null,
+        string $employerId,
+        string $paySpineId,
+        array $contractSpineAllowanceUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleSpineAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -13920,9 +13920,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateMultipleSpineAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $contractSpineAllowanceUpdateRequest = null,
+        string $employerId,
+        string $paySpineId,
+        array $contractSpineAllowanceUpdateRequest = null,
         string $contentType = self::contentTypes['updateMultipleSpineAllowancePaySpine'][0]
     ): Request
     {
@@ -14240,10 +14240,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updatePayGradePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $payGradeId,
-        $contractPaySpineGradeRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $payGradeId,
+        ?\SynergiTech\Staffology\Model\ContractPaySpineGradeRequest $contractPaySpineGradeRequest = null,
         string $contentType = self::contentTypes['updatePayGradePaySpine'][0]
     ): PromiseInterface
     {
@@ -14299,10 +14299,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePayGradePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $payGradeId,
-        $contractPaySpineGradeRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $payGradeId,
+        ?\SynergiTech\Staffology\Model\ContractPaySpineGradeRequest $contractPaySpineGradeRequest = null,
         string $contentType = self::contentTypes['updatePayGradePaySpine'][0]
     ): Request
     {
@@ -14628,9 +14628,9 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updatePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $contractPaySpineUpdateRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractPaySpineUpdateRequest $contractPaySpineUpdateRequest = null,
         string $contentType = self::contentTypes['updatePaySpine'][0]
     ): PromiseInterface
     {
@@ -14685,9 +14685,9 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePaySpineRequest(
-        $employerId,
-        $id,
-        $contractPaySpineUpdateRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractPaySpineUpdateRequest $contractPaySpineUpdateRequest = null,
         string $contentType = self::contentTypes['updatePaySpine'][0]
     ): Request
     {
@@ -15005,10 +15005,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updateSpinalPointPaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $spinalPointId,
-        $contractSpinalPointRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $spinalPointId,
+        ?\SynergiTech\Staffology\Model\ContractSpinalPointRequest $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['updateSpinalPointPaySpine'][0]
     ): PromiseInterface
     {
@@ -15064,10 +15064,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateSpinalPointPaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $spinalPointId,
-        $contractSpinalPointRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $spinalPointId,
+        ?\SynergiTech\Staffology\Model\ContractSpinalPointRequest $contractSpinalPointRequest = null,
         string $contentType = self::contentTypes['updateSpinalPointPaySpine'][0]
     ): Request
     {
@@ -15400,10 +15400,10 @@ class PaySpineApi
      * @return PromiseInterface
      */
     public function updateSpineAllowancePaySpineAsyncWithHttpInfo(
-        $employerId,
-        $paySpineId,
-        $allowanceid,
-        $contractSpineAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceid,
+        ?\SynergiTech\Staffology\Model\ContractSpineAllowanceRequest $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['updateSpineAllowancePaySpine'][0]
     ): PromiseInterface
     {
@@ -15459,10 +15459,10 @@ class PaySpineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateSpineAllowancePaySpineRequest(
-        $employerId,
-        $paySpineId,
-        $allowanceid,
-        $contractSpineAllowanceRequest = null,
+        string $employerId,
+        string $paySpineId,
+        string $allowanceid,
+        ?\SynergiTech\Staffology\Model\ContractSpineAllowanceRequest $contractSpineAllowanceRequest = null,
         string $contentType = self::contentTypes['updateSpineAllowancePaySpine'][0]
     ): Request
     {

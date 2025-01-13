@@ -299,10 +299,10 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function createNicSummaryOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $nicSummary = null,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\NicSummary $nicSummary = null,
         string $contentType = self::contentTypes['createNicSummaryOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -345,10 +345,10 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createNicSummaryOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $nicSummary = null,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\NicSummary $nicSummary = null,
         string $contentType = self::contentTypes['createNicSummaryOpeningBalances'][0]
     ): Request
     {
@@ -405,7 +405,7 @@ class OpeningBalancesApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -603,10 +603,10 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function deleteNicSummaryOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $uniqueId,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $uniqueId,
         string $contentType = self::contentTypes['deleteNicSummaryOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -649,10 +649,10 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteNicSummaryOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $uniqueId,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $uniqueId,
         string $contentType = self::contentTypes['deleteNicSummaryOpeningBalances'][0]
     ): Request
     {
@@ -715,7 +715,7 @@ class OpeningBalancesApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -992,10 +992,10 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function getNicSummariesOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $openingBalancesOnly = true,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?bool $openingBalancesOnly = true,
         string $contentType = self::contentTypes['getNicSummariesOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -1051,10 +1051,10 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getNicSummariesOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $openingBalancesOnly = true,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?bool $openingBalancesOnly = true,
         string $contentType = self::contentTypes['getNicSummariesOpeningBalances'][0]
     ): Request
     {
@@ -1120,7 +1120,7 @@ class OpeningBalancesApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1389,10 +1389,10 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function getNicSummaryOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $uniqueId,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $uniqueId,
         string $contentType = self::contentTypes['getNicSummaryOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -1448,10 +1448,10 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getNicSummaryOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $uniqueId,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $uniqueId,
         string $contentType = self::contentTypes['getNicSummaryOpeningBalances'][0]
     ): Request
     {
@@ -1514,7 +1514,7 @@ class OpeningBalancesApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1777,8 +1777,8 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function getOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['getOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -1832,8 +1832,8 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['getOpeningBalances'][0]
     ): Request
     {
@@ -2129,8 +2129,8 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function getOpeningBalancesTotalsOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['getOpeningBalancesTotalsOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -2184,8 +2184,8 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getOpeningBalancesTotalsOpeningBalancesRequest(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['getOpeningBalancesTotalsOpeningBalances'][0]
     ): Request
     {
@@ -2226,7 +2226,7 @@ class OpeningBalancesApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2308,7 +2308,7 @@ class OpeningBalancesApi
         string $employerId,
         string $employeeId,
         \SynergiTech\Staffology\Model\TaxYear $taxYear,
-        ?array $nicSummary = null,
+        array $nicSummary = null,
         string $contentType = self::contentTypes['updateNicSummariesOpeningBalances'][0]
     ): array
     {
@@ -2335,7 +2335,7 @@ class OpeningBalancesApi
         string $employerId,
         string $employeeId,
         \SynergiTech\Staffology\Model\TaxYear $taxYear,
-        ?array $nicSummary = null,
+        array $nicSummary = null,
         string $contentType = self::contentTypes['updateNicSummariesOpeningBalances'][0]
     ): array
     {
@@ -2468,7 +2468,7 @@ class OpeningBalancesApi
         string $employerId,
         string $employeeId,
         \SynergiTech\Staffology\Model\TaxYear $taxYear,
-        ?array $nicSummary = null,
+        array $nicSummary = null,
         string $contentType = self::contentTypes['updateNicSummariesOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -2495,10 +2495,10 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function updateNicSummariesOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $nicSummary = null,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        array $nicSummary = null,
         string $contentType = self::contentTypes['updateNicSummariesOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -2554,10 +2554,10 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateNicSummariesOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $nicSummary = null,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        array $nicSummary = null,
         string $contentType = self::contentTypes['updateNicSummariesOpeningBalances'][0]
     ): Request
     {
@@ -2614,7 +2614,7 @@ class OpeningBalancesApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2897,11 +2897,11 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function updateNicSummaryOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $uniqueId,
-        $nicSummary = null,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $uniqueId,
+        ?\SynergiTech\Staffology\Model\NicSummary $nicSummary = null,
         string $contentType = self::contentTypes['updateNicSummaryOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -2958,11 +2958,11 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateNicSummaryOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $taxYear,
-        $uniqueId,
-        $nicSummary = null,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $uniqueId,
+        ?\SynergiTech\Staffology\Model\NicSummary $nicSummary = null,
         string $contentType = self::contentTypes['updateNicSummaryOpeningBalances'][0]
     ): Request
     {
@@ -3026,7 +3026,7 @@ class OpeningBalancesApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3303,9 +3303,9 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function updateOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $openingBalances = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\OpeningBalances $openingBalances = null,
         string $contentType = self::contentTypes['updateOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -3360,9 +3360,9 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $openingBalances = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\OpeningBalances $openingBalances = null,
         string $contentType = self::contentTypes['updateOpeningBalances'][0]
     ): Request
     {
@@ -3673,9 +3673,9 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function updateP45OpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $openingBalances = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\OpeningBalances $openingBalances = null,
         string $contentType = self::contentTypes['updateP45OpeningBalances'][0]
     ): PromiseInterface
     {
@@ -3730,9 +3730,9 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateP45OpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $openingBalances = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\OpeningBalances $openingBalances = null,
         string $contentType = self::contentTypes['updateP45OpeningBalances'][0]
     ): Request
     {
@@ -4043,9 +4043,9 @@ class OpeningBalancesApi
      * @return PromiseInterface
      */
     public function updateTerminationPaymentsOpeningBalancesAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $openingBalances = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\OpeningBalances $openingBalances = null,
         string $contentType = self::contentTypes['updateTerminationPaymentsOpeningBalances'][0]
     ): PromiseInterface
     {
@@ -4100,9 +4100,9 @@ class OpeningBalancesApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateTerminationPaymentsOpeningBalancesRequest(
-        $employerId,
-        $employeeId,
-        $openingBalances = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\OpeningBalances $openingBalances = null,
         string $contentType = self::contentTypes['updateTerminationPaymentsOpeningBalances'][0]
     ): Request
     {

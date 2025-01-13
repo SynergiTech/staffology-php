@@ -382,9 +382,9 @@ class AccountApi
      * @return PromiseInterface
      */
     public function activateAccountAsyncWithHttpInfo(
-        $brandCode = null,
-        $autoActivate = false,
-        $user = null,
+        ?string $brandCode = null,
+        ?bool $autoActivate = false,
+        ?\SynergiTech\Staffology\Model\User $user = null,
         string $contentType = self::contentTypes['activateAccount'][0]
     ): PromiseInterface
     {
@@ -439,9 +439,9 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function activateAccountRequest(
-        $brandCode = null,
-        $autoActivate = false,
-        $user = null,
+        ?string $brandCode = null,
+        ?bool $autoActivate = false,
+        ?\SynergiTech\Staffology\Model\User $user = null,
         string $contentType = self::contentTypes['activateAccount'][0]
     ): Request
     {
@@ -728,7 +728,7 @@ class AccountApi
      * @return PromiseInterface
      */
     public function changeEmailAddressAccountAsyncWithHttpInfo(
-        $emailAddress = null,
+        ?string $emailAddress = null,
         string $contentType = self::contentTypes['changeEmailAddressAccount'][0]
     ): PromiseInterface
     {
@@ -781,7 +781,7 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function changeEmailAddressAccountRequest(
-        $emailAddress = null,
+        ?string $emailAddress = null,
         string $contentType = self::contentTypes['changeEmailAddressAccount'][0]
     ): Request
     {
@@ -1050,7 +1050,7 @@ class AccountApi
      * @return PromiseInterface
      */
     public function createApiKeyAccountAsyncWithHttpInfo(
-        $item = null,
+        ?\SynergiTech\Staffology\Model\Item $item = null,
         string $contentType = self::contentTypes['createApiKeyAccount'][0]
     ): PromiseInterface
     {
@@ -1103,7 +1103,7 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createApiKeyAccountRequest(
-        $item = null,
+        ?\SynergiTech\Staffology\Model\Item $item = null,
         string $contentType = self::contentTypes['createApiKeyAccount'][0]
     ): Request
     {
@@ -1503,7 +1503,7 @@ class AccountApi
      * @return PromiseInterface
      */
     public function deleteApiKeyAccountAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['deleteApiKeyAccount'][0]
     ): PromiseInterface
     {
@@ -1543,7 +1543,7 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteApiKeyAccountRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['deleteApiKeyAccount'][0]
     ): Request
     {
@@ -1824,8 +1824,8 @@ class AccountApi
      * @return PromiseInterface
      */
     public function getAccountAsyncWithHttpInfo(
-        $defaults = null,
-        $defaultsKey = null,
+        ?string $defaults = null,
+        ?string $defaultsKey = null,
         string $contentType = self::contentTypes['getAccount'][0]
     ): PromiseInterface
     {
@@ -1879,8 +1879,8 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAccountRequest(
-        $defaults = null,
-        $defaultsKey = null,
+        ?string $defaults = null,
+        ?string $defaultsKey = null,
         string $contentType = self::contentTypes['getAccount'][0]
     ): Request
     {
@@ -2159,7 +2159,7 @@ class AccountApi
      * @return PromiseInterface
      */
     public function getApiKeyAccountAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getApiKeyAccount'][0]
     ): PromiseInterface
     {
@@ -2212,7 +2212,7 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getApiKeyAccountRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getApiKeyAccount'][0]
     ): Request
     {
@@ -3097,8 +3097,8 @@ class AccountApi
      * @return PromiseInterface
      */
     public function getTenantAccountAsyncWithHttpInfo(
-        $tenantId = null,
-        $key = null,
+        ?string $tenantId = null,
+        ?string $key = null,
         string $contentType = self::contentTypes['getTenantAccount'][0]
     ): PromiseInterface
     {
@@ -3152,8 +3152,8 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getTenantAccountRequest(
-        $tenantId = null,
-        $key = null,
+        ?string $tenantId = null,
+        ?string $key = null,
         string $contentType = self::contentTypes['getTenantAccount'][0]
     ): Request
     {
@@ -3432,7 +3432,7 @@ class AccountApi
      * @return PromiseInterface
      */
     public function getUserEmployersAccountAsyncWithHttpInfo(
-        $id = null,
+        ?int $id = null,
         string $contentType = self::contentTypes['getUserEmployersAccount'][0]
     ): PromiseInterface
     {
@@ -3485,7 +3485,7 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getUserEmployersAccountRequest(
-        $id = null,
+        ?int $id = null,
         string $contentType = self::contentTypes['getUserEmployersAccount'][0]
     ): Request
     {
@@ -4056,7 +4056,7 @@ class AccountApi
      * @return PromiseInterface
      */
     public function profileAccountAsyncWithHttpInfo(
-        $user = null,
+        ?\SynergiTech\Staffology\Model\User $user = null,
         string $contentType = self::contentTypes['profileAccount'][0]
     ): PromiseInterface
     {
@@ -4109,7 +4109,7 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function profileAccountRequest(
-        $user = null,
+        ?\SynergiTech\Staffology\Model\User $user = null,
         string $contentType = self::contentTypes['profileAccount'][0]
     ): Request
     {
@@ -4376,7 +4376,7 @@ class AccountApi
      * @return PromiseInterface
      */
     public function setEmployerDefaultsAccountAsyncWithHttpInfo(
-        $employerDefaults = null,
+        ?\SynergiTech\Staffology\Model\EmployerDefaults $employerDefaults = null,
         string $contentType = self::contentTypes['setEmployerDefaultsAccount'][0]
     ): PromiseInterface
     {
@@ -4429,7 +4429,7 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setEmployerDefaultsAccountRequest(
-        $employerDefaults = null,
+        ?\SynergiTech\Staffology\Model\EmployerDefaults $employerDefaults = null,
         string $contentType = self::contentTypes['setEmployerDefaultsAccount'][0]
     ): Request
     {
@@ -4696,7 +4696,7 @@ class AccountApi
      * @return PromiseInterface
      */
     public function updatePhotoAccountAsyncWithHttpInfo(
-        $file = null,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['updatePhotoAccount'][0]
     ): PromiseInterface
     {
@@ -4749,7 +4749,7 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePhotoAccountRequest(
-        $file = null,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['updatePhotoAccount'][0]
     ): Request
     {
@@ -5241,8 +5241,8 @@ class AccountApi
      * @return PromiseInterface
      */
     public function verifyResponseAccountAsyncWithHttpInfo(
-        $u = null,
-        $k = null,
+        ?string $u = null,
+        ?string $k = null,
         string $contentType = self::contentTypes['verifyResponseAccount'][0]
     ): PromiseInterface
     {
@@ -5296,8 +5296,8 @@ class AccountApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function verifyResponseAccountRequest(
-        $u = null,
-        $k = null,
+        ?string $u = null,
+        ?string $k = null,
         string $contentType = self::contentTypes['verifyResponseAccount'][0]
     ): Request
     {

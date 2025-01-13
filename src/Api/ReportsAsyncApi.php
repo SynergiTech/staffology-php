@@ -318,8 +318,8 @@ class ReportsAsyncApi
      * @return PromiseInterface
      */
     public function queueGrossToNetReportReportsAsyncAsyncWithHttpInfo(
-        $employerId,
-        $contractGrossToNetReportRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractGrossToNetReportRequest $contractGrossToNetReportRequest = null,
         string $contentType = self::contentTypes['queueGrossToNetReportReportsAsync'][0]
     ): PromiseInterface
     {
@@ -373,8 +373,8 @@ class ReportsAsyncApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function queueGrossToNetReportReportsAsyncRequest(
-        $employerId,
-        $contractGrossToNetReportRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractGrossToNetReportRequest $contractGrossToNetReportRequest = null,
         string $contentType = self::contentTypes['queueGrossToNetReportReportsAsync'][0]
     ): Request
     {

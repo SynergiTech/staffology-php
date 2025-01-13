@@ -324,8 +324,8 @@ class EmployerTemplateApi
      * @return PromiseInterface
      */
     public function getEmployerTemplateAsyncWithHttpInfo(
-        $employerId,
-        $type,
+        string $employerId,
+        \SynergiTech\Staffology\Model\EmployerTemplateType $type,
         string $contentType = self::contentTypes['getEmployerTemplate'][0]
     ): PromiseInterface
     {
@@ -379,8 +379,8 @@ class EmployerTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmployerTemplateRequest(
-        $employerId,
-        $type,
+        string $employerId,
+        \SynergiTech\Staffology\Model\EmployerTemplateType $type,
         string $contentType = self::contentTypes['getEmployerTemplate'][0]
     ): Request
     {
@@ -421,7 +421,7 @@ class EmployerTemplateApi
         if ($type !== null) {
             $resourcePath = str_replace(
                 '{' . 'type' . '}',
-                ObjectSerializer::toPathValue($type),
+                ObjectSerializer::toPathValue($type->value),
                 $resourcePath
             );
         }
@@ -669,7 +669,7 @@ class EmployerTemplateApi
      * @return PromiseInterface
      */
     public function indexEmployerTemplateAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexEmployerTemplate'][0]
     ): PromiseInterface
     {
@@ -722,7 +722,7 @@ class EmployerTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexEmployerTemplateRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexEmployerTemplate'][0]
     ): Request
     {
@@ -1010,9 +1010,9 @@ class EmployerTemplateApi
      * @return PromiseInterface
      */
     public function updateEmployerTemplateAsyncWithHttpInfo(
-        $employerId,
-        $type,
-        $employerTemplate = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\EmployerTemplateType $type,
+        ?\SynergiTech\Staffology\Model\EmployerTemplate $employerTemplate = null,
         string $contentType = self::contentTypes['updateEmployerTemplate'][0]
     ): PromiseInterface
     {
@@ -1067,9 +1067,9 @@ class EmployerTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEmployerTemplateRequest(
-        $employerId,
-        $type,
-        $employerTemplate = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\EmployerTemplateType $type,
+        ?\SynergiTech\Staffology\Model\EmployerTemplate $employerTemplate = null,
         string $contentType = self::contentTypes['updateEmployerTemplate'][0]
     ): Request
     {
@@ -1111,7 +1111,7 @@ class EmployerTemplateApi
         if ($type !== null) {
             $resourcePath = str_replace(
                 '{' . 'type' . '}',
-                ObjectSerializer::toPathValue($type),
+                ObjectSerializer::toPathValue($type->value),
                 $resourcePath
             );
         }

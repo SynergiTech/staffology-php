@@ -329,7 +329,7 @@ class BillingApi
      * @return PromiseInterface
      */
     public function billBillingAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['billBilling'][0]
     ): PromiseInterface
     {
@@ -382,7 +382,7 @@ class BillingApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function billBillingRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['billBilling'][0]
     ): Request
     {
@@ -656,7 +656,7 @@ class BillingApi
      * @return PromiseInterface
      */
     public function billCsvBillingAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['billCsvBilling'][0]
     ): PromiseInterface
     {
@@ -709,7 +709,7 @@ class BillingApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function billCsvBillingRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['billCsvBilling'][0]
     ): Request
     {
@@ -1207,7 +1207,7 @@ class BillingApi
      * @return PromiseInterface
      */
     public function confirmDirectDebitMandateBillingAsyncWithHttpInfo(
-        $redirectFlowId = null,
+        ?string $redirectFlowId = null,
         string $contentType = self::contentTypes['confirmDirectDebitMandateBilling'][0]
     ): PromiseInterface
     {
@@ -1247,7 +1247,7 @@ class BillingApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function confirmDirectDebitMandateBillingRequest(
-        $redirectFlowId = null,
+        ?string $redirectFlowId = null,
         string $contentType = self::contentTypes['confirmDirectDebitMandateBilling'][0]
     ): Request
     {
@@ -2043,9 +2043,9 @@ class BillingApi
      * @return PromiseInterface
      */
     public function getUsageStatsBillingAsyncWithHttpInfo(
-        $fromDate = null,
-        $toDate = null,
-        $accept = null,
+        ?\DateTime $fromDate = null,
+        ?\DateTime $toDate = null,
+        ?string $accept = null,
         string $contentType = self::contentTypes['getUsageStatsBilling'][0]
     ): PromiseInterface
     {
@@ -2100,9 +2100,9 @@ class BillingApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getUsageStatsBillingRequest(
-        $fromDate = null,
-        $toDate = null,
-        $accept = null,
+        ?\DateTime $fromDate = null,
+        ?\DateTime $toDate = null,
+        ?string $accept = null,
         string $contentType = self::contentTypes['getUsageStatsBilling'][0]
     ): Request
     {
@@ -2386,7 +2386,7 @@ class BillingApi
      * @return PromiseInterface
      */
     public function setupDirectDebitMandateBillingAsyncWithHttpInfo(
-        $returnUrl = null,
+        ?string $returnUrl = null,
         string $contentType = self::contentTypes['setupDirectDebitMandateBilling'][0]
     ): PromiseInterface
     {
@@ -2439,7 +2439,7 @@ class BillingApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setupDirectDebitMandateBillingRequest(
-        $returnUrl = null,
+        ?string $returnUrl = null,
         string $contentType = self::contentTypes['setupDirectDebitMandateBilling'][0]
     ): Request
     {

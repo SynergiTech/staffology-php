@@ -278,10 +278,10 @@ class NoteApi
      * @return PromiseInterface
      */
     public function addDocumentNoteAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentNote'][0]
     ): PromiseInterface
     {
@@ -324,10 +324,10 @@ class NoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function addDocumentNoteRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentNote'][0]
     ): Request
     {
@@ -582,9 +582,9 @@ class NoteApi
      * @return PromiseInterface
      */
     public function createNoteAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $note = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Note $note = null,
         string $contentType = self::contentTypes['createNote'][0]
     ): PromiseInterface
     {
@@ -626,9 +626,9 @@ class NoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createNoteRequest(
-        $employerId,
-        $employeeId,
-        $note = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Note $note = null,
         string $contentType = self::contentTypes['createNote'][0]
     ): Request
     {
@@ -868,10 +868,10 @@ class NoteApi
      * @return PromiseInterface
      */
     public function deleteDocumentNoteAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentNote'][0]
     ): PromiseInterface
     {
@@ -914,10 +914,10 @@ class NoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDocumentNoteRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentNote'][0]
     ): Request
     {
@@ -1172,9 +1172,9 @@ class NoteApi
      * @return PromiseInterface
      */
     public function deleteNoteAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteNote'][0]
     ): PromiseInterface
     {
@@ -1216,9 +1216,9 @@ class NoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteNoteRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteNote'][0]
     ): Request
     {
@@ -1543,10 +1543,10 @@ class NoteApi
      * @return PromiseInterface
      */
     public function getDocumentNoteAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentNote'][0]
     ): PromiseInterface
     {
@@ -1602,10 +1602,10 @@ class NoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDocumentNoteRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentNote'][0]
     ): Request
     {
@@ -1938,9 +1938,9 @@ class NoteApi
      * @return PromiseInterface
      */
     public function getNoteAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getNote'][0]
     ): PromiseInterface
     {
@@ -1995,9 +1995,9 @@ class NoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getNoteRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getNote'][0]
     ): Request
     {
@@ -2308,8 +2308,8 @@ class NoteApi
      * @return PromiseInterface
      */
     public function indexNoteAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexNote'][0]
     ): PromiseInterface
     {
@@ -2363,8 +2363,8 @@ class NoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexNoteRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexNote'][0]
     ): Request
     {
@@ -2674,10 +2674,10 @@ class NoteApi
      * @return PromiseInterface
      */
     public function updateNoteAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $note = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Note $note = null,
         string $contentType = self::contentTypes['updateNote'][0]
     ): PromiseInterface
     {
@@ -2733,10 +2733,10 @@ class NoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateNoteRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $note = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Note $note = null,
         string $contentType = self::contentTypes['updateNote'][0]
     ): Request
     {

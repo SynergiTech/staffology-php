@@ -355,9 +355,9 @@ class FpsApi
      * @return PromiseInterface
      */
     public function createFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $fps = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Fps $fps = null,
         string $contentType = self::contentTypes['createFps'][0]
     ): PromiseInterface
     {
@@ -412,9 +412,9 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createFpsRequest(
-        $employerId,
-        $taxYear,
-        $fps = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Fps $fps = null,
         string $contentType = self::contentTypes['createFps'][0]
     ): Request
     {
@@ -456,7 +456,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -647,9 +647,9 @@ class FpsApi
      * @return PromiseInterface
      */
     public function deleteFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteFps'][0]
     ): PromiseInterface
     {
@@ -691,9 +691,9 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteFpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteFps'][0]
     ): Request
     {
@@ -741,7 +741,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1011,9 +1011,9 @@ class FpsApi
      * @return PromiseInterface
      */
     public function getFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getFps'][0]
     ): PromiseInterface
     {
@@ -1068,9 +1068,9 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getFpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getFps'][0]
     ): Request
     {
@@ -1118,7 +1118,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1395,10 +1395,10 @@ class FpsApi
      * @return PromiseInterface
      */
     public function getXmlRequestFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $compressed = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $compressed = false,
         string $contentType = self::contentTypes['getXmlRequestFps'][0]
     ): PromiseInterface
     {
@@ -1454,10 +1454,10 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getXmlRequestFpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $compressed = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $compressed = false,
         string $contentType = self::contentTypes['getXmlRequestFps'][0]
     ): Request
     {
@@ -1515,7 +1515,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1778,8 +1778,8 @@ class FpsApi
      * @return PromiseInterface
      */
     public function listFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listFps'][0]
     ): PromiseInterface
     {
@@ -1833,8 +1833,8 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listFpsRequest(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listFps'][0]
     ): Request
     {
@@ -1875,7 +1875,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2137,9 +2137,9 @@ class FpsApi
      * @return PromiseInterface
      */
     public function markAsAcceptedFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedFps'][0]
     ): PromiseInterface
     {
@@ -2194,9 +2194,9 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function markAsAcceptedFpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedFps'][0]
     ): Request
     {
@@ -2244,7 +2244,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2521,10 +2521,10 @@ class FpsApi
      * @return PromiseInterface
      */
     public function mostRecentForEmployeeFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $employeeId,
-        $correction = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $employeeId,
+        ?bool $correction = false,
         string $contentType = self::contentTypes['mostRecentForEmployeeFps'][0]
     ): PromiseInterface
     {
@@ -2580,10 +2580,10 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function mostRecentForEmployeeFpsRequest(
-        $employerId,
-        $taxYear,
-        $employeeId,
-        $correction = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $employeeId,
+        ?bool $correction = false,
         string $contentType = self::contentTypes['mostRecentForEmployeeFps'][0]
     ): Request
     {
@@ -2641,7 +2641,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2897,7 +2897,7 @@ class FpsApi
      * @return PromiseInterface
      */
     public function requiringAttentionFpsAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionFps'][0]
     ): PromiseInterface
     {
@@ -2950,7 +2950,7 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function requiringAttentionFpsRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionFps'][0]
     ): Request
     {
@@ -3245,10 +3245,10 @@ class FpsApi
      * @return PromiseInterface
      */
     public function submitFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitFps'][0]
     ): PromiseInterface
     {
@@ -3304,10 +3304,10 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function submitFpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitFps'][0]
     ): Request
     {
@@ -3365,7 +3365,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3642,10 +3642,10 @@ class FpsApi
      * @return PromiseInterface
      */
     public function updateFpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $fps = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Fps $fps = null,
         string $contentType = self::contentTypes['updateFps'][0]
     ): PromiseInterface
     {
@@ -3701,10 +3701,10 @@ class FpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateFpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $fps = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Fps $fps = null,
         string $contentType = self::contentTypes['updateFps'][0]
     ): Request
     {
@@ -3753,7 +3753,7 @@ class FpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }

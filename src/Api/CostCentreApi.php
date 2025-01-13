@@ -164,7 +164,7 @@ class CostCentreApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\CostCentre
+     * @return \SynergiTech\Staffology\Model\CostCentre
      */
     public function createCostCentre(
         string $employerId,
@@ -345,8 +345,8 @@ class CostCentreApi
      * @return PromiseInterface
      */
     public function createCostCentreAsyncWithHttpInfo(
-        $employerId,
-        $costCentre = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\CostCentre $costCentre = null,
         string $contentType = self::contentTypes['createCostCentre'][0]
     ): PromiseInterface
     {
@@ -400,8 +400,8 @@ class CostCentreApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createCostCentreRequest(
-        $employerId,
-        $costCentre = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\CostCentre $costCentre = null,
         string $contentType = self::contentTypes['createCostCentre'][0]
     ): Request
     {
@@ -612,8 +612,8 @@ class CostCentreApi
      * @return PromiseInterface
      */
     public function deleteCostCentreAsyncWithHttpInfo(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['deleteCostCentre'][0]
     ): PromiseInterface
     {
@@ -654,8 +654,8 @@ class CostCentreApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteCostCentreRequest(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['deleteCostCentre'][0]
     ): Request
     {
@@ -873,8 +873,8 @@ class CostCentreApi
      * @return PromiseInterface
      */
     public function deleteCostCentreCostCentreAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['deleteCostCentreCostCentre'][0]
     ): PromiseInterface
     {
@@ -915,8 +915,8 @@ class CostCentreApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteCostCentreCostCentreRequest(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['deleteCostCentreCostCentre'][0]
     ): Request
     {
@@ -1207,8 +1207,8 @@ class CostCentreApi
      * @return PromiseInterface
      */
     public function getCostCentreAsyncWithHttpInfo(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['getCostCentre'][0]
     ): PromiseInterface
     {
@@ -1262,8 +1262,8 @@ class CostCentreApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getCostCentreRequest(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['getCostCentre'][0]
     ): Request
     {
@@ -1559,8 +1559,8 @@ class CostCentreApi
      * @return PromiseInterface
      */
     public function getCostCentreCostCentreAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['getCostCentreCostCentre'][0]
     ): PromiseInterface
     {
@@ -1614,8 +1614,8 @@ class CostCentreApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getCostCentreCostCentreRequest(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['getCostCentreCostCentre'][0]
     ): Request
     {
@@ -1899,7 +1899,7 @@ class CostCentreApi
      * @return PromiseInterface
      */
     public function indexCostCentreAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexCostCentre'][0]
     ): PromiseInterface
     {
@@ -1952,7 +1952,7 @@ class CostCentreApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexCostCentreRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexCostCentre'][0]
     ): Request
     {
@@ -2240,9 +2240,9 @@ class CostCentreApi
      * @return PromiseInterface
      */
     public function updateCostCentreAsyncWithHttpInfo(
-        $employerId,
-        $code,
-        $costCentre = null,
+        string $employerId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\CostCentre $costCentre = null,
         string $contentType = self::contentTypes['updateCostCentre'][0]
     ): PromiseInterface
     {
@@ -2297,9 +2297,9 @@ class CostCentreApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateCostCentreRequest(
-        $employerId,
-        $code,
-        $costCentre = null,
+        string $employerId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\CostCentre $costCentre = null,
         string $contentType = self::contentTypes['updateCostCentre'][0]
     ): Request
     {
@@ -2610,9 +2610,9 @@ class CostCentreApi
      * @return PromiseInterface
      */
     public function updateCostCentreCostCentreAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
-        $costCentre = null,
+        string $employerId,
+        ?string $code = null,
+        ?\SynergiTech\Staffology\Model\CostCentre $costCentre = null,
         string $contentType = self::contentTypes['updateCostCentreCostCentre'][0]
     ): PromiseInterface
     {
@@ -2667,9 +2667,9 @@ class CostCentreApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateCostCentreCostCentreRequest(
-        $employerId,
-        $code = null,
-        $costCentre = null,
+        string $employerId,
+        ?string $code = null,
+        ?\SynergiTech\Staffology\Model\CostCentre $costCentre = null,
         string $contentType = self::contentTypes['updateCostCentreCostCentre'][0]
     ): Request
     {

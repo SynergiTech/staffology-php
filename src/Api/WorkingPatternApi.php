@@ -152,7 +152,7 @@ class WorkingPatternApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\WorkingPattern
+     * @return \SynergiTech\Staffology\Model\WorkingPattern
      */
     public function createWorkingPattern(
         string $employerId,
@@ -333,8 +333,8 @@ class WorkingPatternApi
      * @return PromiseInterface
      */
     public function createWorkingPatternAsyncWithHttpInfo(
-        $employerId,
-        $contractWorkingPatternRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractWorkingPatternRequest $contractWorkingPatternRequest = null,
         string $contentType = self::contentTypes['createWorkingPattern'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class WorkingPatternApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createWorkingPatternRequest(
-        $employerId,
-        $contractWorkingPatternRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractWorkingPatternRequest $contractWorkingPatternRequest = null,
         string $contentType = self::contentTypes['createWorkingPattern'][0]
     ): Request
     {
@@ -600,8 +600,8 @@ class WorkingPatternApi
      * @return PromiseInterface
      */
     public function deleteWorkingPatternAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteWorkingPattern'][0]
     ): PromiseInterface
     {
@@ -642,8 +642,8 @@ class WorkingPatternApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWorkingPatternRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteWorkingPattern'][0]
     ): Request
     {
@@ -939,8 +939,8 @@ class WorkingPatternApi
      * @return PromiseInterface
      */
     public function getAsyncWorkingPatternAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getAsyncWorkingPattern'][0]
     ): PromiseInterface
     {
@@ -994,8 +994,8 @@ class WorkingPatternApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAsyncWorkingPatternRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getAsyncWorkingPattern'][0]
     ): Request
     {
@@ -1284,7 +1284,7 @@ class WorkingPatternApi
      * @return PromiseInterface
      */
     public function indexAsyncWorkingPatternAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexAsyncWorkingPattern'][0]
     ): PromiseInterface
     {
@@ -1337,7 +1337,7 @@ class WorkingPatternApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexAsyncWorkingPatternRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexAsyncWorkingPattern'][0]
     ): Request
     {
@@ -1625,9 +1625,9 @@ class WorkingPatternApi
      * @return PromiseInterface
      */
     public function updateWorkingPatternAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $contractWorkingPatternRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractWorkingPatternRequest $contractWorkingPatternRequest = null,
         string $contentType = self::contentTypes['updateWorkingPattern'][0]
     ): PromiseInterface
     {
@@ -1682,9 +1682,9 @@ class WorkingPatternApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWorkingPatternRequest(
-        $employerId,
-        $id,
-        $contractWorkingPatternRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractWorkingPatternRequest $contractWorkingPatternRequest = null,
         string $contentType = self::contentTypes['updateWorkingPattern'][0]
     ): Request
     {

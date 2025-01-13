@@ -358,9 +358,9 @@ class EpsApi
      * @return PromiseInterface
      */
     public function apprenticeshipLevyEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $taxMonth,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $taxMonth,
         string $contentType = self::contentTypes['apprenticeshipLevyEps'][0]
     ): PromiseInterface
     {
@@ -415,9 +415,9 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function apprenticeshipLevyEpsRequest(
-        $employerId,
-        $taxYear,
-        $taxMonth,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $taxMonth,
         string $contentType = self::contentTypes['apprenticeshipLevyEps'][0]
     ): Request
     {
@@ -465,7 +465,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -735,9 +735,9 @@ class EpsApi
      * @return PromiseInterface
      */
     public function createEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $eps = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Eps $eps = null,
         string $contentType = self::contentTypes['createEps'][0]
     ): PromiseInterface
     {
@@ -792,9 +792,9 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createEpsRequest(
-        $employerId,
-        $taxYear,
-        $eps = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Eps $eps = null,
         string $contentType = self::contentTypes['createEps'][0]
     ): Request
     {
@@ -836,7 +836,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1027,9 +1027,9 @@ class EpsApi
      * @return PromiseInterface
      */
     public function deleteEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteEps'][0]
     ): PromiseInterface
     {
@@ -1071,9 +1071,9 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteEpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteEps'][0]
     ): Request
     {
@@ -1121,7 +1121,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1391,9 +1391,9 @@ class EpsApi
      * @return PromiseInterface
      */
     public function getEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getEps'][0]
     ): PromiseInterface
     {
@@ -1448,9 +1448,9 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getEps'][0]
     ): Request
     {
@@ -1498,7 +1498,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1768,9 +1768,9 @@ class EpsApi
      * @return PromiseInterface
      */
     public function getXmlRequestEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getXmlRequestEps'][0]
     ): PromiseInterface
     {
@@ -1825,9 +1825,9 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getXmlRequestEpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getXmlRequestEps'][0]
     ): Request
     {
@@ -1875,7 +1875,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2138,8 +2138,8 @@ class EpsApi
      * @return PromiseInterface
      */
     public function listEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listEps'][0]
     ): PromiseInterface
     {
@@ -2193,8 +2193,8 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listEpsRequest(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listEps'][0]
     ): Request
     {
@@ -2235,7 +2235,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2497,9 +2497,9 @@ class EpsApi
      * @return PromiseInterface
      */
     public function markAsAcceptedEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedEps'][0]
     ): PromiseInterface
     {
@@ -2554,9 +2554,9 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function markAsAcceptedEpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedEps'][0]
     ): Request
     {
@@ -2604,7 +2604,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2874,9 +2874,9 @@ class EpsApi
      * @return PromiseInterface
      */
     public function recoverableAmountsEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $taxMonth,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $taxMonth,
         string $contentType = self::contentTypes['recoverableAmountsEps'][0]
     ): PromiseInterface
     {
@@ -2931,9 +2931,9 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function recoverableAmountsEpsRequest(
-        $employerId,
-        $taxYear,
-        $taxMonth,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $taxMonth,
         string $contentType = self::contentTypes['recoverableAmountsEps'][0]
     ): Request
     {
@@ -2981,7 +2981,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3237,7 +3237,7 @@ class EpsApi
      * @return PromiseInterface
      */
     public function requiringAttentionEpsAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionEps'][0]
     ): PromiseInterface
     {
@@ -3290,7 +3290,7 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function requiringAttentionEpsRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionEps'][0]
     ): Request
     {
@@ -3585,10 +3585,10 @@ class EpsApi
      * @return PromiseInterface
      */
     public function submitEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitEps'][0]
     ): PromiseInterface
     {
@@ -3644,10 +3644,10 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function submitEpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitEps'][0]
     ): Request
     {
@@ -3705,7 +3705,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3982,10 +3982,10 @@ class EpsApi
      * @return PromiseInterface
      */
     public function updateEpsAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $eps = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Eps $eps = null,
         string $contentType = self::contentTypes['updateEps'][0]
     ): PromiseInterface
     {
@@ -4041,10 +4041,10 @@ class EpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEpsRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $eps = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Eps $eps = null,
         string $contentType = self::contentTypes['updateEps'][0]
     ): Request
     {
@@ -4093,7 +4093,7 @@ class EpsApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }

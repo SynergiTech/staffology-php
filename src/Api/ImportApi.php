@@ -279,8 +279,8 @@ class ImportApi
      * @return PromiseInterface
      */
     public function createPaymentsCsvMappingImportAsyncWithHttpInfo(
-        $employerId,
-        $paymentsCsvMapping = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PaymentsCsvMapping $paymentsCsvMapping = null,
         string $contentType = self::contentTypes['createPaymentsCsvMappingImport'][0]
     ): PromiseInterface
     {
@@ -321,8 +321,8 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPaymentsCsvMappingImportRequest(
-        $employerId,
-        $paymentsCsvMapping = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PaymentsCsvMapping $paymentsCsvMapping = null,
         string $contentType = self::contentTypes['createPaymentsCsvMappingImport'][0]
     ): Request
     {
@@ -533,8 +533,8 @@ class ImportApi
      * @return PromiseInterface
      */
     public function deletePaymentCsvMappingImportAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePaymentCsvMappingImport'][0]
     ): PromiseInterface
     {
@@ -575,8 +575,8 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePaymentCsvMappingImportRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePaymentCsvMappingImport'][0]
     ): Request
     {
@@ -886,10 +886,10 @@ class ImportApi
      * @return PromiseInterface
      */
     public function employeeImportCsvImportAsyncWithHttpInfo(
-        $employerId,
-        $format = null,
-        $allowUpdates = false,
-        $file = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\CsvFileFormat $format = null,
+        ?bool $allowUpdates = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['employeeImportCsvImport'][0]
     ): PromiseInterface
     {
@@ -945,10 +945,10 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employeeImportCsvImportRequest(
-        $employerId,
-        $format = null,
-        $allowUpdates = false,
-        $file = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\CsvFileFormat $format = null,
+        ?bool $allowUpdates = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['employeeImportCsvImport'][0]
     ): Request
     {
@@ -973,7 +973,7 @@ class ImportApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $format,
+            $format?->value,
             'format', // param base name
             'CsvFileFormat', // openApiType
             'form', // style
@@ -1095,7 +1095,7 @@ class ImportApi
         ?bool $append = false,
         ?bool $updateExisting = false,
         ?bool $validateOnly = false,
-        ?array $payOptionsImport = null,
+        array $payOptionsImport = null,
         string $contentType = self::contentTypes['importEmployeePayImport'][0]
     ): void
     {
@@ -1125,7 +1125,7 @@ class ImportApi
         ?bool $append = false,
         ?bool $updateExisting = false,
         ?bool $validateOnly = false,
-        ?array $payOptionsImport = null,
+        array $payOptionsImport = null,
         string $contentType = self::contentTypes['importEmployeePayImport'][0]
     ): array
     {
@@ -1185,7 +1185,7 @@ class ImportApi
         ?bool $append = false,
         ?bool $updateExisting = false,
         ?bool $validateOnly = false,
-        ?array $payOptionsImport = null,
+        array $payOptionsImport = null,
         string $contentType = self::contentTypes['importEmployeePayImport'][0]
     ): PromiseInterface
     {
@@ -1214,12 +1214,12 @@ class ImportApi
      * @return PromiseInterface
      */
     public function importEmployeePayImportAsyncWithHttpInfo(
-        $employerId,
-        $linesOnly = false,
-        $append = false,
-        $updateExisting = false,
-        $validateOnly = false,
-        $payOptionsImport = null,
+        string $employerId,
+        ?bool $linesOnly = false,
+        ?bool $append = false,
+        ?bool $updateExisting = false,
+        ?bool $validateOnly = false,
+        array $payOptionsImport = null,
         string $contentType = self::contentTypes['importEmployeePayImport'][0]
     ): PromiseInterface
     {
@@ -1264,12 +1264,12 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importEmployeePayImportRequest(
-        $employerId,
-        $linesOnly = false,
-        $append = false,
-        $updateExisting = false,
-        $validateOnly = false,
-        $payOptionsImport = null,
+        string $employerId,
+        ?bool $linesOnly = false,
+        ?bool $append = false,
+        ?bool $updateExisting = false,
+        ?bool $validateOnly = false,
+        array $payOptionsImport = null,
         string $contentType = self::contentTypes['importEmployeePayImport'][0]
     ): Request
     {
@@ -1421,7 +1421,7 @@ class ImportApi
      */
     public function importLeaveImport(
         string $employerId,
-        ?array $contractLeaveImportRequest = null,
+        array $contractLeaveImportRequest = null,
         string $contentType = self::contentTypes['importLeaveImport'][0]
     ): \SynergiTech\Staffology\Model\ContractJobResponse
     {
@@ -1444,7 +1444,7 @@ class ImportApi
      */
     public function importLeaveImportWithHttpInfo(
         string $employerId,
-        ?array $contractLeaveImportRequest = null,
+        array $contractLeaveImportRequest = null,
         string $contentType = self::contentTypes['importLeaveImport'][0]
     ): array
     {
@@ -1573,7 +1573,7 @@ class ImportApi
      */
     public function importLeaveImportAsync(
         string $employerId,
-        ?array $contractLeaveImportRequest = null,
+        array $contractLeaveImportRequest = null,
         string $contentType = self::contentTypes['importLeaveImport'][0]
     ): PromiseInterface
     {
@@ -1598,8 +1598,8 @@ class ImportApi
      * @return PromiseInterface
      */
     public function importLeaveImportAsyncWithHttpInfo(
-        $employerId,
-        $contractLeaveImportRequest = null,
+        string $employerId,
+        array $contractLeaveImportRequest = null,
         string $contentType = self::contentTypes['importLeaveImport'][0]
     ): PromiseInterface
     {
@@ -1653,8 +1653,8 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importLeaveImportRequest(
-        $employerId,
-        $contractLeaveImportRequest = null,
+        string $employerId,
+        array $contractLeaveImportRequest = null,
         string $contentType = self::contentTypes['importLeaveImport'][0]
     ): Request
     {
@@ -1957,10 +1957,10 @@ class ImportApi
      * @return PromiseInterface
      */
     public function importPensionMembershipsImportAsyncWithHttpInfo(
-        $employerId,
-        $previewOnly = false,
-        $allowUpdates = false,
-        $file = null,
+        string $employerId,
+        ?bool $previewOnly = false,
+        ?bool $allowUpdates = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importPensionMembershipsImport'][0]
     ): PromiseInterface
     {
@@ -2016,10 +2016,10 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importPensionMembershipsImportRequest(
-        $employerId,
-        $previewOnly = false,
-        $allowUpdates = false,
-        $file = null,
+        string $employerId,
+        ?bool $previewOnly = false,
+        ?bool $allowUpdates = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importPensionMembershipsImport'][0]
     ): Request
     {
@@ -2349,10 +2349,10 @@ class ImportApi
      * @return PromiseInterface
      */
     public function importRolesImportAsyncWithHttpInfo(
-        $employerId,
-        $previewOnly = false,
-        $allowUpdates = false,
-        $file = null,
+        string $employerId,
+        ?bool $previewOnly = false,
+        ?bool $allowUpdates = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importRolesImport'][0]
     ): PromiseInterface
     {
@@ -2408,10 +2408,10 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importRolesImportRequest(
-        $employerId,
-        $previewOnly = false,
-        $allowUpdates = false,
-        $file = null,
+        string $employerId,
+        ?bool $previewOnly = false,
+        ?bool $allowUpdates = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importRolesImport'][0]
     ): Request
     {
@@ -2720,7 +2720,7 @@ class ImportApi
      * @return PromiseInterface
      */
     public function listPaymentsCsvMappingsImportAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['listPaymentsCsvMappingsImport'][0]
     ): PromiseInterface
     {
@@ -2773,7 +2773,7 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listPaymentsCsvMappingsImportRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['listPaymentsCsvMappingsImport'][0]
     ): Request
     {
@@ -3054,8 +3054,8 @@ class ImportApi
      * @return PromiseInterface
      */
     public function paymentsCsvMappingCsvFileImportAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['paymentsCsvMappingCsvFileImport'][0]
     ): PromiseInterface
     {
@@ -3109,8 +3109,8 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function paymentsCsvMappingCsvFileImportRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['paymentsCsvMappingCsvFileImport'][0]
     ): Request
     {
@@ -3406,8 +3406,8 @@ class ImportApi
      * @return PromiseInterface
      */
     public function paymentsCsvMappingImportAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['paymentsCsvMappingImport'][0]
     ): PromiseInterface
     {
@@ -3461,8 +3461,8 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function paymentsCsvMappingImportRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['paymentsCsvMappingImport'][0]
     ): Request
     {
@@ -3765,9 +3765,9 @@ class ImportApi
      * @return PromiseInterface
      */
     public function updatePaymentsCsvMappingImportAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $paymentsCsvMapping = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PaymentsCsvMapping $paymentsCsvMapping = null,
         string $contentType = self::contentTypes['updatePaymentsCsvMappingImport'][0]
     ): PromiseInterface
     {
@@ -3822,9 +3822,9 @@ class ImportApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePaymentsCsvMappingImportRequest(
-        $employerId,
-        $id,
-        $paymentsCsvMapping = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PaymentsCsvMapping $paymentsCsvMapping = null,
         string $contentType = self::contentTypes['updatePaymentsCsvMappingImport'][0]
     ): Request
     {

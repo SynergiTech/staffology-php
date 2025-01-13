@@ -152,7 +152,7 @@ class HolidaySchemeApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractHolidaySchemeResponse
+     * @return \SynergiTech\Staffology\Model\ContractHolidaySchemeResponse
      */
     public function createHolidayScheme(
         string $employerId,
@@ -333,8 +333,8 @@ class HolidaySchemeApi
      * @return PromiseInterface
      */
     public function createHolidaySchemeAsyncWithHttpInfo(
-        $employerId,
-        $contractHolidaySchemeRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractHolidaySchemeRequest $contractHolidaySchemeRequest = null,
         string $contentType = self::contentTypes['createHolidayScheme'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class HolidaySchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createHolidaySchemeRequest(
-        $employerId,
-        $contractHolidaySchemeRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractHolidaySchemeRequest $contractHolidaySchemeRequest = null,
         string $contentType = self::contentTypes['createHolidayScheme'][0]
     ): Request
     {
@@ -600,8 +600,8 @@ class HolidaySchemeApi
      * @return PromiseInterface
      */
     public function deleteHolidaySchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteHolidayScheme'][0]
     ): PromiseInterface
     {
@@ -642,8 +642,8 @@ class HolidaySchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteHolidaySchemeRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteHolidayScheme'][0]
     ): Request
     {
@@ -758,7 +758,7 @@ class HolidaySchemeApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractHolidaySchemeResponse
+     * @return \SynergiTech\Staffology\Model\ContractHolidaySchemeResponse
      */
     public function getByIdHolidayScheme(
         string $employerId,
@@ -939,8 +939,8 @@ class HolidaySchemeApi
      * @return PromiseInterface
      */
     public function getByIdHolidaySchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getByIdHolidayScheme'][0]
     ): PromiseInterface
     {
@@ -994,8 +994,8 @@ class HolidaySchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getByIdHolidaySchemeRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getByIdHolidayScheme'][0]
     ): Request
     {
@@ -1109,7 +1109,7 @@ class HolidaySchemeApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractHolidaySchemeResponse[]
+     * @return \SynergiTech\Staffology\Model\ContractHolidaySchemeResponse[]
      */
     public function getHolidayScheme(
         string $employerId,
@@ -1284,7 +1284,7 @@ class HolidaySchemeApi
      * @return PromiseInterface
      */
     public function getHolidaySchemeAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getHolidayScheme'][0]
     ): PromiseInterface
     {
@@ -1337,7 +1337,7 @@ class HolidaySchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getHolidaySchemeRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getHolidayScheme'][0]
     ): Request
     {
@@ -1438,7 +1438,7 @@ class HolidaySchemeApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractHolidaySchemeResponse
+     * @return \SynergiTech\Staffology\Model\ContractHolidaySchemeResponse
      */
     public function updateHolidayScheme(
         string $employerId,
@@ -1625,9 +1625,9 @@ class HolidaySchemeApi
      * @return PromiseInterface
      */
     public function updateHolidaySchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $contractHolidaySchemeRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractHolidaySchemeRequest $contractHolidaySchemeRequest = null,
         string $contentType = self::contentTypes['updateHolidayScheme'][0]
     ): PromiseInterface
     {
@@ -1682,9 +1682,9 @@ class HolidaySchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateHolidaySchemeRequest(
-        $employerId,
-        $id,
-        $contractHolidaySchemeRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractHolidaySchemeRequest $contractHolidaySchemeRequest = null,
         string $contentType = self::contentTypes['updateHolidayScheme'][0]
     ): Request
     {

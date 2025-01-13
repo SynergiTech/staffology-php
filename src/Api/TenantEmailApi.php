@@ -333,8 +333,8 @@ class TenantEmailApi
      * @return PromiseInterface
      */
     public function getEmailTenantEmailAsyncWithHttpInfo(
-        $id,
-        $emailId,
+        string $id,
+        string $emailId,
         string $contentType = self::contentTypes['getEmailTenantEmail'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class TenantEmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmailTenantEmailRequest(
-        $id,
-        $emailId,
+        string $id,
+        string $emailId,
         string $contentType = self::contentTypes['getEmailTenantEmail'][0]
     ): Request
     {
@@ -678,7 +678,7 @@ class TenantEmailApi
      * @return PromiseInterface
      */
     public function getMailSettingsTenantEmailAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getMailSettingsTenantEmail'][0]
     ): PromiseInterface
     {
@@ -731,7 +731,7 @@ class TenantEmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getMailSettingsTenantEmailRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getMailSettingsTenantEmail'][0]
     ): Request
     {
@@ -1019,9 +1019,9 @@ class TenantEmailApi
      * @return PromiseInterface
      */
     public function indexTenantEmailAsyncWithHttpInfo(
-        $id,
-        $pageNum = null,
-        $pageSize = null,
+        string $id,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['indexTenantEmail'][0]
     ): PromiseInterface
     {
@@ -1076,9 +1076,9 @@ class TenantEmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexTenantEmailRequest(
-        $id,
-        $pageNum = null,
-        $pageSize = null,
+        string $id,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['indexTenantEmail'][0]
     ): Request
     {
@@ -1379,8 +1379,8 @@ class TenantEmailApi
      * @return PromiseInterface
      */
     public function resendEmailTenantEmailAsyncWithHttpInfo(
-        $id,
-        $emailId,
+        string $id,
+        string $emailId,
         string $contentType = self::contentTypes['resendEmailTenantEmail'][0]
     ): PromiseInterface
     {
@@ -1434,8 +1434,8 @@ class TenantEmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function resendEmailTenantEmailRequest(
-        $id,
-        $emailId,
+        string $id,
+        string $emailId,
         string $contentType = self::contentTypes['resendEmailTenantEmail'][0]
     ): Request
     {
@@ -1731,8 +1731,8 @@ class TenantEmailApi
      * @return PromiseInterface
      */
     public function testMailSettingsTenantEmailAsyncWithHttpInfo(
-        $id,
-        $email = null,
+        string $id,
+        ?string $email = null,
         string $contentType = self::contentTypes['testMailSettingsTenantEmail'][0]
     ): PromiseInterface
     {
@@ -1786,8 +1786,8 @@ class TenantEmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function testMailSettingsTenantEmailRequest(
-        $id,
-        $email = null,
+        string $id,
+        ?string $email = null,
         string $contentType = self::contentTypes['testMailSettingsTenantEmail'][0]
     ): Request
     {
@@ -2078,8 +2078,8 @@ class TenantEmailApi
      * @return PromiseInterface
      */
     public function updateMailSettingsTenantEmailAsyncWithHttpInfo(
-        $id,
-        $mailSettings = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\MailSettings $mailSettings = null,
         string $contentType = self::contentTypes['updateMailSettingsTenantEmail'][0]
     ): PromiseInterface
     {
@@ -2133,8 +2133,8 @@ class TenantEmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateMailSettingsTenantEmailRequest(
-        $id,
-        $mailSettings = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\MailSettings $mailSettings = null,
         string $contentType = self::contentTypes['updateMailSettingsTenantEmail'][0]
     ): Request
     {

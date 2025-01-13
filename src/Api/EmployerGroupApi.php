@@ -151,7 +151,7 @@ class EmployerGroupApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\EmployerGroup
+     * @return \SynergiTech\Staffology\Model\EmployerGroup
      */
     public function createEmployerGroup(
         ?\SynergiTech\Staffology\Model\EmployerGroup $employerGroup = null,
@@ -326,7 +326,7 @@ class EmployerGroupApi
      * @return PromiseInterface
      */
     public function createEmployerGroupAsyncWithHttpInfo(
-        $employerGroup = null,
+        ?\SynergiTech\Staffology\Model\EmployerGroup $employerGroup = null,
         string $contentType = self::contentTypes['createEmployerGroup'][0]
     ): PromiseInterface
     {
@@ -379,7 +379,7 @@ class EmployerGroupApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createEmployerGroupRequest(
-        $employerGroup = null,
+        ?\SynergiTech\Staffology\Model\EmployerGroup $employerGroup = null,
         string $contentType = self::contentTypes['createEmployerGroup'][0]
     ): Request
     {
@@ -568,7 +568,7 @@ class EmployerGroupApi
      * @return PromiseInterface
      */
     public function deleteEmployerGroupAsyncWithHttpInfo(
-        $code,
+        string $code,
         string $contentType = self::contentTypes['deleteEmployerGroup'][0]
     ): PromiseInterface
     {
@@ -608,7 +608,7 @@ class EmployerGroupApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteEmployerGroupRequest(
-        $code,
+        string $code,
         string $contentType = self::contentTypes['deleteEmployerGroup'][0]
     ): Request
     {
@@ -882,7 +882,7 @@ class EmployerGroupApi
      * @return PromiseInterface
      */
     public function getEmployerGroupAsyncWithHttpInfo(
-        $code,
+        string $code,
         string $contentType = self::contentTypes['getEmployerGroup'][0]
     ): PromiseInterface
     {
@@ -935,7 +935,7 @@ class EmployerGroupApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmployerGroupRequest(
-        $code,
+        string $code,
         string $contentType = self::contentTypes['getEmployerGroup'][0]
     ): Request
     {
@@ -1518,8 +1518,8 @@ class EmployerGroupApi
      * @return PromiseInterface
      */
     public function updateEmployerGroupAsyncWithHttpInfo(
-        $code,
-        $employerGroup = null,
+        string $code,
+        ?\SynergiTech\Staffology\Model\EmployerGroup $employerGroup = null,
         string $contentType = self::contentTypes['updateEmployerGroup'][0]
     ): PromiseInterface
     {
@@ -1573,8 +1573,8 @@ class EmployerGroupApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEmployerGroupRequest(
-        $code,
-        $employerGroup = null,
+        string $code,
+        ?\SynergiTech\Staffology\Model\EmployerGroup $employerGroup = null,
         string $contentType = self::contentTypes['updateEmployerGroup'][0]
     ): Request
     {

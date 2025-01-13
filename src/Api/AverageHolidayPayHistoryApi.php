@@ -162,7 +162,7 @@ class AverageHolidayPayHistoryApi
      */
     public function createAverageHolidayPayHistory(
         string $employerId,
-        ?array $contractPayHistoryRequest = null,
+        array $contractPayHistoryRequest = null,
         string $contentType = self::contentTypes['createAverageHolidayPayHistory'][0]
     ): void
     {
@@ -184,7 +184,7 @@ class AverageHolidayPayHistoryApi
      */
     public function createAverageHolidayPayHistoryWithHttpInfo(
         string $employerId,
-        ?array $contractPayHistoryRequest = null,
+        array $contractPayHistoryRequest = null,
         string $contentType = self::contentTypes['createAverageHolidayPayHistory'][0]
     ): array
     {
@@ -236,7 +236,7 @@ class AverageHolidayPayHistoryApi
      */
     public function createAverageHolidayPayHistoryAsync(
         string $employerId,
-        ?array $contractPayHistoryRequest = null,
+        array $contractPayHistoryRequest = null,
         string $contentType = self::contentTypes['createAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -261,8 +261,8 @@ class AverageHolidayPayHistoryApi
      * @return PromiseInterface
      */
     public function createAverageHolidayPayHistoryAsyncWithHttpInfo(
-        $employerId,
-        $contractPayHistoryRequest = null,
+        string $employerId,
+        array $contractPayHistoryRequest = null,
         string $contentType = self::contentTypes['createAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -303,8 +303,8 @@ class AverageHolidayPayHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createAverageHolidayPayHistoryRequest(
-        $employerId,
-        $contractPayHistoryRequest = null,
+        string $employerId,
+        array $contractPayHistoryRequest = null,
         string $contentType = self::contentTypes['createAverageHolidayPayHistory'][0]
     ): Request
     {
@@ -515,8 +515,8 @@ class AverageHolidayPayHistoryApi
      * @return PromiseInterface
      */
     public function deleteAverageHolidayPayHistoryAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -557,8 +557,8 @@ class AverageHolidayPayHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAverageHolidayPayHistoryRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteAverageHolidayPayHistory'][0]
     ): Request
     {
@@ -776,8 +776,8 @@ class AverageHolidayPayHistoryApi
      * @return PromiseInterface
      */
     public function deleteByEmployeeIdAverageHolidayPayHistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['deleteByEmployeeIdAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -818,8 +818,8 @@ class AverageHolidayPayHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteByEmployeeIdAverageHolidayPayHistoryRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['deleteByEmployeeIdAverageHolidayPayHistory'][0]
     ): Request
     {
@@ -1122,9 +1122,9 @@ class AverageHolidayPayHistoryApi
      * @return PromiseInterface
      */
     public function getByEmployeeAverageHolidayPayHistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $taxYear,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['getByEmployeeAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -1179,9 +1179,9 @@ class AverageHolidayPayHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getByEmployeeAverageHolidayPayHistoryRequest(
-        $employerId,
-        $employeeId,
-        $taxYear,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['getByEmployeeAverageHolidayPayHistory'][0]
     ): Request
     {
@@ -1237,7 +1237,7 @@ class AverageHolidayPayHistoryApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1485,7 +1485,7 @@ class AverageHolidayPayHistoryApi
      * @return PromiseInterface
      */
     public function getByEmployerAverageHolidayPayHistoryAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getByEmployerAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -1538,7 +1538,7 @@ class AverageHolidayPayHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getByEmployerAverageHolidayPayHistoryRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getByEmployerAverageHolidayPayHistory'][0]
     ): Request
     {
@@ -1826,9 +1826,9 @@ class AverageHolidayPayHistoryApi
      * @return PromiseInterface
      */
     public function importCsvAverageHolidayPayHistoryAsyncWithHttpInfo(
-        $employerId,
-        $previewOnly = false,
-        $file = null,
+        string $employerId,
+        ?bool $previewOnly = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importCsvAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -1883,9 +1883,9 @@ class AverageHolidayPayHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importCsvAverageHolidayPayHistoryRequest(
-        $employerId,
-        $previewOnly = false,
-        $file = null,
+        string $employerId,
+        ?bool $previewOnly = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importCsvAverageHolidayPayHistory'][0]
     ): Request
     {
@@ -2014,7 +2014,7 @@ class AverageHolidayPayHistoryApi
      */
     public function updateAverageHolidayPayHistory(
         string $employerId,
-        ?array $contractPayHistoryUpdateRequest = null,
+        array $contractPayHistoryUpdateRequest = null,
         string $contentType = self::contentTypes['updateAverageHolidayPayHistory'][0]
     ): void
     {
@@ -2036,7 +2036,7 @@ class AverageHolidayPayHistoryApi
      */
     public function updateAverageHolidayPayHistoryWithHttpInfo(
         string $employerId,
-        ?array $contractPayHistoryUpdateRequest = null,
+        array $contractPayHistoryUpdateRequest = null,
         string $contentType = self::contentTypes['updateAverageHolidayPayHistory'][0]
     ): array
     {
@@ -2088,7 +2088,7 @@ class AverageHolidayPayHistoryApi
      */
     public function updateAverageHolidayPayHistoryAsync(
         string $employerId,
-        ?array $contractPayHistoryUpdateRequest = null,
+        array $contractPayHistoryUpdateRequest = null,
         string $contentType = self::contentTypes['updateAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -2113,8 +2113,8 @@ class AverageHolidayPayHistoryApi
      * @return PromiseInterface
      */
     public function updateAverageHolidayPayHistoryAsyncWithHttpInfo(
-        $employerId,
-        $contractPayHistoryUpdateRequest = null,
+        string $employerId,
+        array $contractPayHistoryUpdateRequest = null,
         string $contentType = self::contentTypes['updateAverageHolidayPayHistory'][0]
     ): PromiseInterface
     {
@@ -2155,8 +2155,8 @@ class AverageHolidayPayHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAverageHolidayPayHistoryRequest(
-        $employerId,
-        $contractPayHistoryUpdateRequest = null,
+        string $employerId,
+        array $contractPayHistoryUpdateRequest = null,
         string $contentType = self::contentTypes['updateAverageHolidayPayHistory'][0]
     ): Request
     {

@@ -372,14 +372,14 @@ class PayRunAsyncApi
      * @return PromiseInterface
      */
     public function importPayPayRunAsyncAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $ordinal,
-        $throwOnError,
-        $contractPayOptionsImportRequest,
-        $linesOnly = null,
-        $append = null,
-        $updateExisting = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $ordinal,
+        bool $throwOnError,
+        array $contractPayOptionsImportRequest,
+        ?bool $linesOnly = null,
+        ?bool $append = null,
+        ?bool $updateExisting = null,
         string $contentType = self::contentTypes['importPayPayRunAsync'][0]
     ): PromiseInterface
     {
@@ -439,14 +439,14 @@ class PayRunAsyncApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importPayPayRunAsyncRequest(
-        $employerId,
-        $payPeriod,
-        $ordinal,
-        $throwOnError,
-        $contractPayOptionsImportRequest,
-        $linesOnly = null,
-        $append = null,
-        $updateExisting = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $ordinal,
+        bool $throwOnError,
+        array $contractPayOptionsImportRequest,
+        ?bool $linesOnly = null,
+        ?bool $append = null,
+        ?bool $updateExisting = null,
         string $contentType = self::contentTypes['importPayPayRunAsync'][0]
     ): Request
     {
@@ -556,7 +556,7 @@ class PayRunAsyncApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -754,10 +754,10 @@ class PayRunAsyncApi
      * @return PromiseInterface
      */
     public function queueCreatePayRunPayRunAsyncAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = 1,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['queueCreatePayRunPayRunAsync'][0]
     ): PromiseInterface
     {
@@ -800,10 +800,10 @@ class PayRunAsyncApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function queueCreatePayRunPayRunAsyncRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = 1,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['queueCreatePayRunPayRunAsync'][0]
     ): Request
     {
@@ -861,7 +861,7 @@ class PayRunAsyncApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -869,7 +869,7 @@ class PayRunAsyncApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1067,11 +1067,11 @@ class PayRunAsyncApi
      * @return PromiseInterface
      */
     public function queueDeletePayRunPayRunAsyncAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $ordinal = 1,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['queueDeletePayRunPayRunAsync'][0]
     ): PromiseInterface
     {
@@ -1115,11 +1115,11 @@ class PayRunAsyncApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function queueDeletePayRunPayRunAsyncRequest(
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $ordinal = 1,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['queueDeletePayRunPayRunAsync'][0]
     ): Request
     {
@@ -1184,7 +1184,7 @@ class PayRunAsyncApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -1200,7 +1200,7 @@ class PayRunAsyncApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1281,7 +1281,7 @@ class PayRunAsyncApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return \SynergiTech\Staffology\Model\PayRun|\SynergiTech\Staffology\Model\PayRun
+     * @return \SynergiTech\Staffology\Model\PayRun
      */
     public function queueUpdatePayRunPayRunAsync(
         string $employerId,
@@ -1539,15 +1539,15 @@ class PayRunAsyncApi
      * @return PromiseInterface
      */
     public function queueUpdatePayRunPayRunAsyncAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $payPeriod,
-        $periodNumber,
-        $ordinal = 1,
-        $sendPayslipEmails = false,
-        $payslipReleaseType = null,
-        $payslipScheduledDateTime = null,
-        $payRunStateChange = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        ?int $ordinal = 1,
+        ?bool $sendPayslipEmails = false,
+        ?\SynergiTech\Staffology\Model\PayslipReleaseType $payslipReleaseType = null,
+        ?\DateTime $payslipScheduledDateTime = null,
+        ?\SynergiTech\Staffology\Model\PayRunStateChange $payRunStateChange = null,
         string $contentType = self::contentTypes['queueUpdatePayRunPayRunAsync'][0]
     ): PromiseInterface
     {
@@ -1608,15 +1608,15 @@ class PayRunAsyncApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function queueUpdatePayRunPayRunAsyncRequest(
-        $employerId,
-        $taxYear,
-        $payPeriod,
-        $periodNumber,
-        $ordinal = 1,
-        $sendPayslipEmails = false,
-        $payslipReleaseType = null,
-        $payslipScheduledDateTime = null,
-        $payRunStateChange = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        ?int $ordinal = 1,
+        ?bool $sendPayslipEmails = false,
+        ?\SynergiTech\Staffology\Model\PayslipReleaseType $payslipReleaseType = null,
+        ?\DateTime $payslipScheduledDateTime = null,
+        ?\SynergiTech\Staffology\Model\PayRunStateChange $payRunStateChange = null,
         string $contentType = self::contentTypes['queueUpdatePayRunPayRunAsync'][0]
     ): Request
     {
@@ -1682,7 +1682,7 @@ class PayRunAsyncApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $payslipReleaseType,
+            $payslipReleaseType?->value,
             'payslipReleaseType', // param base name
             'PayslipReleaseType', // openApiType
             'form', // style
@@ -1712,7 +1712,7 @@ class PayRunAsyncApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1720,7 +1720,7 @@ class PayRunAsyncApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }

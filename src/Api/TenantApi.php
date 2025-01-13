@@ -453,8 +453,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function addAdminUserTenantAsyncWithHttpInfo(
-        $id,
-        $body = null,
+        string $id,
+        ?string $body = null,
         string $contentType = self::contentTypes['addAdminUserTenant'][0]
     ): PromiseInterface
     {
@@ -495,8 +495,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function addAdminUserTenantRequest(
-        $id,
-        $body = null,
+        string $id,
+        ?string $body = null,
         string $contentType = self::contentTypes['addAdminUserTenant'][0]
     ): Request
     {
@@ -778,7 +778,7 @@ class TenantApi
      * @return PromiseInterface
      */
     public function adminUsersTenantAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['adminUsersTenant'][0]
     ): PromiseInterface
     {
@@ -831,7 +831,7 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function adminUsersTenantRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['adminUsersTenant'][0]
     ): Request
     {
@@ -1126,10 +1126,10 @@ class TenantApi
      * @return PromiseInterface
      */
     public function billTenantAsyncWithHttpInfo(
-        $id,
-        $year,
-        $month,
-        $billId,
+        string $id,
+        int $year,
+        int $month,
+        string $billId,
         string $contentType = self::contentTypes['billTenant'][0]
     ): PromiseInterface
     {
@@ -1185,10 +1185,10 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function billTenantRequest(
-        $id,
-        $year,
-        $month,
-        $billId,
+        string $id,
+        int $year,
+        int $month,
+        string $billId,
         string $contentType = self::contentTypes['billTenant'][0]
     ): Request
     {
@@ -1528,10 +1528,10 @@ class TenantApi
      * @return PromiseInterface
      */
     public function billsTenantAsyncWithHttpInfo(
-        $id,
-        $year,
-        $month,
-        $includeNetSuiteBills = false,
+        string $id,
+        int $year,
+        int $month,
+        ?bool $includeNetSuiteBills = false,
         string $contentType = self::contentTypes['billsTenant'][0]
     ): PromiseInterface
     {
@@ -1587,10 +1587,10 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function billsTenantRequest(
-        $id,
-        $year,
-        $month,
-        $includeNetSuiteBills = false,
+        string $id,
+        int $year,
+        int $month,
+        ?bool $includeNetSuiteBills = false,
         string $contentType = self::contentTypes['billsTenant'][0]
     ): Request
     {
@@ -1833,8 +1833,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function createBillsTenantAsyncWithHttpInfo(
-        $month = null,
-        $year = null,
+        ?int $month = null,
+        ?int $year = null,
         string $contentType = self::contentTypes['createBillsTenant'][0]
     ): PromiseInterface
     {
@@ -1875,8 +1875,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createBillsTenantRequest(
-        $month = null,
-        $year = null,
+        ?int $month = null,
+        ?int $year = null,
         string $contentType = self::contentTypes['createBillsTenant'][0]
     ): Request
     {
@@ -2162,8 +2162,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function createPayrollSquadTenantAsyncWithHttpInfo(
-        $id,
-        $contractPayrollSquadRequest = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractPayrollSquadRequest $contractPayrollSquadRequest = null,
         string $contentType = self::contentTypes['createPayrollSquadTenant'][0]
     ): PromiseInterface
     {
@@ -2217,8 +2217,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPayrollSquadTenantRequest(
-        $id,
-        $contractPayrollSquadRequest = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractPayrollSquadRequest $contractPayrollSquadRequest = null,
         string $contentType = self::contentTypes['createPayrollSquadTenant'][0]
     ): Request
     {
@@ -2507,8 +2507,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function createPricingTableTenantAsyncWithHttpInfo(
-        $id,
-        $pricingTable = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PricingTable $pricingTable = null,
         string $contentType = self::contentTypes['createPricingTableTenant'][0]
     ): PromiseInterface
     {
@@ -2562,8 +2562,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPricingTableTenantRequest(
-        $id,
-        $pricingTable = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PricingTable $pricingTable = null,
         string $contentType = self::contentTypes['createPricingTableTenant'][0]
     ): Request
     {
@@ -2845,7 +2845,7 @@ class TenantApi
      * @return PromiseInterface
      */
     public function createTenantAsyncWithHttpInfo(
-        $tenant = null,
+        ?\SynergiTech\Staffology\Model\Tenant $tenant = null,
         string $contentType = self::contentTypes['createTenant'][0]
     ): PromiseInterface
     {
@@ -2898,7 +2898,7 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createTenantRequest(
-        $tenant = null,
+        ?\SynergiTech\Staffology\Model\Tenant $tenant = null,
         string $contentType = self::contentTypes['createTenant'][0]
     ): Request
     {
@@ -3101,9 +3101,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function deletePayrollSquadMemberTenantAsyncWithHttpInfo(
-        $id,
-        $payrollSquadId,
-        $payrollSquadMemberId,
+        string $id,
+        string $payrollSquadId,
+        string $payrollSquadMemberId,
         string $contentType = self::contentTypes['deletePayrollSquadMemberTenant'][0]
     ): PromiseInterface
     {
@@ -3145,9 +3145,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePayrollSquadMemberTenantRequest(
-        $id,
-        $payrollSquadId,
-        $payrollSquadMemberId,
+        string $id,
+        string $payrollSquadId,
+        string $payrollSquadMemberId,
         string $contentType = self::contentTypes['deletePayrollSquadMemberTenant'][0]
     ): Request
     {
@@ -3380,8 +3380,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function deletePayrollSquadTenantAsyncWithHttpInfo(
-        $id,
-        $payrollSquadId,
+        string $id,
+        string $payrollSquadId,
         string $contentType = self::contentTypes['deletePayrollSquadTenant'][0]
     ): PromiseInterface
     {
@@ -3422,8 +3422,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePayrollSquadTenantRequest(
-        $id,
-        $payrollSquadId,
+        string $id,
+        string $payrollSquadId,
         string $contentType = self::contentTypes['deletePayrollSquadTenant'][0]
     ): Request
     {
@@ -3641,8 +3641,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function deletePricingTableTenantAsyncWithHttpInfo(
-        $id,
-        $pricingTableId,
+        string $id,
+        string $pricingTableId,
         string $contentType = self::contentTypes['deletePricingTableTenant'][0]
     ): PromiseInterface
     {
@@ -3683,8 +3683,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePricingTableTenantRequest(
-        $id,
-        $pricingTableId,
+        string $id,
+        string $pricingTableId,
         string $contentType = self::contentTypes['deletePricingTableTenant'][0]
     ): Request
     {
@@ -3923,11 +3923,11 @@ class TenantApi
      * @return PromiseInterface
      */
     public function disabledTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $disabled = null,
-        $loginDisabled = null,
-        $body = null,
+        string $id,
+        string $userId,
+        ?bool $disabled = null,
+        ?bool $loginDisabled = null,
+        ?string $body = null,
         string $contentType = self::contentTypes['disabledTenant'][0]
     ): PromiseInterface
     {
@@ -3971,11 +3971,11 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function disabledTenantRequest(
-        $id,
-        $userId,
-        $disabled = null,
-        $loginDisabled = null,
-        $body = null,
+        string $id,
+        string $userId,
+        ?bool $disabled = null,
+        ?bool $loginDisabled = null,
+        ?string $body = null,
         string $contentType = self::contentTypes['disabledTenant'][0]
     ): Request
     {
@@ -4228,9 +4228,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function employerCreationTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $enabled = null,
+        string $id,
+        string $userId,
+        ?bool $enabled = null,
         string $contentType = self::contentTypes['employerCreationTenant'][0]
     ): PromiseInterface
     {
@@ -4272,9 +4272,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employerCreationTenantRequest(
-        $id,
-        $userId,
-        $enabled = null,
+        string $id,
+        string $userId,
+        ?bool $enabled = null,
         string $contentType = self::contentTypes['employerCreationTenant'][0]
     ): Request
     {
@@ -4580,8 +4580,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function employerUsageTenantAsyncWithHttpInfo(
-        $id,
-        $employerId,
+        string $id,
+        string $employerId,
         string $contentType = self::contentTypes['employerUsageTenant'][0]
     ): PromiseInterface
     {
@@ -4635,8 +4635,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employerUsageTenantRequest(
-        $id,
-        $employerId,
+        string $id,
+        string $employerId,
         string $contentType = self::contentTypes['employerUsageTenant'][0]
     ): Request
     {
@@ -4932,8 +4932,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function employerUsersTenantAsyncWithHttpInfo(
-        $id,
-        $employerId,
+        string $id,
+        string $employerId,
         string $contentType = self::contentTypes['employerUsersTenant'][0]
     ): PromiseInterface
     {
@@ -4987,8 +4987,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employerUsersTenantRequest(
-        $id,
-        $employerId,
+        string $id,
+        string $employerId,
         string $contentType = self::contentTypes['employerUsersTenant'][0]
     ): Request
     {
@@ -5277,7 +5277,7 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getApiMailingListReportByIdTenantAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getApiMailingListReportByIdTenant'][0]
     ): PromiseInterface
     {
@@ -5330,7 +5330,7 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getApiMailingListReportByIdTenantRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getApiMailingListReportByIdTenant'][0]
     ): Request
     {
@@ -5906,7 +5906,7 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getEmployersTenantAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getEmployersTenant'][0]
     ): PromiseInterface
     {
@@ -5959,7 +5959,7 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmployersTenantRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getEmployersTenant'][0]
     ): Request
     {
@@ -6059,7 +6059,7 @@ class TenantApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return \SynergiTech\Staffology\Model\ContractPayrollSquadResponse|\SynergiTech\Staffology\Model\ContractPayrollSquadResponse
+     * @return \SynergiTech\Staffology\Model\ContractPayrollSquadResponse
      */
     public function getPayrollSquadTenant(
         string $id,
@@ -6275,8 +6275,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getPayrollSquadTenantAsyncWithHttpInfo(
-        $id,
-        $payrollSquadId,
+        string $id,
+        string $payrollSquadId,
         string $contentType = self::contentTypes['getPayrollSquadTenant'][0]
     ): PromiseInterface
     {
@@ -6330,8 +6330,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPayrollSquadTenantRequest(
-        $id,
-        $payrollSquadId,
+        string $id,
+        string $payrollSquadId,
         string $contentType = self::contentTypes['getPayrollSquadTenant'][0]
     ): Request
     {
@@ -6620,7 +6620,7 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getPayrollSquadsTenantAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getPayrollSquadsTenant'][0]
     ): PromiseInterface
     {
@@ -6673,7 +6673,7 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPayrollSquadsTenantRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getPayrollSquadsTenant'][0]
     ): Request
     {
@@ -6773,7 +6773,7 @@ class TenantApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return \SynergiTech\Staffology\Model\PricingTable|\SynergiTech\Staffology\Model\PricingTable
+     * @return \SynergiTech\Staffology\Model\PricingTable
      */
     public function getPricingTableTenant(
         string $id,
@@ -6989,8 +6989,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getPricingTableTenantAsyncWithHttpInfo(
-        $id,
-        $pricingTableId,
+        string $id,
+        string $pricingTableId,
         string $contentType = self::contentTypes['getPricingTableTenant'][0]
     ): PromiseInterface
     {
@@ -7044,8 +7044,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPricingTableTenantRequest(
-        $id,
-        $pricingTableId,
+        string $id,
+        string $pricingTableId,
         string $contentType = self::contentTypes['getPricingTableTenant'][0]
     ): Request
     {
@@ -7334,7 +7334,7 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getPricingTablesTenantAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getPricingTablesTenant'][0]
     ): PromiseInterface
     {
@@ -7387,7 +7387,7 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPricingTablesTenantRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getPricingTablesTenant'][0]
     ): Request
     {
@@ -7661,7 +7661,7 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getRtiSubmissionSettingsTenantAsyncWithHttpInfo(
-        $id = null,
+        ?string $id = null,
         string $contentType = self::contentTypes['getRtiSubmissionSettingsTenant'][0]
     ): PromiseInterface
     {
@@ -7714,7 +7714,7 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getRtiSubmissionSettingsTenantRequest(
-        $id = null,
+        ?string $id = null,
         string $contentType = self::contentTypes['getRtiSubmissionSettingsTenant'][0]
     ): Request
     {
@@ -7983,7 +7983,7 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getTenantAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getTenant'][0]
     ): PromiseInterface
     {
@@ -8036,7 +8036,7 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getTenantRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getTenant'][0]
     ): Request
     {
@@ -8324,9 +8324,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function getUsersWithNoBillableActivityTenantAsyncWithHttpInfo(
-        $id,
-        $month = null,
-        $year = null,
+        string $id,
+        ?int $month = null,
+        ?int $year = null,
         string $contentType = self::contentTypes['getUsersWithNoBillableActivityTenant'][0]
     ): PromiseInterface
     {
@@ -8381,9 +8381,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getUsersWithNoBillableActivityTenantRequest(
-        $id,
-        $month = null,
-        $year = null,
+        string $id,
+        ?int $month = null,
+        ?int $year = null,
         string $contentType = self::contentTypes['getUsersWithNoBillableActivityTenant'][0]
     ): Request
     {
@@ -8705,11 +8705,11 @@ class TenantApi
      * @return PromiseInterface
      */
     public function netSuiteBillingTenantAsyncWithHttpInfo(
-        $id,
-        $year = null,
-        $month = null,
-        $accept = null,
-        $allTenants = false,
+        string $id,
+        ?int $year = null,
+        ?int $month = null,
+        ?string $accept = null,
+        ?bool $allTenants = false,
         string $contentType = self::contentTypes['netSuiteBillingTenant'][0]
     ): PromiseInterface
     {
@@ -8766,11 +8766,11 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function netSuiteBillingTenantRequest(
-        $id,
-        $year = null,
-        $month = null,
-        $accept = null,
-        $allTenants = false,
+        string $id,
+        ?int $year = null,
+        ?int $month = null,
+        ?string $accept = null,
+        ?bool $allTenants = false,
         string $contentType = self::contentTypes['netSuiteBillingTenant'][0]
     ): Request
     {
@@ -9086,8 +9086,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function payrollSquadAddMemberTenantAsyncWithHttpInfo(
-        $id,
-        $contractPayrollSquadMemberRequest = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractPayrollSquadMemberRequest $contractPayrollSquadMemberRequest = null,
         string $contentType = self::contentTypes['payrollSquadAddMemberTenant'][0]
     ): PromiseInterface
     {
@@ -9141,8 +9141,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function payrollSquadAddMemberTenantRequest(
-        $id,
-        $contractPayrollSquadMemberRequest = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractPayrollSquadMemberRequest $contractPayrollSquadMemberRequest = null,
         string $contentType = self::contentTypes['payrollSquadAddMemberTenant'][0]
     ): Request
     {
@@ -9431,8 +9431,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function payrollSquadUpdateEmployersTenantAsyncWithHttpInfo(
-        $id,
-        $contractPayrollSquadEmployerRequest = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractPayrollSquadEmployerRequest $contractPayrollSquadEmployerRequest = null,
         string $contentType = self::contentTypes['payrollSquadUpdateEmployersTenant'][0]
     ): PromiseInterface
     {
@@ -9486,8 +9486,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function payrollSquadUpdateEmployersTenantRequest(
-        $id,
-        $contractPayrollSquadEmployerRequest = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractPayrollSquadEmployerRequest $contractPayrollSquadEmployerRequest = null,
         string $contentType = self::contentTypes['payrollSquadUpdateEmployersTenant'][0]
     ): Request
     {
@@ -9698,8 +9698,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function removeAdminUserTenantAsyncWithHttpInfo(
-        $id,
-        $body = null,
+        string $id,
+        ?string $body = null,
         string $contentType = self::contentTypes['removeAdminUserTenant'][0]
     ): PromiseInterface
     {
@@ -9740,8 +9740,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function removeAdminUserTenantRequest(
-        $id,
-        $body = null,
+        string $id,
+        ?string $body = null,
         string $contentType = self::contentTypes['removeAdminUserTenant'][0]
     ): Request
     {
@@ -9959,9 +9959,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setAccountingIdTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $accountingId = null,
+        string $id,
+        string $userId,
+        ?string $accountingId = null,
         string $contentType = self::contentTypes['setAccountingIdTenant'][0]
     ): PromiseInterface
     {
@@ -10003,9 +10003,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setAccountingIdTenantRequest(
-        $id,
-        $userId,
-        $accountingId = null,
+        string $id,
+        string $userId,
+        ?string $accountingId = null,
         string $contentType = self::contentTypes['setAccountingIdTenant'][0]
     ): Request
     {
@@ -10240,9 +10240,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setAddressTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $user = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\User $user = null,
         string $contentType = self::contentTypes['setAddressTenant'][0]
     ): PromiseInterface
     {
@@ -10284,9 +10284,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setAddressTenantRequest(
-        $id,
-        $userId,
-        $user = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\User $user = null,
         string $contentType = self::contentTypes['setAddressTenant'][0]
     ): Request
     {
@@ -10519,9 +10519,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setBureauRedirectEmailAddressTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $emailAddress = null,
+        string $id,
+        string $userId,
+        ?string $emailAddress = null,
         string $contentType = self::contentTypes['setBureauRedirectEmailAddressTenant'][0]
     ): PromiseInterface
     {
@@ -10563,9 +10563,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setBureauRedirectEmailAddressTenantRequest(
-        $id,
-        $userId,
-        $emailAddress = null,
+        string $id,
+        string $userId,
+        ?string $emailAddress = null,
         string $contentType = self::contentTypes['setBureauRedirectEmailAddressTenant'][0]
     ): Request
     {
@@ -10800,9 +10800,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setBusinessNameTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $businessName = null,
+        string $id,
+        string $userId,
+        ?string $businessName = null,
         string $contentType = self::contentTypes['setBusinessNameTenant'][0]
     ): PromiseInterface
     {
@@ -10844,9 +10844,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setBusinessNameTenantRequest(
-        $id,
-        $userId,
-        $businessName = null,
+        string $id,
+        string $userId,
+        ?string $businessName = null,
         string $contentType = self::contentTypes['setBusinessNameTenant'][0]
     ): Request
     {
@@ -11081,9 +11081,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setCountryTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $country = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\Country $country = null,
         string $contentType = self::contentTypes['setCountryTenant'][0]
     ): PromiseInterface
     {
@@ -11125,9 +11125,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setCountryTenantRequest(
-        $id,
-        $userId,
-        $country = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\Country $country = null,
         string $contentType = self::contentTypes['setCountryTenant'][0]
     ): Request
     {
@@ -11157,7 +11157,7 @@ class TenantApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $country,
+            $country?->value,
             'country', // param base name
             'Country', // openApiType
             'form', // style
@@ -11362,9 +11362,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setEmployeeCountTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $employeeCount = null,
+        string $id,
+        string $userId,
+        ?int $employeeCount = null,
         string $contentType = self::contentTypes['setEmployeeCountTenant'][0]
     ): PromiseInterface
     {
@@ -11406,9 +11406,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setEmployeeCountTenantRequest(
-        $id,
-        $userId,
-        $employeeCount = null,
+        string $id,
+        string $userId,
+        ?int $employeeCount = null,
         string $contentType = self::contentTypes['setEmployeeCountTenant'][0]
     ): Request
     {
@@ -11636,8 +11636,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setEvcTenantAsyncWithHttpInfo(
-        $id,
-        $disableEvc = null,
+        string $id,
+        ?bool $disableEvc = null,
         string $contentType = self::contentTypes['setEvcTenant'][0]
     ): PromiseInterface
     {
@@ -11678,8 +11678,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setEvcTenantRequest(
-        $id,
-        $disableEvc = null,
+        string $id,
+        ?bool $disableEvc = null,
         string $contentType = self::contentTypes['setEvcTenant'][0]
     ): Request
     {
@@ -11899,9 +11899,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setIndustryTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $industry = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\UserIndustry $industry = null,
         string $contentType = self::contentTypes['setIndustryTenant'][0]
     ): PromiseInterface
     {
@@ -11943,9 +11943,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setIndustryTenantRequest(
-        $id,
-        $userId,
-        $industry = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\UserIndustry $industry = null,
         string $contentType = self::contentTypes['setIndustryTenant'][0]
     ): Request
     {
@@ -11975,7 +11975,7 @@ class TenantApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $industry,
+            $industry?->value,
             'industry', // param base name
             'UserIndustry', // openApiType
             'form', // style
@@ -12180,9 +12180,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setMonthlyMinimumTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $monthlyMinimum = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\MonthlyMinimum $monthlyMinimum = null,
         string $contentType = self::contentTypes['setMonthlyMinimumTenant'][0]
     ): PromiseInterface
     {
@@ -12224,9 +12224,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setMonthlyMinimumTenantRequest(
-        $id,
-        $userId,
-        $monthlyMinimum = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\MonthlyMinimum $monthlyMinimum = null,
         string $contentType = self::contentTypes['setMonthlyMinimumTenant'][0]
     ): Request
     {
@@ -12459,9 +12459,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setPricingTableIdTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $pricingTableId = null,
+        string $id,
+        string $userId,
+        ?string $pricingTableId = null,
         string $contentType = self::contentTypes['setPricingTableIdTenant'][0]
     ): PromiseInterface
     {
@@ -12503,9 +12503,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setPricingTableIdTenantRequest(
-        $id,
-        $userId,
-        $pricingTableId = null,
+        string $id,
+        string $userId,
+        ?string $pricingTableId = null,
         string $contentType = self::contentTypes['setPricingTableIdTenant'][0]
     ): Request
     {
@@ -12740,9 +12740,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function setTenantTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $newTenantId = null,
+        string $id,
+        string $userId,
+        ?string $newTenantId = null,
         string $contentType = self::contentTypes['setTenantTenant'][0]
     ): PromiseInterface
     {
@@ -12784,9 +12784,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setTenantTenantRequest(
-        $id,
-        $userId,
-        $newTenantId = null,
+        string $id,
+        string $userId,
+        ?string $newTenantId = null,
         string $contentType = self::contentTypes['setTenantTenant'][0]
     ): Request
     {
@@ -13113,11 +13113,11 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updateBillTenantAsyncWithHttpInfo(
-        $id,
-        $year,
-        $month,
-        $billId,
-        $usageBill = null,
+        string $id,
+        int $year,
+        int $month,
+        string $billId,
+        ?\SynergiTech\Staffology\Model\UsageBill $usageBill = null,
         string $contentType = self::contentTypes['updateBillTenant'][0]
     ): PromiseInterface
     {
@@ -13174,11 +13174,11 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateBillTenantRequest(
-        $id,
-        $year,
-        $month,
-        $billId,
-        $usageBill = null,
+        string $id,
+        int $year,
+        int $month,
+        string $billId,
+        ?\SynergiTech\Staffology\Model\UsageBill $usageBill = null,
         string $contentType = self::contentTypes['updateBillTenant'][0]
     ): Request
     {
@@ -13335,7 +13335,7 @@ class TenantApi
      */
     public function updateCssColorsTenant(
         string $id,
-        ?array $stringStringKeyValuePair = null,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['updateCssColorsTenant'][0]
     ): array
     {
@@ -13358,7 +13358,7 @@ class TenantApi
      */
     public function updateCssColorsTenantWithHttpInfo(
         string $id,
-        ?array $stringStringKeyValuePair = null,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['updateCssColorsTenant'][0]
     ): array
     {
@@ -13487,7 +13487,7 @@ class TenantApi
      */
     public function updateCssColorsTenantAsync(
         string $id,
-        ?array $stringStringKeyValuePair = null,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['updateCssColorsTenant'][0]
     ): PromiseInterface
     {
@@ -13512,8 +13512,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updateCssColorsTenantAsyncWithHttpInfo(
-        $id,
-        $stringStringKeyValuePair = null,
+        string $id,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['updateCssColorsTenant'][0]
     ): PromiseInterface
     {
@@ -13567,8 +13567,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateCssColorsTenantRequest(
-        $id,
-        $stringStringKeyValuePair = null,
+        string $id,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['updateCssColorsTenant'][0]
     ): Request
     {
@@ -13857,8 +13857,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updateCssTenantAsyncWithHttpInfo(
-        $id,
-        $body = null,
+        string $id,
+        ?string $body = null,
         string $contentType = self::contentTypes['updateCssTenant'][0]
     ): PromiseInterface
     {
@@ -13912,8 +13912,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateCssTenantRequest(
-        $id,
-        $body = null,
+        string $id,
+        ?string $body = null,
         string $contentType = self::contentTypes['updateCssTenant'][0]
     ): Request
     {
@@ -14202,8 +14202,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updateFavIconTenantAsyncWithHttpInfo(
-        $id,
-        $file = null,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['updateFavIconTenant'][0]
     ): PromiseInterface
     {
@@ -14257,8 +14257,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateFavIconTenantRequest(
-        $id,
-        $file = null,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['updateFavIconTenant'][0]
     ): Request
     {
@@ -14554,8 +14554,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updateLogoTenantAsyncWithHttpInfo(
-        $id,
-        $file = null,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['updateLogoTenant'][0]
     ): PromiseInterface
     {
@@ -14609,8 +14609,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateLogoTenantRequest(
-        $id,
-        $file = null,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['updateLogoTenant'][0]
     ): Request
     {
@@ -14913,9 +14913,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updatePricingTableTenantAsyncWithHttpInfo(
-        $id,
-        $pricingTableId,
-        $pricingTable = null,
+        string $id,
+        string $pricingTableId,
+        ?\SynergiTech\Staffology\Model\PricingTable $pricingTable = null,
         string $contentType = self::contentTypes['updatePricingTableTenant'][0]
     ): PromiseInterface
     {
@@ -14970,9 +14970,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePricingTableTenantRequest(
-        $id,
-        $pricingTableId,
-        $pricingTable = null,
+        string $id,
+        string $pricingTableId,
+        ?\SynergiTech\Staffology\Model\PricingTable $pricingTable = null,
         string $contentType = self::contentTypes['updatePricingTableTenant'][0]
     ): Request
     {
@@ -15095,7 +15095,7 @@ class TenantApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\RtiSubmissionSettings
+     * @return \SynergiTech\Staffology\Model\RtiSubmissionSettings
      */
     public function updateRtiSubmissionSettingsTenant(
         ?string $id = null,
@@ -15276,8 +15276,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updateRtiSubmissionSettingsTenantAsyncWithHttpInfo(
-        $id = null,
-        $rtiSubmissionSettings = null,
+        ?string $id = null,
+        ?\SynergiTech\Staffology\Model\RtiSubmissionSettings $rtiSubmissionSettings = null,
         string $contentType = self::contentTypes['updateRtiSubmissionSettingsTenant'][0]
     ): PromiseInterface
     {
@@ -15331,8 +15331,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateRtiSubmissionSettingsTenantRequest(
-        $id = null,
-        $rtiSubmissionSettings = null,
+        ?string $id = null,
+        ?\SynergiTech\Staffology\Model\RtiSubmissionSettings $rtiSubmissionSettings = null,
         string $contentType = self::contentTypes['updateRtiSubmissionSettingsTenant'][0]
     ): Request
     {
@@ -15616,8 +15616,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updateTenantAsyncWithHttpInfo(
-        $id,
-        $tenant = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Tenant $tenant = null,
         string $contentType = self::contentTypes['updateTenant'][0]
     ): PromiseInterface
     {
@@ -15671,8 +15671,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateTenantRequest(
-        $id,
-        $tenant = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Tenant $tenant = null,
         string $contentType = self::contentTypes['updateTenant'][0]
     ): Request
     {
@@ -15968,9 +15968,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function updateUserTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
-        $user = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\User $user = null,
         string $contentType = self::contentTypes['updateUserTenant'][0]
     ): PromiseInterface
     {
@@ -16025,9 +16025,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateUserTenantRequest(
-        $id,
-        $userId,
-        $user = null,
+        string $id,
+        string $userId,
+        ?\SynergiTech\Staffology\Model\User $user = null,
         string $contentType = self::contentTypes['updateUserTenant'][0]
     ): Request
     {
@@ -16338,9 +16338,9 @@ class TenantApi
      * @return PromiseInterface
      */
     public function usageTenantAsyncWithHttpInfo(
-        $id,
-        $year,
-        $month,
+        string $id,
+        int $year,
+        int $month,
         string $contentType = self::contentTypes['usageTenant'][0]
     ): PromiseInterface
     {
@@ -16395,9 +16395,9 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function usageTenantRequest(
-        $id,
-        $year,
-        $month,
+        string $id,
+        int $year,
+        int $month,
         string $contentType = self::contentTypes['usageTenant'][0]
     ): Request
     {
@@ -16708,8 +16708,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function userBillsTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
+        string $id,
+        string $userId,
         string $contentType = self::contentTypes['userBillsTenant'][0]
     ): PromiseInterface
     {
@@ -16763,8 +16763,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function userBillsTenantRequest(
-        $id,
-        $userId,
+        string $id,
+        string $userId,
         string $contentType = self::contentTypes['userBillsTenant'][0]
     ): Request
     {
@@ -17060,8 +17060,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function userEmployersTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
+        string $id,
+        string $userId,
         string $contentType = self::contentTypes['userEmployersTenant'][0]
     ): PromiseInterface
     {
@@ -17115,8 +17115,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function userEmployersTenantRequest(
-        $id,
-        $userId,
+        string $id,
+        string $userId,
         string $contentType = self::contentTypes['userEmployersTenant'][0]
     ): Request
     {
@@ -17412,8 +17412,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function userTenantAsyncWithHttpInfo(
-        $id,
-        $userId,
+        string $id,
+        string $userId,
         string $contentType = self::contentTypes['userTenant'][0]
     ): PromiseInterface
     {
@@ -17467,8 +17467,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function userTenantRequest(
-        $id,
-        $userId,
+        string $id,
+        string $userId,
         string $contentType = self::contentTypes['userTenant'][0]
     ): Request
     {
@@ -17764,8 +17764,8 @@ class TenantApi
      * @return PromiseInterface
      */
     public function usersSearchTenantAsyncWithHttpInfo(
-        $id,
-        $q = null,
+        string $id,
+        ?string $q = null,
         string $contentType = self::contentTypes['usersSearchTenant'][0]
     ): PromiseInterface
     {
@@ -17819,8 +17819,8 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function usersSearchTenantRequest(
-        $id,
-        $q = null,
+        string $id,
+        ?string $q = null,
         string $contentType = self::contentTypes['usersSearchTenant'][0]
     ): Request
     {
@@ -18139,12 +18139,12 @@ class TenantApi
      * @return PromiseInterface
      */
     public function usersTenantAsyncWithHttpInfo(
-        $id,
-        $pageNum = null,
-        $pageSize = null,
-        $sortByLastLogin = false,
-        $category = null,
-        $isBureauMember = null,
+        string $id,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
+        ?bool $sortByLastLogin = false,
+        ?\SynergiTech\Staffology\Model\UserCategory $category = null,
+        ?bool $isBureauMember = null,
         string $contentType = self::contentTypes['usersTenant'][0]
     ): PromiseInterface
     {
@@ -18202,12 +18202,12 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function usersTenantRequest(
-        $id,
-        $pageNum = null,
-        $pageSize = null,
-        $sortByLastLogin = false,
-        $category = null,
-        $isBureauMember = null,
+        string $id,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
+        ?bool $sortByLastLogin = false,
+        ?\SynergiTech\Staffology\Model\UserCategory $category = null,
+        ?bool $isBureauMember = null,
         string $contentType = self::contentTypes['usersTenant'][0]
     ): Request
     {
@@ -18261,7 +18261,7 @@ class TenantApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $category,
+            $category?->value,
             'category', // param base name
             'UserCategory', // openApiType
             'form', // style
@@ -18559,11 +18559,11 @@ class TenantApi
      * @return PromiseInterface
      */
     public function weeklyActivityTenantAsyncWithHttpInfo(
-        $id,
-        $fromDate = null,
-        $toDate = null,
-        $accept = null,
-        $allTenants = false,
+        string $id,
+        ?\DateTime $fromDate = null,
+        ?\DateTime $toDate = null,
+        ?string $accept = null,
+        ?bool $allTenants = false,
         string $contentType = self::contentTypes['weeklyActivityTenant'][0]
     ): PromiseInterface
     {
@@ -18620,11 +18620,11 @@ class TenantApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function weeklyActivityTenantRequest(
-        $id,
-        $fromDate = null,
-        $toDate = null,
-        $accept = null,
-        $allTenants = false,
+        string $id,
+        ?\DateTime $fromDate = null,
+        ?\DateTime $toDate = null,
+        ?string $accept = null,
+        ?bool $allTenants = false,
         string $contentType = self::contentTypes['weeklyActivityTenant'][0]
     ): Request
     {

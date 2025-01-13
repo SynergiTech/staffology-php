@@ -262,9 +262,9 @@ class BenefitsApi
      * @return PromiseInterface
      */
     public function createBenefitsAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $benefit = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Benefit $benefit = null,
         string $contentType = self::contentTypes['createBenefits'][0]
     ): PromiseInterface
     {
@@ -306,9 +306,9 @@ class BenefitsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createBenefitsRequest(
-        $employerId,
-        $employeeId,
-        $benefit = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Benefit $benefit = null,
         string $contentType = self::contentTypes['createBenefits'][0]
     ): Request
     {
@@ -541,9 +541,9 @@ class BenefitsApi
      * @return PromiseInterface
      */
     public function deleteBenefitsAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteBenefits'][0]
     ): PromiseInterface
     {
@@ -585,9 +585,9 @@ class BenefitsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteBenefitsRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteBenefits'][0]
     ): Request
     {
@@ -905,9 +905,9 @@ class BenefitsApi
      * @return PromiseInterface
      */
     public function getBenefitsAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getBenefits'][0]
     ): PromiseInterface
     {
@@ -962,9 +962,9 @@ class BenefitsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getBenefitsRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getBenefits'][0]
     ): Request
     {
@@ -1275,8 +1275,8 @@ class BenefitsApi
      * @return PromiseInterface
      */
     public function indexBenefitsAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexBenefits'][0]
     ): PromiseInterface
     {
@@ -1330,8 +1330,8 @@ class BenefitsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexBenefitsRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexBenefits'][0]
     ): Request
     {
@@ -1641,10 +1641,10 @@ class BenefitsApi
      * @return PromiseInterface
      */
     public function updateBenefitsAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $benefit = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Benefit $benefit = null,
         string $contentType = self::contentTypes['updateBenefits'][0]
     ): PromiseInterface
     {
@@ -1700,10 +1700,10 @@ class BenefitsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateBenefitsRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $benefit = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Benefit $benefit = null,
         string $contentType = self::contentTypes['updateBenefits'][0]
     ): Request
     {

@@ -146,7 +146,7 @@ class JournalTemplateApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\JournalTemplate
+     * @return \SynergiTech\Staffology\Model\JournalTemplate
      */
     public function createJournalTemplate(
         string $employerId,
@@ -327,8 +327,8 @@ class JournalTemplateApi
      * @return PromiseInterface
      */
     public function createJournalTemplateAsyncWithHttpInfo(
-        $employerId,
-        $contractJournalTemplateRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractJournalTemplateRequest $contractJournalTemplateRequest = null,
         string $contentType = self::contentTypes['createJournalTemplate'][0]
     ): PromiseInterface
     {
@@ -382,8 +382,8 @@ class JournalTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createJournalTemplateRequest(
-        $employerId,
-        $contractJournalTemplateRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractJournalTemplateRequest $contractJournalTemplateRequest = null,
         string $contentType = self::contentTypes['createJournalTemplate'][0]
     ): Request
     {
@@ -490,7 +490,7 @@ class JournalTemplateApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractJournalTemplateResponse
+     * @return \SynergiTech\Staffology\Model\ContractJournalTemplateResponse
      */
     public function getJournalTemplate(
         string $employerId,
@@ -665,7 +665,7 @@ class JournalTemplateApi
      * @return PromiseInterface
      */
     public function getJournalTemplateAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getJournalTemplate'][0]
     ): PromiseInterface
     {
@@ -718,7 +718,7 @@ class JournalTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getJournalTemplateRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getJournalTemplate'][0]
     ): Request
     {
@@ -1006,9 +1006,9 @@ class JournalTemplateApi
      * @return PromiseInterface
      */
     public function updateJournalTemplateAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $contractJournalTemplateRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractJournalTemplateRequest $contractJournalTemplateRequest = null,
         string $contentType = self::contentTypes['updateJournalTemplate'][0]
     ): PromiseInterface
     {
@@ -1063,9 +1063,9 @@ class JournalTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateJournalTemplateRequest(
-        $employerId,
-        $id,
-        $contractJournalTemplateRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractJournalTemplateRequest $contractJournalTemplateRequest = null,
         string $contentType = self::contentTypes['updateJournalTemplate'][0]
     ): Request
     {

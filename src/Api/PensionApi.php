@@ -355,9 +355,9 @@ class PensionApi
      * @return PromiseInterface
      */
     public function createPensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $pension = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Pension $pension = null,
         string $contentType = self::contentTypes['createPension'][0]
     ): PromiseInterface
     {
@@ -412,9 +412,9 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPensionRequest(
-        $employerId,
-        $employeeId,
-        $pension = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Pension $pension = null,
         string $contentType = self::contentTypes['createPension'][0]
     ): Request
     {
@@ -718,8 +718,8 @@ class PensionApi
      * @return PromiseInterface
      */
     public function getDeprecatedPensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['getDeprecatedPension'][0]
     ): PromiseInterface
     {
@@ -773,8 +773,8 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDeprecatedPensionRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['getDeprecatedPension'][0]
     ): Request
     {
@@ -1077,9 +1077,9 @@ class PensionApi
      * @return PromiseInterface
      */
     public function getPensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getPension'][0]
     ): PromiseInterface
     {
@@ -1134,9 +1134,9 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPensionRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getPension'][0]
     ): Request
     {
@@ -1461,10 +1461,10 @@ class PensionApi
      * @return PromiseInterface
      */
     public function lastPayRunEntryWithPensionYtdValuesForEmployeePensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $pensionUniqueId,
-        $taxYear,
+        string $employerId,
+        string $employeeId,
+        string $pensionUniqueId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['lastPayRunEntryWithPensionYtdValuesForEmployeePension'][0]
     ): PromiseInterface
     {
@@ -1520,10 +1520,10 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function lastPayRunEntryWithPensionYtdValuesForEmployeePensionRequest(
-        $employerId,
-        $employeeId,
-        $pensionUniqueId,
-        $taxYear,
+        string $employerId,
+        string $employeeId,
+        string $pensionUniqueId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['lastPayRunEntryWithPensionYtdValuesForEmployeePension'][0]
     ): Request
     {
@@ -1594,7 +1594,7 @@ class PensionApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1849,8 +1849,8 @@ class PensionApi
      * @return PromiseInterface
      */
     public function listPensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['listPension'][0]
     ): PromiseInterface
     {
@@ -1904,8 +1904,8 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listPensionRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['listPension'][0]
     ): Request
     {
@@ -2123,8 +2123,8 @@ class PensionApi
      * @return PromiseInterface
      */
     public function removeDeprecatedPensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['removeDeprecatedPension'][0]
     ): PromiseInterface
     {
@@ -2165,8 +2165,8 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function removeDeprecatedPensionRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['removeDeprecatedPension'][0]
     ): Request
     {
@@ -2391,9 +2391,9 @@ class PensionApi
      * @return PromiseInterface
      */
     public function removePensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['removePension'][0]
     ): PromiseInterface
     {
@@ -2435,9 +2435,9 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function removePensionRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['removePension'][0]
     ): Request
     {
@@ -2755,9 +2755,9 @@ class PensionApi
      * @return PromiseInterface
      */
     public function updateDeprecatedPensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $pension = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Pension $pension = null,
         string $contentType = self::contentTypes['updateDeprecatedPension'][0]
     ): PromiseInterface
     {
@@ -2812,9 +2812,9 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateDeprecatedPensionRequest(
-        $employerId,
-        $employeeId,
-        $pension = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Pension $pension = null,
         string $contentType = self::contentTypes['updateDeprecatedPension'][0]
     ): Request
     {
@@ -3132,10 +3132,10 @@ class PensionApi
      * @return PromiseInterface
      */
     public function updatePensionAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $pension = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Pension $pension = null,
         string $contentType = self::contentTypes['updatePension'][0]
     ): PromiseInterface
     {
@@ -3191,10 +3191,10 @@ class PensionApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePensionRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $pension = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Pension $pension = null,
         string $contentType = self::contentTypes['updatePension'][0]
     ): Request
     {

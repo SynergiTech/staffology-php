@@ -303,11 +303,11 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function createPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
-        $paySchedule = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
+        ?\SynergiTech\Staffology\Model\PaySchedule $paySchedule = null,
         string $contentType = self::contentTypes['createPaySchedule'][0]
     ): PromiseInterface
     {
@@ -351,11 +351,11 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
-        $paySchedule = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
+        ?\SynergiTech\Staffology\Model\PaySchedule $paySchedule = null,
         string $contentType = self::contentTypes['createPaySchedule'][0]
     ): Request
     {
@@ -411,7 +411,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -419,7 +419,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -632,11 +632,11 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function createWithOptionalOrdinalPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = null,
-        $paySchedule = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = null,
+        ?\SynergiTech\Staffology\Model\PaySchedule $paySchedule = null,
         string $contentType = self::contentTypes['createWithOptionalOrdinalPaySchedule'][0]
     ): PromiseInterface
     {
@@ -680,11 +680,11 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createWithOptionalOrdinalPayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = null,
-        $paySchedule = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = null,
+        ?\SynergiTech\Staffology\Model\PaySchedule $paySchedule = null,
         string $contentType = self::contentTypes['createWithOptionalOrdinalPaySchedule'][0]
     ): Request
     {
@@ -743,7 +743,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -751,7 +751,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -949,10 +949,10 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function deletePayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
         string $contentType = self::contentTypes['deletePaySchedule'][0]
     ): PromiseInterface
     {
@@ -995,10 +995,10 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
         string $contentType = self::contentTypes['deletePaySchedule'][0]
     ): Request
     {
@@ -1053,7 +1053,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -1061,7 +1061,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1260,10 +1260,10 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function deleteWithOptionalOrdinalPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = null,
         string $contentType = self::contentTypes['deleteWithOptionalOrdinalPaySchedule'][0]
     ): PromiseInterface
     {
@@ -1306,10 +1306,10 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWithOptionalOrdinalPayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = null,
         string $contentType = self::contentTypes['deleteWithOptionalOrdinalPaySchedule'][0]
     ): Request
     {
@@ -1367,7 +1367,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -1375,7 +1375,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1630,8 +1630,8 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function getAllPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['getAllPaySchedule'][0]
     ): PromiseInterface
     {
@@ -1685,8 +1685,8 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAllPayScheduleRequest(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['getAllPaySchedule'][0]
     ): Request
     {
@@ -1727,7 +1727,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1996,10 +1996,10 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function getPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
         string $contentType = self::contentTypes['getPaySchedule'][0]
     ): PromiseInterface
     {
@@ -2055,10 +2055,10 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
         string $contentType = self::contentTypes['getPaySchedule'][0]
     ): Request
     {
@@ -2113,7 +2113,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -2121,7 +2121,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2412,12 +2412,12 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function getPeriodsPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
-        $periodNumber = null,
-        $includeEvents = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
+        ?int $periodNumber = null,
+        ?bool $includeEvents = false,
         string $contentType = self::contentTypes['getPeriodsPaySchedule'][0]
     ): PromiseInterface
     {
@@ -2475,12 +2475,12 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPeriodsPayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
-        $periodNumber = null,
-        $includeEvents = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
+        ?int $periodNumber = null,
+        ?bool $includeEvents = false,
         string $contentType = self::contentTypes['getPeriodsPaySchedule'][0]
     ): Request
     {
@@ -2555,7 +2555,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -2563,7 +2563,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2840,10 +2840,10 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function getWithOptionalOrdinalPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = null,
         string $contentType = self::contentTypes['getWithOptionalOrdinalPaySchedule'][0]
     ): PromiseInterface
     {
@@ -2899,10 +2899,10 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getWithOptionalOrdinalPayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = null,
         string $contentType = self::contentTypes['getWithOptionalOrdinalPaySchedule'][0]
     ): Request
     {
@@ -2960,7 +2960,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -2968,7 +2968,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3244,11 +3244,11 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function savePayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
-        $paySchedule = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
+        ?\SynergiTech\Staffology\Model\PaySchedule $paySchedule = null,
         string $contentType = self::contentTypes['savePaySchedule'][0]
     ): PromiseInterface
     {
@@ -3305,11 +3305,11 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function savePayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
-        $paySchedule = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
+        ?\SynergiTech\Staffology\Model\PaySchedule $paySchedule = null,
         string $contentType = self::contentTypes['savePaySchedule'][0]
     ): Request
     {
@@ -3365,7 +3365,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -3373,7 +3373,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3664,11 +3664,11 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function saveWithOptionalOrdinalPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = null,
-        $paySchedule = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = null,
+        ?\SynergiTech\Staffology\Model\PaySchedule $paySchedule = null,
         string $contentType = self::contentTypes['saveWithOptionalOrdinalPaySchedule'][0]
     ): PromiseInterface
     {
@@ -3725,11 +3725,11 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function saveWithOptionalOrdinalPayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal = null,
-        $paySchedule = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = null,
+        ?\SynergiTech\Staffology\Model\PaySchedule $paySchedule = null,
         string $contentType = self::contentTypes['saveWithOptionalOrdinalPaySchedule'][0]
     ): Request
     {
@@ -3788,7 +3788,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -3796,7 +3796,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -4086,12 +4086,12 @@ class PayScheduleApi
      * @return PromiseInterface
      */
     public function updatePaySchedulePeriodPayScheduleAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
-        $periodNumber,
-        $paySchedulePeriod = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
+        int $periodNumber,
+        ?\SynergiTech\Staffology\Model\PaySchedulePeriod $paySchedulePeriod = null,
         string $contentType = self::contentTypes['updatePaySchedulePeriodPaySchedule'][0]
     ): PromiseInterface
     {
@@ -4149,12 +4149,12 @@ class PayScheduleApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePaySchedulePeriodPayScheduleRequest(
-        $employerId,
-        $payPeriod,
-        $taxYear,
-        $ordinal,
-        $periodNumber,
-        $paySchedulePeriod = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        int $ordinal,
+        int $periodNumber,
+        ?\SynergiTech\Staffology\Model\PaySchedulePeriod $paySchedulePeriod = null,
         string $contentType = self::contentTypes['updatePaySchedulePeriodPaySchedule'][0]
     ): Request
     {
@@ -4217,7 +4217,7 @@ class PayScheduleApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -4225,7 +4225,7 @@ class PayScheduleApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }

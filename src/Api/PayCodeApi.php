@@ -173,7 +173,7 @@ class PayCodeApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\PayCode
+     * @return \SynergiTech\Staffology\Model\PayCode
      */
     public function createPayCode(
         string $employerId,
@@ -354,8 +354,8 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function createPayCodeAsyncWithHttpInfo(
-        $employerId,
-        $payCode = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PayCode $payCode = null,
         string $contentType = self::contentTypes['createPayCode'][0]
     ): PromiseInterface
     {
@@ -409,8 +409,8 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPayCodeRequest(
-        $employerId,
-        $payCode = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PayCode $payCode = null,
         string $contentType = self::contentTypes['createPayCode'][0]
     ): Request
     {
@@ -621,8 +621,8 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function deletePayCodeAsyncWithHttpInfo(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['deletePayCode'][0]
     ): PromiseInterface
     {
@@ -663,8 +663,8 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePayCodeRequest(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['deletePayCode'][0]
     ): Request
     {
@@ -882,8 +882,8 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function deletePayCodePayCodeAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['deletePayCodePayCode'][0]
     ): PromiseInterface
     {
@@ -924,8 +924,8 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePayCodePayCodeRequest(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['deletePayCodePayCode'][0]
     ): Request
     {
@@ -1216,8 +1216,8 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function getPayCodeAsyncWithHttpInfo(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['getPayCode'][0]
     ): PromiseInterface
     {
@@ -1271,8 +1271,8 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPayCodeRequest(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['getPayCode'][0]
     ): Request
     {
@@ -1568,8 +1568,8 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function getPayCodePayCodeAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['getPayCodePayCode'][0]
     ): PromiseInterface
     {
@@ -1623,8 +1623,8 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPayCodePayCodeRequest(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['getPayCodePayCode'][0]
     ): Request
     {
@@ -1915,8 +1915,8 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function indexPayCodeAsyncWithHttpInfo(
-        $employerId,
-        $verbose = false,
+        string $employerId,
+        ?bool $verbose = false,
         string $contentType = self::contentTypes['indexPayCode'][0]
     ): PromiseInterface
     {
@@ -1970,8 +1970,8 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexPayCodeRequest(
-        $employerId,
-        $verbose = false,
+        string $employerId,
+        ?bool $verbose = false,
         string $contentType = self::contentTypes['indexPayCode'][0]
     ): Request
     {
@@ -2255,7 +2255,7 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function nominalCodeMappingsPayCodeAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['nominalCodeMappingsPayCode'][0]
     ): PromiseInterface
     {
@@ -2308,7 +2308,7 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function nominalCodeMappingsPayCodeRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['nominalCodeMappingsPayCode'][0]
     ): Request
     {
@@ -2412,7 +2412,7 @@ class PayCodeApi
      */
     public function updateNominalCodeMappingsPayCode(
         string $employerId,
-        ?array $nominalCodeMapping = null,
+        array $nominalCodeMapping = null,
         string $contentType = self::contentTypes['updateNominalCodeMappingsPayCode'][0]
     ): array
     {
@@ -2435,7 +2435,7 @@ class PayCodeApi
      */
     public function updateNominalCodeMappingsPayCodeWithHttpInfo(
         string $employerId,
-        ?array $nominalCodeMapping = null,
+        array $nominalCodeMapping = null,
         string $contentType = self::contentTypes['updateNominalCodeMappingsPayCode'][0]
     ): array
     {
@@ -2564,7 +2564,7 @@ class PayCodeApi
      */
     public function updateNominalCodeMappingsPayCodeAsync(
         string $employerId,
-        ?array $nominalCodeMapping = null,
+        array $nominalCodeMapping = null,
         string $contentType = self::contentTypes['updateNominalCodeMappingsPayCode'][0]
     ): PromiseInterface
     {
@@ -2589,8 +2589,8 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function updateNominalCodeMappingsPayCodeAsyncWithHttpInfo(
-        $employerId,
-        $nominalCodeMapping = null,
+        string $employerId,
+        array $nominalCodeMapping = null,
         string $contentType = self::contentTypes['updateNominalCodeMappingsPayCode'][0]
     ): PromiseInterface
     {
@@ -2644,8 +2644,8 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateNominalCodeMappingsPayCodeRequest(
-        $employerId,
-        $nominalCodeMapping = null,
+        string $employerId,
+        array $nominalCodeMapping = null,
         string $contentType = self::contentTypes['updateNominalCodeMappingsPayCode'][0]
     ): Request
     {
@@ -2941,9 +2941,9 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function updatePayCodeAsyncWithHttpInfo(
-        $employerId,
-        $code,
-        $payCode = null,
+        string $employerId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\PayCode $payCode = null,
         string $contentType = self::contentTypes['updatePayCode'][0]
     ): PromiseInterface
     {
@@ -2998,9 +2998,9 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePayCodeRequest(
-        $employerId,
-        $code,
-        $payCode = null,
+        string $employerId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\PayCode $payCode = null,
         string $contentType = self::contentTypes['updatePayCode'][0]
     ): Request
     {
@@ -3311,9 +3311,9 @@ class PayCodeApi
      * @return PromiseInterface
      */
     public function updatePayCodePayCodeAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
-        $payCode = null,
+        string $employerId,
+        ?string $code = null,
+        ?\SynergiTech\Staffology\Model\PayCode $payCode = null,
         string $contentType = self::contentTypes['updatePayCodePayCode'][0]
     ): PromiseInterface
     {
@@ -3368,9 +3368,9 @@ class PayCodeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePayCodePayCodeRequest(
-        $employerId,
-        $code = null,
-        $payCode = null,
+        string $employerId,
+        ?string $code = null,
+        ?\SynergiTech\Staffology\Model\PayCode $payCode = null,
         string $contentType = self::contentTypes['updatePayCodePayCode'][0]
     ): Request
     {

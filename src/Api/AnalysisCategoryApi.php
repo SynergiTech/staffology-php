@@ -173,7 +173,7 @@ class AnalysisCategoryApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractAnalysisCategoryResponse
+     * @return \SynergiTech\Staffology\Model\ContractAnalysisCategoryResponse
      */
     public function createAnalysisCategory(
         string $employerId,
@@ -354,8 +354,8 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function createAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $contractAnalysisCategoryRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractAnalysisCategoryRequest $contractAnalysisCategoryRequest = null,
         string $contentType = self::contentTypes['createAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -409,8 +409,8 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createAnalysisCategoryRequest(
-        $employerId,
-        $contractAnalysisCategoryRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractAnalysisCategoryRequest $contractAnalysisCategoryRequest = null,
         string $contentType = self::contentTypes['createAnalysisCategory'][0]
     ): Request
     {
@@ -519,7 +519,7 @@ class AnalysisCategoryApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractAnalysisCategoryCodeResponse
+     * @return \SynergiTech\Staffology\Model\ContractAnalysisCategoryCodeResponse
      */
     public function createAnalysisCategoryCodeAnalysisCategory(
         string $employerId,
@@ -706,9 +706,9 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function createAnalysisCategoryCodeAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $analysisCategoryId,
-        $contractAnalysisCategoryCodeRequest = null,
+        string $employerId,
+        string $analysisCategoryId,
+        ?\SynergiTech\Staffology\Model\ContractAnalysisCategoryCodeRequest $contractAnalysisCategoryCodeRequest = null,
         string $contentType = self::contentTypes['createAnalysisCategoryCodeAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -763,9 +763,9 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createAnalysisCategoryCodeAnalysisCategoryRequest(
-        $employerId,
-        $analysisCategoryId,
-        $contractAnalysisCategoryCodeRequest = null,
+        string $employerId,
+        string $analysisCategoryId,
+        ?\SynergiTech\Staffology\Model\ContractAnalysisCategoryCodeRequest $contractAnalysisCategoryCodeRequest = null,
         string $contentType = self::contentTypes['createAnalysisCategoryCodeAnalysisCategory'][0]
     ): Request
     {
@@ -991,8 +991,8 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function deleteAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -1033,8 +1033,8 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAnalysisCategoryRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteAnalysisCategory'][0]
     ): Request
     {
@@ -1259,9 +1259,9 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function deleteAnalysisCategoryCodeAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $analysisCategoryId,
-        $code,
+        string $employerId,
+        string $analysisCategoryId,
+        string $code,
         string $contentType = self::contentTypes['deleteAnalysisCategoryCodeAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -1303,9 +1303,9 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAnalysisCategoryCodeAnalysisCategoryRequest(
-        $employerId,
-        $analysisCategoryId,
-        $code,
+        string $employerId,
+        string $analysisCategoryId,
+        string $code,
         string $contentType = self::contentTypes['deleteAnalysisCategoryCodeAnalysisCategory'][0]
     ): Request
     {
@@ -1616,8 +1616,8 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function getAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -1671,8 +1671,8 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAnalysisCategoryRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getAnalysisCategory'][0]
     ): Request
     {
@@ -1975,9 +1975,9 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function getAnalysisCategoryCodeAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $analysisCategoryId,
-        $code,
+        string $employerId,
+        string $analysisCategoryId,
+        string $code,
         string $contentType = self::contentTypes['getAnalysisCategoryCodeAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -2032,9 +2032,9 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAnalysisCategoryCodeAnalysisCategoryRequest(
-        $employerId,
-        $analysisCategoryId,
-        $code,
+        string $employerId,
+        string $analysisCategoryId,
+        string $code,
         string $contentType = self::contentTypes['getAnalysisCategoryCodeAnalysisCategory'][0]
     ): Request
     {
@@ -2345,8 +2345,8 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function getCodesAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $analysisCategoryId,
+        string $employerId,
+        string $analysisCategoryId,
         string $contentType = self::contentTypes['getCodesAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -2400,8 +2400,8 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getCodesAnalysisCategoryRequest(
-        $employerId,
-        $analysisCategoryId,
+        string $employerId,
+        string $analysisCategoryId,
         string $contentType = self::contentTypes['getCodesAnalysisCategory'][0]
     ): Request
     {
@@ -2690,7 +2690,7 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function indexAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -2743,7 +2743,7 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexAnalysisCategoryRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexAnalysisCategory'][0]
     ): Request
     {
@@ -3031,9 +3031,9 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function updateAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $contractAnalysisCategoryRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractAnalysisCategoryRequest $contractAnalysisCategoryRequest = null,
         string $contentType = self::contentTypes['updateAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -3088,9 +3088,9 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAnalysisCategoryRequest(
-        $employerId,
-        $id,
-        $contractAnalysisCategoryRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractAnalysisCategoryRequest $contractAnalysisCategoryRequest = null,
         string $contentType = self::contentTypes['updateAnalysisCategory'][0]
     ): Request
     {
@@ -3408,10 +3408,10 @@ class AnalysisCategoryApi
      * @return PromiseInterface
      */
     public function updateAnalysisCategoryCodeAnalysisCategoryAsyncWithHttpInfo(
-        $employerId,
-        $analysisCategoryId,
-        $code,
-        $contractAnalysisCategoryCodeRequest = null,
+        string $employerId,
+        string $analysisCategoryId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\ContractAnalysisCategoryCodeRequest $contractAnalysisCategoryCodeRequest = null,
         string $contentType = self::contentTypes['updateAnalysisCategoryCodeAnalysisCategory'][0]
     ): PromiseInterface
     {
@@ -3467,10 +3467,10 @@ class AnalysisCategoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAnalysisCategoryCodeAnalysisCategoryRequest(
-        $employerId,
-        $analysisCategoryId,
-        $code,
-        $contractAnalysisCategoryCodeRequest = null,
+        string $employerId,
+        string $analysisCategoryId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\ContractAnalysisCategoryCodeRequest $contractAnalysisCategoryCodeRequest = null,
         string $contentType = self::contentTypes['updateAnalysisCategoryCodeAnalysisCategory'][0]
     ): Request
     {

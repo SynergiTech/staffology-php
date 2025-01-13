@@ -278,10 +278,10 @@ class LoanApi
      * @return PromiseInterface
      */
     public function addDocumentLoanAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentLoan'][0]
     ): PromiseInterface
     {
@@ -324,10 +324,10 @@ class LoanApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function addDocumentLoanRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentLoan'][0]
     ): Request
     {
@@ -582,9 +582,9 @@ class LoanApi
      * @return PromiseInterface
      */
     public function createLoanAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $loan = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Loan $loan = null,
         string $contentType = self::contentTypes['createLoan'][0]
     ): PromiseInterface
     {
@@ -626,9 +626,9 @@ class LoanApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createLoanRequest(
-        $employerId,
-        $employeeId,
-        $loan = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Loan $loan = null,
         string $contentType = self::contentTypes['createLoan'][0]
     ): Request
     {
@@ -868,10 +868,10 @@ class LoanApi
      * @return PromiseInterface
      */
     public function deleteDocumentLoanAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentLoan'][0]
     ): PromiseInterface
     {
@@ -914,10 +914,10 @@ class LoanApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDocumentLoanRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentLoan'][0]
     ): Request
     {
@@ -1172,9 +1172,9 @@ class LoanApi
      * @return PromiseInterface
      */
     public function deleteLoanAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteLoan'][0]
     ): PromiseInterface
     {
@@ -1216,9 +1216,9 @@ class LoanApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteLoanRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteLoan'][0]
     ): Request
     {
@@ -1543,10 +1543,10 @@ class LoanApi
      * @return PromiseInterface
      */
     public function getDocumentLoanAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentLoan'][0]
     ): PromiseInterface
     {
@@ -1602,10 +1602,10 @@ class LoanApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDocumentLoanRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentLoan'][0]
     ): Request
     {
@@ -1938,9 +1938,9 @@ class LoanApi
      * @return PromiseInterface
      */
     public function getLoanAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getLoan'][0]
     ): PromiseInterface
     {
@@ -1995,9 +1995,9 @@ class LoanApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getLoanRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getLoan'][0]
     ): Request
     {
@@ -2308,8 +2308,8 @@ class LoanApi
      * @return PromiseInterface
      */
     public function indexLoanAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexLoan'][0]
     ): PromiseInterface
     {
@@ -2363,8 +2363,8 @@ class LoanApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexLoanRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexLoan'][0]
     ): Request
     {
@@ -2481,7 +2481,7 @@ class LoanApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\Loan
+     * @return \SynergiTech\Staffology\Model\Loan
      */
     public function updateLoan(
         string $employerId,
@@ -2674,10 +2674,10 @@ class LoanApi
      * @return PromiseInterface
      */
     public function updateLoanAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $loan = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Loan $loan = null,
         string $contentType = self::contentTypes['updateLoan'][0]
     ): PromiseInterface
     {
@@ -2733,10 +2733,10 @@ class LoanApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateLoanRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $loan = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Loan $loan = null,
         string $contentType = self::contentTypes['updateLoan'][0]
     ): Request
     {

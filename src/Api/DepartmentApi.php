@@ -164,7 +164,7 @@ class DepartmentApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\Department
+     * @return \SynergiTech\Staffology\Model\Department
      */
     public function createDepartment(
         string $employerId,
@@ -345,8 +345,8 @@ class DepartmentApi
      * @return PromiseInterface
      */
     public function createDepartmentAsyncWithHttpInfo(
-        $employerId,
-        $department = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\Department $department = null,
         string $contentType = self::contentTypes['createDepartment'][0]
     ): PromiseInterface
     {
@@ -400,8 +400,8 @@ class DepartmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createDepartmentRequest(
-        $employerId,
-        $department = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\Department $department = null,
         string $contentType = self::contentTypes['createDepartment'][0]
     ): Request
     {
@@ -612,8 +612,8 @@ class DepartmentApi
      * @return PromiseInterface
      */
     public function deleteDepartmentAsyncWithHttpInfo(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['deleteDepartment'][0]
     ): PromiseInterface
     {
@@ -654,8 +654,8 @@ class DepartmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDepartmentRequest(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['deleteDepartment'][0]
     ): Request
     {
@@ -873,8 +873,8 @@ class DepartmentApi
      * @return PromiseInterface
      */
     public function deleteDepartmentDepartmentAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['deleteDepartmentDepartment'][0]
     ): PromiseInterface
     {
@@ -915,8 +915,8 @@ class DepartmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDepartmentDepartmentRequest(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['deleteDepartmentDepartment'][0]
     ): Request
     {
@@ -1207,8 +1207,8 @@ class DepartmentApi
      * @return PromiseInterface
      */
     public function getDepartmentAsyncWithHttpInfo(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['getDepartment'][0]
     ): PromiseInterface
     {
@@ -1262,8 +1262,8 @@ class DepartmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDepartmentRequest(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['getDepartment'][0]
     ): Request
     {
@@ -1559,8 +1559,8 @@ class DepartmentApi
      * @return PromiseInterface
      */
     public function getDepartmentDepartmentAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['getDepartmentDepartment'][0]
     ): PromiseInterface
     {
@@ -1614,8 +1614,8 @@ class DepartmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDepartmentDepartmentRequest(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['getDepartmentDepartment'][0]
     ): Request
     {
@@ -1899,7 +1899,7 @@ class DepartmentApi
      * @return PromiseInterface
      */
     public function indexDepartmentAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexDepartment'][0]
     ): PromiseInterface
     {
@@ -1952,7 +1952,7 @@ class DepartmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexDepartmentRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexDepartment'][0]
     ): Request
     {
@@ -2240,9 +2240,9 @@ class DepartmentApi
      * @return PromiseInterface
      */
     public function updateDepartmentAsyncWithHttpInfo(
-        $employerId,
-        $code,
-        $department = null,
+        string $employerId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\Department $department = null,
         string $contentType = self::contentTypes['updateDepartment'][0]
     ): PromiseInterface
     {
@@ -2297,9 +2297,9 @@ class DepartmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateDepartmentRequest(
-        $employerId,
-        $code,
-        $department = null,
+        string $employerId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\Department $department = null,
         string $contentType = self::contentTypes['updateDepartment'][0]
     ): Request
     {
@@ -2610,9 +2610,9 @@ class DepartmentApi
      * @return PromiseInterface
      */
     public function updateDepartmentDepartmentAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
-        $department = null,
+        string $employerId,
+        ?string $code = null,
+        ?\SynergiTech\Staffology\Model\Department $department = null,
         string $contentType = self::contentTypes['updateDepartmentDepartment'][0]
     ): PromiseInterface
     {
@@ -2667,9 +2667,9 @@ class DepartmentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateDepartmentDepartmentRequest(
-        $employerId,
-        $code = null,
-        $department = null,
+        string $employerId,
+        ?string $code = null,
+        ?\SynergiTech\Staffology\Model\Department $department = null,
         string $contentType = self::contentTypes['updateDepartmentDepartment'][0]
     ): Request
     {

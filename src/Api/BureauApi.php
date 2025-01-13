@@ -326,7 +326,7 @@ class BureauApi
      * @return PromiseInterface
      */
     public function employersBureauAsyncWithHttpInfo(
-        $processor = null,
+        ?string $processor = null,
         string $contentType = self::contentTypes['employersBureau'][0]
     ): PromiseInterface
     {
@@ -379,7 +379,7 @@ class BureauApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employersBureauRequest(
-        $processor = null,
+        ?string $processor = null,
         string $contentType = self::contentTypes['employersBureau'][0]
     ): Request
     {
@@ -473,7 +473,7 @@ class BureauApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\User
+     * @return \SynergiTech\Staffology\Model\User
      */
     public function getProcessorUserBureau(
         string $employerId,
@@ -648,7 +648,7 @@ class BureauApi
      * @return PromiseInterface
      */
     public function getProcessorUserBureauAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getProcessorUserBureau'][0]
     ): PromiseInterface
     {
@@ -701,7 +701,7 @@ class BureauApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getProcessorUserBureauRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getProcessorUserBureau'][0]
     ): Request
     {
@@ -975,7 +975,7 @@ class BureauApi
      * @return PromiseInterface
      */
     public function getReportPackBureauAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getReportPackBureau'][0]
     ): PromiseInterface
     {
@@ -1028,7 +1028,7 @@ class BureauApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getReportPackBureauRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getReportPackBureau'][0]
     ): Request
     {
@@ -1302,7 +1302,7 @@ class BureauApi
      * @return PromiseInterface
      */
     public function getSettingsBureauAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getSettingsBureau'][0]
     ): PromiseInterface
     {
@@ -1355,7 +1355,7 @@ class BureauApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getSettingsBureauRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getSettingsBureau'][0]
     ): Request
     {
@@ -1938,8 +1938,8 @@ class BureauApi
      * @return PromiseInterface
      */
     public function updateSettingsBureauAsyncWithHttpInfo(
-        $employerId,
-        $bureauSettings = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\BureauSettings $bureauSettings = null,
         string $contentType = self::contentTypes['updateSettingsBureau'][0]
     ): PromiseInterface
     {
@@ -1993,8 +1993,8 @@ class BureauApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateSettingsBureauRequest(
-        $employerId,
-        $bureauSettings = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\BureauSettings $bureauSettings = null,
         string $contentType = self::contentTypes['updateSettingsBureau'][0]
     ): Request
     {

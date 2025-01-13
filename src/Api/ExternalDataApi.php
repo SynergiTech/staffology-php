@@ -424,9 +424,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function authorizeExternalDataAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $returnUrl = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        ?string $returnUrl = null,
         string $contentType = self::contentTypes['authorizeExternalData'][0]
     ): PromiseInterface
     {
@@ -481,9 +481,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function authorizeExternalDataRequest(
-        $employerId,
-        $id,
-        $returnUrl = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        ?string $returnUrl = null,
         string $contentType = self::contentTypes['authorizeExternalData'][0]
     ): Request
     {
@@ -534,7 +534,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -789,8 +789,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function companiesExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['companiesExternalData'][0]
     ): PromiseInterface
     {
@@ -844,8 +844,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function companiesExternalDataRequest(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['companiesExternalData'][0]
     ): Request
     {
@@ -878,7 +878,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -1063,8 +1063,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function disconnectExternalDataAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         string $contentType = self::contentTypes['disconnectExternalData'][0]
     ): PromiseInterface
     {
@@ -1105,8 +1105,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function disconnectExternalDataRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         string $contentType = self::contentTypes['disconnectExternalData'][0]
     ): Request
     {
@@ -1147,7 +1147,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -1409,9 +1409,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function employeeExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['employeeExternalData'][0]
     ): PromiseInterface
     {
@@ -1466,9 +1466,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employeeExternalDataRequest(
-        $id,
-        $employerId,
-        $employeeId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['employeeExternalData'][0]
     ): Request
     {
@@ -1508,7 +1508,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -1786,9 +1786,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function employeeLogsExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['employeeLogsExternalData'][0]
     ): PromiseInterface
     {
@@ -1843,9 +1843,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employeeLogsExternalDataRequest(
-        $id,
-        $employerId,
-        $employeeId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['employeeLogsExternalData'][0]
     ): Request
     {
@@ -1885,7 +1885,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -2156,8 +2156,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function employeesExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['employeesExternalData'][0]
     ): PromiseInterface
     {
@@ -2211,8 +2211,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employeesExternalDataRequest(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['employeesExternalData'][0]
     ): Request
     {
@@ -2245,7 +2245,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -2508,8 +2508,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function getConfigDataExternalDataAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         string $contentType = self::contentTypes['getConfigDataExternalData'][0]
     ): PromiseInterface
     {
@@ -2563,8 +2563,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getConfigDataExternalDataRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         string $contentType = self::contentTypes['getConfigDataExternalData'][0]
     ): Request
     {
@@ -2605,7 +2605,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -2685,7 +2685,7 @@ class ExternalDataApi
     public function importEmployeesExternalData(
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         string $employerId,
-        ?array $requestBody = null,
+        array $requestBody = null,
         string $contentType = self::contentTypes['importEmployeesExternalData'][0]
     ): array
     {
@@ -2710,7 +2710,7 @@ class ExternalDataApi
     public function importEmployeesExternalDataWithHttpInfo(
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         string $employerId,
-        ?array $requestBody = null,
+        array $requestBody = null,
         string $contentType = self::contentTypes['importEmployeesExternalData'][0]
     ): array
     {
@@ -2841,7 +2841,7 @@ class ExternalDataApi
     public function importEmployeesExternalDataAsync(
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         string $employerId,
-        ?array $requestBody = null,
+        array $requestBody = null,
         string $contentType = self::contentTypes['importEmployeesExternalData'][0]
     ): PromiseInterface
     {
@@ -2867,9 +2867,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function importEmployeesExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $requestBody = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        array $requestBody = null,
         string $contentType = self::contentTypes['importEmployeesExternalData'][0]
     ): PromiseInterface
     {
@@ -2924,9 +2924,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importEmployeesExternalDataRequest(
-        $id,
-        $employerId,
-        $requestBody = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        array $requestBody = null,
         string $contentType = self::contentTypes['importEmployeesExternalData'][0]
     ): Request
     {
@@ -2960,7 +2960,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -3048,7 +3048,7 @@ class ExternalDataApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ExternalDataProvider[]
+     * @return \SynergiTech\Staffology\Model\ExternalDataProvider[]
      */
     public function listExternalData(
         string $employerId,
@@ -3223,7 +3223,7 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function listExternalDataAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['listExternalData'][0]
     ): PromiseInterface
     {
@@ -3276,7 +3276,7 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listExternalDataRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['listExternalData'][0]
     ): Request
     {
@@ -3557,8 +3557,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function nominalCodesExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['nominalCodesExternalData'][0]
     ): PromiseInterface
     {
@@ -3612,8 +3612,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function nominalCodesExternalDataRequest(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['nominalCodesExternalData'][0]
     ): Request
     {
@@ -3646,7 +3646,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -3944,13 +3944,13 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pensionContributionsCsvExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $schemeId = null,
-        $ordinal = 1,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?string $schemeId = null,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['pensionContributionsCsvExternalData'][0]
     ): PromiseInterface
     {
@@ -4009,13 +4009,13 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pensionContributionsCsvExternalDataRequest(
-        $id,
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $schemeId = null,
-        $ordinal = 1,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?string $schemeId = null,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['pensionContributionsCsvExternalData'][0]
     ): Request
     {
@@ -4089,7 +4089,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -4105,7 +4105,7 @@ class ExternalDataApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -4121,7 +4121,7 @@ class ExternalDataApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -4411,13 +4411,13 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function postJournalExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $force = null,
-        $ordinal = 1,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?bool $force = null,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['postJournalExternalData'][0]
     ): PromiseInterface
     {
@@ -4476,13 +4476,13 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function postJournalExternalDataRequest(
-        $id,
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $force = null,
-        $ordinal = 1,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?bool $force = null,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['postJournalExternalData'][0]
     ): Request
     {
@@ -4556,7 +4556,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -4572,7 +4572,7 @@ class ExternalDataApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -4588,7 +4588,7 @@ class ExternalDataApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -4920,19 +4920,19 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function postPaymentsExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $incEmployees = null,
-        $incHmrc = null,
-        $incPensions = null,
-        $incAeos = null,
-        $incDeductions = null,
-        $force = null,
-        $ordinal = 1,
-        $paymentDate = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?bool $incEmployees = null,
+        ?bool $incHmrc = null,
+        ?bool $incPensions = null,
+        ?bool $incAeos = null,
+        ?bool $incDeductions = null,
+        ?bool $force = null,
+        ?int $ordinal = 1,
+        ?\DateTime $paymentDate = null,
         string $contentType = self::contentTypes['postPaymentsExternalData'][0]
     ): PromiseInterface
     {
@@ -4997,19 +4997,19 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function postPaymentsExternalDataRequest(
-        $id,
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $incEmployees = null,
-        $incHmrc = null,
-        $incPensions = null,
-        $incAeos = null,
-        $incDeductions = null,
-        $force = null,
-        $ordinal = 1,
-        $paymentDate = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?bool $incEmployees = null,
+        ?bool $incHmrc = null,
+        ?bool $incPensions = null,
+        ?bool $incAeos = null,
+        ?bool $incDeductions = null,
+        ?bool $force = null,
+        ?int $ordinal = 1,
+        ?\DateTime $paymentDate = null,
         string $contentType = self::contentTypes['postPaymentsExternalData'][0]
     ): Request
     {
@@ -5143,7 +5143,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -5159,7 +5159,7 @@ class ExternalDataApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -5175,7 +5175,7 @@ class ExternalDataApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -5430,8 +5430,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushEmployeesExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['pushEmployeesExternalData'][0]
     ): PromiseInterface
     {
@@ -5485,8 +5485,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushEmployeesExternalDataRequest(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['pushEmployeesExternalData'][0]
     ): Request
     {
@@ -5519,7 +5519,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -5718,10 +5718,10 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushP11DExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId = null,
-        $taxYear = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?string $employeeId = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['pushP11DExternalData'][0]
     ): PromiseInterface
     {
@@ -5764,10 +5764,10 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushP11DExternalDataRequest(
-        $id,
-        $employerId,
-        $employeeId = null,
-        $taxYear = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?string $employeeId = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['pushP11DExternalData'][0]
     ): Request
     {
@@ -5807,7 +5807,7 @@ class ExternalDataApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -5820,7 +5820,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -6012,9 +6012,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushP11DsExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $taxYear = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['pushP11DsExternalData'][0]
     ): PromiseInterface
     {
@@ -6056,9 +6056,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushP11DsExternalDataRequest(
-        $id,
-        $employerId,
-        $taxYear = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['pushP11DsExternalData'][0]
     ): Request
     {
@@ -6088,7 +6088,7 @@ class ExternalDataApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -6101,7 +6101,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -6293,9 +6293,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushP45ExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?string $employeeId = null,
         string $contentType = self::contentTypes['pushP45ExternalData'][0]
     ): PromiseInterface
     {
@@ -6337,9 +6337,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushP45ExternalDataRequest(
-        $id,
-        $employerId,
-        $employeeId = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?string $employeeId = null,
         string $contentType = self::contentTypes['pushP45ExternalData'][0]
     ): Request
     {
@@ -6382,7 +6382,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -6595,12 +6595,12 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushP45sExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $payPeriod = null,
-        $periodNumber = null,
-        $taxYear = null,
-        $ordinal = 1,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PayPeriods $payPeriod = null,
+        ?int $periodNumber = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['pushP45sExternalData'][0]
     ): PromiseInterface
     {
@@ -6645,12 +6645,12 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushP45sExternalDataRequest(
-        $id,
-        $employerId,
-        $payPeriod = null,
-        $periodNumber = null,
-        $taxYear = null,
-        $ordinal = 1,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PayPeriods $payPeriod = null,
+        ?int $periodNumber = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['pushP45sExternalData'][0]
     ): Request
     {
@@ -6683,7 +6683,7 @@ class ExternalDataApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $payPeriod,
+            $payPeriod?->value,
             'payPeriod', // param base name
             'PayPeriods', // openApiType
             'form', // style
@@ -6701,7 +6701,7 @@ class ExternalDataApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -6723,7 +6723,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -6922,10 +6922,10 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushP60ExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId = null,
-        $taxYear = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?string $employeeId = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['pushP60ExternalData'][0]
     ): PromiseInterface
     {
@@ -6968,10 +6968,10 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushP60ExternalDataRequest(
-        $id,
-        $employerId,
-        $employeeId = null,
-        $taxYear = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?string $employeeId = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['pushP60ExternalData'][0]
     ): Request
     {
@@ -7011,7 +7011,7 @@ class ExternalDataApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -7024,7 +7024,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -7216,9 +7216,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushP60sExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $taxYear = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['pushP60sExternalData'][0]
     ): PromiseInterface
     {
@@ -7260,9 +7260,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushP60sExternalDataRequest(
-        $id,
-        $employerId,
-        $taxYear = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['pushP60sExternalData'][0]
     ): Request
     {
@@ -7292,7 +7292,7 @@ class ExternalDataApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -7305,7 +7305,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -7532,14 +7532,14 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushPayslipsExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $payPeriod = null,
-        $periodNumber = null,
-        $taxYear = null,
-        $force = null,
-        $ordinal = 1,
-        $employeeId = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PayPeriods $payPeriod = null,
+        ?int $periodNumber = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
+        ?bool $force = null,
+        ?int $ordinal = 1,
+        ?string $employeeId = null,
         string $contentType = self::contentTypes['pushPayslipsExternalData'][0]
     ): PromiseInterface
     {
@@ -7586,14 +7586,14 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushPayslipsExternalDataRequest(
-        $id,
-        $employerId,
-        $payPeriod = null,
-        $periodNumber = null,
-        $taxYear = null,
-        $force = null,
-        $ordinal = 1,
-        $employeeId = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PayPeriods $payPeriod = null,
+        ?int $periodNumber = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
+        ?bool $force = null,
+        ?int $ordinal = 1,
+        ?string $employeeId = null,
         string $contentType = self::contentTypes['pushPayslipsExternalData'][0]
     ): Request
     {
@@ -7628,7 +7628,7 @@ class ExternalDataApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $payPeriod,
+            $payPeriod?->value,
             'payPeriod', // param base name
             'PayPeriods', // openApiType
             'form', // style
@@ -7646,7 +7646,7 @@ class ExternalDataApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -7686,7 +7686,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -7885,10 +7885,10 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushPensionLetterExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId = null,
-        $assessmentId = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?string $employeeId = null,
+        ?string $assessmentId = null,
         string $contentType = self::contentTypes['pushPensionLetterExternalData'][0]
     ): PromiseInterface
     {
@@ -7931,10 +7931,10 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushPensionLetterExternalDataRequest(
-        $id,
-        $employerId,
-        $employeeId = null,
-        $assessmentId = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?string $employeeId = null,
+        ?string $assessmentId = null,
         string $contentType = self::contentTypes['pushPensionLetterExternalData'][0]
     ): Request
     {
@@ -7987,7 +7987,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -8172,8 +8172,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function pushPensionLettersExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['pushPensionLettersExternalData'][0]
     ): PromiseInterface
     {
@@ -8214,8 +8214,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function pushPensionLettersExternalDataRequest(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['pushPensionLettersExternalData'][0]
     ): Request
     {
@@ -8248,7 +8248,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -8433,8 +8433,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function respondExternalDataAsyncWithHttpInfo(
-        $id,
-        $error = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        ?string $error = null,
         string $contentType = self::contentTypes['respondExternalData'][0]
     ): PromiseInterface
     {
@@ -8475,8 +8475,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function respondExternalDataRequest(
-        $id,
-        $error = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        ?string $error = null,
         string $contentType = self::contentTypes['respondExternalData'][0]
     ): Request
     {
@@ -8512,7 +8512,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -8592,7 +8592,7 @@ class ExternalDataApi
     public function setConfigDataExternalData(
         string $employerId,
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
-        ?mixed $body = null,
+        mixed $body = null,
         string $contentType = self::contentTypes['setConfigDataExternalData'][0]
     ): mixed
     {
@@ -8617,7 +8617,7 @@ class ExternalDataApi
     public function setConfigDataExternalDataWithHttpInfo(
         string $employerId,
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
-        ?mixed $body = null,
+        mixed $body = null,
         string $contentType = self::contentTypes['setConfigDataExternalData'][0]
     ): array
     {
@@ -8748,7 +8748,7 @@ class ExternalDataApi
     public function setConfigDataExternalDataAsync(
         string $employerId,
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
-        ?mixed $body = null,
+        mixed $body = null,
         string $contentType = self::contentTypes['setConfigDataExternalData'][0]
     ): PromiseInterface
     {
@@ -8774,9 +8774,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function setConfigDataExternalDataAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $body = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        mixed $body = null,
         string $contentType = self::contentTypes['setConfigDataExternalData'][0]
     ): PromiseInterface
     {
@@ -8831,9 +8831,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setConfigDataExternalDataRequest(
-        $employerId,
-        $id,
-        $body = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        mixed $body = null,
         string $contentType = self::contentTypes['setConfigDataExternalData'][0]
     ): Request
     {
@@ -8875,7 +8875,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -8966,7 +8966,7 @@ class ExternalDataApi
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         ?string $username = null,
         ?string $password = null,
-        ?array $stringStringKeyValuePair = null,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['setCredentialsExternalData'][0]
     ): void
     {
@@ -8994,7 +8994,7 @@ class ExternalDataApi
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         ?string $username = null,
         ?string $password = null,
-        ?array $stringStringKeyValuePair = null,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['setCredentialsExternalData'][0]
     ): array
     {
@@ -9052,7 +9052,7 @@ class ExternalDataApi
         \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
         ?string $username = null,
         ?string $password = null,
-        ?array $stringStringKeyValuePair = null,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['setCredentialsExternalData'][0]
     ): PromiseInterface
     {
@@ -9080,11 +9080,11 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function setCredentialsExternalDataAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $username = null,
-        $password = null,
-        $stringStringKeyValuePair = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        ?string $username = null,
+        ?string $password = null,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['setCredentialsExternalData'][0]
     ): PromiseInterface
     {
@@ -9128,11 +9128,11 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setCredentialsExternalDataRequest(
-        $employerId,
-        $id,
-        $username = null,
-        $password = null,
-        $stringStringKeyValuePair = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        ?string $username = null,
+        ?string $password = null,
+        array $stringStringKeyValuePair = null,
         string $contentType = self::contentTypes['setCredentialsExternalData'][0]
     ): Request
     {
@@ -9194,7 +9194,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -9456,8 +9456,8 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function syncAllEmployeesExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['syncAllEmployeesExternalData'][0]
     ): PromiseInterface
     {
@@ -9511,8 +9511,8 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function syncAllEmployeesExternalDataRequest(
-        $id,
-        $employerId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
         string $contentType = self::contentTypes['syncAllEmployeesExternalData'][0]
     ): Request
     {
@@ -9545,7 +9545,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -9815,9 +9815,9 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function syncEmployeeExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['syncEmployeeExternalData'][0]
     ): PromiseInterface
     {
@@ -9872,9 +9872,9 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function syncEmployeeExternalDataRequest(
-        $id,
-        $employerId,
-        $employeeId,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['syncEmployeeExternalData'][0]
     ): Request
     {
@@ -9914,7 +9914,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -10135,12 +10135,12 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function syncLeaveExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $ordinal = 1,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['syncLeaveExternalData'][0]
     ): PromiseInterface
     {
@@ -10185,12 +10185,12 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function syncLeaveExternalDataRequest(
-        $id,
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $ordinal = 1,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['syncLeaveExternalData'][0]
     ): Request
     {
@@ -10254,7 +10254,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -10270,7 +10270,7 @@ class ExternalDataApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -10286,7 +10286,7 @@ class ExternalDataApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -10555,10 +10555,10 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function timeAndAttendanceExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $from = null,
-        $to = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\DateTime $from = null,
+        ?\DateTime $to = null,
         string $contentType = self::contentTypes['timeAndAttendanceExternalData'][0]
     ): PromiseInterface
     {
@@ -10614,10 +10614,10 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function timeAndAttendanceExternalDataRequest(
-        $id,
-        $employerId,
-        $from = null,
-        $to = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        ?\DateTime $from = null,
+        ?\DateTime $to = null,
         string $contentType = self::contentTypes['timeAndAttendanceExternalData'][0]
     ): Request
     {
@@ -10670,7 +10670,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }
@@ -10947,10 +10947,10 @@ class ExternalDataApi
      * @return PromiseInterface
      */
     public function updateEmployeeExternalDataAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId,
-        $externalEmployeeMapping = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\ExternalEmployeeMapping $externalEmployeeMapping = null,
         string $contentType = self::contentTypes['updateEmployeeExternalData'][0]
     ): PromiseInterface
     {
@@ -11006,10 +11006,10 @@ class ExternalDataApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEmployeeExternalDataRequest(
-        $id,
-        $employerId,
-        $employeeId,
-        $externalEmployeeMapping = null,
+        \SynergiTech\Staffology\Model\ExternalDataProviderId $id,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\ExternalEmployeeMapping $externalEmployeeMapping = null,
         string $contentType = self::contentTypes['updateEmployeeExternalData'][0]
     ): Request
     {
@@ -11050,7 +11050,7 @@ class ExternalDataApi
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                ObjectSerializer::toPathValue($id->value),
                 $resourcePath
             );
         }

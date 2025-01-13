@@ -281,10 +281,10 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function addDocumentAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -327,10 +327,10 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function addDocumentAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentAttachmentOrder'][0]
     ): Request
     {
@@ -585,9 +585,9 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function createAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $attachmentOrder = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\AttachmentOrder $attachmentOrder = null,
         string $contentType = self::contentTypes['createAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -629,9 +629,9 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
-        $attachmentOrder = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\AttachmentOrder $attachmentOrder = null,
         string $contentType = self::contentTypes['createAttachmentOrder'][0]
     ): Request
     {
@@ -864,9 +864,9 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function deleteAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -908,9 +908,9 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteAttachmentOrder'][0]
     ): Request
     {
@@ -1157,10 +1157,10 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function deleteDocumentAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -1203,10 +1203,10 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDocumentAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentAttachmentOrder'][0]
     ): Request
     {
@@ -1539,9 +1539,9 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function getAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -1596,9 +1596,9 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getAttachmentOrder'][0]
     ): Request
     {
@@ -1923,10 +1923,10 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function getDocumentAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -1982,10 +1982,10 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDocumentAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentAttachmentOrder'][0]
     ): Request
     {
@@ -2311,8 +2311,8 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function indexAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -2366,8 +2366,8 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexAttachmentOrder'][0]
     ): Request
     {
@@ -2670,9 +2670,9 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function paymentsAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $taxYear,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['paymentsAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -2727,9 +2727,9 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function paymentsAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
-        $taxYear,
+        string $employerId,
+        string $employeeId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['paymentsAttachmentOrder'][0]
     ): Request
     {
@@ -2785,7 +2785,7 @@ class AttachmentOrderApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2861,7 +2861,7 @@ class AttachmentOrderApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\AttachmentOrder
+     * @return \SynergiTech\Staffology\Model\AttachmentOrder
      */
     public function updateAttachmentOrder(
         string $employerId,
@@ -3054,10 +3054,10 @@ class AttachmentOrderApi
      * @return PromiseInterface
      */
     public function updateAttachmentOrderAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $attachmentOrder = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\AttachmentOrder $attachmentOrder = null,
         string $contentType = self::contentTypes['updateAttachmentOrder'][0]
     ): PromiseInterface
     {
@@ -3113,10 +3113,10 @@ class AttachmentOrderApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAttachmentOrderRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $attachmentOrder = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\AttachmentOrder $attachmentOrder = null,
         string $contentType = self::contentTypes['updateAttachmentOrder'][0]
     ): Request
     {

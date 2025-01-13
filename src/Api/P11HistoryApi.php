@@ -155,7 +155,7 @@ class P11HistoryApi
     public function createP11History(
         string $employerId,
         string $employeeId,
-        ?array $contractP11HistoryRequest = null,
+        array $contractP11HistoryRequest = null,
         string $contentType = self::contentTypes['createP11History'][0]
     ): void
     {
@@ -179,7 +179,7 @@ class P11HistoryApi
     public function createP11HistoryWithHttpInfo(
         string $employerId,
         string $employeeId,
-        ?array $contractP11HistoryRequest = null,
+        array $contractP11HistoryRequest = null,
         string $contentType = self::contentTypes['createP11History'][0]
     ): array
     {
@@ -233,7 +233,7 @@ class P11HistoryApi
     public function createP11HistoryAsync(
         string $employerId,
         string $employeeId,
-        ?array $contractP11HistoryRequest = null,
+        array $contractP11HistoryRequest = null,
         string $contentType = self::contentTypes['createP11History'][0]
     ): PromiseInterface
     {
@@ -259,9 +259,9 @@ class P11HistoryApi
      * @return PromiseInterface
      */
     public function createP11HistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $contractP11HistoryRequest = null,
+        string $employerId,
+        string $employeeId,
+        array $contractP11HistoryRequest = null,
         string $contentType = self::contentTypes['createP11History'][0]
     ): PromiseInterface
     {
@@ -303,9 +303,9 @@ class P11HistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createP11HistoryRequest(
-        $employerId,
-        $employeeId,
-        $contractP11HistoryRequest = null,
+        string $employerId,
+        string $employeeId,
+        array $contractP11HistoryRequest = null,
         string $contentType = self::contentTypes['createP11History'][0]
     ): Request
     {
@@ -538,9 +538,9 @@ class P11HistoryApi
      * @return PromiseInterface
      */
     public function deleteP11HistoryAsyncWithHttpInfo(
-        $id,
-        $employerId,
-        $employeeId,
+        string $id,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['deleteP11History'][0]
     ): PromiseInterface
     {
@@ -582,9 +582,9 @@ class P11HistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteP11HistoryRequest(
-        $id,
-        $employerId,
-        $employeeId,
+        string $id,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['deleteP11History'][0]
     ): Request
     {
@@ -909,10 +909,10 @@ class P11HistoryApi
      * @return PromiseInterface
      */
     public function listPagedP11HistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        string $employeeId,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['listPagedP11History'][0]
     ): PromiseInterface
     {
@@ -968,10 +968,10 @@ class P11HistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listPagedP11HistoryRequest(
-        $employerId,
-        $employeeId,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        string $employeeId,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['listPagedP11History'][0]
     ): Request
     {
@@ -1108,7 +1108,7 @@ class P11HistoryApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return \SynergiTech\Staffology\Model\ContractP11HistoryResponse|\SynergiTech\Staffology\Model\ContractP11HistoryResponse
+     * @return \SynergiTech\Staffology\Model\ContractP11HistoryResponse
      */
     public function updateP11History(
         string $employerId,
@@ -1336,10 +1336,10 @@ class P11HistoryApi
      * @return PromiseInterface
      */
     public function updateP11HistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $contractP11HistoryRequest = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractP11HistoryRequest $contractP11HistoryRequest = null,
         string $contentType = self::contentTypes['updateP11History'][0]
     ): PromiseInterface
     {
@@ -1395,10 +1395,10 @@ class P11HistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateP11HistoryRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $contractP11HistoryRequest = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractP11HistoryRequest $contractP11HistoryRequest = null,
         string $contentType = self::contentTypes['updateP11History'][0]
     ): Request
     {

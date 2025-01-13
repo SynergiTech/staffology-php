@@ -341,10 +341,10 @@ class EngineApi
      * @return PromiseInterface
      */
     public function calculateNiEngineAsyncWithHttpInfo(
-        $taxYear = null,
-        $gross = null,
-        $niCategory = null,
-        $payPeriod = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
+        ?float $gross = null,
+        ?string $niCategory = null,
+        ?\SynergiTech\Staffology\Model\PayPeriods $payPeriod = null,
         string $contentType = self::contentTypes['calculateNiEngine'][0]
     ): PromiseInterface
     {
@@ -400,10 +400,10 @@ class EngineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function calculateNiEngineRequest(
-        $taxYear = null,
-        $gross = null,
-        $niCategory = null,
-        $payPeriod = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
+        ?float $gross = null,
+        ?string $niCategory = null,
+        ?\SynergiTech\Staffology\Model\PayPeriods $payPeriod = null,
         string $contentType = self::contentTypes['calculateNiEngine'][0]
     ): Request
     {
@@ -422,7 +422,7 @@ class EngineApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -449,7 +449,7 @@ class EngineApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $payPeriod,
+            $payPeriod?->value,
             'payPeriod', // param base name
             'PayPeriods', // openApiType
             'form', // style
@@ -765,16 +765,16 @@ class EngineApi
      * @return PromiseInterface
      */
     public function calculateTaxEngineAsyncWithHttpInfo(
-        $taxYear = null,
-        $taxCode = null,
-        $gross = null,
-        $periodStart = null,
-        $periodEnd = null,
-        $payPeriod = null,
-        $period = 1,
-        $week1 = false,
-        $grossToDate = 0,
-        $taxToDate = 0,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
+        ?string $taxCode = null,
+        ?float $gross = null,
+        ?\DateTime $periodStart = null,
+        ?\DateTime $periodEnd = null,
+        ?\SynergiTech\Staffology\Model\PayPeriods $payPeriod = null,
+        ?int $period = 1,
+        ?bool $week1 = false,
+        ?float $grossToDate = 0,
+        ?float $taxToDate = 0,
         string $contentType = self::contentTypes['calculateTaxEngine'][0]
     ): PromiseInterface
     {
@@ -836,16 +836,16 @@ class EngineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function calculateTaxEngineRequest(
-        $taxYear = null,
-        $taxCode = null,
-        $gross = null,
-        $periodStart = null,
-        $periodEnd = null,
-        $payPeriod = null,
-        $period = 1,
-        $week1 = false,
-        $grossToDate = 0,
-        $taxToDate = 0,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
+        ?string $taxCode = null,
+        ?float $gross = null,
+        ?\DateTime $periodStart = null,
+        ?\DateTime $periodEnd = null,
+        ?\SynergiTech\Staffology\Model\PayPeriods $payPeriod = null,
+        ?int $period = 1,
+        ?bool $week1 = false,
+        ?float $grossToDate = 0,
+        ?float $taxToDate = 0,
         string $contentType = self::contentTypes['calculateTaxEngine'][0]
     ): Request
     {
@@ -870,7 +870,7 @@ class EngineApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -915,7 +915,7 @@ class EngineApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $payPeriod,
+            $payPeriod?->value,
             'payPeriod', // param base name
             'PayPeriods', // openApiType
             'form', // style
@@ -1204,7 +1204,7 @@ class EngineApi
      * @return PromiseInterface
      */
     public function configEngineAsyncWithHttpInfo(
-        $taxYear = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['configEngine'][0]
     ): PromiseInterface
     {
@@ -1257,7 +1257,7 @@ class EngineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function configEngineRequest(
-        $taxYear = null,
+        ?\SynergiTech\Staffology\Model\TaxYear $taxYear = null,
         string $contentType = self::contentTypes['configEngine'][0]
     ): Request
     {
@@ -1273,7 +1273,7 @@ class EngineApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $taxYear,
+            $taxYear?->value,
             'taxYear', // param base name
             'TaxYear', // openApiType
             'form', // style
@@ -1554,11 +1554,11 @@ class EngineApi
      * @return PromiseInterface
      */
     public function getNationalInsuranceThresholdsEngineAsyncWithHttpInfo(
-        $taxYear,
-        $payPeriod,
-        $periodStart = null,
-        $periodEnd = null,
-        $effectiveDate = null,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        ?\DateTime $periodStart = null,
+        ?\DateTime $periodEnd = null,
+        ?\DateTime $effectiveDate = null,
         string $contentType = self::contentTypes['getNationalInsuranceThresholdsEngine'][0]
     ): PromiseInterface
     {
@@ -1615,11 +1615,11 @@ class EngineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getNationalInsuranceThresholdsEngineRequest(
-        $taxYear,
-        $payPeriod,
-        $periodStart = null,
-        $periodEnd = null,
-        $effectiveDate = null,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        ?\DateTime $periodStart = null,
+        ?\DateTime $periodEnd = null,
+        ?\DateTime $effectiveDate = null,
         string $contentType = self::contentTypes['getNationalInsuranceThresholdsEngine'][0]
     ): Request
     {
@@ -1682,7 +1682,7 @@ class EngineApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1690,7 +1690,7 @@ class EngineApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -1938,7 +1938,7 @@ class EngineApi
      * @return PromiseInterface
      */
     public function getTenantBrandingEngineAsyncWithHttpInfo(
-        $brandCode,
+        string $brandCode,
         string $contentType = self::contentTypes['getTenantBrandingEngine'][0]
     ): PromiseInterface
     {
@@ -1991,7 +1991,7 @@ class EngineApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getTenantBrandingEngineRequest(
-        $brandCode,
+        string $brandCode,
         string $contentType = self::contentTypes['getTenantBrandingEngine'][0]
     ): Request
     {

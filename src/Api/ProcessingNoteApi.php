@@ -268,9 +268,9 @@ class ProcessingNoteApi
      * @return PromiseInterface
      */
     public function addDocumentProcessingNoteAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentProcessingNote'][0]
     ): PromiseInterface
     {
@@ -312,9 +312,9 @@ class ProcessingNoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function addDocumentProcessingNoteRequest(
-        $employerId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentProcessingNote'][0]
     ): Request
     {
@@ -653,12 +653,12 @@ class ProcessingNoteApi
      * @return PromiseInterface
      */
     public function createProcessingNoteAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $payPeriod,
-        $periodNumber,
-        $ordinal = 1,
-        $processingNote = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        ?int $ordinal = 1,
+        ?\SynergiTech\Staffology\Model\ProcessingNote $processingNote = null,
         string $contentType = self::contentTypes['createProcessingNote'][0]
     ): PromiseInterface
     {
@@ -716,12 +716,12 @@ class ProcessingNoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createProcessingNoteRequest(
-        $employerId,
-        $taxYear,
-        $payPeriod,
-        $periodNumber,
-        $ordinal = 1,
-        $processingNote = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        ?int $ordinal = 1,
+        ?\SynergiTech\Staffology\Model\ProcessingNote $processingNote = null,
         string $contentType = self::contentTypes['createProcessingNote'][0]
     ): Request
     {
@@ -787,7 +787,7 @@ class ProcessingNoteApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -795,7 +795,7 @@ class ProcessingNoteApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -994,9 +994,9 @@ class ProcessingNoteApi
      * @return PromiseInterface
      */
     public function deleteDocumentProcessingNoteAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentProcessingNote'][0]
     ): PromiseInterface
     {
@@ -1038,9 +1038,9 @@ class ProcessingNoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDocumentProcessingNoteRequest(
-        $employerId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentProcessingNote'][0]
     ): Request
     {
@@ -1358,9 +1358,9 @@ class ProcessingNoteApi
      * @return PromiseInterface
      */
     public function getDocumentProcessingNoteAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentProcessingNote'][0]
     ): PromiseInterface
     {
@@ -1415,9 +1415,9 @@ class ProcessingNoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDocumentProcessingNoteRequest(
-        $employerId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentProcessingNote'][0]
     ): Request
     {
@@ -1756,12 +1756,12 @@ class ProcessingNoteApi
      * @return PromiseInterface
      */
     public function getProcessingNoteAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $id,
-        $ordinal = 1,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['getProcessingNote'][0]
     ): PromiseInterface
     {
@@ -1819,12 +1819,12 @@ class ProcessingNoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getProcessingNoteRequest(
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $id,
-        $ordinal = 1,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['getProcessingNote'][0]
     ): Request
     {
@@ -1896,7 +1896,7 @@ class ProcessingNoteApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -1912,7 +1912,7 @@ class ProcessingNoteApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2203,12 +2203,12 @@ class ProcessingNoteApi
      * @return PromiseInterface
      */
     public function listProcessingNoteAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $ordinal = 1,
-        $payrunEntryId = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = 1,
+        ?string $payrunEntryId = null,
         string $contentType = self::contentTypes['listProcessingNote'][0]
     ): PromiseInterface
     {
@@ -2266,12 +2266,12 @@ class ProcessingNoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listProcessingNoteRequest(
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $ordinal = 1,
-        $payrunEntryId = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?int $ordinal = 1,
+        ?string $payrunEntryId = null,
         string $contentType = self::contentTypes['listProcessingNote'][0]
     ): Request
     {
@@ -2346,7 +2346,7 @@ class ProcessingNoteApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -2362,7 +2362,7 @@ class ProcessingNoteApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2652,13 +2652,13 @@ class ProcessingNoteApi
      * @return PromiseInterface
      */
     public function setStatusProcessingNoteAsyncWithHttpInfo(
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $id,
-        $ordinal = 1,
-        $body = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?int $ordinal = 1,
+        ?string $body = null,
         string $contentType = self::contentTypes['setStatusProcessingNote'][0]
     ): PromiseInterface
     {
@@ -2717,13 +2717,13 @@ class ProcessingNoteApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setStatusProcessingNoteRequest(
-        $employerId,
-        $payPeriod,
-        $periodNumber,
-        $taxYear,
-        $id,
-        $ordinal = 1,
-        $body = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?int $ordinal = 1,
+        ?string $body = null,
         string $contentType = self::contentTypes['setStatusProcessingNote'][0]
     ): Request
     {
@@ -2796,7 +2796,7 @@ class ProcessingNoteApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -2812,7 +2812,7 @@ class ProcessingNoteApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }

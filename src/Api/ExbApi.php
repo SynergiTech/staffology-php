@@ -348,8 +348,8 @@ class ExbApi
      * @return PromiseInterface
      */
     public function annualValuesExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['annualValuesExb'][0]
     ): PromiseInterface
     {
@@ -403,8 +403,8 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function annualValuesExbRequest(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['annualValuesExb'][0]
     ): Request
     {
@@ -445,7 +445,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -707,9 +707,9 @@ class ExbApi
      * @return PromiseInterface
      */
     public function createExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $exb = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Exb $exb = null,
         string $contentType = self::contentTypes['createExb'][0]
     ): PromiseInterface
     {
@@ -764,9 +764,9 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createExbRequest(
-        $employerId,
-        $taxYear,
-        $exb = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Exb $exb = null,
         string $contentType = self::contentTypes['createExb'][0]
     ): Request
     {
@@ -808,7 +808,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -999,9 +999,9 @@ class ExbApi
      * @return PromiseInterface
      */
     public function deleteExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteExb'][0]
     ): PromiseInterface
     {
@@ -1043,9 +1043,9 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteExbRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteExb'][0]
     ): Request
     {
@@ -1093,7 +1093,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1363,9 +1363,9 @@ class ExbApi
      * @return PromiseInterface
      */
     public function getExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getExb'][0]
     ): PromiseInterface
     {
@@ -1420,9 +1420,9 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getExbRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getExb'][0]
     ): Request
     {
@@ -1470,7 +1470,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1740,9 +1740,9 @@ class ExbApi
      * @return PromiseInterface
      */
     public function getXmlRequestExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getXmlRequestExb'][0]
     ): PromiseInterface
     {
@@ -1797,9 +1797,9 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getXmlRequestExbRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getXmlRequestExb'][0]
     ): Request
     {
@@ -1847,7 +1847,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2110,8 +2110,8 @@ class ExbApi
      * @return PromiseInterface
      */
     public function listExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listExb'][0]
     ): PromiseInterface
     {
@@ -2165,8 +2165,8 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listExbRequest(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listExb'][0]
     ): Request
     {
@@ -2207,7 +2207,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2469,9 +2469,9 @@ class ExbApi
      * @return PromiseInterface
      */
     public function markAsAcceptedExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedExb'][0]
     ): PromiseInterface
     {
@@ -2526,9 +2526,9 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function markAsAcceptedExbRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedExb'][0]
     ): Request
     {
@@ -2576,7 +2576,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2832,7 +2832,7 @@ class ExbApi
      * @return PromiseInterface
      */
     public function requiringAttentionExbAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionExb'][0]
     ): PromiseInterface
     {
@@ -2885,7 +2885,7 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function requiringAttentionExbRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionExb'][0]
     ): Request
     {
@@ -3180,10 +3180,10 @@ class ExbApi
      * @return PromiseInterface
      */
     public function submitExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitExb'][0]
     ): PromiseInterface
     {
@@ -3239,10 +3239,10 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function submitExbRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitExb'][0]
     ): Request
     {
@@ -3300,7 +3300,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3577,10 +3577,10 @@ class ExbApi
      * @return PromiseInterface
      */
     public function updateExbAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $exb = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Exb $exb = null,
         string $contentType = self::contentTypes['updateExb'][0]
     ): PromiseInterface
     {
@@ -3636,10 +3636,10 @@ class ExbApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateExbRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $exb = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Exb $exb = null,
         string $contentType = self::contentTypes['updateExb'][0]
     ): Request
     {
@@ -3688,7 +3688,7 @@ class ExbApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }

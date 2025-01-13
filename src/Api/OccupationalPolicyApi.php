@@ -152,7 +152,7 @@ class OccupationalPolicyApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\OccupationalPolicy
+     * @return \SynergiTech\Staffology\Model\OccupationalPolicy
      */
     public function createOccupationalPolicy(
         string $employerId,
@@ -333,8 +333,8 @@ class OccupationalPolicyApi
      * @return PromiseInterface
      */
     public function createOccupationalPolicyAsyncWithHttpInfo(
-        $employerId,
-        $occupationalPolicy = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\OccupationalPolicy $occupationalPolicy = null,
         string $contentType = self::contentTypes['createOccupationalPolicy'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class OccupationalPolicyApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createOccupationalPolicyRequest(
-        $employerId,
-        $occupationalPolicy = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\OccupationalPolicy $occupationalPolicy = null,
         string $contentType = self::contentTypes['createOccupationalPolicy'][0]
     ): Request
     {
@@ -600,8 +600,8 @@ class OccupationalPolicyApi
      * @return PromiseInterface
      */
     public function deleteOccupationalPolicyAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteOccupationalPolicy'][0]
     ): PromiseInterface
     {
@@ -642,8 +642,8 @@ class OccupationalPolicyApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteOccupationalPolicyRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteOccupationalPolicy'][0]
     ): Request
     {
@@ -939,8 +939,8 @@ class OccupationalPolicyApi
      * @return PromiseInterface
      */
     public function getOccupationalPolicyAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getOccupationalPolicy'][0]
     ): PromiseInterface
     {
@@ -994,8 +994,8 @@ class OccupationalPolicyApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getOccupationalPolicyRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getOccupationalPolicy'][0]
     ): Request
     {
@@ -1284,7 +1284,7 @@ class OccupationalPolicyApi
      * @return PromiseInterface
      */
     public function indexOccupationalPolicyAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexOccupationalPolicy'][0]
     ): PromiseInterface
     {
@@ -1337,7 +1337,7 @@ class OccupationalPolicyApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexOccupationalPolicyRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexOccupationalPolicy'][0]
     ): Request
     {
@@ -1625,9 +1625,9 @@ class OccupationalPolicyApi
      * @return PromiseInterface
      */
     public function updateOccupationalPolicyAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $occupationalPolicy = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\OccupationalPolicy $occupationalPolicy = null,
         string $contentType = self::contentTypes['updateOccupationalPolicy'][0]
     ): PromiseInterface
     {
@@ -1682,9 +1682,9 @@ class OccupationalPolicyApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateOccupationalPolicyRequest(
-        $employerId,
-        $id,
-        $occupationalPolicy = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\OccupationalPolicy $occupationalPolicy = null,
         string $contentType = self::contentTypes['updateOccupationalPolicy'][0]
     ): Request
     {

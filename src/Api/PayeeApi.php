@@ -152,7 +152,7 @@ class PayeeApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\Payee
+     * @return \SynergiTech\Staffology\Model\Payee
      */
     public function createPayee(
         string $employerId,
@@ -333,8 +333,8 @@ class PayeeApi
      * @return PromiseInterface
      */
     public function createPayeeAsyncWithHttpInfo(
-        $employerId,
-        $payee = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\Payee $payee = null,
         string $contentType = self::contentTypes['createPayee'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class PayeeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPayeeRequest(
-        $employerId,
-        $payee = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\Payee $payee = null,
         string $contentType = self::contentTypes['createPayee'][0]
     ): Request
     {
@@ -600,8 +600,8 @@ class PayeeApi
      * @return PromiseInterface
      */
     public function deletePayeeAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePayee'][0]
     ): PromiseInterface
     {
@@ -642,8 +642,8 @@ class PayeeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePayeeRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePayee'][0]
     ): Request
     {
@@ -939,8 +939,8 @@ class PayeeApi
      * @return PromiseInterface
      */
     public function getPayeeAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getPayee'][0]
     ): PromiseInterface
     {
@@ -994,8 +994,8 @@ class PayeeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPayeeRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getPayee'][0]
     ): Request
     {
@@ -1284,7 +1284,7 @@ class PayeeApi
      * @return PromiseInterface
      */
     public function indexPayeeAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexPayee'][0]
     ): PromiseInterface
     {
@@ -1337,7 +1337,7 @@ class PayeeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexPayeeRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexPayee'][0]
     ): Request
     {
@@ -1625,9 +1625,9 @@ class PayeeApi
      * @return PromiseInterface
      */
     public function updatePayeeAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $payee = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Payee $payee = null,
         string $contentType = self::contentTypes['updatePayee'][0]
     ): PromiseInterface
     {
@@ -1682,9 +1682,9 @@ class PayeeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePayeeRequest(
-        $employerId,
-        $id,
-        $payee = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Payee $payee = null,
         string $contentType = self::contentTypes['updatePayee'][0]
     ): Request
     {

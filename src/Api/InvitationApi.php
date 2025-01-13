@@ -252,8 +252,8 @@ class InvitationApi
      * @return PromiseInterface
      */
     public function acceptInvitationAsyncWithHttpInfo(
-        $id,
-        $acceptInvitation = null,
+        string $id,
+        ?bool $acceptInvitation = null,
         string $contentType = self::contentTypes['acceptInvitation'][0]
     ): PromiseInterface
     {
@@ -294,8 +294,8 @@ class InvitationApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function acceptInvitationRequest(
-        $id,
-        $acceptInvitation = null,
+        string $id,
+        ?bool $acceptInvitation = null,
         string $contentType = self::contentTypes['acceptInvitation'][0]
     ): Request
     {
@@ -406,7 +406,7 @@ class InvitationApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\Invitation
+     * @return \SynergiTech\Staffology\Model\Invitation
      */
     public function createInvitation(
         string $employerId,
@@ -593,9 +593,9 @@ class InvitationApi
      * @return PromiseInterface
      */
     public function createInvitationAsyncWithHttpInfo(
-        $employerId,
-        $autoAccept = null,
-        $invitation = null,
+        string $employerId,
+        ?bool $autoAccept = null,
+        ?\SynergiTech\Staffology\Model\Invitation $invitation = null,
         string $contentType = self::contentTypes['createInvitation'][0]
     ): PromiseInterface
     {
@@ -650,9 +650,9 @@ class InvitationApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createInvitationRequest(
-        $employerId,
-        $autoAccept = null,
-        $invitation = null,
+        string $employerId,
+        ?bool $autoAccept = null,
+        ?\SynergiTech\Staffology\Model\Invitation $invitation = null,
         string $contentType = self::contentTypes['createInvitation'][0]
     ): Request
     {
@@ -873,8 +873,8 @@ class InvitationApi
      * @return PromiseInterface
      */
     public function deleteInvitationAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteInvitation'][0]
     ): PromiseInterface
     {
@@ -915,8 +915,8 @@ class InvitationApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteInvitationRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteInvitation'][0]
     ): Request
     {
@@ -1212,8 +1212,8 @@ class InvitationApi
      * @return PromiseInterface
      */
     public function getInvitationAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getInvitation'][0]
     ): PromiseInterface
     {
@@ -1267,8 +1267,8 @@ class InvitationApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getInvitationRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getInvitation'][0]
     ): Request
     {
@@ -1557,7 +1557,7 @@ class InvitationApi
      * @return PromiseInterface
      */
     public function indexInvitationAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexInvitation'][0]
     ): PromiseInterface
     {
@@ -1610,7 +1610,7 @@ class InvitationApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexInvitationRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexInvitation'][0]
     ): Request
     {

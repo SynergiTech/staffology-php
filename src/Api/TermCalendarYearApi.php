@@ -340,9 +340,9 @@ class TermCalendarYearApi
      * @return PromiseInterface
      */
     public function createTermCalendarYearAsyncWithHttpInfo(
-        $employerId,
-        $termCalendarId,
-        $contractTermCalendarYearRequest = null,
+        string $employerId,
+        string $termCalendarId,
+        ?\SynergiTech\Staffology\Model\ContractTermCalendarYearRequest $contractTermCalendarYearRequest = null,
         string $contentType = self::contentTypes['createTermCalendarYear'][0]
     ): PromiseInterface
     {
@@ -397,9 +397,9 @@ class TermCalendarYearApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createTermCalendarYearRequest(
-        $employerId,
-        $termCalendarId,
-        $contractTermCalendarYearRequest = null,
+        string $employerId,
+        string $termCalendarId,
+        ?\SynergiTech\Staffology\Model\ContractTermCalendarYearRequest $contractTermCalendarYearRequest = null,
         string $contentType = self::contentTypes['createTermCalendarYear'][0]
     ): Request
     {
@@ -632,9 +632,9 @@ class TermCalendarYearApi
      * @return PromiseInterface
      */
     public function deleteTermCalendarYearAsyncWithHttpInfo(
-        $employerId,
-        $termCalendarId,
-        $id,
+        string $employerId,
+        string $termCalendarId,
+        string $id,
         string $contentType = self::contentTypes['deleteTermCalendarYear'][0]
     ): PromiseInterface
     {
@@ -676,9 +676,9 @@ class TermCalendarYearApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteTermCalendarYearRequest(
-        $employerId,
-        $termCalendarId,
-        $id,
+        string $employerId,
+        string $termCalendarId,
+        string $id,
         string $contentType = self::contentTypes['deleteTermCalendarYear'][0]
     ): Request
     {
@@ -996,9 +996,9 @@ class TermCalendarYearApi
      * @return PromiseInterface
      */
     public function getTermCalendarYearAsyncWithHttpInfo(
-        $employerId,
-        $termCalendarId,
-        $id,
+        string $employerId,
+        string $termCalendarId,
+        string $id,
         string $contentType = self::contentTypes['getTermCalendarYear'][0]
     ): PromiseInterface
     {
@@ -1053,9 +1053,9 @@ class TermCalendarYearApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getTermCalendarYearRequest(
-        $employerId,
-        $termCalendarId,
-        $id,
+        string $employerId,
+        string $termCalendarId,
+        string $id,
         string $contentType = self::contentTypes['getTermCalendarYear'][0]
     ): Request
     {
@@ -1366,8 +1366,8 @@ class TermCalendarYearApi
      * @return PromiseInterface
      */
     public function indexTermCalendarYearAsyncWithHttpInfo(
-        $employerId,
-        $termCalendarId,
+        string $employerId,
+        string $termCalendarId,
         string $contentType = self::contentTypes['indexTermCalendarYear'][0]
     ): PromiseInterface
     {
@@ -1421,8 +1421,8 @@ class TermCalendarYearApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexTermCalendarYearRequest(
-        $employerId,
-        $termCalendarId,
+        string $employerId,
+        string $termCalendarId,
         string $contentType = self::contentTypes['indexTermCalendarYear'][0]
     ): Request
     {
@@ -1732,10 +1732,10 @@ class TermCalendarYearApi
      * @return PromiseInterface
      */
     public function updateTermCalendarYearAsyncWithHttpInfo(
-        $employerId,
-        $termCalendarId,
-        $id,
-        $contractTermCalendarYearRequest = null,
+        string $employerId,
+        string $termCalendarId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractTermCalendarYearRequest $contractTermCalendarYearRequest = null,
         string $contentType = self::contentTypes['updateTermCalendarYear'][0]
     ): PromiseInterface
     {
@@ -1791,10 +1791,10 @@ class TermCalendarYearApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateTermCalendarYearRequest(
-        $employerId,
-        $termCalendarId,
-        $id,
-        $contractTermCalendarYearRequest = null,
+        string $employerId,
+        string $termCalendarId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractTermCalendarYearRequest $contractTermCalendarYearRequest = null,
         string $contentType = self::contentTypes['updateTermCalendarYear'][0]
     ): Request
     {

@@ -352,9 +352,9 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function createCis300AsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $cis300 = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Cis300 $cis300 = null,
         string $contentType = self::contentTypes['createCis300'][0]
     ): PromiseInterface
     {
@@ -409,9 +409,9 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createCis300Request(
-        $employerId,
-        $taxYear,
-        $cis300 = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Cis300 $cis300 = null,
         string $contentType = self::contentTypes['createCis300'][0]
     ): Request
     {
@@ -453,7 +453,7 @@ class Cis300Api
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -644,9 +644,9 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function deleteCis300AsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteCis300'][0]
     ): PromiseInterface
     {
@@ -688,9 +688,9 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteCis300Request(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteCis300'][0]
     ): Request
     {
@@ -738,7 +738,7 @@ class Cis300Api
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1008,9 +1008,9 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function getCis300AsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getCis300'][0]
     ): PromiseInterface
     {
@@ -1065,9 +1065,9 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getCis300Request(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getCis300'][0]
     ): Request
     {
@@ -1115,7 +1115,7 @@ class Cis300Api
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1385,9 +1385,9 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function getXmlRequestCis300AsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getXmlRequestCis300'][0]
     ): PromiseInterface
     {
@@ -1442,9 +1442,9 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getXmlRequestCis300Request(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getXmlRequestCis300'][0]
     ): Request
     {
@@ -1492,7 +1492,7 @@ class Cis300Api
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1755,8 +1755,8 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function listCis300AsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listCis300'][0]
     ): PromiseInterface
     {
@@ -1810,8 +1810,8 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listCis300Request(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listCis300'][0]
     ): Request
     {
@@ -1852,7 +1852,7 @@ class Cis300Api
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2114,9 +2114,9 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function markAsAcceptedCis300AsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedCis300'][0]
     ): PromiseInterface
     {
@@ -2171,9 +2171,9 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function markAsAcceptedCis300Request(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedCis300'][0]
     ): Request
     {
@@ -2221,7 +2221,7 @@ class Cis300Api
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2477,7 +2477,7 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function requiringAttentionCis300AsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionCis300'][0]
     ): PromiseInterface
     {
@@ -2530,7 +2530,7 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function requiringAttentionCis300Request(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionCis300'][0]
     ): Request
     {
@@ -2825,10 +2825,10 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function submitCis300AsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitCis300'][0]
     ): PromiseInterface
     {
@@ -2884,10 +2884,10 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function submitCis300Request(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitCis300'][0]
     ): Request
     {
@@ -2945,7 +2945,7 @@ class Cis300Api
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3222,10 +3222,10 @@ class Cis300Api
      * @return PromiseInterface
      */
     public function updateCis300AsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $cis300 = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Cis300 $cis300 = null,
         string $contentType = self::contentTypes['updateCis300'][0]
     ): PromiseInterface
     {
@@ -3281,10 +3281,10 @@ class Cis300Api
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateCis300Request(
-        $employerId,
-        $taxYear,
-        $id,
-        $cis300 = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Cis300 $cis300 = null,
         string $contentType = self::contentTypes['updateCis300'][0]
     ): Request
     {
@@ -3333,7 +3333,7 @@ class Cis300Api
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }

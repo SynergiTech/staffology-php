@@ -152,7 +152,7 @@ class PayCodeSetApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\PayCodeSet
+     * @return \SynergiTech\Staffology\Model\PayCodeSet
      */
     public function createPayCodeSet(
         string $employerId,
@@ -333,8 +333,8 @@ class PayCodeSetApi
      * @return PromiseInterface
      */
     public function createPayCodeSetAsyncWithHttpInfo(
-        $employerId,
-        $payCodeSet = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PayCodeSet $payCodeSet = null,
         string $contentType = self::contentTypes['createPayCodeSet'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class PayCodeSetApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPayCodeSetRequest(
-        $employerId,
-        $payCodeSet = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PayCodeSet $payCodeSet = null,
         string $contentType = self::contentTypes['createPayCodeSet'][0]
     ): Request
     {
@@ -600,8 +600,8 @@ class PayCodeSetApi
      * @return PromiseInterface
      */
     public function deletePayCodeSetAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePayCodeSet'][0]
     ): PromiseInterface
     {
@@ -642,8 +642,8 @@ class PayCodeSetApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePayCodeSetRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePayCodeSet'][0]
     ): Request
     {
@@ -758,7 +758,7 @@ class PayCodeSetApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\PayCodeSet
+     * @return \SynergiTech\Staffology\Model\PayCodeSet
      */
     public function getPayCodeSet(
         string $employerId,
@@ -939,8 +939,8 @@ class PayCodeSetApi
      * @return PromiseInterface
      */
     public function getPayCodeSetAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getPayCodeSet'][0]
     ): PromiseInterface
     {
@@ -994,8 +994,8 @@ class PayCodeSetApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPayCodeSetRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getPayCodeSet'][0]
     ): Request
     {
@@ -1284,7 +1284,7 @@ class PayCodeSetApi
      * @return PromiseInterface
      */
     public function indexPayCodeSetAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexPayCodeSet'][0]
     ): PromiseInterface
     {
@@ -1337,7 +1337,7 @@ class PayCodeSetApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexPayCodeSetRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexPayCodeSet'][0]
     ): Request
     {
@@ -1625,9 +1625,9 @@ class PayCodeSetApi
      * @return PromiseInterface
      */
     public function updatePayCodeSetAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $payCodeSet = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PayCodeSet $payCodeSet = null,
         string $contentType = self::contentTypes['updatePayCodeSet'][0]
     ): PromiseInterface
     {
@@ -1682,9 +1682,9 @@ class PayCodeSetApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePayCodeSetRequest(
-        $employerId,
-        $id,
-        $payCodeSet = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PayCodeSet $payCodeSet = null,
         string $contentType = self::contentTypes['updatePayCodeSet'][0]
     ): Request
     {

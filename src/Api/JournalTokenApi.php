@@ -183,12 +183,12 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractCostCentreJournalOverridesResponse[]
+     * @return \SynergiTech\Staffology\Model\ContractCostCentreJournalOverridesResponse[]
      */
     public function createCostCentreJournalOverridesJournalToken(
         string $employerId,
         string $costCentreId,
-        ?array $contractCostCentreJournalOverridesRequest = null,
+        array $contractCostCentreJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createCostCentreJournalOverridesJournalToken'][0]
     ): array
     {
@@ -213,7 +213,7 @@ class JournalTokenApi
     public function createCostCentreJournalOverridesJournalTokenWithHttpInfo(
         string $employerId,
         string $costCentreId,
-        ?array $contractCostCentreJournalOverridesRequest = null,
+        array $contractCostCentreJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createCostCentreJournalOverridesJournalToken'][0]
     ): array
     {
@@ -344,7 +344,7 @@ class JournalTokenApi
     public function createCostCentreJournalOverridesJournalTokenAsync(
         string $employerId,
         string $costCentreId,
-        ?array $contractCostCentreJournalOverridesRequest = null,
+        array $contractCostCentreJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createCostCentreJournalOverridesJournalToken'][0]
     ): PromiseInterface
     {
@@ -370,9 +370,9 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function createCostCentreJournalOverridesJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $costCentreId,
-        $contractCostCentreJournalOverridesRequest = null,
+        string $employerId,
+        string $costCentreId,
+        array $contractCostCentreJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createCostCentreJournalOverridesJournalToken'][0]
     ): PromiseInterface
     {
@@ -427,9 +427,9 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createCostCentreJournalOverridesJournalTokenRequest(
-        $employerId,
-        $costCentreId,
-        $contractCostCentreJournalOverridesRequest = null,
+        string $employerId,
+        string $costCentreId,
+        array $contractCostCentreJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createCostCentreJournalOverridesJournalToken'][0]
     ): Request
     {
@@ -553,12 +553,12 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractDepartmentJournalOverridesResponse[]
+     * @return \SynergiTech\Staffology\Model\ContractDepartmentJournalOverridesResponse[]
      */
     public function createDepartmentJournalOverridesJournalToken(
         string $employerId,
         string $departmentId,
-        ?array $contractDepartmentJournalOverridesRequest = null,
+        array $contractDepartmentJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createDepartmentJournalOverridesJournalToken'][0]
     ): array
     {
@@ -583,7 +583,7 @@ class JournalTokenApi
     public function createDepartmentJournalOverridesJournalTokenWithHttpInfo(
         string $employerId,
         string $departmentId,
-        ?array $contractDepartmentJournalOverridesRequest = null,
+        array $contractDepartmentJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createDepartmentJournalOverridesJournalToken'][0]
     ): array
     {
@@ -714,7 +714,7 @@ class JournalTokenApi
     public function createDepartmentJournalOverridesJournalTokenAsync(
         string $employerId,
         string $departmentId,
-        ?array $contractDepartmentJournalOverridesRequest = null,
+        array $contractDepartmentJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createDepartmentJournalOverridesJournalToken'][0]
     ): PromiseInterface
     {
@@ -740,9 +740,9 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function createDepartmentJournalOverridesJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $departmentId,
-        $contractDepartmentJournalOverridesRequest = null,
+        string $employerId,
+        string $departmentId,
+        array $contractDepartmentJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createDepartmentJournalOverridesJournalToken'][0]
     ): PromiseInterface
     {
@@ -797,9 +797,9 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createDepartmentJournalOverridesJournalTokenRequest(
-        $employerId,
-        $departmentId,
-        $contractDepartmentJournalOverridesRequest = null,
+        string $employerId,
+        string $departmentId,
+        array $contractDepartmentJournalOverridesRequest = null,
         string $contentType = self::contentTypes['createDepartmentJournalOverridesJournalToken'][0]
     ): Request
     {
@@ -922,7 +922,7 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractJournalTokenResponse
+     * @return \SynergiTech\Staffology\Model\ContractJournalTokenResponse
      */
     public function createJournalToken(
         string $employerId,
@@ -1103,8 +1103,8 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function createJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $contractJournalTokenRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractJournalTokenRequest $contractJournalTokenRequest = null,
         string $contentType = self::contentTypes['createJournalToken'][0]
     ): PromiseInterface
     {
@@ -1158,8 +1158,8 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createJournalTokenRequest(
-        $employerId,
-        $contractJournalTokenRequest = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ContractJournalTokenRequest $contractJournalTokenRequest = null,
         string $contentType = self::contentTypes['createJournalToken'][0]
     ): Request
     {
@@ -1370,8 +1370,8 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function deleteJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteJournalToken'][0]
     ): PromiseInterface
     {
@@ -1412,8 +1412,8 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteJournalTokenRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteJournalToken'][0]
     ): Request
     {
@@ -1528,7 +1528,7 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractCostCentreJournalOverridesResponseItem[]
+     * @return \SynergiTech\Staffology\Model\ContractCostCentreJournalOverridesResponseItem[]
      */
     public function getCostCentreJournalOverridesListJournalToken(
         string $employerId,
@@ -1709,8 +1709,8 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function getCostCentreJournalOverridesListJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $costCentreId,
+        string $employerId,
+        string $costCentreId,
         string $contentType = self::contentTypes['getCostCentreJournalOverridesListJournalToken'][0]
     ): PromiseInterface
     {
@@ -1764,8 +1764,8 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getCostCentreJournalOverridesListJournalTokenRequest(
-        $employerId,
-        $costCentreId,
+        string $employerId,
+        string $costCentreId,
         string $contentType = self::contentTypes['getCostCentreJournalOverridesListJournalToken'][0]
     ): Request
     {
@@ -1880,7 +1880,7 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractDepartmentJournalOverridesResponseItem[]
+     * @return \SynergiTech\Staffology\Model\ContractDepartmentJournalOverridesResponseItem[]
      */
     public function getDepartmentJournalOverridesListJournalToken(
         string $employerId,
@@ -2061,8 +2061,8 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function getDepartmentJournalOverridesListJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $departmentId,
+        string $employerId,
+        string $departmentId,
         string $contentType = self::contentTypes['getDepartmentJournalOverridesListJournalToken'][0]
     ): PromiseInterface
     {
@@ -2116,8 +2116,8 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDepartmentJournalOverridesListJournalTokenRequest(
-        $employerId,
-        $departmentId,
+        string $employerId,
+        string $departmentId,
         string $contentType = self::contentTypes['getDepartmentJournalOverridesListJournalToken'][0]
     ): Request
     {
@@ -2232,7 +2232,7 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractJournalTokenResponse
+     * @return \SynergiTech\Staffology\Model\ContractJournalTokenResponse
      */
     public function getJournalToken(
         string $employerId,
@@ -2413,8 +2413,8 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function getJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getJournalToken'][0]
     ): PromiseInterface
     {
@@ -2468,8 +2468,8 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getJournalTokenRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getJournalToken'][0]
     ): Request
     {
@@ -2583,7 +2583,7 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractJournalTokenResponseItem[]
+     * @return \SynergiTech\Staffology\Model\ContractJournalTokenResponseItem[]
      */
     public function indexJournalToken(
         string $employerId,
@@ -2758,7 +2758,7 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function indexJournalTokenAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexJournalToken'][0]
     ): PromiseInterface
     {
@@ -2811,7 +2811,7 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexJournalTokenRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexJournalToken'][0]
     ): Request
     {
@@ -2912,12 +2912,12 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractCostCentreJournalOverridesResponse[]
+     * @return \SynergiTech\Staffology\Model\ContractCostCentreJournalOverridesResponse[]
      */
     public function updateCostCentreJournalOverridesJournalToken(
         string $employerId,
         string $costCentreId,
-        ?array $contractCostCentreJournalOverridesUpdateRequest = null,
+        array $contractCostCentreJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateCostCentreJournalOverridesJournalToken'][0]
     ): array
     {
@@ -2942,7 +2942,7 @@ class JournalTokenApi
     public function updateCostCentreJournalOverridesJournalTokenWithHttpInfo(
         string $employerId,
         string $costCentreId,
-        ?array $contractCostCentreJournalOverridesUpdateRequest = null,
+        array $contractCostCentreJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateCostCentreJournalOverridesJournalToken'][0]
     ): array
     {
@@ -3073,7 +3073,7 @@ class JournalTokenApi
     public function updateCostCentreJournalOverridesJournalTokenAsync(
         string $employerId,
         string $costCentreId,
-        ?array $contractCostCentreJournalOverridesUpdateRequest = null,
+        array $contractCostCentreJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateCostCentreJournalOverridesJournalToken'][0]
     ): PromiseInterface
     {
@@ -3099,9 +3099,9 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function updateCostCentreJournalOverridesJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $costCentreId,
-        $contractCostCentreJournalOverridesUpdateRequest = null,
+        string $employerId,
+        string $costCentreId,
+        array $contractCostCentreJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateCostCentreJournalOverridesJournalToken'][0]
     ): PromiseInterface
     {
@@ -3156,9 +3156,9 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateCostCentreJournalOverridesJournalTokenRequest(
-        $employerId,
-        $costCentreId,
-        $contractCostCentreJournalOverridesUpdateRequest = null,
+        string $employerId,
+        string $costCentreId,
+        array $contractCostCentreJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateCostCentreJournalOverridesJournalToken'][0]
     ): Request
     {
@@ -3282,12 +3282,12 @@ class JournalTokenApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ContractDepartmentJournalOverridesResponse[]
+     * @return \SynergiTech\Staffology\Model\ContractDepartmentJournalOverridesResponse[]
      */
     public function updateDepartmentJournalOverridesJournalToken(
         string $employerId,
         string $departmentId,
-        ?array $contractDepartmentJournalOverridesUpdateRequest = null,
+        array $contractDepartmentJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateDepartmentJournalOverridesJournalToken'][0]
     ): array
     {
@@ -3312,7 +3312,7 @@ class JournalTokenApi
     public function updateDepartmentJournalOverridesJournalTokenWithHttpInfo(
         string $employerId,
         string $departmentId,
-        ?array $contractDepartmentJournalOverridesUpdateRequest = null,
+        array $contractDepartmentJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateDepartmentJournalOverridesJournalToken'][0]
     ): array
     {
@@ -3443,7 +3443,7 @@ class JournalTokenApi
     public function updateDepartmentJournalOverridesJournalTokenAsync(
         string $employerId,
         string $departmentId,
-        ?array $contractDepartmentJournalOverridesUpdateRequest = null,
+        array $contractDepartmentJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateDepartmentJournalOverridesJournalToken'][0]
     ): PromiseInterface
     {
@@ -3469,9 +3469,9 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function updateDepartmentJournalOverridesJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $departmentId,
-        $contractDepartmentJournalOverridesUpdateRequest = null,
+        string $employerId,
+        string $departmentId,
+        array $contractDepartmentJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateDepartmentJournalOverridesJournalToken'][0]
     ): PromiseInterface
     {
@@ -3526,9 +3526,9 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateDepartmentJournalOverridesJournalTokenRequest(
-        $employerId,
-        $departmentId,
-        $contractDepartmentJournalOverridesUpdateRequest = null,
+        string $employerId,
+        string $departmentId,
+        array $contractDepartmentJournalOverridesUpdateRequest = null,
         string $contentType = self::contentTypes['updateDepartmentJournalOverridesJournalToken'][0]
     ): Request
     {
@@ -3839,9 +3839,9 @@ class JournalTokenApi
      * @return PromiseInterface
      */
     public function updateJournalTokenAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $contractJournalTokenRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractJournalTokenRequest $contractJournalTokenRequest = null,
         string $contentType = self::contentTypes['updateJournalToken'][0]
     ): PromiseInterface
     {
@@ -3896,9 +3896,9 @@ class JournalTokenApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateJournalTokenRequest(
-        $employerId,
-        $id,
-        $contractJournalTokenRequest = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ContractJournalTokenRequest $contractJournalTokenRequest = null,
         string $contentType = self::contentTypes['updateJournalToken'][0]
     ): Request
     {

@@ -174,7 +174,7 @@ class PensionSchemeApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\PensionContributionsSubmission
+     * @return \SynergiTech\Staffology\Model\PensionContributionsSubmission
      */
     public function contributionsForPayrunPensionScheme(
         string $employerId,
@@ -379,12 +379,12 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function contributionsForPayrunPensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $taxYear,
-        $payPeriod,
-        $periodNumber,
-        $ordinal = 1,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['contributionsForPayrunPensionScheme'][0]
     ): PromiseInterface
     {
@@ -442,12 +442,12 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function contributionsForPayrunPensionSchemeRequest(
-        $employerId,
-        $id,
-        $taxYear,
-        $payPeriod,
-        $periodNumber,
-        $ordinal = 1,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        int $periodNumber,
+        ?int $ordinal = 1,
         string $contentType = self::contentTypes['contributionsForPayrunPensionScheme'][0]
     ): Request
     {
@@ -527,7 +527,7 @@ class PensionSchemeApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -535,7 +535,7 @@ class PensionSchemeApi
         if ($payPeriod !== null) {
             $resourcePath = str_replace(
                 '{' . 'payPeriod' . '}',
-                ObjectSerializer::toPathValue($payPeriod),
+                ObjectSerializer::toPathValue($payPeriod->value),
                 $resourcePath
             );
         }
@@ -812,10 +812,10 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function contributionsPensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $taxYear,
-        $submissionId,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $submissionId,
         string $contentType = self::contentTypes['contributionsPensionScheme'][0]
     ): PromiseInterface
     {
@@ -871,10 +871,10 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function contributionsPensionSchemeRequest(
-        $employerId,
-        $id,
-        $taxYear,
-        $submissionId,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $submissionId,
         string $contentType = self::contentTypes['contributionsPensionScheme'][0]
     ): Request
     {
@@ -937,7 +937,7 @@ class PensionSchemeApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1019,7 +1019,7 @@ class PensionSchemeApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\PensionScheme
+     * @return \SynergiTech\Staffology\Model\PensionScheme
      */
     public function createPensionScheme(
         string $employerId,
@@ -1200,8 +1200,8 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function createPensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $pensionScheme = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PensionScheme $pensionScheme = null,
         string $contentType = self::contentTypes['createPensionScheme'][0]
     ): PromiseInterface
     {
@@ -1255,8 +1255,8 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPensionSchemeRequest(
-        $employerId,
-        $pensionScheme = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\PensionScheme $pensionScheme = null,
         string $contentType = self::contentTypes['createPensionScheme'][0]
     ): Request
     {
@@ -1467,8 +1467,8 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function deletePensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePensionScheme'][0]
     ): PromiseInterface
     {
@@ -1509,8 +1509,8 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePensionSchemeRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deletePensionScheme'][0]
     ): Request
     {
@@ -1806,8 +1806,8 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function employeesPensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['employeesPensionScheme'][0]
     ): PromiseInterface
     {
@@ -1861,8 +1861,8 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function employeesPensionSchemeRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['employeesPensionScheme'][0]
     ): Request
     {
@@ -2158,8 +2158,8 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function getPensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getPensionScheme'][0]
     ): PromiseInterface
     {
@@ -2213,8 +2213,8 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPensionSchemeRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getPensionScheme'][0]
     ): Request
     {
@@ -2503,7 +2503,7 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function indexPensionSchemeAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexPensionScheme'][0]
     ): PromiseInterface
     {
@@ -2556,7 +2556,7 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexPensionSchemeRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexPensionScheme'][0]
     ): Request
     {
@@ -2844,9 +2844,9 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function listContributionsPensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $taxYear,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listContributionsPensionScheme'][0]
     ): PromiseInterface
     {
@@ -2901,9 +2901,9 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listContributionsPensionSchemeRequest(
-        $employerId,
-        $id,
-        $taxYear,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listContributionsPensionScheme'][0]
     ): Request
     {
@@ -2959,7 +2959,7 @@ class PensionSchemeApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3228,10 +3228,10 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function markAsSentPensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $taxYear,
-        $submissionId,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $submissionId,
         string $contentType = self::contentTypes['markAsSentPensionScheme'][0]
     ): PromiseInterface
     {
@@ -3287,10 +3287,10 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function markAsSentPensionSchemeRequest(
-        $employerId,
-        $id,
-        $taxYear,
-        $submissionId,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $submissionId,
         string $contentType = self::contentTypes['markAsSentPensionScheme'][0]
     ): Request
     {
@@ -3353,7 +3353,7 @@ class PensionSchemeApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3552,10 +3552,10 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function resubmitContributionsPensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $taxYear,
-        $submissionId,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $submissionId,
         string $contentType = self::contentTypes['resubmitContributionsPensionScheme'][0]
     ): PromiseInterface
     {
@@ -3598,10 +3598,10 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function resubmitContributionsPensionSchemeRequest(
-        $employerId,
-        $id,
-        $taxYear,
-        $submissionId,
+        string $employerId,
+        string $id,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $submissionId,
         string $contentType = self::contentTypes['resubmitContributionsPensionScheme'][0]
     ): Request
     {
@@ -3664,7 +3664,7 @@ class PensionSchemeApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3934,9 +3934,9 @@ class PensionSchemeApi
      * @return PromiseInterface
      */
     public function updatePensionSchemeAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $pensionScheme = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PensionScheme $pensionScheme = null,
         string $contentType = self::contentTypes['updatePensionScheme'][0]
     ): PromiseInterface
     {
@@ -3991,9 +3991,9 @@ class PensionSchemeApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePensionSchemeRequest(
-        $employerId,
-        $id,
-        $pensionScheme = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PensionScheme $pensionScheme = null,
         string $contentType = self::contentTypes['updatePensionScheme'][0]
     ): Request
     {

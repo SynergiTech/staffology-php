@@ -152,7 +152,7 @@ class ReportPackApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ReportPack
+     * @return \SynergiTech\Staffology\Model\ReportPack
      */
     public function createReportPack(
         string $employerId,
@@ -333,8 +333,8 @@ class ReportPackApi
      * @return PromiseInterface
      */
     public function createReportPackAsyncWithHttpInfo(
-        $employerId,
-        $reportPack = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ReportPack $reportPack = null,
         string $contentType = self::contentTypes['createReportPack'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class ReportPackApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createReportPackRequest(
-        $employerId,
-        $reportPack = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ReportPack $reportPack = null,
         string $contentType = self::contentTypes['createReportPack'][0]
     ): Request
     {
@@ -600,8 +600,8 @@ class ReportPackApi
      * @return PromiseInterface
      */
     public function deleteReportPackAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteReportPack'][0]
     ): PromiseInterface
     {
@@ -642,8 +642,8 @@ class ReportPackApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteReportPackRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteReportPack'][0]
     ): Request
     {
@@ -939,8 +939,8 @@ class ReportPackApi
      * @return PromiseInterface
      */
     public function getReportPackAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getReportPack'][0]
     ): PromiseInterface
     {
@@ -994,8 +994,8 @@ class ReportPackApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getReportPackRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getReportPack'][0]
     ): Request
     {
@@ -1284,7 +1284,7 @@ class ReportPackApi
      * @return PromiseInterface
      */
     public function indexReportPackAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexReportPack'][0]
     ): PromiseInterface
     {
@@ -1337,7 +1337,7 @@ class ReportPackApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexReportPackRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexReportPack'][0]
     ): Request
     {
@@ -1625,9 +1625,9 @@ class ReportPackApi
      * @return PromiseInterface
      */
     public function updateReportPackAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $reportPack = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ReportPack $reportPack = null,
         string $contentType = self::contentTypes['updateReportPack'][0]
     ): PromiseInterface
     {
@@ -1682,9 +1682,9 @@ class ReportPackApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateReportPackRequest(
-        $employerId,
-        $id,
-        $reportPack = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ReportPack $reportPack = null,
         string $contentType = self::contentTypes['updateReportPack'][0]
     ): Request
     {

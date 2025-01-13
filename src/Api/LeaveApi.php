@@ -287,10 +287,10 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function addDocumentLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentLeave'][0]
     ): PromiseInterface
     {
@@ -333,10 +333,10 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function addDocumentLeaveRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $file = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['addDocumentLeave'][0]
     ): Request
     {
@@ -591,9 +591,9 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function createLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $leave = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Leave $leave = null,
         string $contentType = self::contentTypes['createLeave'][0]
     ): PromiseInterface
     {
@@ -635,9 +635,9 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createLeaveRequest(
-        $employerId,
-        $employeeId,
-        $leave = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\Leave $leave = null,
         string $contentType = self::contentTypes['createLeave'][0]
     ): Request
     {
@@ -877,10 +877,10 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function deleteDocumentLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentLeave'][0]
     ): PromiseInterface
     {
@@ -923,10 +923,10 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDocumentLeaveRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['deleteDocumentLeave'][0]
     ): Request
     {
@@ -1181,9 +1181,9 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function deleteLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteLeave'][0]
     ): PromiseInterface
     {
@@ -1225,9 +1225,9 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteLeaveRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteLeave'][0]
     ): Request
     {
@@ -1566,12 +1566,12 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function findLinkedPiwLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $leaveType = null,
-        $leavePayType = null,
-        $from = null,
-        $to = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\SynergiTech\Staffology\Model\LeavePayType $leavePayType = null,
+        ?\DateTime $from = null,
+        ?\DateTime $to = null,
         string $contentType = self::contentTypes['findLinkedPiwLeave'][0]
     ): PromiseInterface
     {
@@ -1629,12 +1629,12 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function findLinkedPiwLeaveRequest(
-        $employerId,
-        $employeeId,
-        $leaveType = null,
-        $leavePayType = null,
-        $from = null,
-        $to = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\SynergiTech\Staffology\Model\LeavePayType $leavePayType = null,
+        ?\DateTime $from = null,
+        ?\DateTime $to = null,
         string $contentType = self::contentTypes['findLinkedPiwLeave'][0]
     ): Request
     {
@@ -1667,7 +1667,7 @@ class LeaveApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $leaveType,
+            $leaveType?->value,
             'leaveType', // param base name
             'LeaveType', // openApiType
             'form', // style
@@ -1676,7 +1676,7 @@ class LeaveApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $leavePayType,
+            $leavePayType?->value,
             'leavePayType', // param base name
             'LeavePayType', // openApiType
             'form', // style
@@ -1984,10 +1984,10 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function getDocumentLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentLeave'][0]
     ): PromiseInterface
     {
@@ -2043,10 +2043,10 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDocumentLeaveRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $documentId,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        string $documentId,
         string $contentType = self::contentTypes['getDocumentLeave'][0]
     ): Request
     {
@@ -2379,9 +2379,9 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function getLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getLeave'][0]
     ): PromiseInterface
     {
@@ -2436,9 +2436,9 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getLeaveRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getLeave'][0]
     ): Request
     {
@@ -2805,16 +2805,16 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function getMaternityLeaveScheduleLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $babyDueDate = null,
-        $leaveFrom = null,
-        $leaveTo = null,
-        $leaveType = null,
-        $leavePayType = null,
-        $payFrequency = null,
-        $averageWeeklyEarnings = 0,
-        $isReversed = false,
+        string $employerId,
+        string $employeeId,
+        ?\DateTime $babyDueDate = null,
+        ?\DateTime $leaveFrom = null,
+        ?\DateTime $leaveTo = null,
+        ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\SynergiTech\Staffology\Model\LeavePayType $leavePayType = null,
+        ?\SynergiTech\Staffology\Model\StatPayFrequency $payFrequency = null,
+        ?float $averageWeeklyEarnings = 0,
+        ?bool $isReversed = false,
         string $contentType = self::contentTypes['getMaternityLeaveScheduleLeave'][0]
     ): PromiseInterface
     {
@@ -2876,16 +2876,16 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getMaternityLeaveScheduleLeaveRequest(
-        $employerId,
-        $employeeId,
-        $babyDueDate = null,
-        $leaveFrom = null,
-        $leaveTo = null,
-        $leaveType = null,
-        $leavePayType = null,
-        $payFrequency = null,
-        $averageWeeklyEarnings = 0,
-        $isReversed = false,
+        string $employerId,
+        string $employeeId,
+        ?\DateTime $babyDueDate = null,
+        ?\DateTime $leaveFrom = null,
+        ?\DateTime $leaveTo = null,
+        ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\SynergiTech\Staffology\Model\LeavePayType $leavePayType = null,
+        ?\SynergiTech\Staffology\Model\StatPayFrequency $payFrequency = null,
+        ?float $averageWeeklyEarnings = 0,
+        ?bool $isReversed = false,
         string $contentType = self::contentTypes['getMaternityLeaveScheduleLeave'][0]
     ): Request
     {
@@ -2949,7 +2949,7 @@ class LeaveApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $leaveType,
+            $leaveType?->value,
             'leaveType', // param base name
             'LeaveType', // openApiType
             'form', // style
@@ -2958,7 +2958,7 @@ class LeaveApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $leavePayType,
+            $leavePayType?->value,
             'leavePayType', // param base name
             'LeavePayType', // openApiType
             'form', // style
@@ -2967,7 +2967,7 @@ class LeaveApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $payFrequency,
+            $payFrequency?->value,
             'payFrequency', // param base name
             'StatPayFrequency', // openApiType
             'form', // style
@@ -3268,9 +3268,9 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function getOccupationalMaternityScheduleLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getOccupationalMaternityScheduleLeave'][0]
     ): PromiseInterface
     {
@@ -3325,9 +3325,9 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getOccupationalMaternityScheduleLeaveRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getOccupationalMaternityScheduleLeave'][0]
     ): Request
     {
@@ -3638,8 +3638,8 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function indexLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexLeave'][0]
     ): PromiseInterface
     {
@@ -3693,8 +3693,8 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexLeaveRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexLeave'][0]
     ): Request
     {
@@ -4004,10 +4004,10 @@ class LeaveApi
      * @return PromiseInterface
      */
     public function updateLeaveAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $leave = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Leave $leave = null,
         string $contentType = self::contentTypes['updateLeave'][0]
     ): PromiseInterface
     {
@@ -4063,10 +4063,10 @@ class LeaveApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateLeaveRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $leave = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Leave $leave = null,
         string $contentType = self::contentTypes['updateLeave'][0]
     ): Request
     {

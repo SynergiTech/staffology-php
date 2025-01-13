@@ -243,7 +243,7 @@ class EmployerApi
      */
     public function applyYearEndEmployer(
         string $id,
-        ?array $requestBody = null,
+        array $requestBody = null,
         string $contentType = self::contentTypes['applyYearEndEmployer'][0]
     ): \SynergiTech\Staffology\Model\YearEnd
     {
@@ -266,7 +266,7 @@ class EmployerApi
      */
     public function applyYearEndEmployerWithHttpInfo(
         string $id,
-        ?array $requestBody = null,
+        array $requestBody = null,
         string $contentType = self::contentTypes['applyYearEndEmployer'][0]
     ): array
     {
@@ -395,7 +395,7 @@ class EmployerApi
      */
     public function applyYearEndEmployerAsync(
         string $id,
-        ?array $requestBody = null,
+        array $requestBody = null,
         string $contentType = self::contentTypes['applyYearEndEmployer'][0]
     ): PromiseInterface
     {
@@ -420,8 +420,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function applyYearEndEmployerAsyncWithHttpInfo(
-        $id,
-        $requestBody = null,
+        string $id,
+        array $requestBody = null,
         string $contentType = self::contentTypes['applyYearEndEmployer'][0]
     ): PromiseInterface
     {
@@ -475,8 +475,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function applyYearEndEmployerRequest(
-        $id,
-        $requestBody = null,
+        string $id,
+        array $requestBody = null,
         string $contentType = self::contentTypes['applyYearEndEmployer'][0]
     ): Request
     {
@@ -772,9 +772,9 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function calendarEmployerAsyncWithHttpInfo(
-        $id,
-        $from = null,
-        $to = null,
+        string $id,
+        ?\DateTime $from = null,
+        ?\DateTime $to = null,
         string $contentType = self::contentTypes['calendarEmployer'][0]
     ): PromiseInterface
     {
@@ -829,9 +829,9 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function calendarEmployerRequest(
-        $id,
-        $from = null,
-        $to = null,
+        string $id,
+        ?\DateTime $from = null,
+        ?\DateTime $to = null,
         string $contentType = self::contentTypes['calendarEmployer'][0]
     ): Request
     {
@@ -1125,7 +1125,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function createEmployerAsyncWithHttpInfo(
-        $employer = null,
+        ?\SynergiTech\Staffology\Model\Employer $employer = null,
         string $contentType = self::contentTypes['createEmployer'][0]
     ): PromiseInterface
     {
@@ -1178,7 +1178,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createEmployerRequest(
-        $employer = null,
+        ?\SynergiTech\Staffology\Model\Employer $employer = null,
         string $contentType = self::contentTypes['createEmployer'][0]
     ): Request
     {
@@ -1445,7 +1445,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function customPayslipEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['customPayslipEmployer'][0]
     ): PromiseInterface
     {
@@ -1498,7 +1498,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function customPayslipEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['customPayslipEmployer'][0]
     ): Request
     {
@@ -1694,7 +1694,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function deleteEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['deleteEmployer'][0]
     ): PromiseInterface
     {
@@ -1734,7 +1734,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['deleteEmployer'][0]
     ): Request
     {
@@ -2008,7 +2008,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function getAutomationSettingsEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getAutomationSettingsEmployer'][0]
     ): PromiseInterface
     {
@@ -2061,7 +2061,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getAutomationSettingsEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getAutomationSettingsEmployer'][0]
     ): Request
     {
@@ -2335,7 +2335,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function getEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getEmployer'][0]
     ): PromiseInterface
     {
@@ -2388,7 +2388,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getEmployer'][0]
     ): Request
     {
@@ -2662,7 +2662,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function getEmployerOpeningBalancesEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getEmployerOpeningBalancesEmployer'][0]
     ): PromiseInterface
     {
@@ -2715,7 +2715,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmployerOpeningBalancesEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getEmployerOpeningBalancesEmployer'][0]
     ): Request
     {
@@ -2989,7 +2989,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function getEvcOptInHistoryEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getEvcOptInHistoryEmployer'][0]
     ): PromiseInterface
     {
@@ -3042,7 +3042,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEvcOptInHistoryEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getEvcOptInHistoryEmployer'][0]
     ): Request
     {
@@ -3316,7 +3316,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function getGroupMembershipsEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getGroupMembershipsEmployer'][0]
     ): PromiseInterface
     {
@@ -3369,7 +3369,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getGroupMembershipsEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['getGroupMembershipsEmployer'][0]
     ): Request
     {
@@ -3650,8 +3650,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function importCsvEmployerAsyncWithHttpInfo(
-        $previewOnly = false,
-        $file = null,
+        ?bool $previewOnly = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importCsvEmployer'][0]
     ): PromiseInterface
     {
@@ -3705,8 +3705,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importCsvEmployerRequest(
-        $previewOnly = false,
-        $file = null,
+        ?bool $previewOnly = false,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importCsvEmployer'][0]
     ): Request
     {
@@ -3990,7 +3990,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function indexEmployerAsyncWithHttpInfo(
-        $employerGroupCode = null,
+        ?string $employerGroupCode = null,
         string $contentType = self::contentTypes['indexEmployer'][0]
     ): PromiseInterface
     {
@@ -4043,7 +4043,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexEmployerRequest(
-        $employerGroupCode = null,
+        ?string $employerGroupCode = null,
         string $contentType = self::contentTypes['indexEmployer'][0]
     ): Request
     {
@@ -4312,7 +4312,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function listUsersEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['listUsersEmployer'][0]
     ): PromiseInterface
     {
@@ -4365,7 +4365,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listUsersEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['listUsersEmployer'][0]
     ): Request
     {
@@ -4568,8 +4568,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function removeUserEmployerAsyncWithHttpInfo(
-        $id,
-        $userId,
+        string $id,
+        string $userId,
         string $contentType = self::contentTypes['removeUserEmployer'][0]
     ): PromiseInterface
     {
@@ -4610,8 +4610,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function removeUserEmployerRequest(
-        $id,
-        $userId,
+        string $id,
+        string $userId,
         string $contentType = self::contentTypes['removeUserEmployer'][0]
     ): Request
     {
@@ -4900,7 +4900,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function reviewYearEndEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['reviewYearEndEmployer'][0]
     ): PromiseInterface
     {
@@ -4953,7 +4953,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function reviewYearEndEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['reviewYearEndEmployer'][0]
     ): Request
     {
@@ -5227,7 +5227,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function rtiRequiringAttentionEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['rtiRequiringAttentionEmployer'][0]
     ): PromiseInterface
     {
@@ -5280,7 +5280,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function rtiRequiringAttentionEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['rtiRequiringAttentionEmployer'][0]
     ): Request
     {
@@ -5561,8 +5561,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function searchEmployeesEmployerAsyncWithHttpInfo(
-        $query = null,
-        $exludeCisSubContactors = false,
+        ?string $query = null,
+        ?bool $exludeCisSubContactors = false,
         string $contentType = self::contentTypes['searchEmployeesEmployer'][0]
     ): PromiseInterface
     {
@@ -5616,8 +5616,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function searchEmployeesEmployerRequest(
-        $query = null,
-        $exludeCisSubContactors = false,
+        ?string $query = null,
+        ?bool $exludeCisSubContactors = false,
         string $contentType = self::contentTypes['searchEmployeesEmployer'][0]
     ): Request
     {
@@ -5896,7 +5896,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function searchEmployerAsyncWithHttpInfo(
-        $query = null,
+        ?string $query = null,
         string $contentType = self::contentTypes['searchEmployer'][0]
     ): PromiseInterface
     {
@@ -5949,7 +5949,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function searchEmployerRequest(
-        $query = null,
+        ?string $query = null,
         string $contentType = self::contentTypes['searchEmployer'][0]
     ): Request
     {
@@ -6147,8 +6147,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function setEvcOptInEmployerAsyncWithHttpInfo(
-        $id,
-        $body = null,
+        string $id,
+        ?bool $body = null,
         string $contentType = self::contentTypes['setEvcOptInEmployer'][0]
     ): PromiseInterface
     {
@@ -6189,8 +6189,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setEvcOptInEmployerRequest(
-        $id,
-        $body = null,
+        string $id,
+        ?bool $body = null,
         string $contentType = self::contentTypes['setEvcOptInEmployer'][0]
     ): Request
     {
@@ -6302,7 +6302,7 @@ class EmployerApi
      */
     public function setGroupMembershipsEmployer(
         string $id,
-        ?array $employerGroupMembership = null,
+        array $employerGroupMembership = null,
         string $contentType = self::contentTypes['setGroupMembershipsEmployer'][0]
     ): array
     {
@@ -6325,7 +6325,7 @@ class EmployerApi
      */
     public function setGroupMembershipsEmployerWithHttpInfo(
         string $id,
-        ?array $employerGroupMembership = null,
+        array $employerGroupMembership = null,
         string $contentType = self::contentTypes['setGroupMembershipsEmployer'][0]
     ): array
     {
@@ -6454,7 +6454,7 @@ class EmployerApi
      */
     public function setGroupMembershipsEmployerAsync(
         string $id,
-        ?array $employerGroupMembership = null,
+        array $employerGroupMembership = null,
         string $contentType = self::contentTypes['setGroupMembershipsEmployer'][0]
     ): PromiseInterface
     {
@@ -6479,8 +6479,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function setGroupMembershipsEmployerAsyncWithHttpInfo(
-        $id,
-        $employerGroupMembership = null,
+        string $id,
+        array $employerGroupMembership = null,
         string $contentType = self::contentTypes['setGroupMembershipsEmployer'][0]
     ): PromiseInterface
     {
@@ -6534,8 +6534,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setGroupMembershipsEmployerRequest(
-        $id,
-        $employerGroupMembership = null,
+        string $id,
+        array $employerGroupMembership = null,
         string $contentType = self::contentTypes['setGroupMembershipsEmployer'][0]
     ): Request
     {
@@ -6746,8 +6746,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function setOwnerEmployerAsyncWithHttpInfo(
-        $id,
-        $body = null,
+        string $id,
+        ?string $body = null,
         string $contentType = self::contentTypes['setOwnerEmployer'][0]
     ): PromiseInterface
     {
@@ -6788,8 +6788,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function setOwnerEmployerRequest(
-        $id,
-        $body = null,
+        string $id,
+        ?string $body = null,
         string $contentType = self::contentTypes['setOwnerEmployer'][0]
     ): Request
     {
@@ -7071,7 +7071,7 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function suggestPayCodeEmployerAsyncWithHttpInfo(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['suggestPayCodeEmployer'][0]
     ): PromiseInterface
     {
@@ -7124,7 +7124,7 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function suggestPayCodeEmployerRequest(
-        $id,
+        string $id,
         string $contentType = self::contentTypes['suggestPayCodeEmployer'][0]
     ): Request
     {
@@ -7405,8 +7405,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function updateAutomationSettingsEmployerAsyncWithHttpInfo(
-        $id,
-        $automationSettings = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\AutomationSettings $automationSettings = null,
         string $contentType = self::contentTypes['updateAutomationSettingsEmployer'][0]
     ): PromiseInterface
     {
@@ -7460,8 +7460,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAutomationSettingsEmployerRequest(
-        $id,
-        $automationSettings = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\AutomationSettings $automationSettings = null,
         string $contentType = self::contentTypes['updateAutomationSettingsEmployer'][0]
     ): Request
     {
@@ -7750,8 +7750,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function updateCustomPayslipEmployerAsyncWithHttpInfo(
-        $id,
-        $payslipCustomisation = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PayslipCustomisation $payslipCustomisation = null,
         string $contentType = self::contentTypes['updateCustomPayslipEmployer'][0]
     ): PromiseInterface
     {
@@ -7805,8 +7805,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateCustomPayslipEmployerRequest(
-        $id,
-        $payslipCustomisation = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PayslipCustomisation $payslipCustomisation = null,
         string $contentType = self::contentTypes['updateCustomPayslipEmployer'][0]
     ): Request
     {
@@ -8095,8 +8095,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function updateEmployerAsyncWithHttpInfo(
-        $id,
-        $employer = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Employer $employer = null,
         string $contentType = self::contentTypes['updateEmployer'][0]
     ): PromiseInterface
     {
@@ -8150,8 +8150,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEmployerRequest(
-        $id,
-        $employer = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Employer $employer = null,
         string $contentType = self::contentTypes['updateEmployer'][0]
     ): Request
     {
@@ -8440,8 +8440,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function updateEmployerOpeningBalancesEmployerAsyncWithHttpInfo(
-        $id,
-        $employerOpeningBalances = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\EmployerOpeningBalances $employerOpeningBalances = null,
         string $contentType = self::contentTypes['updateEmployerOpeningBalancesEmployer'][0]
     ): PromiseInterface
     {
@@ -8495,8 +8495,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEmployerOpeningBalancesEmployerRequest(
-        $id,
-        $employerOpeningBalances = null,
+        string $id,
+        ?\SynergiTech\Staffology\Model\EmployerOpeningBalances $employerOpeningBalances = null,
         string $contentType = self::contentTypes['updateEmployerOpeningBalancesEmployer'][0]
     ): Request
     {
@@ -8785,8 +8785,8 @@ class EmployerApi
      * @return PromiseInterface
      */
     public function updateLogoEmployerAsyncWithHttpInfo(
-        $id,
-        $file = null,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['updateLogoEmployer'][0]
     ): PromiseInterface
     {
@@ -8840,8 +8840,8 @@ class EmployerApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateLogoEmployerRequest(
-        $id,
-        $file = null,
+        string $id,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['updateLogoEmployer'][0]
     ): Request
     {

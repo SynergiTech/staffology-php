@@ -268,9 +268,9 @@ class PensionRefundApi
      * @return PromiseInterface
      */
     public function createPensionRefundAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $pensionRefund = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\PensionRefund $pensionRefund = null,
         string $contentType = self::contentTypes['createPensionRefund'][0]
     ): PromiseInterface
     {
@@ -312,9 +312,9 @@ class PensionRefundApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createPensionRefundRequest(
-        $employerId,
-        $employeeId,
-        $pensionRefund = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\PensionRefund $pensionRefund = null,
         string $contentType = self::contentTypes['createPensionRefund'][0]
     ): Request
     {
@@ -547,9 +547,9 @@ class PensionRefundApi
      * @return PromiseInterface
      */
     public function deletePensionRefundAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deletePensionRefund'][0]
     ): PromiseInterface
     {
@@ -591,9 +591,9 @@ class PensionRefundApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePensionRefundRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deletePensionRefund'][0]
     ): Request
     {
@@ -911,9 +911,9 @@ class PensionRefundApi
      * @return PromiseInterface
      */
     public function getPensionRefundAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getPensionRefund'][0]
     ): PromiseInterface
     {
@@ -968,9 +968,9 @@ class PensionRefundApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getPensionRefundRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getPensionRefund'][0]
     ): Request
     {
@@ -1281,8 +1281,8 @@ class PensionRefundApi
      * @return PromiseInterface
      */
     public function indexPensionRefundAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexPensionRefund'][0]
     ): PromiseInterface
     {
@@ -1336,8 +1336,8 @@ class PensionRefundApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexPensionRefundRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['indexPensionRefund'][0]
     ): Request
     {
@@ -1633,8 +1633,8 @@ class PensionRefundApi
      * @return PromiseInterface
      */
     public function issueRefundForCurrentPensionSchemePensionRefundAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['issueRefundForCurrentPensionSchemePensionRefund'][0]
     ): PromiseInterface
     {
@@ -1688,8 +1688,8 @@ class PensionRefundApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function issueRefundForCurrentPensionSchemePensionRefundRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['issueRefundForCurrentPensionSchemePensionRefund'][0]
     ): Request
     {
@@ -1992,9 +1992,9 @@ class PensionRefundApi
      * @return PromiseInterface
      */
     public function issueRefundForPensionPensionRefundAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $pensionId,
+        string $employerId,
+        string $employeeId,
+        string $pensionId,
         string $contentType = self::contentTypes['issueRefundForPensionPensionRefund'][0]
     ): PromiseInterface
     {
@@ -2049,9 +2049,9 @@ class PensionRefundApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function issueRefundForPensionPensionRefundRequest(
-        $employerId,
-        $employeeId,
-        $pensionId,
+        string $employerId,
+        string $employeeId,
+        string $pensionId,
         string $contentType = self::contentTypes['issueRefundForPensionPensionRefund'][0]
     ): Request
     {
@@ -2376,10 +2376,10 @@ class PensionRefundApi
      * @return PromiseInterface
      */
     public function updatePensionRefundAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $pensionRefund = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PensionRefund $pensionRefund = null,
         string $contentType = self::contentTypes['updatePensionRefund'][0]
     ): PromiseInterface
     {
@@ -2435,10 +2435,10 @@ class PensionRefundApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePensionRefundRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $pensionRefund = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\PensionRefund $pensionRefund = null,
         string $contentType = self::contentTypes['updatePensionRefund'][0]
     ): Request
     {

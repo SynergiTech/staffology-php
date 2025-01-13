@@ -352,9 +352,9 @@ class NvrApi
      * @return PromiseInterface
      */
     public function createNvrAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $nvr = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Nvr $nvr = null,
         string $contentType = self::contentTypes['createNvr'][0]
     ): PromiseInterface
     {
@@ -409,9 +409,9 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createNvrRequest(
-        $employerId,
-        $taxYear,
-        $nvr = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        ?\SynergiTech\Staffology\Model\Nvr $nvr = null,
         string $contentType = self::contentTypes['createNvr'][0]
     ): Request
     {
@@ -453,7 +453,7 @@ class NvrApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -644,9 +644,9 @@ class NvrApi
      * @return PromiseInterface
      */
     public function deleteNvrAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteNvr'][0]
     ): PromiseInterface
     {
@@ -688,9 +688,9 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteNvrRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['deleteNvr'][0]
     ): Request
     {
@@ -738,7 +738,7 @@ class NvrApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1008,9 +1008,9 @@ class NvrApi
      * @return PromiseInterface
      */
     public function getNvrAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getNvr'][0]
     ): PromiseInterface
     {
@@ -1065,9 +1065,9 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getNvrRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getNvr'][0]
     ): Request
     {
@@ -1115,7 +1115,7 @@ class NvrApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1385,9 +1385,9 @@ class NvrApi
      * @return PromiseInterface
      */
     public function getXmlRequestNvrAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getXmlRequestNvr'][0]
     ): PromiseInterface
     {
@@ -1442,9 +1442,9 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getXmlRequestNvrRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['getXmlRequestNvr'][0]
     ): Request
     {
@@ -1492,7 +1492,7 @@ class NvrApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1755,8 +1755,8 @@ class NvrApi
      * @return PromiseInterface
      */
     public function listNvrAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listNvr'][0]
     ): PromiseInterface
     {
@@ -1810,8 +1810,8 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listNvrRequest(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['listNvr'][0]
     ): Request
     {
@@ -1852,7 +1852,7 @@ class NvrApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2114,9 +2114,9 @@ class NvrApi
      * @return PromiseInterface
      */
     public function markAsAcceptedNvrAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedNvr'][0]
     ): PromiseInterface
     {
@@ -2171,9 +2171,9 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function markAsAcceptedNvrRequest(
-        $employerId,
-        $taxYear,
-        $id,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
         string $contentType = self::contentTypes['markAsAcceptedNvr'][0]
     ): Request
     {
@@ -2221,7 +2221,7 @@ class NvrApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -2477,7 +2477,7 @@ class NvrApi
      * @return PromiseInterface
      */
     public function requiringAttentionNvrAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionNvr'][0]
     ): PromiseInterface
     {
@@ -2530,7 +2530,7 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function requiringAttentionNvrRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['requiringAttentionNvr'][0]
     ): Request
     {
@@ -2825,10 +2825,10 @@ class NvrApi
      * @return PromiseInterface
      */
     public function submitNvrAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitNvr'][0]
     ): PromiseInterface
     {
@@ -2884,10 +2884,10 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function submitNvrRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $force = false,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?bool $force = false,
         string $contentType = self::contentTypes['submitNvr'][0]
     ): Request
     {
@@ -2945,7 +2945,7 @@ class NvrApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -3222,10 +3222,10 @@ class NvrApi
      * @return PromiseInterface
      */
     public function updateNvrAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $id,
-        $nvr = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Nvr $nvr = null,
         string $contentType = self::contentTypes['updateNvr'][0]
     ): PromiseInterface
     {
@@ -3281,10 +3281,10 @@ class NvrApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateNvrRequest(
-        $employerId,
-        $taxYear,
-        $id,
-        $nvr = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Nvr $nvr = null,
         string $contentType = self::contentTypes['updateNvr'][0]
     ): Request
     {
@@ -3333,7 +3333,7 @@ class NvrApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }

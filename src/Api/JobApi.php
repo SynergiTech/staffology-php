@@ -545,9 +545,9 @@ class JobApi
      * @return PromiseInterface
      */
     public function getJobErrorsByJobIdJobAsyncWithHttpInfo(
-        $jobId,
-        $pageNum = 0,
-        $pageSize = 10,
+        string $jobId,
+        ?int $pageNum = 0,
+        ?int $pageSize = 10,
         string $contentType = self::contentTypes['getJobErrorsByJobIdJob'][0]
     ): PromiseInterface
     {
@@ -602,9 +602,9 @@ class JobApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getJobErrorsByJobIdJobRequest(
-        $jobId,
-        $pageNum = 0,
-        $pageSize = 10,
+        string $jobId,
+        ?int $pageNum = 0,
+        ?int $pageSize = 10,
         string $contentType = self::contentTypes['getJobErrorsByJobIdJob'][0]
     ): Request
     {
@@ -898,7 +898,7 @@ class JobApi
      * @return PromiseInterface
      */
     public function getJobJobAsyncWithHttpInfo(
-        $jobId,
+        string $jobId,
         string $contentType = self::contentTypes['getJobJob'][0]
     ): PromiseInterface
     {
@@ -951,7 +951,7 @@ class JobApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getJobJobRequest(
-        $jobId,
+        string $jobId,
         string $contentType = self::contentTypes['getJobJob'][0]
     ): Request
     {
@@ -1246,10 +1246,10 @@ class JobApi
      * @return PromiseInterface
      */
     public function getJobsListJobAsyncWithHttpInfo(
-        $employerId = null,
-        $jobType = null,
-        $pageNum = null,
-        $pageSize = null,
+        ?string $employerId = null,
+        ?\SynergiTech\Staffology\Model\JobType $jobType = null,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['getJobsListJob'][0]
     ): PromiseInterface
     {
@@ -1305,10 +1305,10 @@ class JobApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getJobsListJobRequest(
-        $employerId = null,
-        $jobType = null,
-        $pageNum = null,
-        $pageSize = null,
+        ?string $employerId = null,
+        ?\SynergiTech\Staffology\Model\JobType $jobType = null,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['getJobsListJob'][0]
     ): Request
     {
@@ -1336,7 +1336,7 @@ class JobApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $jobType,
+            $jobType?->value,
             'jobType', // param base name
             'JobType', // openApiType
             'form', // style
@@ -1607,7 +1607,7 @@ class JobApi
      * @return PromiseInterface
      */
     public function getReportJobResultJobAsyncWithHttpInfo(
-        $jobId,
+        string $jobId,
         string $contentType = self::contentTypes['getReportJobResultJob'][0]
     ): PromiseInterface
     {
@@ -1660,7 +1660,7 @@ class JobApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getReportJobResultJobRequest(
-        $jobId,
+        string $jobId,
         string $contentType = self::contentTypes['getReportJobResultJob'][0]
     ): Request
     {

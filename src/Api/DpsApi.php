@@ -348,8 +348,8 @@ class DpsApi
      * @return PromiseInterface
      */
     public function applyDpsAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['applyDps'][0]
     ): PromiseInterface
     {
@@ -403,8 +403,8 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function applyDpsRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['applyDps'][0]
     ): Request
     {
@@ -693,7 +693,7 @@ class DpsApi
      * @return PromiseInterface
      */
     public function checkForNoticesDpsAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['checkForNoticesDps'][0]
     ): PromiseInterface
     {
@@ -746,7 +746,7 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function checkForNoticesDpsRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['checkForNoticesDps'][0]
     ): Request
     {
@@ -942,7 +942,7 @@ class DpsApi
      * @return PromiseInterface
      */
     public function deleteAllDpsAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['deleteAllDps'][0]
     ): PromiseInterface
     {
@@ -982,7 +982,7 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAllDpsRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['deleteAllDps'][0]
     ): Request
     {
@@ -1185,8 +1185,8 @@ class DpsApi
      * @return PromiseInterface
      */
     public function deleteDpsAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteDps'][0]
     ): PromiseInterface
     {
@@ -1227,8 +1227,8 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDpsRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteDps'][0]
     ): Request
     {
@@ -1524,8 +1524,8 @@ class DpsApi
      * @return PromiseInterface
      */
     public function getDpsAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getDps'][0]
     ): PromiseInterface
     {
@@ -1579,8 +1579,8 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDpsRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getDps'][0]
     ): Request
     {
@@ -1869,7 +1869,7 @@ class DpsApi
      * @return PromiseInterface
      */
     public function getDpsSettingsDpsAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getDpsSettingsDps'][0]
     ): PromiseInterface
     {
@@ -1922,7 +1922,7 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getDpsSettingsDpsRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getDpsSettingsDps'][0]
     ): Request
     {
@@ -2210,9 +2210,9 @@ class DpsApi
      * @return PromiseInterface
      */
     public function listNoticesDpsAsyncWithHttpInfo(
-        $employerId,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['listNoticesDps'][0]
     ): PromiseInterface
     {
@@ -2267,9 +2267,9 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function listNoticesDpsRequest(
-        $employerId,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['listNoticesDps'][0]
     ): Request
     {
@@ -2570,8 +2570,8 @@ class DpsApi
      * @return PromiseInterface
      */
     public function parseXmlDpsAsyncWithHttpInfo(
-        $employerId,
-        $body = null,
+        string $employerId,
+        ?string $body = null,
         string $contentType = self::contentTypes['parseXmlDps'][0]
     ): PromiseInterface
     {
@@ -2625,8 +2625,8 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function parseXmlDpsRequest(
-        $employerId,
-        $body = null,
+        string $employerId,
+        ?string $body = null,
         string $contentType = self::contentTypes['parseXmlDps'][0]
     ): Request
     {
@@ -2915,8 +2915,8 @@ class DpsApi
      * @return PromiseInterface
      */
     public function reapplyNoticesDpsAsyncWithHttpInfo(
-        $employerId,
-        $appliedFromDate,
+        string $employerId,
+        \DateTime $appliedFromDate,
         string $contentType = self::contentTypes['reapplyNoticesDps'][0]
     ): PromiseInterface
     {
@@ -2970,8 +2970,8 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function reapplyNoticesDpsRequest(
-        $employerId,
-        $appliedFromDate,
+        string $employerId,
+        \DateTime $appliedFromDate,
         string $contentType = self::contentTypes['reapplyNoticesDps'][0]
     ): Request
     {
@@ -3268,8 +3268,8 @@ class DpsApi
      * @return PromiseInterface
      */
     public function updateDpsSettingsDpsAsyncWithHttpInfo(
-        $employerId,
-        $dpsSettings = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\DpsSettings $dpsSettings = null,
         string $contentType = self::contentTypes['updateDpsSettingsDps'][0]
     ): PromiseInterface
     {
@@ -3323,8 +3323,8 @@ class DpsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateDpsSettingsDpsRequest(
-        $employerId,
-        $dpsSettings = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\DpsSettings $dpsSettings = null,
         string $contentType = self::contentTypes['updateDpsSettingsDps'][0]
     ): Request
     {

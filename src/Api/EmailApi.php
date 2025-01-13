@@ -339,8 +339,8 @@ class EmailApi
      * @return PromiseInterface
      */
     public function getEmailEmailAsyncWithHttpInfo(
-        $employerId,
-        $emailId,
+        string $employerId,
+        string $emailId,
         string $contentType = self::contentTypes['getEmailEmail'][0]
     ): PromiseInterface
     {
@@ -394,8 +394,8 @@ class EmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmailEmailRequest(
-        $employerId,
-        $emailId,
+        string $employerId,
+        string $emailId,
         string $contentType = self::contentTypes['getEmailEmail'][0]
     ): Request
     {
@@ -684,7 +684,7 @@ class EmailApi
      * @return PromiseInterface
      */
     public function getMailSettingsEmailAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getMailSettingsEmail'][0]
     ): PromiseInterface
     {
@@ -737,7 +737,7 @@ class EmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getMailSettingsEmailRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['getMailSettingsEmail'][0]
     ): Request
     {
@@ -1025,9 +1025,9 @@ class EmailApi
      * @return PromiseInterface
      */
     public function indexEmailAsyncWithHttpInfo(
-        $employerId,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['indexEmail'][0]
     ): PromiseInterface
     {
@@ -1082,9 +1082,9 @@ class EmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexEmailRequest(
-        $employerId,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['indexEmail'][0]
     ): Request
     {
@@ -1385,8 +1385,8 @@ class EmailApi
      * @return PromiseInterface
      */
     public function resendEmailEmailAsyncWithHttpInfo(
-        $employerId,
-        $emailId,
+        string $employerId,
+        string $emailId,
         string $contentType = self::contentTypes['resendEmailEmail'][0]
     ): PromiseInterface
     {
@@ -1440,8 +1440,8 @@ class EmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function resendEmailEmailRequest(
-        $employerId,
-        $emailId,
+        string $employerId,
+        string $emailId,
         string $contentType = self::contentTypes['resendEmailEmail'][0]
     ): Request
     {
@@ -1737,8 +1737,8 @@ class EmailApi
      * @return PromiseInterface
      */
     public function testMailSettingsEmailAsyncWithHttpInfo(
-        $employerId,
-        $email = null,
+        string $employerId,
+        ?string $email = null,
         string $contentType = self::contentTypes['testMailSettingsEmail'][0]
     ): PromiseInterface
     {
@@ -1792,8 +1792,8 @@ class EmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function testMailSettingsEmailRequest(
-        $employerId,
-        $email = null,
+        string $employerId,
+        ?string $email = null,
         string $contentType = self::contentTypes['testMailSettingsEmail'][0]
     ): Request
     {
@@ -2084,8 +2084,8 @@ class EmailApi
      * @return PromiseInterface
      */
     public function updateMailSettingsEmailAsyncWithHttpInfo(
-        $employerId,
-        $mailSettings = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\MailSettings $mailSettings = null,
         string $contentType = self::contentTypes['updateMailSettingsEmail'][0]
     ): PromiseInterface
     {
@@ -2139,8 +2139,8 @@ class EmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateMailSettingsEmailRequest(
-        $employerId,
-        $mailSettings = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\MailSettings $mailSettings = null,
         string $contentType = self::contentTypes['updateMailSettingsEmail'][0]
     ): Request
     {
@@ -2344,7 +2344,7 @@ class EmailApi
      * @return PromiseInterface
      */
     public function verifyMailSettingsEmailAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['verifyMailSettingsEmail'][0]
     ): PromiseInterface
     {
@@ -2384,7 +2384,7 @@ class EmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function verifyMailSettingsEmailRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['verifyMailSettingsEmail'][0]
     ): Request
     {
@@ -2672,9 +2672,9 @@ class EmailApi
      * @return PromiseInterface
      */
     public function verifyMailSettingsResponseEmailAsyncWithHttpInfo(
-        $employerId,
-        $u = null,
-        $k = null,
+        string $employerId,
+        ?string $u = null,
+        ?string $k = null,
         string $contentType = self::contentTypes['verifyMailSettingsResponseEmail'][0]
     ): PromiseInterface
     {
@@ -2729,9 +2729,9 @@ class EmailApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function verifyMailSettingsResponseEmailRequest(
-        $employerId,
-        $u = null,
-        $k = null,
+        string $employerId,
+        ?string $u = null,
+        ?string $k = null,
         string $contentType = self::contentTypes['verifyMailSettingsResponseEmail'][0]
     ): Request
     {

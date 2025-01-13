@@ -152,7 +152,7 @@ class ReportTemplateApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\ReportTemplate
+     * @return \SynergiTech\Staffology\Model\ReportTemplate
      */
     public function createReportTemplate(
         string $employerId,
@@ -333,8 +333,8 @@ class ReportTemplateApi
      * @return PromiseInterface
      */
     public function createReportTemplateAsyncWithHttpInfo(
-        $employerId,
-        $reportTemplate = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ReportTemplate $reportTemplate = null,
         string $contentType = self::contentTypes['createReportTemplate'][0]
     ): PromiseInterface
     {
@@ -388,8 +388,8 @@ class ReportTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createReportTemplateRequest(
-        $employerId,
-        $reportTemplate = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\ReportTemplate $reportTemplate = null,
         string $contentType = self::contentTypes['createReportTemplate'][0]
     ): Request
     {
@@ -600,8 +600,8 @@ class ReportTemplateApi
      * @return PromiseInterface
      */
     public function deleteReportTemplateAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteReportTemplate'][0]
     ): PromiseInterface
     {
@@ -642,8 +642,8 @@ class ReportTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteReportTemplateRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteReportTemplate'][0]
     ): Request
     {
@@ -939,8 +939,8 @@ class ReportTemplateApi
      * @return PromiseInterface
      */
     public function getReportTemplateAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getReportTemplate'][0]
     ): PromiseInterface
     {
@@ -994,8 +994,8 @@ class ReportTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getReportTemplateRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getReportTemplate'][0]
     ): Request
     {
@@ -1284,7 +1284,7 @@ class ReportTemplateApi
      * @return PromiseInterface
      */
     public function indexReportTemplateAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexReportTemplate'][0]
     ): PromiseInterface
     {
@@ -1337,7 +1337,7 @@ class ReportTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexReportTemplateRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexReportTemplate'][0]
     ): Request
     {
@@ -1625,9 +1625,9 @@ class ReportTemplateApi
      * @return PromiseInterface
      */
     public function updateReportTemplateAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $reportTemplate = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ReportTemplate $reportTemplate = null,
         string $contentType = self::contentTypes['updateReportTemplate'][0]
     ): PromiseInterface
     {
@@ -1682,9 +1682,9 @@ class ReportTemplateApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateReportTemplateRequest(
-        $employerId,
-        $id,
-        $reportTemplate = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\ReportTemplate $reportTemplate = null,
         string $contentType = self::contentTypes['updateReportTemplate'][0]
     ): Request
     {

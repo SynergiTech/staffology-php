@@ -164,7 +164,7 @@ class TagApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\Tag
+     * @return \SynergiTech\Staffology\Model\Tag
      */
     public function createTag(
         string $employerId,
@@ -345,8 +345,8 @@ class TagApi
      * @return PromiseInterface
      */
     public function createTagAsyncWithHttpInfo(
-        $employerId,
-        $tag = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\Tag $tag = null,
         string $contentType = self::contentTypes['createTag'][0]
     ): PromiseInterface
     {
@@ -400,8 +400,8 @@ class TagApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createTagRequest(
-        $employerId,
-        $tag = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\Tag $tag = null,
         string $contentType = self::contentTypes['createTag'][0]
     ): Request
     {
@@ -612,8 +612,8 @@ class TagApi
      * @return PromiseInterface
      */
     public function deleteTagAsyncWithHttpInfo(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['deleteTag'][0]
     ): PromiseInterface
     {
@@ -654,8 +654,8 @@ class TagApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteTagRequest(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['deleteTag'][0]
     ): Request
     {
@@ -873,8 +873,8 @@ class TagApi
      * @return PromiseInterface
      */
     public function deleteTagTagAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['deleteTagTag'][0]
     ): PromiseInterface
     {
@@ -915,8 +915,8 @@ class TagApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteTagTagRequest(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['deleteTagTag'][0]
     ): Request
     {
@@ -1207,8 +1207,8 @@ class TagApi
      * @return PromiseInterface
      */
     public function getTagAsyncWithHttpInfo(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['getTag'][0]
     ): PromiseInterface
     {
@@ -1262,8 +1262,8 @@ class TagApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getTagRequest(
-        $employerId,
-        $code,
+        string $employerId,
+        string $code,
         string $contentType = self::contentTypes['getTag'][0]
     ): Request
     {
@@ -1559,8 +1559,8 @@ class TagApi
      * @return PromiseInterface
      */
     public function getTagTagAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['getTagTag'][0]
     ): PromiseInterface
     {
@@ -1614,8 +1614,8 @@ class TagApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getTagTagRequest(
-        $employerId,
-        $code = null,
+        string $employerId,
+        ?string $code = null,
         string $contentType = self::contentTypes['getTagTag'][0]
     ): Request
     {
@@ -1899,7 +1899,7 @@ class TagApi
      * @return PromiseInterface
      */
     public function indexTagAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexTag'][0]
     ): PromiseInterface
     {
@@ -1952,7 +1952,7 @@ class TagApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexTagRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexTag'][0]
     ): Request
     {
@@ -2240,9 +2240,9 @@ class TagApi
      * @return PromiseInterface
      */
     public function updateTagAsyncWithHttpInfo(
-        $employerId,
-        $code,
-        $tag = null,
+        string $employerId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\Tag $tag = null,
         string $contentType = self::contentTypes['updateTag'][0]
     ): PromiseInterface
     {
@@ -2297,9 +2297,9 @@ class TagApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateTagRequest(
-        $employerId,
-        $code,
-        $tag = null,
+        string $employerId,
+        string $code,
+        ?\SynergiTech\Staffology\Model\Tag $tag = null,
         string $contentType = self::contentTypes['updateTag'][0]
     ): Request
     {
@@ -2610,9 +2610,9 @@ class TagApi
      * @return PromiseInterface
      */
     public function updateTagTagAsyncWithHttpInfo(
-        $employerId,
-        $code = null,
-        $tag = null,
+        string $employerId,
+        ?string $code = null,
+        ?\SynergiTech\Staffology\Model\Tag $tag = null,
         string $contentType = self::contentTypes['updateTagTag'][0]
     ): PromiseInterface
     {
@@ -2667,9 +2667,9 @@ class TagApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateTagTagRequest(
-        $employerId,
-        $code = null,
-        $tag = null,
+        string $employerId,
+        ?string $code = null,
+        ?\SynergiTech\Staffology\Model\Tag $tag = null,
         string $contentType = self::contentTypes['updateTagTag'][0]
     ): Request
     {

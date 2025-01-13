@@ -162,7 +162,7 @@ class OccupationalSickLeaveHistoryApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\OccupationalSickLeaveHistory
+     * @return \SynergiTech\Staffology\Model\OccupationalSickLeaveHistory
      */
     public function createOccupationalSickLeaveHistory(
         string $employerId,
@@ -349,9 +349,9 @@ class OccupationalSickLeaveHistoryApi
      * @return PromiseInterface
      */
     public function createOccupationalSickLeaveHistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $occupationalSickLeaveHistory = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\OccupationalSickLeaveHistory $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['createOccupationalSickLeaveHistory'][0]
     ): PromiseInterface
     {
@@ -406,9 +406,9 @@ class OccupationalSickLeaveHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createOccupationalSickLeaveHistoryRequest(
-        $employerId,
-        $employeeId,
-        $occupationalSickLeaveHistory = null,
+        string $employerId,
+        string $employeeId,
+        ?\SynergiTech\Staffology\Model\OccupationalSickLeaveHistory $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['createOccupationalSickLeaveHistory'][0]
     ): Request
     {
@@ -641,9 +641,9 @@ class OccupationalSickLeaveHistoryApi
      * @return PromiseInterface
      */
     public function deleteOccupationalSickLeaveHistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteOccupationalSickLeaveHistory'][0]
     ): PromiseInterface
     {
@@ -685,9 +685,9 @@ class OccupationalSickLeaveHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteOccupationalSickLeaveHistoryRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['deleteOccupationalSickLeaveHistory'][0]
     ): Request
     {
@@ -1005,9 +1005,9 @@ class OccupationalSickLeaveHistoryApi
      * @return PromiseInterface
      */
     public function getOccupationalSickLeaveHistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getOccupationalSickLeaveHistory'][0]
     ): PromiseInterface
     {
@@ -1062,9 +1062,9 @@ class OccupationalSickLeaveHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getOccupationalSickLeaveHistoryRequest(
-        $employerId,
-        $employeeId,
-        $id,
+        string $employerId,
+        string $employeeId,
+        string $id,
         string $contentType = self::contentTypes['getOccupationalSickLeaveHistory'][0]
     ): Request
     {
@@ -1375,8 +1375,8 @@ class OccupationalSickLeaveHistoryApi
      * @return PromiseInterface
      */
     public function importOccupationalSickLeaveHistoryCsvOccupationalSickLeaveHistoryAsyncWithHttpInfo(
-        $employerId,
-        $file = null,
+        string $employerId,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importOccupationalSickLeaveHistoryCsvOccupationalSickLeaveHistory'][0]
     ): PromiseInterface
     {
@@ -1430,8 +1430,8 @@ class OccupationalSickLeaveHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function importOccupationalSickLeaveHistoryCsvOccupationalSickLeaveHistoryRequest(
-        $employerId,
-        $file = null,
+        string $employerId,
+        ?\SplFileObject $file = null,
         string $contentType = self::contentTypes['importOccupationalSickLeaveHistoryCsvOccupationalSickLeaveHistory'][0]
     ): Request
     {
@@ -1727,8 +1727,8 @@ class OccupationalSickLeaveHistoryApi
      * @return PromiseInterface
      */
     public function occupationalSickLeaveHistoryOccupationalSickLeaveHistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['occupationalSickLeaveHistoryOccupationalSickLeaveHistory'][0]
     ): PromiseInterface
     {
@@ -1782,8 +1782,8 @@ class OccupationalSickLeaveHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function occupationalSickLeaveHistoryOccupationalSickLeaveHistoryRequest(
-        $employerId,
-        $employeeId,
+        string $employerId,
+        string $employeeId,
         string $contentType = self::contentTypes['occupationalSickLeaveHistoryOccupationalSickLeaveHistory'][0]
     ): Request
     {
@@ -1900,7 +1900,7 @@ class OccupationalSickLeaveHistoryApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\OccupationalSickLeaveHistory
+     * @return \SynergiTech\Staffology\Model\OccupationalSickLeaveHistory
      */
     public function updateOccupationalSickLeaveHistory(
         string $employerId,
@@ -2093,10 +2093,10 @@ class OccupationalSickLeaveHistoryApi
      * @return PromiseInterface
      */
     public function updateOccupationalSickLeaveHistoryAsyncWithHttpInfo(
-        $employerId,
-        $employeeId,
-        $id,
-        $occupationalSickLeaveHistory = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\OccupationalSickLeaveHistory $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['updateOccupationalSickLeaveHistory'][0]
     ): PromiseInterface
     {
@@ -2152,10 +2152,10 @@ class OccupationalSickLeaveHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateOccupationalSickLeaveHistoryRequest(
-        $employerId,
-        $employeeId,
-        $id,
-        $occupationalSickLeaveHistory = null,
+        string $employerId,
+        string $employeeId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\OccupationalSickLeaveHistory $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['updateOccupationalSickLeaveHistory'][0]
     ): Request
     {
@@ -2293,11 +2293,11 @@ class OccupationalSickLeaveHistoryApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |\SynergiTech\Staffology\Model\Item[]
+     * @return \SynergiTech\Staffology\Model\Item[]
      */
     public function uploadOSPHistoryOccupationalSickLeaveHistory(
         string $employerId,
-        ?array $occupationalSickLeaveHistory = null,
+        array $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['uploadOSPHistoryOccupationalSickLeaveHistory'][0]
     ): array
     {
@@ -2320,7 +2320,7 @@ class OccupationalSickLeaveHistoryApi
      */
     public function uploadOSPHistoryOccupationalSickLeaveHistoryWithHttpInfo(
         string $employerId,
-        ?array $occupationalSickLeaveHistory = null,
+        array $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['uploadOSPHistoryOccupationalSickLeaveHistory'][0]
     ): array
     {
@@ -2449,7 +2449,7 @@ class OccupationalSickLeaveHistoryApi
      */
     public function uploadOSPHistoryOccupationalSickLeaveHistoryAsync(
         string $employerId,
-        ?array $occupationalSickLeaveHistory = null,
+        array $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['uploadOSPHistoryOccupationalSickLeaveHistory'][0]
     ): PromiseInterface
     {
@@ -2474,8 +2474,8 @@ class OccupationalSickLeaveHistoryApi
      * @return PromiseInterface
      */
     public function uploadOSPHistoryOccupationalSickLeaveHistoryAsyncWithHttpInfo(
-        $employerId,
-        $occupationalSickLeaveHistory = null,
+        string $employerId,
+        array $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['uploadOSPHistoryOccupationalSickLeaveHistory'][0]
     ): PromiseInterface
     {
@@ -2529,8 +2529,8 @@ class OccupationalSickLeaveHistoryApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function uploadOSPHistoryOccupationalSickLeaveHistoryRequest(
-        $employerId,
-        $occupationalSickLeaveHistory = null,
+        string $employerId,
+        array $occupationalSickLeaveHistory = null,
         string $contentType = self::contentTypes['uploadOSPHistoryOccupationalSickLeaveHistory'][0]
     ): Request
     {

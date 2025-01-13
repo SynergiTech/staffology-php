@@ -341,10 +341,10 @@ class HmrcPaymentApi
      * @return PromiseInterface
      */
     public function bankPaymentHmrcPaymentAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $periodEnding,
-        $accept = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \DateTime $periodEnding,
+        ?string $accept = null,
         string $contentType = self::contentTypes['bankPaymentHmrcPayment'][0]
     ): PromiseInterface
     {
@@ -400,10 +400,10 @@ class HmrcPaymentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function bankPaymentHmrcPaymentRequest(
-        $employerId,
-        $taxYear,
-        $periodEnding,
-        $accept = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \DateTime $periodEnding,
+        ?string $accept = null,
         string $contentType = self::contentTypes['bankPaymentHmrcPayment'][0]
     ): Request
     {
@@ -456,7 +456,7 @@ class HmrcPaymentApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -726,9 +726,9 @@ class HmrcPaymentApi
      * @return PromiseInterface
      */
     public function getHmrcPaymentAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $periodEnding,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \DateTime $periodEnding,
         string $contentType = self::contentTypes['getHmrcPayment'][0]
     ): PromiseInterface
     {
@@ -783,9 +783,9 @@ class HmrcPaymentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getHmrcPaymentRequest(
-        $employerId,
-        $taxYear,
-        $periodEnding,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \DateTime $periodEnding,
         string $contentType = self::contentTypes['getHmrcPayment'][0]
     ): Request
     {
@@ -833,7 +833,7 @@ class HmrcPaymentApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1096,8 +1096,8 @@ class HmrcPaymentApi
      * @return PromiseInterface
      */
     public function indexHmrcPaymentAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['indexHmrcPayment'][0]
     ): PromiseInterface
     {
@@ -1151,8 +1151,8 @@ class HmrcPaymentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexHmrcPaymentRequest(
-        $employerId,
-        $taxYear,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
         string $contentType = self::contentTypes['indexHmrcPayment'][0]
     ): Request
     {
@@ -1193,7 +1193,7 @@ class HmrcPaymentApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }
@@ -1462,10 +1462,10 @@ class HmrcPaymentApi
      * @return PromiseInterface
      */
     public function updateHmrcPaymentAsyncWithHttpInfo(
-        $employerId,
-        $taxYear,
-        $periodEnding,
-        $hmrcLiability = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \DateTime $periodEnding,
+        ?\SynergiTech\Staffology\Model\HmrcLiability $hmrcLiability = null,
         string $contentType = self::contentTypes['updateHmrcPayment'][0]
     ): PromiseInterface
     {
@@ -1521,10 +1521,10 @@ class HmrcPaymentApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateHmrcPaymentRequest(
-        $employerId,
-        $taxYear,
-        $periodEnding,
-        $hmrcLiability = null,
+        string $employerId,
+        \SynergiTech\Staffology\Model\TaxYear $taxYear,
+        \DateTime $periodEnding,
+        ?\SynergiTech\Staffology\Model\HmrcLiability $hmrcLiability = null,
         string $contentType = self::contentTypes['updateHmrcPayment'][0]
     ): Request
     {
@@ -1573,7 +1573,7 @@ class HmrcPaymentApi
         if ($taxYear !== null) {
             $resourcePath = str_replace(
                 '{' . 'taxYear' . '}',
-                ObjectSerializer::toPathValue($taxYear),
+                ObjectSerializer::toPathValue($taxYear->value),
                 $resourcePath
             );
         }

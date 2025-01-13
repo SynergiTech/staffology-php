@@ -134,7 +134,7 @@ class TierablePayApi
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
      * @throws InvalidArgumentException
-     * @return |float
+     * @return float
      */
     public function getTierablePay(
         string $employerId,
@@ -315,8 +315,8 @@ class TierablePayApi
      * @return PromiseInterface
      */
     public function getTierablePayAsyncWithHttpInfo(
-        $employerId,
-        $payrunEntryId,
+        string $employerId,
+        string $payrunEntryId,
         string $contentType = self::contentTypes['getTierablePay'][0]
     ): PromiseInterface
     {
@@ -370,8 +370,8 @@ class TierablePayApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getTierablePayRequest(
-        $employerId,
-        $payrunEntryId,
+        string $employerId,
+        string $payrunEntryId,
         string $contentType = self::contentTypes['getTierablePay'][0]
     ): Request
     {

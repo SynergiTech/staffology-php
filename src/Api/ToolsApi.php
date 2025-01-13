@@ -399,20 +399,20 @@ class ToolsApi
      * @return PromiseInterface
      */
     public function calculateNetOfOnCostsToolsAsyncWithHttpInfo(
-        $notionalDayRate,
-        $fee,
-        $feeIsPercentage,
-        $employersPensionContribution,
-        $employersPensionContributionIsPercentage,
-        $employeesPensionContribution,
-        $employeesPensionContributionIsPercentage,
-        $useAeBandings,
-        $holidayWeeks,
-        $daysWorkedPerWeek,
-        $payPeriod,
-        $calculationDate = null,
-        $apprenticeshipLevyRateOverride = null,
-        $pensionRule = null,
+        float $notionalDayRate,
+        float $fee,
+        bool $feeIsPercentage,
+        float $employersPensionContribution,
+        bool $employersPensionContributionIsPercentage,
+        float $employeesPensionContribution,
+        bool $employeesPensionContributionIsPercentage,
+        bool $useAeBandings,
+        float $holidayWeeks,
+        int $daysWorkedPerWeek,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        ?\DateTime $calculationDate = null,
+        ?float $apprenticeshipLevyRateOverride = null,
+        ?\SynergiTech\Staffology\Model\PensionRule $pensionRule = null,
         string $contentType = self::contentTypes['calculateNetOfOnCostsTools'][0]
     ): PromiseInterface
     {
@@ -478,20 +478,20 @@ class ToolsApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function calculateNetOfOnCostsToolsRequest(
-        $notionalDayRate,
-        $fee,
-        $feeIsPercentage,
-        $employersPensionContribution,
-        $employersPensionContributionIsPercentage,
-        $employeesPensionContribution,
-        $employeesPensionContributionIsPercentage,
-        $useAeBandings,
-        $holidayWeeks,
-        $daysWorkedPerWeek,
-        $payPeriod,
-        $calculationDate = null,
-        $apprenticeshipLevyRateOverride = null,
-        $pensionRule = null,
+        float $notionalDayRate,
+        float $fee,
+        bool $feeIsPercentage,
+        float $employersPensionContribution,
+        bool $employersPensionContributionIsPercentage,
+        float $employeesPensionContribution,
+        bool $employeesPensionContributionIsPercentage,
+        bool $useAeBandings,
+        float $holidayWeeks,
+        int $daysWorkedPerWeek,
+        \SynergiTech\Staffology\Model\PayPeriods $payPeriod,
+        ?\DateTime $calculationDate = null,
+        ?float $apprenticeshipLevyRateOverride = null,
+        ?\SynergiTech\Staffology\Model\PensionRule $pensionRule = null,
         string $contentType = self::contentTypes['calculateNetOfOnCostsTools'][0]
     ): Request
     {
@@ -694,7 +694,7 @@ class ToolsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $payPeriod,
+            $payPeriod?->value,
             'PayPeriod', // param base name
             'PayPeriods', // openApiType
             'form', // style
@@ -703,7 +703,7 @@ class ToolsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $pensionRule,
+            $pensionRule?->value,
             'PensionRule', // param base name
             'PensionRule', // openApiType
             'form', // style

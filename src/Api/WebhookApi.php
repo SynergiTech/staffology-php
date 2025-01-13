@@ -264,8 +264,8 @@ class WebhookApi
      * @return PromiseInterface
      */
     public function createWebhookAsyncWithHttpInfo(
-        $employerId,
-        $webhook = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\Webhook $webhook = null,
         string $contentType = self::contentTypes['createWebhook'][0]
     ): PromiseInterface
     {
@@ -306,8 +306,8 @@ class WebhookApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebhookRequest(
-        $employerId,
-        $webhook = null,
+        string $employerId,
+        ?\SynergiTech\Staffology\Model\Webhook $webhook = null,
         string $contentType = self::contentTypes['createWebhook'][0]
     ): Request
     {
@@ -518,8 +518,8 @@ class WebhookApi
      * @return PromiseInterface
      */
     public function deleteWebhookAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteWebhook'][0]
     ): PromiseInterface
     {
@@ -560,8 +560,8 @@ class WebhookApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebhookRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['deleteWebhook'][0]
     ): Request
     {
@@ -857,8 +857,8 @@ class WebhookApi
      * @return PromiseInterface
      */
     public function getWebhookAsyncWithHttpInfo(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getWebhook'][0]
     ): PromiseInterface
     {
@@ -912,8 +912,8 @@ class WebhookApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebhookRequest(
-        $employerId,
-        $id,
+        string $employerId,
+        string $id,
         string $contentType = self::contentTypes['getWebhook'][0]
     ): Request
     {
@@ -1202,7 +1202,7 @@ class WebhookApi
      * @return PromiseInterface
      */
     public function indexWebhookAsyncWithHttpInfo(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexWebhook'][0]
     ): PromiseInterface
     {
@@ -1255,7 +1255,7 @@ class WebhookApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function indexWebhookRequest(
-        $employerId,
+        string $employerId,
         string $contentType = self::contentTypes['indexWebhook'][0]
     ): Request
     {
@@ -1543,9 +1543,9 @@ class WebhookApi
      * @return PromiseInterface
      */
     public function payloadWebhookAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $payloadId,
+        string $employerId,
+        string $id,
+        string $payloadId,
         string $contentType = self::contentTypes['payloadWebhook'][0]
     ): PromiseInterface
     {
@@ -1600,9 +1600,9 @@ class WebhookApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function payloadWebhookRequest(
-        $employerId,
-        $id,
-        $payloadId,
+        string $employerId,
+        string $id,
+        string $payloadId,
         string $contentType = self::contentTypes['payloadWebhook'][0]
     ): Request
     {
@@ -1927,10 +1927,10 @@ class WebhookApi
      * @return PromiseInterface
      */
     public function payloadsWebhookAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        string $id,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['payloadsWebhook'][0]
     ): PromiseInterface
     {
@@ -1986,10 +1986,10 @@ class WebhookApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function payloadsWebhookRequest(
-        $employerId,
-        $id,
-        $pageNum = null,
-        $pageSize = null,
+        string $employerId,
+        string $id,
+        ?int $pageNum = null,
+        ?int $pageSize = null,
         string $contentType = self::contentTypes['payloadsWebhook'][0]
     ): Request
     {
@@ -2305,8 +2305,8 @@ class WebhookApi
      * @return PromiseInterface
      */
     public function sampleWebhookAsyncWithHttpInfo(
-        $employerId,
-        $webhookEvent,
+        string $employerId,
+        \SynergiTech\Staffology\Model\WebhookEvent $webhookEvent,
         string $contentType = self::contentTypes['sampleWebhook'][0]
     ): PromiseInterface
     {
@@ -2360,8 +2360,8 @@ class WebhookApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function sampleWebhookRequest(
-        $employerId,
-        $webhookEvent,
+        string $employerId,
+        \SynergiTech\Staffology\Model\WebhookEvent $webhookEvent,
         string $contentType = self::contentTypes['sampleWebhook'][0]
     ): Request
     {
@@ -2402,7 +2402,7 @@ class WebhookApi
         if ($webhookEvent !== null) {
             $resourcePath = str_replace(
                 '{' . 'webhookEvent' . '}',
-                ObjectSerializer::toPathValue($webhookEvent),
+                ObjectSerializer::toPathValue($webhookEvent->value),
                 $resourcePath
             );
         }
@@ -2664,9 +2664,9 @@ class WebhookApi
      * @return PromiseInterface
      */
     public function updateWebhookAsyncWithHttpInfo(
-        $employerId,
-        $id,
-        $webhook = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Webhook $webhook = null,
         string $contentType = self::contentTypes['updateWebhook'][0]
     ): PromiseInterface
     {
@@ -2721,9 +2721,9 @@ class WebhookApi
      * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebhookRequest(
-        $employerId,
-        $id,
-        $webhook = null,
+        string $employerId,
+        string $id,
+        ?\SynergiTech\Staffology\Model\Webhook $webhook = null,
         string $contentType = self::contentTypes['updateWebhook'][0]
     ): Request
     {
