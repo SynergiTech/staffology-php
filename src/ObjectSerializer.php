@@ -163,8 +163,12 @@ class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toPathValue(string $value): string
+    public static function toPathValue(string|\BackedEnum $value): string
     {
+        if ($value instanceof \BackedEnum) {
+            $value = $value->value;
+        }
+
         return rawurlencode(self::toString($value));
     }
 
