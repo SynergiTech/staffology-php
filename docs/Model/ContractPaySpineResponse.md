@@ -20,6 +20,6 @@ Name | Type | Description | Notes
 **gradeEffectiveDate** | **\DateTime** | Effective date for applicable grades | [optional]
 **pointEffectiveDate** | **\DateTime** | Effective date for applicable spinal points | [optional]
 **useSpineHolidayRules** | **bool** | Flag to include holiday entitlements in Payspine (Default false) | [optional]
-**holidayEntitlements** | [**\SynergiTech\Staffology\Model\ContractHolidayEntitlementResponse[]**](ContractHolidayEntitlementResponse.md) | PaySpine Years Service Entitlements | [optional]
+**holidayEntitlements** | [**\SynergiTech\Staffology\Model\ContractHolidayEntitlementResponse[]**](ContractHolidayEntitlementResponse.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

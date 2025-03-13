@@ -44,6 +44,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 | [**setMonthlyMinimumTenant()**](TenantApi.md#setMonthlyMinimumTenant) | **PUT** /tenants/{id}/users/{userId}/monthlyminimum | Set Monthly Minimum |
 | [**setPricingTableIdTenant()**](TenantApi.md#setPricingTableIdTenant) | **PUT** /tenants/{id}/users/{userId}/pricingtable | Set User PricingTableId |
 | [**setTenantTenant()**](TenantApi.md#setTenantTenant) | **PUT** /tenants/{id}/users/{userId}/tenant | Set User Tenant |
+| [**setUserCanUseRefactoredAeRoutinesTenant()**](TenantApi.md#setUserCanUseRefactoredAeRoutinesTenant) | **PUT** /tenants/{id}/users/{userId}/refactoredaeroutine | Set CanUseRefactoredAeRoutines flag |
 | [**updateBillTenant()**](TenantApi.md#updateBillTenant) | **PUT** /tenants/{id}/bills/{year}/{month}/{billId} | Update Bill |
 | [**updateCssColorsTenant()**](TenantApi.md#updateCssColorsTenant) | **PUT** /tenants/{id}/css/colors | Update CSS Colors |
 | [**updateCssTenant()**](TenantApi.md#updateCssTenant) | **PUT** /tenants/{id}/css | Update CSS |
@@ -2610,6 +2611,71 @@ try {
 | **id** | **string**| The Id of the Tenant the user is currently assigned to. | |
 | **userId** | **string**|  | |
 | **newTenantId** | **string**| The Id of the Tenant the user is to be assigned to. | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Basic](../../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `setUserCanUseRefactoredAeRoutinesTenant()`
+
+```php
+setUserCanUseRefactoredAeRoutinesTenant($id, $userId, $canUseRefactoredAeRoutines)
+```
+
+Set CanUseRefactoredAeRoutines flag
+
+Updates the CanUseRefactoredAeRoutines flag for a User
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: Basic
+$config = SynergiTech\Staffology\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new SynergiTech\Staffology\Api\TenantApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | The Id of the Tenant.
+$userId = 'userId_example'; // string | The Id of the User.
+$canUseRefactoredAeRoutines = True; // bool | The CanUseRefactoredAeRoutines flag for the User.
+
+try {
+    $apiInstance->setUserCanUseRefactoredAeRoutinesTenant($id, $userId, $canUseRefactoredAeRoutines);
+} catch (Exception $e) {
+    echo 'Exception when calling TenantApi->setUserCanUseRefactoredAeRoutinesTenant: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| The Id of the Tenant. | |
+| **userId** | **string**| The Id of the User. | |
+| **canUseRefactoredAeRoutines** | **bool**| The CanUseRefactoredAeRoutines flag for the User. | [optional] |
 
 ### Return type
 

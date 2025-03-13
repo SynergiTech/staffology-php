@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 **isSystemCode** | **bool** | [readonly] System Codes cannot be deleted or edited | [optional]
 **isControlCode** | **bool** | [readonly] Control Codes cannot be deleted or edited nor can PayLines be assigned to them. | [optional]
 **isNotional** | **bool** | Determines whether the transaction involves non-monetary benefits for payroll processing, potentially subject to tax and National Insurance. | [optional]
+**isStandAloneLumpSum** | **bool** | If true then any payments made using this code will be reported as  a Lump Sums (A - SALS) | [optional]
+**isPensionExcessLumpSum** | **bool** | If true then any payments made using this code will be reported as  a Lump Sums (B - PCELS) | [optional]
 **payee** | **string** | The Id of the Payee, if any, that deductions are to be paid to. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

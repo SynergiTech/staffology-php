@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **upperPointUniqueId** | **string** | Id of upper spinal point to be used. | [optional]
 **upperPointUseMax** | **bool** | Use the Alt Max Value of the Upper Point. (Default false) | [optional]
 **effectiveDate** | **\DateTime** | Date that this configuration is effective from. | [optional]
-**holidayEntitlement** | **float** | The number of holiday days entitled for this pay spine grade. | [optional]
+**holidayEntitlement** | **float** | The number of holidays entitled to this pay spine grade. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

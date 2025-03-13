@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **personalDetails** | [**\SynergiTech\Staffology\Model\ContractPersonalDetailsResponse**](ContractPersonalDetailsResponse.md) |  | [optional]
 **employmentDetails** | [**\SynergiTech\Staffology\Model\ContractEmploymentDetailsResponse**](ContractEmploymentDetailsResponse.md) |  | [optional]
 **autoEnrolment** | [**\SynergiTech\Staffology\Model\ContractAutoEnrolmentResponse**](ContractAutoEnrolmentResponse.md) |  | [optional]
-**leaveSettings** | [**\SynergiTech\Staffology\Model\ContractLeaveSettingsResponse**](ContractLeaveSettingsResponse.md) |  | [optional]
+**leaveSettings** | [**\SynergiTech\Staffology\Model\ContractEmployeeLeaveSettingsResponse**](ContractEmployeeLeaveSettingsResponse.md) |  | [optional]
 **rightToWork** | [**\SynergiTech\Staffology\Model\ContractRightToWork**](ContractRightToWork.md) |  | [optional]
 **bankDetails** | [**\SynergiTech\Staffology\Model\ContractBankDetails**](ContractBankDetails.md) |  | [optional]
 **payOptions** | [**\SynergiTech\Staffology\Model\ContractPayOptionsResponse**](ContractPayOptionsResponse.md) |  | [optional]

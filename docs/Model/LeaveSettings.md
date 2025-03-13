@@ -42,6 +42,7 @@ Name | Type | Description | Notes
 **accruedHoursAmountLastPeriod** | **float** | [readonly] The total accrued hours for this employee in the last pay period | [optional]
 **paidHoursAmountLastPeriod** | **float** | [readonly] The number of hours paid against the pay code | [optional]
 **accruedHoursBalance** | **float** | [readonly] The balance of hours owed to this employee in lieu of holidays | [optional] [readonly]
+**holidayAccrualResetDate** | **\DateTime** | [readonly] This date is used to reset holiday accrual schemes (Accrual Money or Accrual Hours). | [optional]
 **aggregatedServiceDate** | **\DateTime** |  | [optional]
 **useAggregatedServiceDate** | **bool** |  | [optional]
 **useDefaultHolidayAccrualDefaultRateType** | **bool** | If true then the value for HolidayAccrualDefaultRateType comes from the Employer record. | [optional]

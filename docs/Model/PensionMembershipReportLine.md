@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **avcPensionYTD** | **float** | Additional Voluntary Contribution YTD | [optional]
 **employerPensionYTD** | **float** | Employer pension year to date | [optional]
 **assumedPensionablePayYTD** | **float** | Assumed pensionable pay year to date | [optional]
+**reasonForLeaving** | **string** | Reason the employee left the scheme | [optional]
+**pensionId** | **string** | Pension Id | [optional]
 **employee** | [**\SynergiTech\Staffology\Model\Item**](Item.md) |  | [optional]
 **department** | **string** |  | [optional]
 

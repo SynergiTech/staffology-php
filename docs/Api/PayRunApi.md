@@ -946,7 +946,7 @@ try {
 ## `getPayRunPayRun()`
 
 ```php
-getPayRunPayRun($employerId, $payPeriod, $periodNumber, $taxYear, $ordinal, $pageNum, $pageSize, $searchTerm, $zeroPaid, $departmentCode, $startersLeavers, $sortBy, $sortDescending): \SynergiTech\Staffology\Model\PayRun
+getPayRunPayRun($employerId, $payPeriod, $periodNumber, $taxYear, $ordinal, $pageNum, $pageSize, $searchTerm, $zeroPaid, $departmentCode, $startersLeavers, $sortBy, $sortDescending, $rolledBackOnly): \SynergiTech\Staffology\Model\PayRun
 ```
 
 Get a PayRun
@@ -983,9 +983,10 @@ $departmentCode = 'departmentCode_example'; // string | The option to filter on 
 $startersLeavers = new \SynergiTech\Staffology\Model\\SynergiTech\Staffology\Model\StartersLeaversFilter(); // \SynergiTech\Staffology\Model\StartersLeaversFilter | The option to filter on whether the employee is a starter or leaver
 $sortBy = new \SynergiTech\Staffology\Model\\SynergiTech\Staffology\Model\PayRunEntrySortBy(); // \SynergiTech\Staffology\Model\PayRunEntrySortBy | The option to sort by a certain field. Default is Payroll Code
 $sortDescending = false; // bool | Whether to sort in ascending or descending order
+$rolledBackOnly = false; // bool | If set to true, returns rolled back pay run entries. If false, returns all entries.
 
 try {
-    $result = $apiInstance->getPayRunPayRun($employerId, $payPeriod, $periodNumber, $taxYear, $ordinal, $pageNum, $pageSize, $searchTerm, $zeroPaid, $departmentCode, $startersLeavers, $sortBy, $sortDescending);
+    $result = $apiInstance->getPayRunPayRun($employerId, $payPeriod, $periodNumber, $taxYear, $ordinal, $pageNum, $pageSize, $searchTerm, $zeroPaid, $departmentCode, $startersLeavers, $sortBy, $sortDescending, $rolledBackOnly);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PayRunApi->getPayRunPayRun: ', $e->getMessage(), PHP_EOL;
@@ -1009,6 +1010,7 @@ try {
 | **startersLeavers** | [**\SynergiTech\Staffology\Model\StartersLeaversFilter**](../Model/.md)| The option to filter on whether the employee is a starter or leaver | [optional] |
 | **sortBy** | [**\SynergiTech\Staffology\Model\PayRunEntrySortBy**](../Model/.md)| The option to sort by a certain field. Default is Payroll Code | [optional] |
 | **sortDescending** | **bool**| Whether to sort in ascending or descending order | [optional] [default to false] |
+| **rolledBackOnly** | **bool**| If set to true, returns rolled back pay run entries. If false, returns all entries. | [optional] [default to false] |
 
 ### Return type
 

@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **canUseBureauFeatures** | **bool** |  | [optional]
 **canUseBetaFeatures** | **bool** |  | [optional]
 **canUseReportWriter** | **bool** | Indicates whether the user has permission to use the report writer feature. | [optional]
+**canUseRefactoredAeRoutines** | **bool** |  | [optional]
 **isBilledInNetSuite** | **bool** |  | [optional]
 **tenant** | [**\SynergiTech\Staffology\Model\Tenant**](Tenant.md) |  | [optional]
 **requestDdSetup** | **bool** | [readonly] If true then the user is required to set up a direct debit mandate | [optional]

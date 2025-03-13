@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Spinal Point identifier | [optional]
+**finalAnnualValue** | **float** | Spinal Point Final Annual Value | [optional]
 **name** | **string** | Name of the Spinal Point | [optional]
 **number** | **int** | Number of Spinal Point within the Scale | [optional]
 **annualValue** | **float** | Annual Value for the Spinal Point | [optional]

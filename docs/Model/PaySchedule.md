@@ -28,5 +28,7 @@ Name | Type | Description | Notes
 **currentPayRun** | [**\SynergiTech\Staffology\Model\Item**](Item.md) |  | [optional]
 **nextPayRun** | [**\SynergiTech\Staffology\Model\PayRun**](PayRun.md) |  | [optional]
 **publicCreatedDate** | **\DateTime** |  | [optional]
+**employerName** | **string** | Employer name for this PaySchedule | [optional]
+**employerUniqueId** | **string** | Employer Unique Id for this PaySchedule | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

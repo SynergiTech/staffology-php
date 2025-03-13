@@ -10,6 +10,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 | [**customPayslipEmployer()**](EmployerApi.md#customPayslipEmployer) | **GET** /employers/{id}/custompayslip | Get Payslip Customisations |
 | [**deleteEmployer()**](EmployerApi.md#deleteEmployer) | **DELETE** /employers/{id} | Delete an Employer |
 | [**getAutomationSettingsEmployer()**](EmployerApi.md#getAutomationSettingsEmployer) | **GET** /employers/{id}/automation | Get Automation Settings |
+| [**getEmployeesWithAccrualHolidaySchemeEmployer()**](EmployerApi.md#getEmployeesWithAccrualHolidaySchemeEmployer) | **GET** /employers/{id}/accrual-holiday-scheme/employee | Get List of Employees with Holiday Accrual Scheme |
 | [**getEmployer()**](EmployerApi.md#getEmployer) | **GET** /employers/{id} | Get an Employer |
 | [**getEmployerOpeningBalancesEmployer()**](EmployerApi.md#getEmployerOpeningBalancesEmployer) | **GET** /employers/{id}/openingbalances | Get EmployerOpeningBalances |
 | [**getEvcOptInHistoryEmployer()**](EmployerApi.md#getEvcOptInHistoryEmployer) | **GET** /employers/{id}/evc | Get EVC OptIn History |
@@ -166,7 +167,7 @@ try {
 ## `createEmployer()`
 
 ```php
-createEmployer($employer): \SynergiTech\Staffology\Model\Employer
+createEmployer($contractEmployerRequest): \SynergiTech\Staffology\Model\ContractEmployerResponse
 ```
 
 Create an Employer
@@ -192,10 +193,10 @@ $apiInstance = new SynergiTech\Staffology\Api\EmployerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$employer = new \SynergiTech\Staffology\Model\Employer(); // \SynergiTech\Staffology\Model\Employer
+$contractEmployerRequest = new \SynergiTech\Staffology\Model\ContractEmployerRequest(); // \SynergiTech\Staffology\Model\ContractEmployerRequest
 
 try {
-    $result = $apiInstance->createEmployer($employer);
+    $result = $apiInstance->createEmployer($contractEmployerRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmployerApi->createEmployer: ', $e->getMessage(), PHP_EOL;
@@ -206,11 +207,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **employer** | [**\SynergiTech\Staffology\Model\Employer**](../Model/Employer.md)|  | [optional] |
+| **contractEmployerRequest** | [**\SynergiTech\Staffology\Model\ContractEmployerRequest**](../Model/ContractEmployerRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\SynergiTech\Staffology\Model\Employer**](../Model/Employer.md)
+[**\SynergiTech\Staffology\Model\ContractEmployerResponse**](../Model/ContractEmployerResponse.md)
 
 ### Authorization
 
@@ -408,10 +409,70 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getEmployeesWithAccrualHolidaySchemeEmployer()`
+
+```php
+getEmployeesWithAccrualHolidaySchemeEmployer($id): \SynergiTech\Staffology\Model\Item[]
+```
+
+Get List of Employees with Holiday Accrual Scheme
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: Basic
+$config = SynergiTech\Staffology\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new SynergiTech\Staffology\Api\EmployerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+
+try {
+    $result = $apiInstance->getEmployeesWithAccrualHolidaySchemeEmployer($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EmployerApi->getEmployeesWithAccrualHolidaySchemeEmployer: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+
+### Return type
+
+[**\SynergiTech\Staffology\Model\Item[]**](../Model/Item.md)
+
+### Authorization
+
+[Basic](../../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getEmployer()`
 
 ```php
-getEmployer($id): \SynergiTech\Staffology\Model\Employer
+getEmployer($id): \SynergiTech\Staffology\Model\ContractEmployerResponse
 ```
 
 Get an Employer
@@ -453,7 +514,7 @@ try {
 
 ### Return type
 
-[**\SynergiTech\Staffology\Model\Employer**](../Model/Employer.md)
+[**\SynergiTech\Staffology\Model\ContractEmployerResponse**](../Model/ContractEmployerResponse.md)
 
 ### Authorization
 
@@ -719,10 +780,12 @@ try {
 ## `indexEmployer()`
 
 ```php
-indexEmployer($employerGroupCode): \SynergiTech\Staffology\Model\Item[]
+indexEmployer($employerGroupCode, $searchTerm, $employerListType, $pageNum, $pageSize, $sortBy, $sortDescending): \SynergiTech\Staffology\Model\Item[]
 ```
 
 List Employers
+
+Return a list of employers with pagination options. If no pagination parameters are provided, return all applicable employers based on the search.
 
 ### Example
 
@@ -744,9 +807,15 @@ $apiInstance = new SynergiTech\Staffology\Api\EmployerApi(
     $config
 );
 $employerGroupCode = 'employerGroupCode_example'; // string | Optionally specify the code of an EmployerGroup to only see employers that are a member of that group.
+$searchTerm = 'searchTerm_example'; // string | Filters the employer list by Processor Name, Employer Name, Customer #, Alt ID and Employer GUID.
+$employerListType = new \SynergiTech\Staffology\Model\\SynergiTech\Staffology\Model\EmployerListType(); // \SynergiTech\Staffology\Model\EmployerListType | Filters the employer list type.
+$pageNum = 56; // int | Zero-based index indicating the current page.
+$pageSize = 56; // int | Number of items per page.
+$sortBy = new \SynergiTech\Staffology\Model\\SynergiTech\Staffology\Model\EmployerSortBy(); // \SynergiTech\Staffology\Model\EmployerSortBy | Field to sort employers by.
+$sortDescending = True; // bool | Indicates descending sort order.
 
 try {
-    $result = $apiInstance->indexEmployer($employerGroupCode);
+    $result = $apiInstance->indexEmployer($employerGroupCode, $searchTerm, $employerListType, $pageNum, $pageSize, $sortBy, $sortDescending);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmployerApi->indexEmployer: ', $e->getMessage(), PHP_EOL;
@@ -758,6 +827,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **employerGroupCode** | **string**| Optionally specify the code of an EmployerGroup to only see employers that are a member of that group. | [optional] |
+| **searchTerm** | **string**| Filters the employer list by Processor Name, Employer Name, Customer #, Alt ID and Employer GUID. | [optional] |
+| **employerListType** | [**\SynergiTech\Staffology\Model\EmployerListType**](../Model/.md)| Filters the employer list type. | [optional] |
+| **pageNum** | **int**| Zero-based index indicating the current page. | [optional] |
+| **pageSize** | **int**| Number of items per page. | [optional] |
+| **sortBy** | [**\SynergiTech\Staffology\Model\EmployerSortBy**](../Model/.md)| Field to sort employers by. | [optional] |
+| **sortDescending** | **bool**| Indicates descending sort order. | [optional] |
 
 ### Return type
 
@@ -1530,7 +1605,7 @@ try {
 ## `updateEmployer()`
 
 ```php
-updateEmployer($id, $employer): \SynergiTech\Staffology\Model\Employer
+updateEmployer($id, $contractEmployerRequest): \SynergiTech\Staffology\Model\ContractEmployerResponse
 ```
 
 Update an Employer
@@ -1555,10 +1630,10 @@ $apiInstance = new SynergiTech\Staffology\Api\EmployerApi(
     $config
 );
 $id = 'id_example'; // string | The Id of the Employer you want to update.
-$employer = new \SynergiTech\Staffology\Model\Employer(); // \SynergiTech\Staffology\Model\Employer
+$contractEmployerRequest = new \SynergiTech\Staffology\Model\ContractEmployerRequest(); // \SynergiTech\Staffology\Model\ContractEmployerRequest
 
 try {
-    $result = $apiInstance->updateEmployer($id, $employer);
+    $result = $apiInstance->updateEmployer($id, $contractEmployerRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmployerApi->updateEmployer: ', $e->getMessage(), PHP_EOL;
@@ -1570,11 +1645,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| The Id of the Employer you want to update. | |
-| **employer** | [**\SynergiTech\Staffology\Model\Employer**](../Model/Employer.md)|  | [optional] |
+| **contractEmployerRequest** | [**\SynergiTech\Staffology\Model\ContractEmployerRequest**](../Model/ContractEmployerRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\SynergiTech\Staffology\Model\Employer**](../Model/Employer.md)
+[**\SynergiTech\Staffology\Model\ContractEmployerResponse**](../Model/ContractEmployerResponse.md)
 
 ### Authorization
 
@@ -1656,7 +1731,7 @@ try {
 ## `updateLogoEmployer()`
 
 ```php
-updateLogoEmployer($id, $file): \SynergiTech\Staffology\Model\Employer
+updateLogoEmployer($id, $file): \SynergiTech\Staffology\Model\ContractEmployerResponse
 ```
 
 Update Employer Logo
@@ -1702,7 +1777,7 @@ try {
 
 ### Return type
 
-[**\SynergiTech\Staffology\Model\Employer**](../Model/Employer.md)
+[**\SynergiTech\Staffology\Model\ContractEmployerResponse**](../Model/ContractEmployerResponse.md)
 
 ### Authorization
 

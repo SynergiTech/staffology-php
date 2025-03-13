@@ -17,5 +17,9 @@ Name | Type | Description | Notes
 **calculationType** | [**\SynergiTech\Staffology\Model\LeaveCalculationType**](LeaveCalculationType.md) |  | [optional]
 **percentOfPay** | **float** | Only provided when the leave type is &#39;Sick&#39; and the payment type is &#39;Custom&#39;. | [optional]
 **strikeHoursToDeduct** | **float** | Only provided when the leave type is &#39;StrikeAction&#39; and the calculation type is &#39;SpecifyHours&#39;. | [optional]
+**paySSPInAddition** | **bool** | Only provided when the leave type is &#39;Sick&#39; and the payment type is &#39;Custom&#39;. | [optional]
+**useAssumedPensionablePay** | **bool** | Only provided when the leave type is &#39;Sick&#39; and the payment type is &#39;Custom&#39;, &#39;Occupational Policy&#39; or &#39;Statutory Pay&#39;. | [optional]
+**assumedPensionablePay** | **float** | Assumed Pensionable Pay (APP) is an average figure, calculated as the average pay in the 3 months  (or 12 weeks if weekly/fortnightly/fourweekly paid) before the absence | [optional]
+**automaticAPPCalculation** | **bool** | If set to True then we&#39;ll automatically calculate the AssumedPensionablePay.   Set it to false if you want to manually provide a figure that overrides our calculations | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **paid** | **float** | [readonly] | [optional] [readonly]
 **bikOutstanding** | **float** | [readonly] | [optional] [readonly]
 **isPeriodValue** | **bool** | To be used for the benefit period | [optional]
+**overrideOpeningBalance** | **bool** | To be used to change the opening balance if the benefit has been payrolled | [optional]
 **employee** | [**\SynergiTech\Staffology\Model\Item**](Item.md) |  | [optional]
 **id** | **string** | [readonly] The unique id of the object | [optional] [readonly]
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**effectiveDate** | **\DateTime** | PaySpine Holiday Entitlement Effective Date  If UseSpineHolidayRules is true then this field is required | [optional]
-**baseHolidayEntitlement** | **float** | PaySpine Base Holiday Entitlement  If UseSpineHolidayRules is true then this field is required | [optional]
+**effectiveDate** | **\DateTime** | PaySpine Holiday Entitlement Effective Date |
+**baseHolidayEntitlement** | **float** | PaySpine Base Holiday Entitlement |
 **yearsServiceEntitlementBasis** | [**\SynergiTech\Staffology\Model\PaySpineYearsServiceEntitlementBasis**](PaySpineYearsServiceEntitlementBasis.md) |  | [optional]
 **yearsServiceEntitlements** | [**\SynergiTech\Staffology\Model\ContractYearsServiceEntitlementRequest[]**](ContractYearsServiceEntitlementRequest.md) | Holiday Entitlement Years Service Entitlements | [optional]
 

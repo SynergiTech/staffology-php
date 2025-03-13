@@ -32,6 +32,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 | [**getPaySpineGradePaySpine()**](PaySpineApi.md#getPaySpineGradePaySpine) | **GET** /employers/{employerId}/payspines/{paySpineId}/paygrades/{payGradeId} | Get PaySpine Grade |
 | [**getSpinalPointListPaySpine()**](PaySpineApi.md#getSpinalPointListPaySpine) | **GET** /employers/{employerId}/payspines/{paySpineId}/spinalpoints | List SpinalPoints |
 | [**getSpinalPointPaySpine()**](PaySpineApi.md#getSpinalPointPaySpine) | **GET** /employers/{employerId}/payspines/{paySpineId}/spinalpoints/{spinalPointId} | Get SpinalPoint |
+| [**getSpinalPointWithAnnualSalaryPaySpine()**](PaySpineApi.md#getSpinalPointWithAnnualSalaryPaySpine) | **GET** /employers/{employerId}/payspines/{id}/employees/{employeeId}/getspinalpointwithannualsalary/{spinalPointId}/{effectiveFrom} | Get Spinal Point With Final Annual Salary |
 | [**getSpineAllowanceListPaySpine()**](PaySpineApi.md#getSpineAllowanceListPaySpine) | **GET** /employers/{employerId}/payspines/{paySpineId}/allowances | List SpineAllowances |
 | [**getSpineAllowancePaySpine()**](PaySpineApi.md#getSpineAllowancePaySpine) | **GET** /employers/{employerId}/payspines/{paySpineId}/allowances/{allowanceid} | Get SpineAllowance |
 | [**importCsvPaySpine()**](PaySpineApi.md#importCsvPaySpine) | **POST** /employers/{employerId}/payspines/spinalpoints/import | Import SpinalPoints from csv file |
@@ -1363,7 +1364,7 @@ try {
 ## `getAnnualValueFromSalaryFormulaPaySpine()`
 
 ```php
-getAnnualValueFromSalaryFormulaPaySpine($employerId, $id, $employeeId, $paySpineGradeId, $spinalPointId, $londonAllowanceType, $effectiveFrom, $workingPatternId): \SynergiTech\Staffology\Model\PaylineCalculationData
+getAnnualValueFromSalaryFormulaPaySpine($employerId, $id, $employeeId, $paySpineGradeId, $spinalPointId, $londonAllowanceType, $effectiveFrom, $workingPatternId, $roleId): \SynergiTech\Staffology\Model\PaylineCalculationData
 ```
 
 Get Annual Value from pay spines formula
@@ -1394,10 +1395,11 @@ $paySpineGradeId = 'paySpineGradeId_example'; // string | The selected PaySpineG
 $spinalPointId = 'spinalPointId_example'; // string | The selected SpinalPoint Id.
 $londonAllowanceType = 56; // int | The London Allowance Id of PayLine.
 $effectiveFrom = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The PayLine effective from.
-$workingPatternId = 'workingPatternId_example'; // string
+$workingPatternId = 'workingPatternId_example'; // string | The selected WorkingPattern Id.
+$roleId = 'roleId_example'; // string | The Role Id.
 
 try {
-    $result = $apiInstance->getAnnualValueFromSalaryFormulaPaySpine($employerId, $id, $employeeId, $paySpineGradeId, $spinalPointId, $londonAllowanceType, $effectiveFrom, $workingPatternId);
+    $result = $apiInstance->getAnnualValueFromSalaryFormulaPaySpine($employerId, $id, $employeeId, $paySpineGradeId, $spinalPointId, $londonAllowanceType, $effectiveFrom, $workingPatternId, $roleId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaySpineApi->getAnnualValueFromSalaryFormulaPaySpine: ', $e->getMessage(), PHP_EOL;
@@ -1415,7 +1417,8 @@ try {
 | **spinalPointId** | **string**| The selected SpinalPoint Id. | [optional] |
 | **londonAllowanceType** | **int**| The London Allowance Id of PayLine. | [optional] |
 | **effectiveFrom** | **\DateTime**| The PayLine effective from. | [optional] |
-| **workingPatternId** | **string**|  | [optional] |
+| **workingPatternId** | **string**| The selected WorkingPattern Id. | [optional] |
+| **roleId** | **string**| The Role Id. | [optional] |
 
 ### Return type
 
@@ -1870,6 +1873,78 @@ try {
 | **employerId** | **string**| The Id of the Employer for which you want Spinal Point | |
 | **paySpineId** | **string**| The Id of the Pay Spine for which you want Spinal Point | |
 | **spinalPointId** | **string**| The Id of the Spinal Point for which you want Spinal Point | |
+
+### Return type
+
+[**\SynergiTech\Staffology\Model\ContractSpinalPointResponse**](../Model/ContractSpinalPointResponse.md)
+
+### Authorization
+
+[Basic](../../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getSpinalPointWithAnnualSalaryPaySpine()`
+
+```php
+getSpinalPointWithAnnualSalaryPaySpine($employerId, $employeeId, $id, $spinalPointId, $effectiveFrom, $paySpineGradeId, $londonAllowanceType): \SynergiTech\Staffology\Model\ContractSpinalPointResponse
+```
+
+Get Spinal Point With Final Annual Salary
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: Basic
+$config = SynergiTech\Staffology\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new SynergiTech\Staffology\Api\PaySpineApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$employerId = 'employerId_example'; // string | The Employer id.
+$employeeId = 'employeeId_example'; // string | The Employee id.
+$id = 'id_example'; // string | The selected PaySpine Id.
+$spinalPointId = 'spinalPointId_example'; // string | The selected SpinalPoint Id.
+$effectiveFrom = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The PayLine effective from.
+$paySpineGradeId = 'paySpineGradeId_example'; // string | The selected PaySpineGrade Id.
+$londonAllowanceType = 56; // int | The London Allowance Id of PayLine.
+
+try {
+    $result = $apiInstance->getSpinalPointWithAnnualSalaryPaySpine($employerId, $employeeId, $id, $spinalPointId, $effectiveFrom, $paySpineGradeId, $londonAllowanceType);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PaySpineApi->getSpinalPointWithAnnualSalaryPaySpine: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **employerId** | **string**| The Employer id. | |
+| **employeeId** | **string**| The Employee id. | |
+| **id** | **string**| The selected PaySpine Id. | |
+| **spinalPointId** | **string**| The selected SpinalPoint Id. | |
+| **effectiveFrom** | **\DateTime**| The PayLine effective from. | |
+| **paySpineGradeId** | **string**| The selected PaySpineGrade Id. | [optional] |
+| **londonAllowanceType** | **int**| The London Allowance Id of PayLine. | [optional] |
 
 ### Return type
 

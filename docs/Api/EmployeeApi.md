@@ -25,6 +25,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 | [**minimumWageEmployee()**](EmployeeApi.md#minimumWageEmployee) | **GET** /employers/{employerId}/employees/{id}/{taxYear}/minimum-wage | Minimum Wage |
 | [**payRunEntriesEmployee()**](EmployeeApi.md#payRunEntriesEmployee) | **GET** /employers/{employerId}/employees/{id}/payrunentries/{taxYear} | PayRunEntries for Employee |
 | [**reHireEmployee()**](EmployeeApi.md#reHireEmployee) | **GET** /employers/{employerId}/employees/{id}/rehire | Rehire an Employee |
+| [**resetEmployeeHolidayAccrualSchemeEmployee()**](EmployeeApi.md#resetEmployeeHolidayAccrualSchemeEmployee) | **PUT** /employers/{employerId}/employees/reset-holiday-scheme | Resets employee accrual scheme |
 | [**searchByPayrollCodeEmployee()**](EmployeeApi.md#searchByPayrollCodeEmployee) | **GET** /employers/{employerId}/employees/search/payrollcode | Get Employee by Payroll Code |
 | [**searchEmployee()**](EmployeeApi.md#searchEmployee) | **GET** /employers/{employerId}/employees/search | Search Employer for Employees |
 | [**setDepartmentMembershipsEmployee()**](EmployeeApi.md#setDepartmentMembershipsEmployee) | **PUT** /employers/{employerId}/employees/{id}/departments | Set Employee Departments |
@@ -1394,6 +1395,69 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `resetEmployeeHolidayAccrualSchemeEmployee()`
+
+```php
+resetEmployeeHolidayAccrualSchemeEmployee($employerId, $requestBody)
+```
+
+Resets employee accrual scheme
+
+Resets employee accrual scheme fields to zero and adds a update accrual reset date in employee table
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: Basic
+$config = SynergiTech\Staffology\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new SynergiTech\Staffology\Api\EmployeeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$employerId = 'employerId_example'; // string | The Id of the Employer
+$requestBody = array('requestBody_example'); // string[] | UnqiueId of the employees for setting the Holiday Scheme Reset Date
+
+try {
+    $apiInstance->resetEmployeeHolidayAccrualSchemeEmployee($employerId, $requestBody);
+} catch (Exception $e) {
+    echo 'Exception when calling EmployeeApi->resetEmployeeHolidayAccrualSchemeEmployee: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **employerId** | **string**| The Id of the Employer | |
+| **requestBody** | [**string[]**](../Model/string.md)| UnqiueId of the employees for setting the Holiday Scheme Reset Date | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Basic](../../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json-patch+json`, `application/json`, `text/json`, `application/*+json`
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **cisSubContractor** | **bool** | Set to True if this Employee is a CIS Subcontractor. The &#x60;&#x60;&#x60;Cis&#x60;&#x60;&#x60; property contains further information | [optional]
 **payrollCode** | **string** | The Employees Payroll Code. Must be unique within the Employer. |
 **jobTitle** | **string** | Job Title of Primary role of the Employee | [optional]
+**workplacePostcode** | **string** | Set the workplace postcode, ensuring it&#39;s uppercase and no longer than 10 characters. | [optional]
 **onHold** | **bool** | Set to true to temporarily exclude the employee from payruns | [optional]
 **onFurlough** | **bool** | Set to true if the employee is on furlough. | [optional]
 **furloughStart** | **\DateTime** | Furlough Start Date. | [optional]

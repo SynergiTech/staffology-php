@@ -4,18 +4,18 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**queueGrossToNetReportReportsAsync()**](ReportsAsyncApi.md#queueGrossToNetReportReportsAsync) | **POST** /employers/{employerId}/reports-async/gross-to-net | Gross To Net async (beta) |
+| [**executeCustomReportReportsAsync()**](ReportsAsyncApi.md#executeCustomReportReportsAsync) | **POST** /employers/{employerId}/reports-async/{templateId} | Execute report template |
 
 
-## `queueGrossToNetReportReportsAsync()`
+## `executeCustomReportReportsAsync()`
 
 ```php
-queueGrossToNetReportReportsAsync($employerId, $contractGrossToNetReportRequest): \SynergiTech\Staffology\Model\ContractJobResponse
+executeCustomReportReportsAsync($employerId, $templateId, $contractCustomReportRequest): \SynergiTech\Staffology\Model\ContractJobResponse
 ```
 
-Gross To Net async (beta)
+Execute report template
 
-Returns a job that is created to process a report comparing employees' gross pay with their net pay for one or more pay periods.  This endpoint is currently being beta tested and subject to un-announced breaking changes.  Use the GET of Jobs to get the status and response of the job.
+Returns a job created to process a report using custom report templates.   This endpoint is being beta tested and subject to un-announced breaking changes.  Use the GET of Jobs to get the status and response of the job.
 
 ### Example
 
@@ -37,13 +37,14 @@ $apiInstance = new SynergiTech\Staffology\Api\ReportsAsyncApi(
     $config
 );
 $employerId = 'employerId_example'; // string
-$contractGrossToNetReportRequest = new \SynergiTech\Staffology\Model\ContractGrossToNetReportRequest(); // \SynergiTech\Staffology\Model\ContractGrossToNetReportRequest | The request payload for the gross to net report
+$templateId = 'templateId_example'; // string
+$contractCustomReportRequest = new \SynergiTech\Staffology\Model\ContractCustomReportRequest(); // \SynergiTech\Staffology\Model\ContractCustomReportRequest
 
 try {
-    $result = $apiInstance->queueGrossToNetReportReportsAsync($employerId, $contractGrossToNetReportRequest);
+    $result = $apiInstance->executeCustomReportReportsAsync($employerId, $templateId, $contractCustomReportRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ReportsAsyncApi->queueGrossToNetReportReportsAsync: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ReportsAsyncApi->executeCustomReportReportsAsync: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -52,7 +53,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **employerId** | **string**|  | |
-| **contractGrossToNetReportRequest** | [**\SynergiTech\Staffology\Model\ContractGrossToNetReportRequest**](../Model/ContractGrossToNetReportRequest.md)| The request payload for the gross to net report | [optional] |
+| **templateId** | **string**|  | |
+| **contractCustomReportRequest** | [**\SynergiTech\Staffology\Model\ContractCustomReportRequest**](../Model/ContractCustomReportRequest.md)|  | [optional] |
 
 ### Return type
 

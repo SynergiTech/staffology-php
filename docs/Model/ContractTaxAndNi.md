@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**niTable** | **string** | The appropriate NI letter for this Employee |
+**niTable** | **string** | The appropriate NI letter for this Employee | [optional]
 **secondaryClass1NotPayable** | **bool** | If set to true then no Employer NI will be paid for this Employee | [optional]
 **postgradLoan** | **bool** | Set to true if the Employee needs to make Post Graduate Loan repayments | [optional]
 **postgraduateLoanStartDate** | **\DateTime** |  | [optional]
