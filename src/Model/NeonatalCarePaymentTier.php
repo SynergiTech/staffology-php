@@ -1,6 +1,6 @@
 <?php
 /**
- * FlexibleDrawdown
+ * NeonatalCarePaymentTier
  *
  * PHP version 8.1
  *
@@ -29,25 +29,19 @@
 namespace SynergiTech\Staffology\Model;
 
 /**
- * FlexibleDrawdown Class Doc Comment
+ * NeonatalCarePaymentTier Class Doc Comment
  *
  * @package  SynergiTech\Staffology
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-enum FlexibleDrawdown: string
+enum NeonatalCarePaymentTier: string
 {
     case NONE = 'None';
 
-    case DEATH_BENEFIT = 'DeathBenefit';
+    case FIRST_TIER = 'FirstTier';
 
-    case PENSION = 'Pension';
-
-    case SERIOUS_ILL_HEALTH = 'SeriousIllHealth';
-
-    case STAND_ALONE_LUMP_SUM = 'StandAloneLumpSum';
-
-    case PENSION_COMMENCEMENT_EXCESS = 'PensionCommencementExcess';
+    case SECOND_TIER = 'SecondTier';
 }
 
 

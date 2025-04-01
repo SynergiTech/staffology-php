@@ -71,6 +71,7 @@ class FpsEmployeeFigsToDate implements ModelInterface, ArrayAccess, JsonSerializ
         'sapytd' => 'string',
         'shppytd' => 'string',
         'spbpytd' => 'string',
+        'sncpytd' => 'string',
         'sspytd' => 'string',
         'gross' => 'string',
         'netPay' => 'string',
@@ -109,6 +110,7 @@ class FpsEmployeeFigsToDate implements ModelInterface, ArrayAccess, JsonSerializ
         'sapytd' => null,
         'shppytd' => null,
         'spbpytd' => null,
+        'sncpytd' => null,
         'sspytd' => null,
         'gross' => null,
         'netPay' => null,
@@ -147,6 +149,7 @@ class FpsEmployeeFigsToDate implements ModelInterface, ArrayAccess, JsonSerializ
         'sapytd' => true,
         'shppytd' => true,
         'spbpytd' => true,
+        'sncpytd' => true,
         'sspytd' => true,
         'gross' => true,
         'netPay' => true,
@@ -265,6 +268,7 @@ class FpsEmployeeFigsToDate implements ModelInterface, ArrayAccess, JsonSerializ
         'sapytd' => 'sapytd',
         'shppytd' => 'shppytd',
         'spbpytd' => 'spbpytd',
+        'sncpytd' => 'sncpytd',
         'sspytd' => 'sspytd',
         'gross' => 'gross',
         'netPay' => 'netPay',
@@ -303,6 +307,7 @@ class FpsEmployeeFigsToDate implements ModelInterface, ArrayAccess, JsonSerializ
         'sapytd' => 'setSapytd',
         'shppytd' => 'setShppytd',
         'spbpytd' => 'setSpbpytd',
+        'sncpytd' => 'setSncpytd',
         'sspytd' => 'setSspytd',
         'gross' => 'setGross',
         'netPay' => 'setNetPay',
@@ -341,6 +346,7 @@ class FpsEmployeeFigsToDate implements ModelInterface, ArrayAccess, JsonSerializ
         'sapytd' => 'getSapytd',
         'shppytd' => 'getShppytd',
         'spbpytd' => 'getSpbpytd',
+        'sncpytd' => 'getSncpytd',
         'sspytd' => 'getSspytd',
         'gross' => 'getGross',
         'netPay' => 'getNetPay',
@@ -429,6 +435,7 @@ class FpsEmployeeFigsToDate implements ModelInterface, ArrayAccess, JsonSerializ
         $this->setIfExists('sapytd', $data ?? [], null);
         $this->setIfExists('shppytd', $data ?? [], null);
         $this->setIfExists('spbpytd', $data ?? [], null);
+        $this->setIfExists('sncpytd', $data ?? [], null);
         $this->setIfExists('sspytd', $data ?? [], null);
         $this->setIfExists('gross', $data ?? [], null);
         $this->setIfExists('netPay', $data ?? [], null);
@@ -895,6 +902,40 @@ class FpsEmployeeFigsToDate implements ModelInterface, ArrayAccess, JsonSerializ
             }
         }
         $this->container['spbpytd'] = $spbpytd;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncpytd
+     *
+     * @return string|null
+     */
+    public function getSncpytd(): ?string
+    {
+        return $this->container['sncpytd'];
+    }
+
+    /**
+     * Sets sncpytd
+     *
+     * @param string|null $sncpytd sncpytd
+     *
+     * @return $this
+     */
+    public function setSncpytd(?string $sncpytd): static
+    {
+        if (is_null($sncpytd)) {
+            array_push($this->openAPINullablesSetToNull, 'sncpytd');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sncpytd', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['sncpytd'] = $sncpytd;
 
         return $this;
     }

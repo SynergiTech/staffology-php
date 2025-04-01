@@ -1,6 +1,6 @@
 <?php
 /**
- * FlexibleDrawdown
+ * DaysBeforePayday
  *
  * PHP version 8.1
  *
@@ -29,25 +29,25 @@
 namespace SynergiTech\Staffology\Model;
 
 /**
- * FlexibleDrawdown Class Doc Comment
+ * DaysBeforePayday Class Doc Comment
  *
  * @package  SynergiTech\Staffology
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-enum FlexibleDrawdown: string
+enum DaysBeforePayday: string
 {
-    case NONE = 'None';
+    case ZERO_DAY_BEFORE_PAYDAY = 'ZeroDayBeforePayday';
 
-    case DEATH_BENEFIT = 'DeathBenefit';
+    case ONE_DAY_BEFORE_PAYDAY = 'OneDayBeforePayday';
 
-    case PENSION = 'Pension';
+    case TWO_DAYS_BEFORE_PAYDAY = 'TwoDaysBeforePayday';
 
-    case SERIOUS_ILL_HEALTH = 'SeriousIllHealth';
+    case THREE_DAYS_BEFORE_PAYDAY = 'ThreeDaysBeforePayday';
 
-    case STAND_ALONE_LUMP_SUM = 'StandAloneLumpSum';
+    case FOUR_DAYS_BEFORE_PAYDAY = 'FourDaysBeforePayday';
 
-    case PENSION_COMMENCEMENT_EXCESS = 'PensionCommencementExcess';
+    case FIVE_DAYS_BEFORE_PAYDAY = 'FiveDaysBeforePayday';
 }
 
 

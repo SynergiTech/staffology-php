@@ -27,6 +27,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 | [**employeeBenefitsReports()**](ReportsApi.md#employeeBenefitsReports) | **GET** /employers/{employerId}/reports/{taxYear}/EmployeeBenefits | Employee Benefits |
 | [**employeeExportReports()**](ReportsApi.md#employeeExportReports) | **GET** /employees | Employee Export Details |
 | [**employeeLeaveReports()**](ReportsApi.md#employeeLeaveReports) | **GET** /employers/{employerId}/reports/employeeleave | Employee Leave |
+| [**employeePaymentsReportReports()**](ReportsApi.md#employeePaymentsReportReports) | **POST** /employers/{employerId}/reports/{payPeriod}/employeepayments | Employee Payments Report |
 | [**employeeRoleExportReports()**](ReportsApi.md#employeeRoleExportReports) | **GET** /employeeroles | Employee Export Roles Details |
 | [**employerChangesReports()**](ReportsApi.md#employerChangesReports) | **GET** /employers/{employerId}/reports/employerchanges | Gets audit changes for a company. |
 | [**employerExportReports()**](ReportsApi.md#employerExportReports) | **GET** /employers/{employerId}/reports/employers | Employer Export |
@@ -1674,6 +1675,74 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`, `text/csv`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `employeePaymentsReportReports()`
+
+```php
+employeePaymentsReportReports($employerId, $payPeriod, $accept, $contractEmployeePaymentsReportRequest): \SynergiTech\Staffology\Model\EmployeePaymentsReportReportResponse
+```
+
+Employee Payments Report
+
+Returns a payments report for all employees for given pay schedule.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure HTTP basic authorization: Basic
+$config = SynergiTech\Staffology\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new SynergiTech\Staffology\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$employerId = 'employerId_example'; // string
+$payPeriod = new \SynergiTech\Staffology\Model\\SynergiTech\Staffology\Model\PayPeriods(); // \SynergiTech\Staffology\Model\PayPeriods
+$accept = 'accept_example'; // string
+$contractEmployeePaymentsReportRequest = new \SynergiTech\Staffology\Model\ContractEmployeePaymentsReportRequest(); // \SynergiTech\Staffology\Model\ContractEmployeePaymentsReportRequest
+
+try {
+    $result = $apiInstance->employeePaymentsReportReports($employerId, $payPeriod, $accept, $contractEmployeePaymentsReportRequest);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->employeePaymentsReportReports: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **employerId** | **string**|  | |
+| **payPeriod** | [**\SynergiTech\Staffology\Model\PayPeriods**](../Model/.md)|  | |
+| **accept** | **string**|  | [optional] |
+| **contractEmployeePaymentsReportRequest** | [**\SynergiTech\Staffology\Model\ContractEmployeePaymentsReportRequest**](../Model/ContractEmployeePaymentsReportRequest.md)|  | [optional] |
+
+### Return type
+
+[**\SynergiTech\Staffology\Model\EmployeePaymentsReportReportResponse**](../Model/EmployeePaymentsReportReportResponse.md)
+
+### Authorization
+
+[Basic](../../README.md#Basic)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json-patch+json`, `application/json`, `text/json`, `application/*+json`
 - **Accept**: `application/json`, `text/csv`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

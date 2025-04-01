@@ -65,6 +65,7 @@ class FpsEmployment implements ModelInterface, ArrayAccess, JsonSerializable
         'directorsNIC' => 'string',
         'taxWkOfApptOfDirector' => 'string',
         'starter' => '\SynergiTech\Staffology\Model\FpsEmployeeStarter',
+        'employeeWorkplacePostcode' => 'string',
         'payId' => 'string',
         'payIdChgd' => '\SynergiTech\Staffology\Model\FpsEmployerPayIdChanged',
         'paymentToANonIndividual' => 'string',
@@ -87,6 +88,7 @@ class FpsEmployment implements ModelInterface, ArrayAccess, JsonSerializable
         'directorsNIC' => null,
         'taxWkOfApptOfDirector' => null,
         'starter' => null,
+        'employeeWorkplacePostcode' => null,
         'payId' => null,
         'payIdChgd' => null,
         'paymentToANonIndividual' => null,
@@ -109,6 +111,7 @@ class FpsEmployment implements ModelInterface, ArrayAccess, JsonSerializable
         'directorsNIC' => true,
         'taxWkOfApptOfDirector' => true,
         'starter' => false,
+        'employeeWorkplacePostcode' => true,
         'payId' => true,
         'payIdChgd' => false,
         'paymentToANonIndividual' => true,
@@ -211,6 +214,7 @@ class FpsEmployment implements ModelInterface, ArrayAccess, JsonSerializable
         'directorsNIC' => 'directorsNIC',
         'taxWkOfApptOfDirector' => 'taxWkOfApptOfDirector',
         'starter' => 'starter',
+        'employeeWorkplacePostcode' => 'employeeWorkplacePostcode',
         'payId' => 'payId',
         'payIdChgd' => 'payIdChgd',
         'paymentToANonIndividual' => 'paymentToANonIndividual',
@@ -233,6 +237,7 @@ class FpsEmployment implements ModelInterface, ArrayAccess, JsonSerializable
         'directorsNIC' => 'setDirectorsNIC',
         'taxWkOfApptOfDirector' => 'setTaxWkOfApptOfDirector',
         'starter' => 'setStarter',
+        'employeeWorkplacePostcode' => 'setEmployeeWorkplacePostcode',
         'payId' => 'setPayId',
         'payIdChgd' => 'setPayIdChgd',
         'paymentToANonIndividual' => 'setPaymentToANonIndividual',
@@ -255,6 +260,7 @@ class FpsEmployment implements ModelInterface, ArrayAccess, JsonSerializable
         'directorsNIC' => 'getDirectorsNIC',
         'taxWkOfApptOfDirector' => 'getTaxWkOfApptOfDirector',
         'starter' => 'getStarter',
+        'employeeWorkplacePostcode' => 'getEmployeeWorkplacePostcode',
         'payId' => 'getPayId',
         'payIdChgd' => 'getPayIdChgd',
         'paymentToANonIndividual' => 'getPaymentToANonIndividual',
@@ -327,6 +333,7 @@ class FpsEmployment implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('directorsNIC', $data ?? [], null);
         $this->setIfExists('taxWkOfApptOfDirector', $data ?? [], null);
         $this->setIfExists('starter', $data ?? [], null);
+        $this->setIfExists('employeeWorkplacePostcode', $data ?? [], null);
         $this->setIfExists('payId', $data ?? [], null);
         $this->setIfExists('payIdChgd', $data ?? [], null);
         $this->setIfExists('paymentToANonIndividual', $data ?? [], null);
@@ -572,6 +579,40 @@ class FpsEmployment implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable starter cannot be null');
         }
         $this->container['starter'] = $starter;
+
+        return $this;
+    }
+
+    /**
+     * Gets employeeWorkplacePostcode
+     *
+     * @return string|null
+     */
+    public function getEmployeeWorkplacePostcode(): ?string
+    {
+        return $this->container['employeeWorkplacePostcode'];
+    }
+
+    /**
+     * Sets employeeWorkplacePostcode
+     *
+     * @param string|null $employeeWorkplacePostcode employeeWorkplacePostcode
+     *
+     * @return $this
+     */
+    public function setEmployeeWorkplacePostcode(?string $employeeWorkplacePostcode): static
+    {
+        if (is_null($employeeWorkplacePostcode)) {
+            array_push($this->openAPINullablesSetToNull, 'employeeWorkplacePostcode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('employeeWorkplacePostcode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['employeeWorkplacePostcode'] = $employeeWorkplacePostcode;
 
         return $this;
     }

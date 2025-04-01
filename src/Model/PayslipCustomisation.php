@@ -71,6 +71,7 @@ class PayslipCustomisation implements ModelInterface, ArrayAccess, JsonSerializa
         'includeDepartment' => 'bool',
         'includeHealthAndSocialCareMessage' => 'bool',
         'includeBenefits' => 'bool',
+        'removePensionYtd' => 'bool',
         'paperSize' => '\SynergiTech\Staffology\Model\PdfPaperSize',
         'orientation' => '\SynergiTech\Staffology\Model\PdfPaperOrientation',
         'margins' => '\SynergiTech\Staffology\Model\PdfPaperMargins',
@@ -94,6 +95,7 @@ class PayslipCustomisation implements ModelInterface, ArrayAccess, JsonSerializa
         'includeDepartment' => null,
         'includeHealthAndSocialCareMessage' => null,
         'includeBenefits' => null,
+        'removePensionYtd' => null,
         'paperSize' => null,
         'orientation' => null,
         'margins' => null,
@@ -117,6 +119,7 @@ class PayslipCustomisation implements ModelInterface, ArrayAccess, JsonSerializa
         'includeDepartment' => false,
         'includeHealthAndSocialCareMessage' => false,
         'includeBenefits' => false,
+        'removePensionYtd' => false,
         'paperSize' => false,
         'orientation' => false,
         'margins' => false,
@@ -220,6 +223,7 @@ class PayslipCustomisation implements ModelInterface, ArrayAccess, JsonSerializa
         'includeDepartment' => 'includeDepartment',
         'includeHealthAndSocialCareMessage' => 'includeHealthAndSocialCareMessage',
         'includeBenefits' => 'includeBenefits',
+        'removePensionYtd' => 'removePensionYtd',
         'paperSize' => 'paperSize',
         'orientation' => 'orientation',
         'margins' => 'margins',
@@ -243,6 +247,7 @@ class PayslipCustomisation implements ModelInterface, ArrayAccess, JsonSerializa
         'includeDepartment' => 'setIncludeDepartment',
         'includeHealthAndSocialCareMessage' => 'setIncludeHealthAndSocialCareMessage',
         'includeBenefits' => 'setIncludeBenefits',
+        'removePensionYtd' => 'setRemovePensionYtd',
         'paperSize' => 'setPaperSize',
         'orientation' => 'setOrientation',
         'margins' => 'setMargins',
@@ -266,6 +271,7 @@ class PayslipCustomisation implements ModelInterface, ArrayAccess, JsonSerializa
         'includeDepartment' => 'getIncludeDepartment',
         'includeHealthAndSocialCareMessage' => 'getIncludeHealthAndSocialCareMessage',
         'includeBenefits' => 'getIncludeBenefits',
+        'removePensionYtd' => 'getRemovePensionYtd',
         'paperSize' => 'getPaperSize',
         'orientation' => 'getOrientation',
         'margins' => 'getMargins',
@@ -339,6 +345,7 @@ class PayslipCustomisation implements ModelInterface, ArrayAccess, JsonSerializa
         $this->setIfExists('includeDepartment', $data ?? [], null);
         $this->setIfExists('includeHealthAndSocialCareMessage', $data ?? [], null);
         $this->setIfExists('includeBenefits', $data ?? [], null);
+        $this->setIfExists('removePensionYtd', $data ?? [], null);
         $this->setIfExists('paperSize', $data ?? [], null);
         $this->setIfExists('orientation', $data ?? [], null);
         $this->setIfExists('margins', $data ?? [], null);
@@ -710,6 +717,33 @@ class PayslipCustomisation implements ModelInterface, ArrayAccess, JsonSerializa
             throw new InvalidArgumentException('non-nullable includeBenefits cannot be null');
         }
         $this->container['includeBenefits'] = $includeBenefits;
+
+        return $this;
+    }
+
+    /**
+     * Gets removePensionYtd
+     *
+     * @return bool|null
+     */
+    public function getRemovePensionYtd(): ?bool
+    {
+        return $this->container['removePensionYtd'];
+    }
+
+    /**
+     * Sets removePensionYtd
+     *
+     * @param bool|null $removePensionYtd Whether or not to remove the pension YTD column
+     *
+     * @return $this
+     */
+    public function setRemovePensionYtd(?bool $removePensionYtd): static
+    {
+        if (is_null($removePensionYtd)) {
+            throw new InvalidArgumentException('non-nullable removePensionYtd cannot be null');
+        }
+        $this->container['removePensionYtd'] = $removePensionYtd;
 
         return $this;
     }

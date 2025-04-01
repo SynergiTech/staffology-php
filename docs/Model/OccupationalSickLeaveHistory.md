@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **payPercent** | **float** |  |
 **serviceBandFrom** | **int** |  |
 **serviceBandTo** | **int** |  |
+**payRunId** | **int** |  | [optional]
 **roleReference** | **string** |  | [optional]
 **occupationalPolicy** | **string** |  | [optional]
 **id** | **string** | [readonly] The unique id of the object | [optional] [readonly]

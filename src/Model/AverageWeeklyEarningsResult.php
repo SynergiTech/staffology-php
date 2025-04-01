@@ -44,6 +44,10 @@ enum AverageWeeklyEarningsResult: string
     case NOT_ENOUGH_PAYROLL_DATA = 'NotEnoughPayrollData';
 
     case TAX_YEAR_NOT_SUPPORTED = 'TaxYearNotSupported';
+
+    case TWO_RELATED_SCHEMES = 'TwoRelatedSchemes';
+
+    case NEONATAL_CARE_DATE_MISSING = 'NeonatalCareDateMissing';
 }
 
 

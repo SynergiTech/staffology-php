@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **sapytd** | **string** |  | [optional]
 **shPPYTD** | **string** |  | [optional]
 **spbpytd** | **string** |  | [optional]
+**sncpytd** | **string** |  | [optional]
 **trivialCommutationPayment** | [**\SynergiTech\Staffology\Model\FpsEmployeeTrivialCommutationPayment[]**](FpsEmployeeTrivialCommutationPayment.md) |  | [optional]
 **flexibleDrawdown** | [**\SynergiTech\Staffology\Model\FpsEmployeeFlexibleDrawdown**](FpsEmployeeFlexibleDrawdown.md) |  | [optional]
 

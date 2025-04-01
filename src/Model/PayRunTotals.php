@@ -94,6 +94,10 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'flexiDdPensionNonTax' => 'float',
         'flexiDdSeriousIllHealth' => 'float',
         'flexiDdSeriousIllHealthNonTax' => 'float',
+        'flexiDdStandAloneLumpSum' => 'float',
+        'flexiDdStandAloneLumpSumNonTax' => 'float',
+        'flexiDdPensionCommencementExcess' => 'float',
+        'flexiDdPensionCommencementExcessNonTax' => 'float',
         'smp' => 'float',
         'smpNonRti' => 'float',
         'spp' => 'float',
@@ -104,6 +108,8 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNonRti' => 'float',
         'spbp' => 'float',
         'spbpNonRti' => 'float',
+        'sncp' => 'float',
+        'sncpNonRti' => 'float',
         'ssp' => 'float',
         'sspNonRti' => 'float',
         'studentLoanRecovered' => 'float',
@@ -180,6 +186,10 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'flexiDdPensionNonTax' => 'double',
         'flexiDdSeriousIllHealth' => 'double',
         'flexiDdSeriousIllHealthNonTax' => 'double',
+        'flexiDdStandAloneLumpSum' => 'double',
+        'flexiDdStandAloneLumpSumNonTax' => 'double',
+        'flexiDdPensionCommencementExcess' => 'double',
+        'flexiDdPensionCommencementExcessNonTax' => 'double',
         'smp' => 'double',
         'smpNonRti' => 'double',
         'spp' => 'double',
@@ -190,6 +200,8 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNonRti' => 'double',
         'spbp' => 'double',
         'spbpNonRti' => 'double',
+        'sncp' => 'double',
+        'sncpNonRti' => 'double',
         'ssp' => 'double',
         'sspNonRti' => 'double',
         'studentLoanRecovered' => 'double',
@@ -266,6 +278,10 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'flexiDdPensionNonTax' => false,
         'flexiDdSeriousIllHealth' => false,
         'flexiDdSeriousIllHealthNonTax' => false,
+        'flexiDdStandAloneLumpSum' => false,
+        'flexiDdStandAloneLumpSumNonTax' => false,
+        'flexiDdPensionCommencementExcess' => false,
+        'flexiDdPensionCommencementExcessNonTax' => false,
         'smp' => false,
         'smpNonRti' => false,
         'spp' => false,
@@ -276,6 +292,8 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNonRti' => false,
         'spbp' => false,
         'spbpNonRti' => false,
+        'sncp' => false,
+        'sncpNonRti' => false,
         'ssp' => false,
         'sspNonRti' => false,
         'studentLoanRecovered' => false,
@@ -432,6 +450,10 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'flexiDdPensionNonTax' => 'flexiDd_Pension_NonTax',
         'flexiDdSeriousIllHealth' => 'flexiDd_SeriousIllHealth',
         'flexiDdSeriousIllHealthNonTax' => 'flexiDd_SeriousIllHealth_NonTax',
+        'flexiDdStandAloneLumpSum' => 'flexiDd_StandAloneLumpSum',
+        'flexiDdStandAloneLumpSumNonTax' => 'flexiDd_StandAloneLumpSum_NonTax',
+        'flexiDdPensionCommencementExcess' => 'flexiDd_PensionCommencementExcess',
+        'flexiDdPensionCommencementExcessNonTax' => 'flexiDd_PensionCommencementExcess_NonTax',
         'smp' => 'smp',
         'smpNonRti' => 'smpNonRti',
         'spp' => 'spp',
@@ -442,6 +464,8 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNonRti' => 'shppNonRti',
         'spbp' => 'spbp',
         'spbpNonRti' => 'spbpNonRti',
+        'sncp' => 'sncp',
+        'sncpNonRti' => 'sncpNonRti',
         'ssp' => 'ssp',
         'sspNonRti' => 'sspNonRti',
         'studentLoanRecovered' => 'studentLoanRecovered',
@@ -518,6 +542,10 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'flexiDdPensionNonTax' => 'setFlexiDdPensionNonTax',
         'flexiDdSeriousIllHealth' => 'setFlexiDdSeriousIllHealth',
         'flexiDdSeriousIllHealthNonTax' => 'setFlexiDdSeriousIllHealthNonTax',
+        'flexiDdStandAloneLumpSum' => 'setFlexiDdStandAloneLumpSum',
+        'flexiDdStandAloneLumpSumNonTax' => 'setFlexiDdStandAloneLumpSumNonTax',
+        'flexiDdPensionCommencementExcess' => 'setFlexiDdPensionCommencementExcess',
+        'flexiDdPensionCommencementExcessNonTax' => 'setFlexiDdPensionCommencementExcessNonTax',
         'smp' => 'setSmp',
         'smpNonRti' => 'setSmpNonRti',
         'spp' => 'setSpp',
@@ -528,6 +556,8 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNonRti' => 'setShppNonRti',
         'spbp' => 'setSpbp',
         'spbpNonRti' => 'setSpbpNonRti',
+        'sncp' => 'setSncp',
+        'sncpNonRti' => 'setSncpNonRti',
         'ssp' => 'setSsp',
         'sspNonRti' => 'setSspNonRti',
         'studentLoanRecovered' => 'setStudentLoanRecovered',
@@ -604,6 +634,10 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'flexiDdPensionNonTax' => 'getFlexiDdPensionNonTax',
         'flexiDdSeriousIllHealth' => 'getFlexiDdSeriousIllHealth',
         'flexiDdSeriousIllHealthNonTax' => 'getFlexiDdSeriousIllHealthNonTax',
+        'flexiDdStandAloneLumpSum' => 'getFlexiDdStandAloneLumpSum',
+        'flexiDdStandAloneLumpSumNonTax' => 'getFlexiDdStandAloneLumpSumNonTax',
+        'flexiDdPensionCommencementExcess' => 'getFlexiDdPensionCommencementExcess',
+        'flexiDdPensionCommencementExcessNonTax' => 'getFlexiDdPensionCommencementExcessNonTax',
         'smp' => 'getSmp',
         'smpNonRti' => 'getSmpNonRti',
         'spp' => 'getSpp',
@@ -614,6 +648,8 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNonRti' => 'getShppNonRti',
         'spbp' => 'getSpbp',
         'spbpNonRti' => 'getSpbpNonRti',
+        'sncp' => 'getSncp',
+        'sncpNonRti' => 'getSncpNonRti',
         'ssp' => 'getSsp',
         'sspNonRti' => 'getSspNonRti',
         'studentLoanRecovered' => 'getStudentLoanRecovered',
@@ -740,6 +776,10 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('flexiDdPensionNonTax', $data ?? [], null);
         $this->setIfExists('flexiDdSeriousIllHealth', $data ?? [], null);
         $this->setIfExists('flexiDdSeriousIllHealthNonTax', $data ?? [], null);
+        $this->setIfExists('flexiDdStandAloneLumpSum', $data ?? [], null);
+        $this->setIfExists('flexiDdStandAloneLumpSumNonTax', $data ?? [], null);
+        $this->setIfExists('flexiDdPensionCommencementExcess', $data ?? [], null);
+        $this->setIfExists('flexiDdPensionCommencementExcessNonTax', $data ?? [], null);
         $this->setIfExists('smp', $data ?? [], null);
         $this->setIfExists('smpNonRti', $data ?? [], null);
         $this->setIfExists('spp', $data ?? [], null);
@@ -750,6 +790,8 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('shppNonRti', $data ?? [], null);
         $this->setIfExists('spbp', $data ?? [], null);
         $this->setIfExists('spbpNonRti', $data ?? [], null);
+        $this->setIfExists('sncp', $data ?? [], null);
+        $this->setIfExists('sncpNonRti', $data ?? [], null);
         $this->setIfExists('ssp', $data ?? [], null);
         $this->setIfExists('sspNonRti', $data ?? [], null);
         $this->setIfExists('studentLoanRecovered', $data ?? [], null);
@@ -1747,6 +1789,114 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
+     * Gets flexiDdStandAloneLumpSum
+     *
+     * @return float|null
+     */
+    public function getFlexiDdStandAloneLumpSum(): ?float
+    {
+        return $this->container['flexiDdStandAloneLumpSum'];
+    }
+
+    /**
+     * Sets flexiDdStandAloneLumpSum
+     *
+     * @param float|null $flexiDdStandAloneLumpSum [readonly] Value of payments marked as flexibly accessing stand alone lump sum (taxable)
+     *
+     * @return $this
+     */
+    public function setFlexiDdStandAloneLumpSum(?float $flexiDdStandAloneLumpSum): static
+    {
+        if (is_null($flexiDdStandAloneLumpSum)) {
+            throw new InvalidArgumentException('non-nullable flexiDdStandAloneLumpSum cannot be null');
+        }
+        $this->container['flexiDdStandAloneLumpSum'] = $flexiDdStandAloneLumpSum;
+
+        return $this;
+    }
+
+    /**
+     * Gets flexiDdStandAloneLumpSumNonTax
+     *
+     * @return float|null
+     */
+    public function getFlexiDdStandAloneLumpSumNonTax(): ?float
+    {
+        return $this->container['flexiDdStandAloneLumpSumNonTax'];
+    }
+
+    /**
+     * Sets flexiDdStandAloneLumpSumNonTax
+     *
+     * @param float|null $flexiDdStandAloneLumpSumNonTax [readonly] Value of payments marked as flexibly accessing stand alone lump sum (non taxable)
+     *
+     * @return $this
+     */
+    public function setFlexiDdStandAloneLumpSumNonTax(?float $flexiDdStandAloneLumpSumNonTax): static
+    {
+        if (is_null($flexiDdStandAloneLumpSumNonTax)) {
+            throw new InvalidArgumentException('non-nullable flexiDdStandAloneLumpSumNonTax cannot be null');
+        }
+        $this->container['flexiDdStandAloneLumpSumNonTax'] = $flexiDdStandAloneLumpSumNonTax;
+
+        return $this;
+    }
+
+    /**
+     * Gets flexiDdPensionCommencementExcess
+     *
+     * @return float|null
+     */
+    public function getFlexiDdPensionCommencementExcess(): ?float
+    {
+        return $this->container['flexiDdPensionCommencementExcess'];
+    }
+
+    /**
+     * Sets flexiDdPensionCommencementExcess
+     *
+     * @param float|null $flexiDdPensionCommencementExcess [readonly] Value of payments marked as flexibly accessing pension commencement excess lump sum (taxable)
+     *
+     * @return $this
+     */
+    public function setFlexiDdPensionCommencementExcess(?float $flexiDdPensionCommencementExcess): static
+    {
+        if (is_null($flexiDdPensionCommencementExcess)) {
+            throw new InvalidArgumentException('non-nullable flexiDdPensionCommencementExcess cannot be null');
+        }
+        $this->container['flexiDdPensionCommencementExcess'] = $flexiDdPensionCommencementExcess;
+
+        return $this;
+    }
+
+    /**
+     * Gets flexiDdPensionCommencementExcessNonTax
+     *
+     * @return float|null
+     */
+    public function getFlexiDdPensionCommencementExcessNonTax(): ?float
+    {
+        return $this->container['flexiDdPensionCommencementExcessNonTax'];
+    }
+
+    /**
+     * Sets flexiDdPensionCommencementExcessNonTax
+     *
+     * @param float|null $flexiDdPensionCommencementExcessNonTax [readonly] Value of payments marked as flexibly accessing pension commencement excess lump sum (non taxable)
+     *
+     * @return $this
+     */
+    public function setFlexiDdPensionCommencementExcessNonTax(?float $flexiDdPensionCommencementExcessNonTax): static
+    {
+        if (is_null($flexiDdPensionCommencementExcessNonTax)) {
+            throw new InvalidArgumentException('non-nullable flexiDdPensionCommencementExcessNonTax cannot be null');
+        }
+        $this->container['flexiDdPensionCommencementExcessNonTax'] = $flexiDdPensionCommencementExcessNonTax;
+
+        return $this;
+    }
+
+    /**
      * Gets smp
      *
      * @return float|null
@@ -2012,6 +2162,60 @@ class PayRunTotals implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable spbpNonRti cannot be null');
         }
         $this->container['spbpNonRti'] = $spbpNonRti;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncp
+     *
+     * @return float|null
+     */
+    public function getSncp(): ?float
+    {
+        return $this->container['sncp'];
+    }
+
+    /**
+     * Sets sncp
+     *
+     * @param float|null $sncp [readonly] Statutory Neonatal Care Pay
+     *
+     * @return $this
+     */
+    public function setSncp(?float $sncp): static
+    {
+        if (is_null($sncp)) {
+            throw new InvalidArgumentException('non-nullable sncp cannot be null');
+        }
+        $this->container['sncp'] = $sncp;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncpNonRti
+     *
+     * @return float|null
+     */
+    public function getSncpNonRti(): ?float
+    {
+        return $this->container['sncpNonRti'];
+    }
+
+    /**
+     * Sets sncpNonRti
+     *
+     * @param float|null $sncpNonRti [readonly] Statutory Neonatal Care Pay excluded from RTI
+     *
+     * @return $this
+     */
+    public function setSncpNonRti(?float $sncpNonRti): static
+    {
+        if (is_null($sncpNonRti)) {
+            throw new InvalidArgumentException('non-nullable sncpNonRti cannot be null');
+        }
+        $this->container['sncpNonRti'] = $sncpNonRti;
 
         return $this;
     }

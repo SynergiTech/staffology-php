@@ -231,6 +231,7 @@ Class | Method | HTTP request | Description
 *EmployeeApi* | [**minimumWageEmployee**](docs/Api/EmployeeApi.md#minimumwageemployee) | **GET** /employers/{employerId}/employees/{id}/{taxYear}/minimum-wage | Minimum Wage
 *EmployeeApi* | [**payRunEntriesEmployee**](docs/Api/EmployeeApi.md#payrunentriesemployee) | **GET** /employers/{employerId}/employees/{id}/payrunentries/{taxYear} | PayRunEntries for Employee
 *EmployeeApi* | [**reHireEmployee**](docs/Api/EmployeeApi.md#rehireemployee) | **GET** /employers/{employerId}/employees/{id}/rehire | Rehire an Employee
+*EmployeeApi* | [**resetEmployeeHolidayAccrualSchemeEmployee**](docs/Api/EmployeeApi.md#resetemployeeholidayaccrualschemeemployee) | **PUT** /employers/{employerId}/employees/reset-holiday-scheme | Resets employee accrual scheme
 *EmployeeApi* | [**searchByPayrollCodeEmployee**](docs/Api/EmployeeApi.md#searchbypayrollcodeemployee) | **GET** /employers/{employerId}/employees/search/payrollcode | Get Employee by Payroll Code
 *EmployeeApi* | [**searchEmployee**](docs/Api/EmployeeApi.md#searchemployee) | **GET** /employers/{employerId}/employees/search | Search Employer for Employees
 *EmployeeApi* | [**setDepartmentMembershipsEmployee**](docs/Api/EmployeeApi.md#setdepartmentmembershipsemployee) | **PUT** /employers/{employerId}/employees/{id}/departments | Set Employee Departments
@@ -264,6 +265,7 @@ Class | Method | HTTP request | Description
 *EmployerApi* | [**customPayslipEmployer**](docs/Api/EmployerApi.md#custompayslipemployer) | **GET** /employers/{id}/custompayslip | Get Payslip Customisations
 *EmployerApi* | [**deleteEmployer**](docs/Api/EmployerApi.md#deleteemployer) | **DELETE** /employers/{id} | Delete an Employer
 *EmployerApi* | [**getAutomationSettingsEmployer**](docs/Api/EmployerApi.md#getautomationsettingsemployer) | **GET** /employers/{id}/automation | Get Automation Settings
+*EmployerApi* | [**getEmployeesWithAccrualHolidaySchemeEmployer**](docs/Api/EmployerApi.md#getemployeeswithaccrualholidayschemeemployer) | **GET** /employers/{id}/accrual-holiday-scheme/employee | Get List of Employees with Holiday Accrual Scheme
 *EmployerApi* | [**getEmployer**](docs/Api/EmployerApi.md#getemployer) | **GET** /employers/{id} | Get an Employer
 *EmployerApi* | [**getEmployerOpeningBalancesEmployer**](docs/Api/EmployerApi.md#getemployeropeningbalancesemployer) | **GET** /employers/{id}/openingbalances | Get EmployerOpeningBalances
 *EmployerApi* | [**getEvcOptInHistoryEmployer**](docs/Api/EmployerApi.md#getevcoptinhistoryemployer) | **GET** /employers/{id}/evc | Get EVC OptIn History
@@ -558,6 +560,7 @@ Class | Method | HTTP request | Description
 *PaySpineApi* | [**getPaySpineGradePaySpine**](docs/Api/PaySpineApi.md#getpayspinegradepayspine) | **GET** /employers/{employerId}/payspines/{paySpineId}/paygrades/{payGradeId} | Get PaySpine Grade
 *PaySpineApi* | [**getSpinalPointListPaySpine**](docs/Api/PaySpineApi.md#getspinalpointlistpayspine) | **GET** /employers/{employerId}/payspines/{paySpineId}/spinalpoints | List SpinalPoints
 *PaySpineApi* | [**getSpinalPointPaySpine**](docs/Api/PaySpineApi.md#getspinalpointpayspine) | **GET** /employers/{employerId}/payspines/{paySpineId}/spinalpoints/{spinalPointId} | Get SpinalPoint
+*PaySpineApi* | [**getSpinalPointWithAnnualSalaryPaySpine**](docs/Api/PaySpineApi.md#getspinalpointwithannualsalarypayspine) | **GET** /employers/{employerId}/payspines/{id}/employees/{employeeId}/getspinalpointwithannualsalary/{spinalPointId}/{effectiveFrom} | Get Spinal Point With Final Annual Salary
 *PaySpineApi* | [**getSpineAllowanceListPaySpine**](docs/Api/PaySpineApi.md#getspineallowancelistpayspine) | **GET** /employers/{employerId}/payspines/{paySpineId}/allowances | List SpineAllowances
 *PaySpineApi* | [**getSpineAllowancePaySpine**](docs/Api/PaySpineApi.md#getspineallowancepayspine) | **GET** /employers/{employerId}/payspines/{paySpineId}/allowances/{allowanceid} | Get SpineAllowance
 *PaySpineApi* | [**importCsvPaySpine**](docs/Api/PaySpineApi.md#importcsvpayspine) | **POST** /employers/{employerId}/payspines/spinalpoints/import | Import SpinalPoints from csv file
@@ -612,16 +615,20 @@ Class | Method | HTTP request | Description
 *ProcessingNoteApi* | [**getProcessingNote**](docs/Api/ProcessingNoteApi.md#getprocessingnote) | **GET** /employers/{employerId}/payrun/{taxYear}/{payPeriod}/{periodNumber}/processingnotes/{id} | Get a ProcessingNote
 *ProcessingNoteApi* | [**listProcessingNote**](docs/Api/ProcessingNoteApi.md#listprocessingnote) | **GET** /employers/{employerId}/payrun/{taxYear}/{payPeriod}/{periodNumber}/processingnotes | List ProcessingNotes for a PayRun
 *ProcessingNoteApi* | [**setStatusProcessingNote**](docs/Api/ProcessingNoteApi.md#setstatusprocessingnote) | **PUT** /employers/{employerId}/payrun/{taxYear}/{payPeriod}/{periodNumber}/processingnotes/{id}/status | Set a ProcessingNote status
+*ReportBuilderApi* | [**getPaySchedulesByEmployerAndPayDatesReportBuilder**](docs/Api/ReportBuilderApi.md#getpayschedulesbyemployerandpaydatesreportbuilder) | **POST** /reportbuilder/schedulesbydate | List PaySchedules By Date Range
+*ReportBuilderApi* | [**getPaySchedulesByEmployersAndTaxYearsReportBuilder**](docs/Api/ReportBuilderApi.md#getpayschedulesbyemployersandtaxyearsreportbuilder) | **POST** /reportbuilder/schedules | List PaySchedules
 *ReportPackApi* | [**createReportPack**](docs/Api/ReportPackApi.md#createreportpack) | **POST** /employers/{employerId}/reports/packs | Create ReportPack
 *ReportPackApi* | [**deleteReportPack**](docs/Api/ReportPackApi.md#deletereportpack) | **DELETE** /employers/{employerId}/reports/packs/{id} | Delete ReportPack
 *ReportPackApi* | [**getReportPack**](docs/Api/ReportPackApi.md#getreportpack) | **GET** /employers/{employerId}/reports/packs/{id} | Get ReportPack
 *ReportPackApi* | [**indexReportPack**](docs/Api/ReportPackApi.md#indexreportpack) | **GET** /employers/{employerId}/reports/packs | List ReportPacks
 *ReportPackApi* | [**updateReportPack**](docs/Api/ReportPackApi.md#updatereportpack) | **PUT** /employers/{employerId}/reports/packs/{id} | Update ReportPack
-*ReportTemplateApi* | [**createReportTemplate**](docs/Api/ReportTemplateApi.md#createreporttemplate) | **POST** /employers/{employerId}/reporttemplates | Create Report Template (beta)
-*ReportTemplateApi* | [**deleteReportTemplate**](docs/Api/ReportTemplateApi.md#deletereporttemplate) | **DELETE** /employers/{employerId}/reporttemplates/{id} | Delete Report Template (beta)
-*ReportTemplateApi* | [**getReportTemplate**](docs/Api/ReportTemplateApi.md#getreporttemplate) | **GET** /employers/{employerId}/reporttemplates/{id} | Get Report Template (beta)
-*ReportTemplateApi* | [**indexReportTemplate**](docs/Api/ReportTemplateApi.md#indexreporttemplate) | **GET** /employers/{employerId}/reporttemplates | List Report Templates (beta)
-*ReportTemplateApi* | [**updateReportTemplate**](docs/Api/ReportTemplateApi.md#updatereporttemplate) | **PUT** /employers/{employerId}/reporttemplates/{id} | Update Report Template (beta)
+*ReportTemplateApi* | [**createReportTemplate**](docs/Api/ReportTemplateApi.md#createreporttemplate) | **POST** /employers/{employerId}/reporttemplate | Create Report Template (beta)
+*ReportTemplateApi* | [**deleteReportTemplate**](docs/Api/ReportTemplateApi.md#deletereporttemplate) | **DELETE** /employers/{employerId}/reporttemplate/{id} | Delete Report Template (beta)
+*ReportTemplateApi* | [**getContentDictionaryReportTemplate**](docs/Api/ReportTemplateApi.md#getcontentdictionaryreporttemplate) | **GET** /contentdictionary | Get Content Dictionary For Report Template Column Type(beta)
+*ReportTemplateApi* | [**getReportTemplate**](docs/Api/ReportTemplateApi.md#getreporttemplate) | **GET** /employers/{employerId}/reporttemplate/{id} | Get Report Template (beta)
+*ReportTemplateApi* | [**indexReportTemplate**](docs/Api/ReportTemplateApi.md#indexreporttemplate) | **GET** /employers/{employerId}/reporttemplate | List Report Templates (beta)
+*ReportTemplateApi* | [**updateReportTemplate**](docs/Api/ReportTemplateApi.md#updatereporttemplate) | **PUT** /employers/{employerId}/reporttemplate/{id} | Update Report Template (beta)
+*ReportTemplateApi* | [**validateReportTemplateColumnsReportTemplate**](docs/Api/ReportTemplateApi.md#validatereporttemplatecolumnsreporttemplate) | **POST** /column/validate | Validate Report Template Columns(beta)
 *ReportsApi* | [**advancedVarianceReportReports**](docs/Api/ReportsApi.md#advancedvariancereportreports) | **GET** /employers/{employerId}/reports/advancedvariance | Advanced Variance Report
 *ReportsApi* | [**aeAssessmentsReports**](docs/Api/ReportsApi.md#aeassessmentsreports) | **GET** /employers/{employerId}/reports/AeAssessments | AutoEnrolment Assessments
 *ReportsApi* | [**aeoStatementReports**](docs/Api/ReportsApi.md#aeostatementreports) | **GET** /aeo/{employeeId}/{id} | AEO Statement
@@ -645,6 +652,7 @@ Class | Method | HTTP request | Description
 *ReportsApi* | [**employeeBenefitsReports**](docs/Api/ReportsApi.md#employeebenefitsreports) | **GET** /employers/{employerId}/reports/{taxYear}/EmployeeBenefits | Employee Benefits
 *ReportsApi* | [**employeeExportReports**](docs/Api/ReportsApi.md#employeeexportreports) | **GET** /employees | Employee Export Details
 *ReportsApi* | [**employeeLeaveReports**](docs/Api/ReportsApi.md#employeeleavereports) | **GET** /employers/{employerId}/reports/employeeleave | Employee Leave
+*ReportsApi* | [**employeePaymentsReportReports**](docs/Api/ReportsApi.md#employeepaymentsreportreports) | **POST** /employers/{employerId}/reports/{payPeriod}/employeepayments | Employee Payments Report
 *ReportsApi* | [**employeeRoleExportReports**](docs/Api/ReportsApi.md#employeeroleexportreports) | **GET** /employeeroles | Employee Export Roles Details
 *ReportsApi* | [**employerChangesReports**](docs/Api/ReportsApi.md#employerchangesreports) | **GET** /employers/{employerId}/reports/employerchanges | Gets audit changes for a company.
 *ReportsApi* | [**employerExportReports**](docs/Api/ReportsApi.md#employerexportreports) | **GET** /employers/{employerId}/reports/employers | Employer Export
@@ -697,7 +705,7 @@ Class | Method | HTTP request | Description
 *ReportsApi* | [**varianceReportReports**](docs/Api/ReportsApi.md#variancereportreports) | **GET** /employers/{employerId}/reports/{taxYear}/{payPeriod}/variance | Variance Report
 *ReportsApi* | [**warningsReports**](docs/Api/ReportsApi.md#warningsreports) | **GET** /employers/{employerId}/reports/{taxYear}/{payPeriod}/{periodNumber}/PayrollRunWarnings | Export Payroll Run Warnings
 *ReportsApi* | [**ytdReports**](docs/Api/ReportsApi.md#ytdreports) | **GET** /ytd | Year To Date Values
-*ReportsAsyncApi* | [**queueGrossToNetReportReportsAsync**](docs/Api/ReportsAsyncApi.md#queuegrosstonetreportreportsasync) | **POST** /employers/{employerId}/reports-async/gross-to-net | Gross To Net async (beta)
+*ReportsAsyncApi* | [**executeCustomReportReportsAsync**](docs/Api/ReportsAsyncApi.md#executecustomreportreportsasync) | **POST** /employers/{employerId}/reports-async/{templateId} | Execute report template
 *TagApi* | [**createTag**](docs/Api/TagApi.md#createtag) | **POST** /employers/{employerId}/tags | Create Tag
 *TagApi* | [**deleteTag**](docs/Api/TagApi.md#deletetag) | **DELETE** /employers/{employerId}/tags/{code} | Delete Tag (deprecated)
 *TagApi* | [**deleteTagTag**](docs/Api/TagApi.md#deletetagtag) | **DELETE** /employers/{employerId}/tags/tag | Delete Tag
@@ -746,6 +754,7 @@ Class | Method | HTTP request | Description
 *TenantApi* | [**setMonthlyMinimumTenant**](docs/Api/TenantApi.md#setmonthlyminimumtenant) | **PUT** /tenants/{id}/users/{userId}/monthlyminimum | Set Monthly Minimum
 *TenantApi* | [**setPricingTableIdTenant**](docs/Api/TenantApi.md#setpricingtableidtenant) | **PUT** /tenants/{id}/users/{userId}/pricingtable | Set User PricingTableId
 *TenantApi* | [**setTenantTenant**](docs/Api/TenantApi.md#settenanttenant) | **PUT** /tenants/{id}/users/{userId}/tenant | Set User Tenant
+*TenantApi* | [**setUserCanUseRefactoredAeRoutinesTenant**](docs/Api/TenantApi.md#setusercanuserefactoredaeroutinestenant) | **PUT** /tenants/{id}/users/{userId}/refactoredaeroutine | Set CanUseRefactoredAeRoutines flag
 *TenantApi* | [**updateBillTenant**](docs/Api/TenantApi.md#updatebilltenant) | **PUT** /tenants/{id}/bills/{year}/{month}/{billId} | Update Bill
 *TenantApi* | [**updateCssColorsTenant**](docs/Api/TenantApi.md#updatecsscolorstenant) | **PUT** /tenants/{id}/css/colors | Update CSS Colors
 *TenantApi* | [**updateCssTenant**](docs/Api/TenantApi.md#updatecsstenant) | **PUT** /tenants/{id}/css | Update CSS
@@ -828,7 +837,6 @@ Class | Method | HTTP request | Description
 - [AuditEventAction](docs/Model/AuditEventAction.md)
 - [AuthScheme](docs/Model/AuthScheme.md)
 - [AutoEnrolment](docs/Model/AutoEnrolment.md)
-- [AutoEnrolmentSettings](docs/Model/AutoEnrolmentSettings.md)
 - [AutoPilotFinaliseTime](docs/Model/AutoPilotFinaliseTime.md)
 - [AutomationSettings](docs/Model/AutomationSettings.md)
 - [AverageHolidayPayRateReport](docs/Model/AverageHolidayPayRateReport.md)
@@ -893,6 +901,8 @@ Class | Method | HTTP request | Description
 - [ContractAnalysisCategoryResponse](docs/Model/ContractAnalysisCategoryResponse.md)
 - [ContractAutoEnrolmentRequest](docs/Model/ContractAutoEnrolmentRequest.md)
 - [ContractAutoEnrolmentResponse](docs/Model/ContractAutoEnrolmentResponse.md)
+- [ContractAutoEnrolmentSettingsRequest](docs/Model/ContractAutoEnrolmentSettingsRequest.md)
+- [ContractAutoEnrolmentSettingsResponse](docs/Model/ContractAutoEnrolmentSettingsResponse.md)
 - [ContractBankDetails](docs/Model/ContractBankDetails.md)
 - [ContractCisDetailsRequest](docs/Model/ContractCisDetailsRequest.md)
 - [ContractCisDetailsResponse](docs/Model/ContractCisDetailsResponse.md)
@@ -906,6 +916,7 @@ Class | Method | HTTP request | Description
 - [ContractCostCentreJournalOverridesResponseItem](docs/Model/ContractCostCentreJournalOverridesResponseItem.md)
 - [ContractCostCentreJournalOverridesUpdateRequest](docs/Model/ContractCostCentreJournalOverridesUpdateRequest.md)
 - [ContractCreateEmployeeRequest](docs/Model/ContractCreateEmployeeRequest.md)
+- [ContractCustomReportRequest](docs/Model/ContractCustomReportRequest.md)
 - [ContractDepartmentJournalOverridesRequest](docs/Model/ContractDepartmentJournalOverridesRequest.md)
 - [ContractDepartmentJournalOverridesResponse](docs/Model/ContractDepartmentJournalOverridesResponse.md)
 - [ContractDepartmentJournalOverridesResponseItem](docs/Model/ContractDepartmentJournalOverridesResponseItem.md)
@@ -914,6 +925,9 @@ Class | Method | HTTP request | Description
 - [ContractDepartmentResponse](docs/Model/ContractDepartmentResponse.md)
 - [ContractDirectorshipDetails](docs/Model/ContractDirectorshipDetails.md)
 - [ContractEmployeeItem](docs/Model/ContractEmployeeItem.md)
+- [ContractEmployeeLeaveSettingsRequest](docs/Model/ContractEmployeeLeaveSettingsRequest.md)
+- [ContractEmployeeLeaveSettingsResponse](docs/Model/ContractEmployeeLeaveSettingsResponse.md)
+- [ContractEmployeePaymentsReportRequest](docs/Model/ContractEmployeePaymentsReportRequest.md)
 - [ContractEmployeeResponse](docs/Model/ContractEmployeeResponse.md)
 - [ContractEmployeeRoleAnalysisCategoryCodeRequest](docs/Model/ContractEmployeeRoleAnalysisCategoryCodeRequest.md)
 - [ContractEmployeeRoleAnalysisCategoryCodeResponse](docs/Model/ContractEmployeeRoleAnalysisCategoryCodeResponse.md)
@@ -923,10 +937,19 @@ Class | Method | HTTP request | Description
 - [ContractEmployeeRoleWorkingPatternResponse](docs/Model/ContractEmployeeRoleWorkingPatternResponse.md)
 - [ContractEmployeeRoleWorkingPatternResponseItem](docs/Model/ContractEmployeeRoleWorkingPatternResponseItem.md)
 - [ContractEmployerBase](docs/Model/ContractEmployerBase.md)
+- [ContractEmployerLeaveSettingsRequest](docs/Model/ContractEmployerLeaveSettingsRequest.md)
+- [ContractEmployerLeaveSettingsResponse](docs/Model/ContractEmployerLeaveSettingsResponse.md)
+- [ContractEmployerRequest](docs/Model/ContractEmployerRequest.md)
+- [ContractEmployerResponse](docs/Model/ContractEmployerResponse.md)
+- [ContractEmployerSettingsRequest](docs/Model/ContractEmployerSettingsRequest.md)
+- [ContractEmployerSettingsResponse](docs/Model/ContractEmployerSettingsResponse.md)
 - [ContractEmploymentDetailsRequest](docs/Model/ContractEmploymentDetailsRequest.md)
 - [ContractEmploymentDetailsResponse](docs/Model/ContractEmploymentDetailsResponse.md)
+- [ContractExternalDataCompanyRequest](docs/Model/ContractExternalDataCompanyRequest.md)
+- [ContractExternalDataCompanyResponse](docs/Model/ContractExternalDataCompanyResponse.md)
 - [ContractFpsFields](docs/Model/ContractFpsFields.md)
-- [ContractGrossToNetReportRequest](docs/Model/ContractGrossToNetReportRequest.md)
+- [ContractHmrcDetailsRequest](docs/Model/ContractHmrcDetailsRequest.md)
+- [ContractHmrcDetailsResponse](docs/Model/ContractHmrcDetailsResponse.md)
 - [ContractHolidayEntitlementRequest](docs/Model/ContractHolidayEntitlementRequest.md)
 - [ContractHolidayEntitlementResponse](docs/Model/ContractHolidayEntitlementResponse.md)
 - [ContractHolidayEntitlementUpdateRequest](docs/Model/ContractHolidayEntitlementUpdateRequest.md)
@@ -942,8 +965,6 @@ Class | Method | HTTP request | Description
 - [ContractJournalTokenResponse](docs/Model/ContractJournalTokenResponse.md)
 - [ContractJournalTokenResponseItem](docs/Model/ContractJournalTokenResponseItem.md)
 - [ContractLeaveImportRequest](docs/Model/ContractLeaveImportRequest.md)
-- [ContractLeaveSettingsRequest](docs/Model/ContractLeaveSettingsRequest.md)
-- [ContractLeaveSettingsResponse](docs/Model/ContractLeaveSettingsResponse.md)
 - [ContractLeaverDetails](docs/Model/ContractLeaverDetails.md)
 - [ContractLondonAllowanceRequest](docs/Model/ContractLondonAllowanceRequest.md)
 - [ContractLondonAllowanceResponse](docs/Model/ContractLondonAllowanceResponse.md)
@@ -962,7 +983,11 @@ Class | Method | HTTP request | Description
 - [ContractPayOptionsImportRequest](docs/Model/ContractPayOptionsImportRequest.md)
 - [ContractPayOptionsRequest](docs/Model/ContractPayOptionsRequest.md)
 - [ContractPayOptionsResponse](docs/Model/ContractPayOptionsResponse.md)
+- [ContractPayRunResponseItem](docs/Model/ContractPayRunResponseItem.md)
 - [ContractPayRunStateHistoryResponse](docs/Model/ContractPayRunStateHistoryResponse.md)
+- [ContractPayScheduleByDateRangeRequest](docs/Model/ContractPayScheduleByDateRangeRequest.md)
+- [ContractPayScheduleRequest](docs/Model/ContractPayScheduleRequest.md)
+- [ContractPayScheduleResponseItem](docs/Model/ContractPayScheduleResponseItem.md)
 - [ContractPaySpineGradeRequest](docs/Model/ContractPaySpineGradeRequest.md)
 - [ContractPaySpineGradeResponse](docs/Model/ContractPaySpineGradeResponse.md)
 - [ContractPaySpineRequest](docs/Model/ContractPaySpineRequest.md)
@@ -977,13 +1002,39 @@ Class | Method | HTTP request | Description
 - [ContractPayrollSquadRequest](docs/Model/ContractPayrollSquadRequest.md)
 - [ContractPayrollSquadResponse](docs/Model/ContractPayrollSquadResponse.md)
 - [ContractPendingLettersCountResponse](docs/Model/ContractPendingLettersCountResponse.md)
+- [ContractPensionAdministratorRequest](docs/Model/ContractPensionAdministratorRequest.md)
+- [ContractPensionAdministratorResponse](docs/Model/ContractPensionAdministratorResponse.md)
+- [ContractPensionProviderRequest](docs/Model/ContractPensionProviderRequest.md)
+- [ContractPensionProviderResponse](docs/Model/ContractPensionProviderResponse.md)
+- [ContractPensionSchemeNominalCodeMappingRequest](docs/Model/ContractPensionSchemeNominalCodeMappingRequest.md)
+- [ContractPensionSchemeNominalCodeMappingResponse](docs/Model/ContractPensionSchemeNominalCodeMappingResponse.md)
+- [ContractPensionSchemeReportOptionsLgpsCivicaUpmRequest](docs/Model/ContractPensionSchemeReportOptionsLgpsCivicaUpmRequest.md)
+- [ContractPensionSchemeReportOptionsLgpsCivicaUpmResponse](docs/Model/ContractPensionSchemeReportOptionsLgpsCivicaUpmResponse.md)
+- [ContractPensionSchemeReportOptionsLgpsIConnectRequest](docs/Model/ContractPensionSchemeReportOptionsLgpsIConnectRequest.md)
+- [ContractPensionSchemeReportOptionsLgpsIConnectResponse](docs/Model/ContractPensionSchemeReportOptionsLgpsIConnectResponse.md)
+- [ContractPensionSchemeRequest](docs/Model/ContractPensionSchemeRequest.md)
+- [ContractPensionSchemeResponse](docs/Model/ContractPensionSchemeResponse.md)
+- [ContractPensionSelectionRequest](docs/Model/ContractPensionSelectionRequest.md)
+- [ContractPensionSelectionResponse](docs/Model/ContractPensionSelectionResponse.md)
 - [ContractPensionerPayroll](docs/Model/ContractPensionerPayroll.md)
 - [ContractPersonalDetailsRequest](docs/Model/ContractPersonalDetailsRequest.md)
 - [ContractPersonalDetailsResponse](docs/Model/ContractPersonalDetailsResponse.md)
 - [ContractReapplyDpsNoticeResponse](docs/Model/ContractReapplyDpsNoticeResponse.md)
+- [ContractReportTemplateColumnRequest](docs/Model/ContractReportTemplateColumnRequest.md)
+- [ContractReportTemplateColumnResponse](docs/Model/ContractReportTemplateColumnResponse.md)
+- [ContractReportTemplateContentDictionaryResponse](docs/Model/ContractReportTemplateContentDictionaryResponse.md)
+- [ContractReportTemplateContentResponse](docs/Model/ContractReportTemplateContentResponse.md)
+- [ContractReportTemplateRequest](docs/Model/ContractReportTemplateRequest.md)
+- [ContractReportTemplateResponse](docs/Model/ContractReportTemplateResponse.md)
 - [ContractRightToWork](docs/Model/ContractRightToWork.md)
+- [ContractRtiAgentRequest](docs/Model/ContractRtiAgentRequest.md)
+- [ContractRtiAgentResponse](docs/Model/ContractRtiAgentResponse.md)
+- [ContractRtiContactRequest](docs/Model/ContractRtiContactRequest.md)
+- [ContractRtiContactResponse](docs/Model/ContractRtiContactResponse.md)
 - [ContractRtiEmployeeAddress](docs/Model/ContractRtiEmployeeAddress.md)
 - [ContractRtiEmployeeName](docs/Model/ContractRtiEmployeeName.md)
+- [ContractRtiSubmissionSettingsRequest](docs/Model/ContractRtiSubmissionSettingsRequest.md)
+- [ContractRtiSubmissionSettingsResponse](docs/Model/ContractRtiSubmissionSettingsResponse.md)
 - [ContractShiftWorkingPatternDayRequest](docs/Model/ContractShiftWorkingPatternDayRequest.md)
 - [ContractShiftWorkingPatternDayResponse](docs/Model/ContractShiftWorkingPatternDayResponse.md)
 - [ContractSpinalPointRequest](docs/Model/ContractSpinalPointRequest.md)
@@ -998,8 +1049,12 @@ Class | Method | HTTP request | Description
 - [ContractTermCalendarResponse](docs/Model/ContractTermCalendarResponse.md)
 - [ContractTermCalendarYearRequest](docs/Model/ContractTermCalendarYearRequest.md)
 - [ContractTermCalendarYearResponse](docs/Model/ContractTermCalendarYearResponse.md)
+- [ContractUmbrellaSettingsRequest](docs/Model/ContractUmbrellaSettingsRequest.md)
+- [ContractUmbrellaSettingsResponse](docs/Model/ContractUmbrellaSettingsResponse.md)
 - [ContractUpdateEmployeeRequest](docs/Model/ContractUpdateEmployeeRequest.md)
 - [ContractVeteranDetails](docs/Model/ContractVeteranDetails.md)
+- [ContractWorkerGroupRequest](docs/Model/ContractWorkerGroupRequest.md)
+- [ContractWorkerGroupResponse](docs/Model/ContractWorkerGroupResponse.md)
 - [ContractWorkingPatternRequest](docs/Model/ContractWorkingPatternRequest.md)
 - [ContractWorkingPatternResponse](docs/Model/ContractWorkingPatternResponse.md)
 - [ContractYearsServiceEntitlementRequest](docs/Model/ContractYearsServiceEntitlementRequest.md)
@@ -1014,6 +1069,8 @@ Class | Method | HTTP request | Description
 - [Country](docs/Model/Country.md)
 - [CsvFileFormat](docs/Model/CsvFileFormat.md)
 - [DayOfWeek](docs/Model/DayOfWeek.md)
+- [DaysBeforePayday](docs/Model/DaysBeforePayday.md)
+- [DecimalDecimalBooleanPensionRuleValueTuple](docs/Model/DecimalDecimalBooleanPensionRuleValueTuple.md)
 - [DecimalTaxYearConfigPrimitiveValue](docs/Model/DecimalTaxYearConfigPrimitiveValue.md)
 - [DeferalPeriodType](docs/Model/DeferalPeriodType.md)
 - [Department](docs/Model/Department.md)
@@ -1034,6 +1091,9 @@ Class | Method | HTTP request | Description
 - [EmployeeLeaveReportReportResponse](docs/Model/EmployeeLeaveReportReportResponse.md)
 - [EmployeeNiYtdValues](docs/Model/EmployeeNiYtdValues.md)
 - [EmployeePayRunTotal](docs/Model/EmployeePayRunTotal.md)
+- [EmployeePaymentsReport](docs/Model/EmployeePaymentsReport.md)
+- [EmployeePaymentsReportLine](docs/Model/EmployeePaymentsReportLine.md)
+- [EmployeePaymentsReportReportResponse](docs/Model/EmployeePaymentsReportReportResponse.md)
 - [EmployeeRole](docs/Model/EmployeeRole.md)
 - [EmployeeRoleAnalysisCategoryCode](docs/Model/EmployeeRoleAnalysisCategoryCode.md)
 - [EmployeeRolePayItem](docs/Model/EmployeeRolePayItem.md)
@@ -1041,16 +1101,16 @@ Class | Method | HTTP request | Description
 - [EmployeeSortBy](docs/Model/EmployeeSortBy.md)
 - [EmployeeStatus](docs/Model/EmployeeStatus.md)
 - [EmployeeYtdValues](docs/Model/EmployeeYtdValues.md)
-- [Employer](docs/Model/Employer.md)
 - [EmployerDefaults](docs/Model/EmployerDefaults.md)
 - [EmployerEmail](docs/Model/EmployerEmail.md)
 - [EmployerEvcOptInHistory](docs/Model/EmployerEvcOptInHistory.md)
 - [EmployerGroup](docs/Model/EmployerGroup.md)
 - [EmployerGroupMembership](docs/Model/EmployerGroupMembership.md)
 - [EmployerItem](docs/Model/EmployerItem.md)
+- [EmployerListType](docs/Model/EmployerListType.md)
 - [EmployerOpeningBalances](docs/Model/EmployerOpeningBalances.md)
 - [EmployerPensionContribution](docs/Model/EmployerPensionContribution.md)
-- [EmployerSettings](docs/Model/EmployerSettings.md)
+- [EmployerSortBy](docs/Model/EmployerSortBy.md)
 - [EmployerTemplate](docs/Model/EmployerTemplate.md)
 - [EmployerTemplateType](docs/Model/EmployerTemplateType.md)
 - [EmploymentDetails](docs/Model/EmploymentDetails.md)
@@ -1192,6 +1252,7 @@ Class | Method | HTTP request | Description
 - [NationalInsuranceCalculationPeriodValues](docs/Model/NationalInsuranceCalculationPeriodValues.md)
 - [NationalInsuranceCode](docs/Model/NationalInsuranceCode.md)
 - [NationalMinimumWage](docs/Model/NationalMinimumWage.md)
+- [NeonatalCarePaymentTier](docs/Model/NeonatalCarePaymentTier.md)
 - [NiLetterError](docs/Model/NiLetterError.md)
 - [NiLetterValidationReport](docs/Model/NiLetterValidationReport.md)
 - [NiLetterValidationReportLine](docs/Model/NiLetterValidationReportLine.md)
@@ -1330,6 +1391,8 @@ Class | Method | HTTP request | Description
 - [PayslipCustomisation](docs/Model/PayslipCustomisation.md)
 - [PayslipLine](docs/Model/PayslipLine.md)
 - [PayslipLineType](docs/Model/PayslipLineType.md)
+- [PayslipReleasePaymentDateRule](docs/Model/PayslipReleasePaymentDateRule.md)
+- [PayslipReleaseTime](docs/Model/PayslipReleaseTime.md)
 - [PayslipReleaseType](docs/Model/PayslipReleaseType.md)
 - [PayslipReportResponse](docs/Model/PayslipReportResponse.md)
 - [PdfPaperMargins](docs/Model/PdfPaperMargins.md)
@@ -1356,7 +1419,6 @@ Class | Method | HTTP request | Description
 - [PensionSchemeNominalCodeMapping](docs/Model/PensionSchemeNominalCodeMapping.md)
 - [PensionSchemeReportOptionsLgpsCivicaUpm](docs/Model/PensionSchemeReportOptionsLgpsCivicaUpm.md)
 - [PensionSchemeReportOptionsLgpsIConnect](docs/Model/PensionSchemeReportOptionsLgpsIConnect.md)
-- [PensionSelection](docs/Model/PensionSelection.md)
 - [PensionSummary](docs/Model/PensionSummary.md)
 - [PensionSummaryCostBreakdown](docs/Model/PensionSummaryCostBreakdown.md)
 - [PensionablePayDefinition](docs/Model/PensionablePayDefinition.md)
@@ -1376,7 +1438,7 @@ Class | Method | HTTP request | Description
 - [ReportPack](docs/Model/ReportPack.md)
 - [ReportResponse](docs/Model/ReportResponse.md)
 - [ReportSortBy](docs/Model/ReportSortBy.md)
-- [ReportTemplate](docs/Model/ReportTemplate.md)
+- [ReportTemplateColumnType](docs/Model/ReportTemplateColumnType.md)
 - [RightToWork](docs/Model/RightToWork.md)
 - [RightToWorkDocumentType](docs/Model/RightToWorkDocumentType.md)
 - [RightToWorkReport](docs/Model/RightToWorkReport.md)
@@ -1408,6 +1470,7 @@ Class | Method | HTTP request | Description
 - [StatutoryPayReportLine](docs/Model/StatutoryPayReportLine.md)
 - [StatutoryPayReportReportResponse](docs/Model/StatutoryPayReportReportResponse.md)
 - [StringDecimalKeyValuePair](docs/Model/StringDecimalKeyValuePair.md)
+- [StringStringDecimalValueTuple](docs/Model/StringStringDecimalValueTuple.md)
 - [StringStringKeyValuePair](docs/Model/StringStringKeyValuePair.md)
 - [StudentLoan](docs/Model/StudentLoan.md)
 - [StudentLoanRecovered](docs/Model/StudentLoanRecovered.md)
@@ -1439,7 +1502,6 @@ Class | Method | HTTP request | Description
 - [UmbrellaReconciliationReport](docs/Model/UmbrellaReconciliationReport.md)
 - [UmbrellaReconciliationReportLine](docs/Model/UmbrellaReconciliationReportLine.md)
 - [UmbrellaReconciliationReportReportResponse](docs/Model/UmbrellaReconciliationReportReportResponse.md)
-- [UmbrellaSettings](docs/Model/UmbrellaSettings.md)
 - [UsageBill](docs/Model/UsageBill.md)
 - [User](docs/Model/User.md)
 - [UserAuthorization](docs/Model/UserAuthorization.md)
@@ -1496,5 +1558,5 @@ This PHP package is automatically generated by the [OpenAPI Generator](https://o
 
 - API version: `v1`
     - Package version: `1.0.0`
-    - Generator version: `7.11.0-SNAPSHOT`
+    - Generator version: `7.13.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpNextgenClientCodegen`

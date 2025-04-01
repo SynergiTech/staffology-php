@@ -779,6 +779,8 @@ class EmployeeApi
      * @param  string $id The Employee Id. (required)
      * @param  \DateTime|null $date The date at which you want to calculate the earnings from. (optional)
      * @param  \SynergiTech\Staffology\Model\LeaveType|null $leaveType  (optional)
+     * @param  \DateTime|null $secondaryDate  (optional)
+     * @param  \DateTime|null $tertiaryDate  (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['averageWeeklyEarningsEmployee'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -790,10 +792,12 @@ class EmployeeApi
         string $id,
         ?\DateTime $date = null,
         ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\DateTime $secondaryDate = null,
+        ?\DateTime $tertiaryDate = null,
         string $contentType = self::contentTypes['averageWeeklyEarningsEmployee'][0]
     ): \SynergiTech\Staffology\Model\AverageWeeklyEarnings
     {
-        list($response) = $this->averageWeeklyEarningsEmployeeWithHttpInfo($employerId, $id, $date, $leaveType, $contentType);
+        list($response) = $this->averageWeeklyEarningsEmployeeWithHttpInfo($employerId, $id, $date, $leaveType, $secondaryDate, $tertiaryDate, $contentType);
         return $response;
     }
 
@@ -806,6 +810,8 @@ class EmployeeApi
      * @param  string $id The Employee Id. (required)
      * @param  \DateTime|null $date The date at which you want to calculate the earnings from. (optional)
      * @param  \SynergiTech\Staffology\Model\LeaveType|null $leaveType  (optional)
+     * @param  \DateTime|null $secondaryDate  (optional)
+     * @param  \DateTime|null $tertiaryDate  (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['averageWeeklyEarningsEmployee'] to see the possible values for this operation
      *
      * @throws ApiException on non-2xx response or if the response body is not in the expected format
@@ -817,10 +823,12 @@ class EmployeeApi
         string $id,
         ?\DateTime $date = null,
         ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\DateTime $secondaryDate = null,
+        ?\DateTime $tertiaryDate = null,
         string $contentType = self::contentTypes['averageWeeklyEarningsEmployee'][0]
     ): array
     {
-        $request = $this->averageWeeklyEarningsEmployeeRequest($employerId, $id, $date, $leaveType, $contentType);
+        $request = $this->averageWeeklyEarningsEmployeeRequest($employerId, $id, $date, $leaveType, $secondaryDate, $tertiaryDate, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -940,6 +948,8 @@ class EmployeeApi
      * @param  string $id The Employee Id. (required)
      * @param  \DateTime|null $date The date at which you want to calculate the earnings from. (optional)
      * @param  \SynergiTech\Staffology\Model\LeaveType|null $leaveType  (optional)
+     * @param  \DateTime|null $secondaryDate  (optional)
+     * @param  \DateTime|null $tertiaryDate  (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['averageWeeklyEarningsEmployee'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -950,10 +960,12 @@ class EmployeeApi
         string $id,
         ?\DateTime $date = null,
         ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\DateTime $secondaryDate = null,
+        ?\DateTime $tertiaryDate = null,
         string $contentType = self::contentTypes['averageWeeklyEarningsEmployee'][0]
     ): PromiseInterface
     {
-        return $this->averageWeeklyEarningsEmployeeAsyncWithHttpInfo($employerId, $id, $date, $leaveType, $contentType)
+        return $this->averageWeeklyEarningsEmployeeAsyncWithHttpInfo($employerId, $id, $date, $leaveType, $secondaryDate, $tertiaryDate, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -970,6 +982,8 @@ class EmployeeApi
      * @param  string $id The Employee Id. (required)
      * @param  \DateTime|null $date The date at which you want to calculate the earnings from. (optional)
      * @param  \SynergiTech\Staffology\Model\LeaveType|null $leaveType  (optional)
+     * @param  \DateTime|null $secondaryDate  (optional)
+     * @param  \DateTime|null $tertiaryDate  (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['averageWeeklyEarningsEmployee'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -980,11 +994,13 @@ class EmployeeApi
         string $id,
         ?\DateTime $date = null,
         ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\DateTime $secondaryDate = null,
+        ?\DateTime $tertiaryDate = null,
         string $contentType = self::contentTypes['averageWeeklyEarningsEmployee'][0]
     ): PromiseInterface
     {
         $returnType = '\SynergiTech\Staffology\Model\AverageWeeklyEarnings';
-        $request = $this->averageWeeklyEarningsEmployeeRequest($employerId, $id, $date, $leaveType, $contentType);
+        $request = $this->averageWeeklyEarningsEmployeeRequest($employerId, $id, $date, $leaveType, $secondaryDate, $tertiaryDate, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1029,6 +1045,8 @@ class EmployeeApi
      * @param  string $id The Employee Id. (required)
      * @param  \DateTime|null $date The date at which you want to calculate the earnings from. (optional)
      * @param  \SynergiTech\Staffology\Model\LeaveType|null $leaveType  (optional)
+     * @param  \DateTime|null $secondaryDate  (optional)
+     * @param  \DateTime|null $tertiaryDate  (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['averageWeeklyEarningsEmployee'] to see the possible values for this operation
      *
      * @throws InvalidArgumentException
@@ -1039,6 +1057,8 @@ class EmployeeApi
         string $id,
         ?\DateTime $date = null,
         ?\SynergiTech\Staffology\Model\LeaveType $leaveType = null,
+        ?\DateTime $secondaryDate = null,
+        ?\DateTime $tertiaryDate = null,
         string $contentType = self::contentTypes['averageWeeklyEarningsEmployee'][0]
     ): Request
     {
@@ -1056,6 +1076,8 @@ class EmployeeApi
                 'Missing the required parameter $id when calling averageWeeklyEarningsEmployee'
             );
         }
+
+
 
 
 
@@ -1081,6 +1103,24 @@ class EmployeeApi
             $leaveType?->value,
             'leaveType', // param base name
             'LeaveType', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $secondaryDate,
+            'secondaryDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $tertiaryDate,
+            'tertiaryDate', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

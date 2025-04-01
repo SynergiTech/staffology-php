@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **sap** | **float** |  | [optional]
 **shpp** | **float** |  | [optional]
 **spbp** | **float** |  | [optional]
+**sncp** | **float** |  | [optional]
 **realTimeClass1ANi** | **float** |  | [optional]
 **terminationPayments** | **float** |  | [optional]
 **mapsMiles** | **int** |  | [optional]

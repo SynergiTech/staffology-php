@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **pensionablePay** | **float** |  |
 **additionalVoluntaryContribution** | **float** |  |
 **assumedPensionablePay** | **float** |  |
+**isPreviousTaxYearRefund** | **bool** |  |
 **tierName** | **string** |  | [optional]
 **tierRate** | **float** |  | [optional]
 **employee** | [**\SynergiTech\Staffology\Model\Item**](Item.md) |  | [optional]

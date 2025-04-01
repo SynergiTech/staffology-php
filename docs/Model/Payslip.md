@@ -35,5 +35,6 @@ Name | Type | Description | Notes
 **departmentMemberships** | [**\SynergiTech\Staffology\Model\DepartmentMembership[]**](DepartmentMembership.md) | The Employee Department Membership(s) by role only populated when creating journals | [optional]
 **pensionContributionsByRole** | [**\SynergiTech\Staffology\Model\Item[]**](Item.md) | The Pension Employer contribution by role only populated when creating journals | [optional]
 **employerPensionContributions** | [**\SynergiTech\Staffology\Model\EmployerPensionContribution[]**](EmployerPensionContribution.md) | [readonly] The list of Employer Pension Contribution(s) | [optional]
+**employeePensionContributions** | [**array<string,\SynergiTech\Staffology\Model\DecimalDecimalBooleanPensionRuleValueTuple>**](DecimalDecimalBooleanPensionRuleValueTuple.md) | Dictionary of Pension Contributions(s) Keyed on PensionId containing Employee Pension and AVC Contribution(s) Bfd, AVC indicator and pension rule | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

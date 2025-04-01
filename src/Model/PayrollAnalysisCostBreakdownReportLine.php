@@ -61,8 +61,8 @@ class PayrollAnalysisCostBreakdownReportLine implements ModelInterface, ArrayAcc
     protected static array $openAPITypes = [
         'payrollCode' => 'string',
         'lastName' => 'string',
-        'department' => '\SynergiTech\Staffology\Model\StringDecimalKeyValuePair',
-        'costCentre' => '\SynergiTech\Staffology\Model\StringDecimalKeyValuePair',
+        'department' => '\SynergiTech\Staffology\Model\StringStringDecimalValueTuple',
+        'costCentre' => '\SynergiTech\Staffology\Model\StringStringDecimalValueTuple',
         'employeeRoleAnalysisCategory' => 'array<string,\SynergiTech\Staffology\Model\StringDecimalKeyValuePair>',
         'lines' => '\SynergiTech\Staffology\Model\PayrollAnalysisCostBreakdownReportValue[]',
         'totalPay' => 'float',
@@ -520,9 +520,9 @@ class PayrollAnalysisCostBreakdownReportLine implements ModelInterface, ArrayAcc
     /**
      * Gets department
      *
-     * @return \SynergiTech\Staffology\Model\StringDecimalKeyValuePair|null
+     * @return \SynergiTech\Staffology\Model\StringStringDecimalValueTuple|null
      */
-    public function getDepartment(): ?\SynergiTech\Staffology\Model\StringDecimalKeyValuePair
+    public function getDepartment(): ?\SynergiTech\Staffology\Model\StringStringDecimalValueTuple
     {
         return $this->container['department'];
     }
@@ -530,11 +530,11 @@ class PayrollAnalysisCostBreakdownReportLine implements ModelInterface, ArrayAcc
     /**
      * Sets department
      *
-     * @param \SynergiTech\Staffology\Model\StringDecimalKeyValuePair|null $department department
+     * @param \SynergiTech\Staffology\Model\StringStringDecimalValueTuple|null $department department
      *
      * @return $this
      */
-    public function setDepartment(?\SynergiTech\Staffology\Model\StringDecimalKeyValuePair $department): static
+    public function setDepartment(?\SynergiTech\Staffology\Model\StringStringDecimalValueTuple $department): static
     {
         if (is_null($department)) {
             throw new InvalidArgumentException('non-nullable department cannot be null');
@@ -547,9 +547,9 @@ class PayrollAnalysisCostBreakdownReportLine implements ModelInterface, ArrayAcc
     /**
      * Gets costCentre
      *
-     * @return \SynergiTech\Staffology\Model\StringDecimalKeyValuePair|null
+     * @return \SynergiTech\Staffology\Model\StringStringDecimalValueTuple|null
      */
-    public function getCostCentre(): ?\SynergiTech\Staffology\Model\StringDecimalKeyValuePair
+    public function getCostCentre(): ?\SynergiTech\Staffology\Model\StringStringDecimalValueTuple
     {
         return $this->container['costCentre'];
     }
@@ -557,11 +557,11 @@ class PayrollAnalysisCostBreakdownReportLine implements ModelInterface, ArrayAcc
     /**
      * Sets costCentre
      *
-     * @param \SynergiTech\Staffology\Model\StringDecimalKeyValuePair|null $costCentre costCentre
+     * @param \SynergiTech\Staffology\Model\StringStringDecimalValueTuple|null $costCentre costCentre
      *
      * @return $this
      */
-    public function setCostCentre(?\SynergiTech\Staffology\Model\StringDecimalKeyValuePair $costCentre): static
+    public function setCostCentre(?\SynergiTech\Staffology\Model\StringStringDecimalValueTuple $costCentre): static
     {
         if (is_null($costCentre)) {
             throw new InvalidArgumentException('non-nullable costCentre cannot be null');

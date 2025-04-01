@@ -75,6 +75,7 @@ class OpeningBalancesTotals implements ModelInterface, ArrayAccess, JsonSerializ
         'sap' => 'float',
         'shpp' => 'float',
         'spbp' => 'float',
+        'sncp' => 'float',
         'realTimeClass1ANi' => 'float',
         'terminationPayments' => 'float',
         'mapsMiles' => 'int',
@@ -107,6 +108,7 @@ class OpeningBalancesTotals implements ModelInterface, ArrayAccess, JsonSerializ
         'sap' => 'double',
         'shpp' => 'double',
         'spbp' => 'double',
+        'sncp' => 'double',
         'realTimeClass1ANi' => 'double',
         'terminationPayments' => 'double',
         'mapsMiles' => 'int32',
@@ -139,6 +141,7 @@ class OpeningBalancesTotals implements ModelInterface, ArrayAccess, JsonSerializ
         'sap' => false,
         'shpp' => false,
         'spbp' => false,
+        'sncp' => false,
         'realTimeClass1ANi' => false,
         'terminationPayments' => false,
         'mapsMiles' => false,
@@ -251,6 +254,7 @@ class OpeningBalancesTotals implements ModelInterface, ArrayAccess, JsonSerializ
         'sap' => 'sap',
         'shpp' => 'shpp',
         'spbp' => 'spbp',
+        'sncp' => 'sncp',
         'realTimeClass1ANi' => 'realTimeClass1ANi',
         'terminationPayments' => 'terminationPayments',
         'mapsMiles' => 'mapsMiles',
@@ -283,6 +287,7 @@ class OpeningBalancesTotals implements ModelInterface, ArrayAccess, JsonSerializ
         'sap' => 'setSap',
         'shpp' => 'setShpp',
         'spbp' => 'setSpbp',
+        'sncp' => 'setSncp',
         'realTimeClass1ANi' => 'setRealTimeClass1ANi',
         'terminationPayments' => 'setTerminationPayments',
         'mapsMiles' => 'setMapsMiles',
@@ -315,6 +320,7 @@ class OpeningBalancesTotals implements ModelInterface, ArrayAccess, JsonSerializ
         'sap' => 'getSap',
         'shpp' => 'getShpp',
         'spbp' => 'getSpbp',
+        'sncp' => 'getSncp',
         'realTimeClass1ANi' => 'getRealTimeClass1ANi',
         'terminationPayments' => 'getTerminationPayments',
         'mapsMiles' => 'getMapsMiles',
@@ -397,6 +403,7 @@ class OpeningBalancesTotals implements ModelInterface, ArrayAccess, JsonSerializ
         $this->setIfExists('sap', $data ?? [], null);
         $this->setIfExists('shpp', $data ?? [], null);
         $this->setIfExists('spbp', $data ?? [], null);
+        $this->setIfExists('sncp', $data ?? [], null);
         $this->setIfExists('realTimeClass1ANi', $data ?? [], null);
         $this->setIfExists('terminationPayments', $data ?? [], null);
         $this->setIfExists('mapsMiles', $data ?? [], null);
@@ -877,6 +884,33 @@ class OpeningBalancesTotals implements ModelInterface, ArrayAccess, JsonSerializ
             throw new InvalidArgumentException('non-nullable spbp cannot be null');
         }
         $this->container['spbp'] = $spbp;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncp
+     *
+     * @return float|null
+     */
+    public function getSncp(): ?float
+    {
+        return $this->container['sncp'];
+    }
+
+    /**
+     * Sets sncp
+     *
+     * @param float|null $sncp sncp
+     *
+     * @return $this
+     */
+    public function setSncp(?float $sncp): static
+    {
+        if (is_null($sncp)) {
+            throw new InvalidArgumentException('non-nullable sncp cannot be null');
+        }
+        $this->container['sncp'] = $sncp;
 
         return $this;
     }

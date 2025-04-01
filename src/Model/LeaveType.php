@@ -58,6 +58,8 @@ enum LeaveType: string
     case PATERNITY_ADOPTION = 'PaternityAdoption';
 
     case STRIKE_ACTION = 'StrikeAction';
+
+    case NEONATAL_CARE = 'NeonatalCare';
 }
 
 

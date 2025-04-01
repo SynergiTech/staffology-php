@@ -52,6 +52,8 @@ enum TaxYear: string
     case YEAR2023 = 'Year2023';
 
     case YEAR2024 = 'Year2024';
+
+    case YEAR2025 = 'Year2025';
 }
 
 

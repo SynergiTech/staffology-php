@@ -90,6 +90,7 @@ class FpsEmployeePayment implements ModelInterface, ArrayAccess, JsonSerializabl
         'sapytd' => 'string',
         'shPPYTD' => 'string',
         'spbpytd' => 'string',
+        'sncpytd' => 'string',
         'trivialCommutationPayment' => '\SynergiTech\Staffology\Model\FpsEmployeeTrivialCommutationPayment[]',
         'flexibleDrawdown' => '\SynergiTech\Staffology\Model\FpsEmployeeFlexibleDrawdown'
     ];
@@ -131,6 +132,7 @@ class FpsEmployeePayment implements ModelInterface, ArrayAccess, JsonSerializabl
         'sapytd' => null,
         'shPPYTD' => null,
         'spbpytd' => null,
+        'sncpytd' => null,
         'trivialCommutationPayment' => null,
         'flexibleDrawdown' => null
     ];
@@ -172,6 +174,7 @@ class FpsEmployeePayment implements ModelInterface, ArrayAccess, JsonSerializabl
         'sapytd' => true,
         'shPPYTD' => true,
         'spbpytd' => true,
+        'sncpytd' => true,
         'trivialCommutationPayment' => true,
         'flexibleDrawdown' => false
     ];
@@ -293,6 +296,7 @@ class FpsEmployeePayment implements ModelInterface, ArrayAccess, JsonSerializabl
         'sapytd' => 'sapytd',
         'shPPYTD' => 'shPPYTD',
         'spbpytd' => 'spbpytd',
+        'sncpytd' => 'sncpytd',
         'trivialCommutationPayment' => 'trivialCommutationPayment',
         'flexibleDrawdown' => 'flexibleDrawdown'
     ];
@@ -334,6 +338,7 @@ class FpsEmployeePayment implements ModelInterface, ArrayAccess, JsonSerializabl
         'sapytd' => 'setSapytd',
         'shPPYTD' => 'setShPPYTD',
         'spbpytd' => 'setSpbpytd',
+        'sncpytd' => 'setSncpytd',
         'trivialCommutationPayment' => 'setTrivialCommutationPayment',
         'flexibleDrawdown' => 'setFlexibleDrawdown'
     ];
@@ -375,6 +380,7 @@ class FpsEmployeePayment implements ModelInterface, ArrayAccess, JsonSerializabl
         'sapytd' => 'getSapytd',
         'shPPYTD' => 'getShPPYTD',
         'spbpytd' => 'getSpbpytd',
+        'sncpytd' => 'getSncpytd',
         'trivialCommutationPayment' => 'getTrivialCommutationPayment',
         'flexibleDrawdown' => 'getFlexibleDrawdown'
     ];
@@ -466,6 +472,7 @@ class FpsEmployeePayment implements ModelInterface, ArrayAccess, JsonSerializabl
         $this->setIfExists('sapytd', $data ?? [], null);
         $this->setIfExists('shPPYTD', $data ?? [], null);
         $this->setIfExists('spbpytd', $data ?? [], null);
+        $this->setIfExists('sncpytd', $data ?? [], null);
         $this->setIfExists('trivialCommutationPayment', $data ?? [], null);
         $this->setIfExists('flexibleDrawdown', $data ?? [], null);
     }
@@ -1534,6 +1541,40 @@ class FpsEmployeePayment implements ModelInterface, ArrayAccess, JsonSerializabl
             }
         }
         $this->container['spbpytd'] = $spbpytd;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncpytd
+     *
+     * @return string|null
+     */
+    public function getSncpytd(): ?string
+    {
+        return $this->container['sncpytd'];
+    }
+
+    /**
+     * Sets sncpytd
+     *
+     * @param string|null $sncpytd sncpytd
+     *
+     * @return $this
+     */
+    public function setSncpytd(?string $sncpytd): static
+    {
+        if (is_null($sncpytd)) {
+            array_push($this->openAPINullablesSetToNull, 'sncpytd');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sncpytd', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['sncpytd'] = $sncpytd;
 
         return $this;
     }

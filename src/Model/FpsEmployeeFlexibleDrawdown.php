@@ -62,6 +62,8 @@ class FpsEmployeeFlexibleDrawdown implements ModelInterface, ArrayAccess, JsonSe
         'flexiblyAccessingPensionRights' => 'string',
         'pensionDeathBenefit' => 'string',
         'seriousIllHealthLumpSum' => 'string',
+        'standAloneLumpSum' => 'string',
+        'pensionCommencementExcess' => 'string',
         'taxablePayment' => 'string',
         'nontaxablePayment' => 'string'
     ];
@@ -75,6 +77,8 @@ class FpsEmployeeFlexibleDrawdown implements ModelInterface, ArrayAccess, JsonSe
         'flexiblyAccessingPensionRights' => null,
         'pensionDeathBenefit' => null,
         'seriousIllHealthLumpSum' => null,
+        'standAloneLumpSum' => null,
+        'pensionCommencementExcess' => null,
         'taxablePayment' => null,
         'nontaxablePayment' => null
     ];
@@ -88,6 +92,8 @@ class FpsEmployeeFlexibleDrawdown implements ModelInterface, ArrayAccess, JsonSe
         'flexiblyAccessingPensionRights' => true,
         'pensionDeathBenefit' => true,
         'seriousIllHealthLumpSum' => true,
+        'standAloneLumpSum' => true,
+        'pensionCommencementExcess' => true,
         'taxablePayment' => true,
         'nontaxablePayment' => true
     ];
@@ -181,6 +187,8 @@ class FpsEmployeeFlexibleDrawdown implements ModelInterface, ArrayAccess, JsonSe
         'flexiblyAccessingPensionRights' => 'flexiblyAccessingPensionRights',
         'pensionDeathBenefit' => 'pensionDeathBenefit',
         'seriousIllHealthLumpSum' => 'seriousIllHealthLumpSum',
+        'standAloneLumpSum' => 'standAloneLumpSum',
+        'pensionCommencementExcess' => 'pensionCommencementExcess',
         'taxablePayment' => 'taxablePayment',
         'nontaxablePayment' => 'nontaxablePayment'
     ];
@@ -194,6 +202,8 @@ class FpsEmployeeFlexibleDrawdown implements ModelInterface, ArrayAccess, JsonSe
         'flexiblyAccessingPensionRights' => 'setFlexiblyAccessingPensionRights',
         'pensionDeathBenefit' => 'setPensionDeathBenefit',
         'seriousIllHealthLumpSum' => 'setSeriousIllHealthLumpSum',
+        'standAloneLumpSum' => 'setStandAloneLumpSum',
+        'pensionCommencementExcess' => 'setPensionCommencementExcess',
         'taxablePayment' => 'setTaxablePayment',
         'nontaxablePayment' => 'setNontaxablePayment'
     ];
@@ -207,6 +217,8 @@ class FpsEmployeeFlexibleDrawdown implements ModelInterface, ArrayAccess, JsonSe
         'flexiblyAccessingPensionRights' => 'getFlexiblyAccessingPensionRights',
         'pensionDeathBenefit' => 'getPensionDeathBenefit',
         'seriousIllHealthLumpSum' => 'getSeriousIllHealthLumpSum',
+        'standAloneLumpSum' => 'getStandAloneLumpSum',
+        'pensionCommencementExcess' => 'getPensionCommencementExcess',
         'taxablePayment' => 'getTaxablePayment',
         'nontaxablePayment' => 'getNontaxablePayment'
     ];
@@ -270,6 +282,8 @@ class FpsEmployeeFlexibleDrawdown implements ModelInterface, ArrayAccess, JsonSe
         $this->setIfExists('flexiblyAccessingPensionRights', $data ?? [], null);
         $this->setIfExists('pensionDeathBenefit', $data ?? [], null);
         $this->setIfExists('seriousIllHealthLumpSum', $data ?? [], null);
+        $this->setIfExists('standAloneLumpSum', $data ?? [], null);
+        $this->setIfExists('pensionCommencementExcess', $data ?? [], null);
         $this->setIfExists('taxablePayment', $data ?? [], null);
         $this->setIfExists('nontaxablePayment', $data ?? [], null);
     }
@@ -414,6 +428,74 @@ class FpsEmployeeFlexibleDrawdown implements ModelInterface, ArrayAccess, JsonSe
             }
         }
         $this->container['seriousIllHealthLumpSum'] = $seriousIllHealthLumpSum;
+
+        return $this;
+    }
+
+    /**
+     * Gets standAloneLumpSum
+     *
+     * @return string|null
+     */
+    public function getStandAloneLumpSum(): ?string
+    {
+        return $this->container['standAloneLumpSum'];
+    }
+
+    /**
+     * Sets standAloneLumpSum
+     *
+     * @param string|null $standAloneLumpSum standAloneLumpSum
+     *
+     * @return $this
+     */
+    public function setStandAloneLumpSum(?string $standAloneLumpSum): static
+    {
+        if (is_null($standAloneLumpSum)) {
+            array_push($this->openAPINullablesSetToNull, 'standAloneLumpSum');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('standAloneLumpSum', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['standAloneLumpSum'] = $standAloneLumpSum;
+
+        return $this;
+    }
+
+    /**
+     * Gets pensionCommencementExcess
+     *
+     * @return string|null
+     */
+    public function getPensionCommencementExcess(): ?string
+    {
+        return $this->container['pensionCommencementExcess'];
+    }
+
+    /**
+     * Sets pensionCommencementExcess
+     *
+     * @param string|null $pensionCommencementExcess pensionCommencementExcess
+     *
+     * @return $this
+     */
+    public function setPensionCommencementExcess(?string $pensionCommencementExcess): static
+    {
+        if (is_null($pensionCommencementExcess)) {
+            array_push($this->openAPINullablesSetToNull, 'pensionCommencementExcess');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('pensionCommencementExcess', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['pensionCommencementExcess'] = $pensionCommencementExcess;
 
         return $this;
     }

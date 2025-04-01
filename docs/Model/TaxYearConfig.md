@@ -50,5 +50,9 @@ Name | Type | Description | Notes
 **govTalk** | [**\SynergiTech\Staffology\Model\GovTalk**](GovTalk.md) |  | [optional]
 **mileageAllowancePaymentsRates** | [**\SynergiTech\Staffology\Model\MileageAllowancePaymentsRate[]**](MileageAllowancePaymentsRate.md) | [readonly] | [optional]
 **tieredPensions** | [**\SynergiTech\Staffology\Model\TieredPension[]**](TieredPension.md) | [readonly] | [optional]
+**nicRecoverableNormalEmployerRate** | **float** | [readonly] | [optional]
+**nicRecoverableSmallEmployerRate** | **float** | [readonly] | [optional]
+**nicCompensationNormalEmployerRate** | **float** | [readonly] | [optional]
+**nicCompensationSmallEmployerRate** | **float** | [readonly] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

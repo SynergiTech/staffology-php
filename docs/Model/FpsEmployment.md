@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **directorsNIC** | **string** |  | [optional]
 **taxWkOfApptOfDirector** | **string** |  | [optional]
 **starter** | [**\SynergiTech\Staffology\Model\FpsEmployeeStarter**](FpsEmployeeStarter.md) |  | [optional]
+**employeeWorkplacePostcode** | **string** |  | [optional]
 **payId** | **string** |  | [optional]
 **payIdChgd** | [**\SynergiTech\Staffology\Model\FpsEmployerPayIdChanged**](FpsEmployerPayIdChanged.md) |  | [optional]
 **paymentToANonIndividual** | **string** |  | [optional]

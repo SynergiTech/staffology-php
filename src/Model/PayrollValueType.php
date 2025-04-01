@@ -162,6 +162,16 @@ enum PayrollValueType: string
     case P45_GROSS = 'P45Gross';
 
     case P45_TAX = 'P45Tax';
+
+    case SNCP = 'Sncp';
+
+    case FLEXI_DD_STAND_ALONE_LUMP_SUM = 'FlexiDd_StandAloneLumpSum';
+
+    case FLEXI_DD_STAND_ALONE_LUMP_SUM_NON_TAX = 'FlexiDd_StandAloneLumpSum_NonTax';
+
+    case FLEXI_DD_PENSION_COMMENCEMENT_EXCESS = 'FlexiDd_PensionCommencementExcess';
+
+    case FLEXI_DD_PENSION_COMMENCEMENT_EXCESS_NON_TAX = 'FlexiDd_PensionCommencementExcess_NonTax';
 }
 
 

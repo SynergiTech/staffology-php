@@ -90,7 +90,8 @@ class Payslip implements ModelInterface, ArrayAccess, JsonSerializable
         'employeeCostCentres' => '\SynergiTech\Staffology\Model\EmployeeCostCentre[]',
         'departmentMemberships' => '\SynergiTech\Staffology\Model\DepartmentMembership[]',
         'pensionContributionsByRole' => '\SynergiTech\Staffology\Model\Item[]',
-        'employerPensionContributions' => '\SynergiTech\Staffology\Model\EmployerPensionContribution[]'
+        'employerPensionContributions' => '\SynergiTech\Staffology\Model\EmployerPensionContribution[]',
+        'employeePensionContributions' => 'array<string,\SynergiTech\Staffology\Model\DecimalDecimalBooleanPensionRuleValueTuple>'
     ];
 
     /**
@@ -129,7 +130,8 @@ class Payslip implements ModelInterface, ArrayAccess, JsonSerializable
         'employeeCostCentres' => null,
         'departmentMemberships' => null,
         'pensionContributionsByRole' => null,
-        'employerPensionContributions' => null
+        'employerPensionContributions' => null,
+        'employeePensionContributions' => null
     ];
 
     /**
@@ -168,7 +170,8 @@ class Payslip implements ModelInterface, ArrayAccess, JsonSerializable
         'employeeCostCentres' => true,
         'departmentMemberships' => true,
         'pensionContributionsByRole' => true,
-        'employerPensionContributions' => true
+        'employerPensionContributions' => true,
+        'employeePensionContributions' => true
     ];
 
     /**
@@ -287,7 +290,8 @@ class Payslip implements ModelInterface, ArrayAccess, JsonSerializable
         'employeeCostCentres' => 'employeeCostCentres',
         'departmentMemberships' => 'departmentMemberships',
         'pensionContributionsByRole' => 'pensionContributionsByRole',
-        'employerPensionContributions' => 'employerPensionContributions'
+        'employerPensionContributions' => 'employerPensionContributions',
+        'employeePensionContributions' => 'employeePensionContributions'
     ];
 
     /**
@@ -326,7 +330,8 @@ class Payslip implements ModelInterface, ArrayAccess, JsonSerializable
         'employeeCostCentres' => 'setEmployeeCostCentres',
         'departmentMemberships' => 'setDepartmentMemberships',
         'pensionContributionsByRole' => 'setPensionContributionsByRole',
-        'employerPensionContributions' => 'setEmployerPensionContributions'
+        'employerPensionContributions' => 'setEmployerPensionContributions',
+        'employeePensionContributions' => 'setEmployeePensionContributions'
     ];
 
     /**
@@ -365,7 +370,8 @@ class Payslip implements ModelInterface, ArrayAccess, JsonSerializable
         'employeeCostCentres' => 'getEmployeeCostCentres',
         'departmentMemberships' => 'getDepartmentMemberships',
         'pensionContributionsByRole' => 'getPensionContributionsByRole',
-        'employerPensionContributions' => 'getEmployerPensionContributions'
+        'employerPensionContributions' => 'getEmployerPensionContributions',
+        'employeePensionContributions' => 'getEmployeePensionContributions'
     ];
 
     /**
@@ -455,6 +461,7 @@ class Payslip implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('departmentMemberships', $data ?? [], null);
         $this->setIfExists('pensionContributionsByRole', $data ?? [], null);
         $this->setIfExists('employerPensionContributions', $data ?? [], null);
+        $this->setIfExists('employeePensionContributions', $data ?? [], null);
     }
 
     /**
@@ -1416,6 +1423,40 @@ class Payslip implements ModelInterface, ArrayAccess, JsonSerializable
             }
         }
         $this->container['employerPensionContributions'] = $employerPensionContributions;
+
+        return $this;
+    }
+
+    /**
+     * Gets employeePensionContributions
+     *
+     * @return array<string,\SynergiTech\Staffology\Model\DecimalDecimalBooleanPensionRuleValueTuple>|null
+     */
+    public function getEmployeePensionContributions(): ?array
+    {
+        return $this->container['employeePensionContributions'];
+    }
+
+    /**
+     * Sets employeePensionContributions
+     *
+     * @param array<string,\SynergiTech\Staffology\Model\DecimalDecimalBooleanPensionRuleValueTuple>|null $employeePensionContributions Dictionary of Pension Contributions(s) Keyed on PensionId containing Employee Pension and AVC Contribution(s) Bfd, AVC indicator and pension rule
+     *
+     * @return $this
+     */
+    public function setEmployeePensionContributions(?array $employeePensionContributions): static
+    {
+        if (is_null($employeePensionContributions)) {
+            array_push($this->openAPINullablesSetToNull, 'employeePensionContributions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('employeePensionContributions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['employeePensionContributions'] = $employeePensionContributions;
 
         return $this;
     }

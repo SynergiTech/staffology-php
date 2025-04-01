@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **includeDepartment** | **bool** | Whether or not to include the primary department of the employee on the payslip | [optional]
 **includeHealthAndSocialCareMessage** | **bool** | Whether or not to include health and social car message | [optional]
 **includeBenefits** | **bool** | Whether or not to include any payrolled benefits | [optional]
+**removePensionYtd** | **bool** | Whether or not to remove the pension YTD column | [optional]
 **paperSize** | [**\SynergiTech\Staffology\Model\PdfPaperSize**](PdfPaperSize.md) |  | [optional]
 **orientation** | [**\SynergiTech\Staffology\Model\PdfPaperOrientation**](PdfPaperOrientation.md) |  | [optional]
 **margins** | [**\SynergiTech\Staffology\Model\PdfPaperMargins**](PdfPaperMargins.md) |  | [optional]

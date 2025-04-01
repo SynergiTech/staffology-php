@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **sapytd** | **string** |  | [optional]
 **shppytd** | **string** |  | [optional]
 **spbpytd** | **string** |  | [optional]
+**sncpytd** | **string** |  | [optional]
 **sspytd** | **string** |  | [optional]
 **gross** | **string** |  | [optional]
 **netPay** | **string** |  | [optional]

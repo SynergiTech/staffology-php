@@ -1,6 +1,6 @@
 <?php
 /**
- * OccupationalSickLeaveHistory
+ * EmployeePaymentsReportReportResponse
  *
  * PHP version 8.1
  *
@@ -35,14 +35,15 @@ use ReturnTypeWillChange;
 use SynergiTech\Staffology\ObjectSerializer;
 
 /**
- * OccupationalSickLeaveHistory Class Doc Comment
+ * EmployeePaymentsReportReportResponse Class Doc Comment
  *
+ * @description Used to encapsulate a response for any of the reports.  See the Introduction Guide for Reports for more details
  * @package  SynergiTech\Staffology
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements ArrayAccess<string, mixed>
  */
-class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonSerializable
+class EmployeePaymentsReportReportResponse implements ModelInterface, ArrayAccess, JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OccupationalSickLeaveHistory';
+    protected static string $openAPIModelName = 'EmployeePaymentsReportReportResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +60,10 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
       * @var array<string, string>
       */
     protected static array $openAPITypes = [
-        'payrollCode' => 'string',
-        'leaveDate' => '\DateTime',
-        'payPercent' => 'float',
-        'serviceBandFrom' => 'int',
-        'serviceBandTo' => 'int',
-        'payRunId' => 'int',
-        'roleReference' => 'string',
-        'occupationalPolicy' => 'string',
-        'id' => 'string'
+        'type' => 'string',
+        'content' => 'string',
+        'model' => '\SynergiTech\Staffology\Model\EmployeePaymentsReport',
+        'stream' => 'string'
     ];
 
     /**
@@ -76,15 +72,10 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
       * @var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'payrollCode' => null,
-        'leaveDate' => 'date',
-        'payPercent' => 'double',
-        'serviceBandFrom' => 'int32',
-        'serviceBandTo' => 'int32',
-        'payRunId' => 'int32',
-        'roleReference' => null,
-        'occupationalPolicy' => null,
-        'id' => 'uuid'
+        'type' => null,
+        'content' => null,
+        'model' => null,
+        'stream' => 'byte'
     ];
 
     /**
@@ -93,15 +84,10 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
       * @var array<string, bool>
       */
     protected static array $openAPINullables = [
-        'payrollCode' => true,
-        'leaveDate' => false,
-        'payPercent' => false,
-        'serviceBandFrom' => false,
-        'serviceBandTo' => false,
-        'payRunId' => false,
-        'roleReference' => true,
-        'occupationalPolicy' => true,
-        'id' => false
+        'type' => true,
+        'content' => true,
+        'model' => false,
+        'stream' => true
     ];
 
     /**
@@ -190,15 +176,10 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
      * @var array<string, string>
      */
     protected static array $attributeMap = [
-        'payrollCode' => 'payrollCode',
-        'leaveDate' => 'leaveDate',
-        'payPercent' => 'payPercent',
-        'serviceBandFrom' => 'serviceBandFrom',
-        'serviceBandTo' => 'serviceBandTo',
-        'payRunId' => 'payRunId',
-        'roleReference' => 'roleReference',
-        'occupationalPolicy' => 'occupationalPolicy',
-        'id' => 'id'
+        'type' => 'type',
+        'content' => 'content',
+        'model' => 'model',
+        'stream' => 'stream'
     ];
 
     /**
@@ -207,15 +188,10 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
      * @var array<string, string>
      */
     protected static array $setters = [
-        'payrollCode' => 'setPayrollCode',
-        'leaveDate' => 'setLeaveDate',
-        'payPercent' => 'setPayPercent',
-        'serviceBandFrom' => 'setServiceBandFrom',
-        'serviceBandTo' => 'setServiceBandTo',
-        'payRunId' => 'setPayRunId',
-        'roleReference' => 'setRoleReference',
-        'occupationalPolicy' => 'setOccupationalPolicy',
-        'id' => 'setId'
+        'type' => 'setType',
+        'content' => 'setContent',
+        'model' => 'setModel',
+        'stream' => 'setStream'
     ];
 
     /**
@@ -224,15 +200,10 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
      * @var array<string, string>
      */
     protected static array $getters = [
-        'payrollCode' => 'getPayrollCode',
-        'leaveDate' => 'getLeaveDate',
-        'payPercent' => 'getPayPercent',
-        'serviceBandFrom' => 'getServiceBandFrom',
-        'serviceBandTo' => 'getServiceBandTo',
-        'payRunId' => 'getPayRunId',
-        'roleReference' => 'getRoleReference',
-        'occupationalPolicy' => 'getOccupationalPolicy',
-        'id' => 'getId'
+        'type' => 'getType',
+        'content' => 'getContent',
+        'model' => 'getModel',
+        'stream' => 'getStream'
     ];
 
     /**
@@ -291,15 +262,10 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('payrollCode', $data ?? [], null);
-        $this->setIfExists('leaveDate', $data ?? [], null);
-        $this->setIfExists('payPercent', $data ?? [], null);
-        $this->setIfExists('serviceBandFrom', $data ?? [], null);
-        $this->setIfExists('serviceBandTo', $data ?? [], null);
-        $this->setIfExists('payRunId', $data ?? [], null);
-        $this->setIfExists('roleReference', $data ?? [], null);
-        $this->setIfExists('occupationalPolicy', $data ?? [], null);
-        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('model', $data ?? [], null);
+        $this->setIfExists('stream', $data ?? [], null);
     }
 
     /**
@@ -329,18 +295,6 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['leaveDate'] === null) {
-            $invalidProperties[] = "'leaveDate' can't be null";
-        }
-        if ($this->container['payPercent'] === null) {
-            $invalidProperties[] = "'payPercent' can't be null";
-        }
-        if ($this->container['serviceBandFrom'] === null) {
-            $invalidProperties[] = "'serviceBandFrom' can't be null";
-        }
-        if ($this->container['serviceBandTo'] === null) {
-            $invalidProperties[] = "'serviceBandTo' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -357,265 +311,130 @@ class OccupationalSickLeaveHistory implements ModelInterface, ArrayAccess, JsonS
 
 
     /**
-     * Gets payrollCode
+     * Gets type
      *
      * @return string|null
      */
-    public function getPayrollCode(): ?string
+    public function getType(): ?string
     {
-        return $this->container['payrollCode'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets payrollCode
+     * Sets type
      *
-     * @param string|null $payrollCode payrollCode
+     * @param string|null $type [readonly] The content-type, this would usually be the same as the accept header you provided when you requested the report
      *
      * @return $this
      */
-    public function setPayrollCode(?string $payrollCode): static
+    public function setType(?string $type): static
     {
-        if (is_null($payrollCode)) {
-            array_push($this->openAPINullablesSetToNull, 'payrollCode');
+        if (is_null($type)) {
+            array_push($this->openAPINullablesSetToNull, 'type');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payrollCode', $nullablesSetToNull);
+            $index = array_search('type', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['payrollCode'] = $payrollCode;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets leaveDate
-     *
-     * @return \DateTime
-     */
-    public function getLeaveDate(): \DateTime
-    {
-        return $this->container['leaveDate'];
-    }
-
-    /**
-     * Sets leaveDate
-     *
-     * @param \DateTime $leaveDate leaveDate
-     *
-     * @return $this
-     */
-    public function setLeaveDate(\DateTime $leaveDate): static
-    {
-        if (is_null($leaveDate)) {
-            throw new InvalidArgumentException('non-nullable leaveDate cannot be null');
-        }
-        $this->container['leaveDate'] = $leaveDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets payPercent
-     *
-     * @return float
-     */
-    public function getPayPercent(): float
-    {
-        return $this->container['payPercent'];
-    }
-
-    /**
-     * Sets payPercent
-     *
-     * @param float $payPercent payPercent
-     *
-     * @return $this
-     */
-    public function setPayPercent(float $payPercent): static
-    {
-        if (is_null($payPercent)) {
-            throw new InvalidArgumentException('non-nullable payPercent cannot be null');
-        }
-        $this->container['payPercent'] = $payPercent;
-
-        return $this;
-    }
-
-    /**
-     * Gets serviceBandFrom
-     *
-     * @return int
-     */
-    public function getServiceBandFrom(): int
-    {
-        return $this->container['serviceBandFrom'];
-    }
-
-    /**
-     * Sets serviceBandFrom
-     *
-     * @param int $serviceBandFrom serviceBandFrom
-     *
-     * @return $this
-     */
-    public function setServiceBandFrom(int $serviceBandFrom): static
-    {
-        if (is_null($serviceBandFrom)) {
-            throw new InvalidArgumentException('non-nullable serviceBandFrom cannot be null');
-        }
-        $this->container['serviceBandFrom'] = $serviceBandFrom;
-
-        return $this;
-    }
-
-    /**
-     * Gets serviceBandTo
-     *
-     * @return int
-     */
-    public function getServiceBandTo(): int
-    {
-        return $this->container['serviceBandTo'];
-    }
-
-    /**
-     * Sets serviceBandTo
-     *
-     * @param int $serviceBandTo serviceBandTo
-     *
-     * @return $this
-     */
-    public function setServiceBandTo(int $serviceBandTo): static
-    {
-        if (is_null($serviceBandTo)) {
-            throw new InvalidArgumentException('non-nullable serviceBandTo cannot be null');
-        }
-        $this->container['serviceBandTo'] = $serviceBandTo;
-
-        return $this;
-    }
-
-    /**
-     * Gets payRunId
-     *
-     * @return int|null
-     */
-    public function getPayRunId(): ?int
-    {
-        return $this->container['payRunId'];
-    }
-
-    /**
-     * Sets payRunId
-     *
-     * @param int|null $payRunId payRunId
-     *
-     * @return $this
-     */
-    public function setPayRunId(?int $payRunId): static
-    {
-        if (is_null($payRunId)) {
-            throw new InvalidArgumentException('non-nullable payRunId cannot be null');
-        }
-        $this->container['payRunId'] = $payRunId;
-
-        return $this;
-    }
-
-    /**
-     * Gets roleReference
+     * Gets content
      *
      * @return string|null
      */
-    public function getRoleReference(): ?string
+    public function getContent(): ?string
     {
-        return $this->container['roleReference'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets roleReference
+     * Sets content
      *
-     * @param string|null $roleReference roleReference
+     * @param string|null $content [readonly] This could contain a link to a PDF file, HTML content or other content, depending on the Type value.
      *
      * @return $this
      */
-    public function setRoleReference(?string $roleReference): static
+    public function setContent(?string $content): static
     {
-        if (is_null($roleReference)) {
-            array_push($this->openAPINullablesSetToNull, 'roleReference');
+        if (is_null($content)) {
+            array_push($this->openAPINullablesSetToNull, 'content');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('roleReference', $nullablesSetToNull);
+            $index = array_search('content', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['roleReference'] = $roleReference;
+        $this->container['content'] = $content;
 
         return $this;
     }
 
     /**
-     * Gets occupationalPolicy
+     * Gets model
      *
-     * @return string|null
+     * @return \SynergiTech\Staffology\Model\EmployeePaymentsReport|null
      */
-    public function getOccupationalPolicy(): ?string
+    public function getModel(): ?\SynergiTech\Staffology\Model\EmployeePaymentsReport
     {
-        return $this->container['occupationalPolicy'];
+        return $this->container['model'];
     }
 
     /**
-     * Sets occupationalPolicy
+     * Sets model
      *
-     * @param string|null $occupationalPolicy occupationalPolicy
+     * @param \SynergiTech\Staffology\Model\EmployeePaymentsReport|null $model model
      *
      * @return $this
      */
-    public function setOccupationalPolicy(?string $occupationalPolicy): static
+    public function setModel(?\SynergiTech\Staffology\Model\EmployeePaymentsReport $model): static
     {
-        if (is_null($occupationalPolicy)) {
-            array_push($this->openAPINullablesSetToNull, 'occupationalPolicy');
+        if (is_null($model)) {
+            throw new InvalidArgumentException('non-nullable model cannot be null');
+        }
+        $this->container['model'] = $model;
+
+        return $this;
+    }
+
+    /**
+     * Gets stream
+     *
+     * @return string|null
+     */
+    public function getStream(): ?string
+    {
+        return $this->container['stream'];
+    }
+
+    /**
+     * Sets stream
+     *
+     * @param string|null $stream byte array
+     *
+     * @return $this
+     */
+    public function setStream(?string $stream): static
+    {
+        if (is_null($stream)) {
+            array_push($this->openAPINullablesSetToNull, 'stream');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('occupationalPolicy', $nullablesSetToNull);
+            $index = array_search('stream', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['occupationalPolicy'] = $occupationalPolicy;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    public function getId(): ?string
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id [readonly] The unique id of the object
-     *
-     * @return $this
-     */
-    public function setId(?string $id): static
-    {
-        if (is_null($id)) {
-            throw new InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
+        $this->container['stream'] = $stream;
 
         return $this;
     }

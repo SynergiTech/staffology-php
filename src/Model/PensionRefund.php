@@ -70,6 +70,7 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
         'pensionablePay' => 'float',
         'additionalVoluntaryContribution' => 'float',
         'assumedPensionablePay' => 'float',
+        'isPreviousTaxYearRefund' => 'bool',
         'tierName' => 'string',
         'tierRate' => 'float',
         'employee' => '\SynergiTech\Staffology\Model\Item',
@@ -92,6 +93,7 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
         'pensionablePay' => 'double',
         'additionalVoluntaryContribution' => 'double',
         'assumedPensionablePay' => 'double',
+        'isPreviousTaxYearRefund' => null,
         'tierName' => null,
         'tierRate' => 'double',
         'employee' => null,
@@ -114,6 +116,7 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
         'pensionablePay' => false,
         'additionalVoluntaryContribution' => false,
         'assumedPensionablePay' => false,
+        'isPreviousTaxYearRefund' => false,
         'tierName' => true,
         'tierRate' => true,
         'employee' => false,
@@ -216,6 +219,7 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
         'pensionablePay' => 'pensionablePay',
         'additionalVoluntaryContribution' => 'additionalVoluntaryContribution',
         'assumedPensionablePay' => 'assumedPensionablePay',
+        'isPreviousTaxYearRefund' => 'isPreviousTaxYearRefund',
         'tierName' => 'tierName',
         'tierRate' => 'tierRate',
         'employee' => 'employee',
@@ -238,6 +242,7 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
         'pensionablePay' => 'setPensionablePay',
         'additionalVoluntaryContribution' => 'setAdditionalVoluntaryContribution',
         'assumedPensionablePay' => 'setAssumedPensionablePay',
+        'isPreviousTaxYearRefund' => 'setIsPreviousTaxYearRefund',
         'tierName' => 'setTierName',
         'tierRate' => 'setTierRate',
         'employee' => 'setEmployee',
@@ -260,6 +265,7 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
         'pensionablePay' => 'getPensionablePay',
         'additionalVoluntaryContribution' => 'getAdditionalVoluntaryContribution',
         'assumedPensionablePay' => 'getAssumedPensionablePay',
+        'isPreviousTaxYearRefund' => 'getIsPreviousTaxYearRefund',
         'tierName' => 'getTierName',
         'tierRate' => 'getTierRate',
         'employee' => 'getEmployee',
@@ -332,6 +338,7 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('pensionablePay', $data ?? [], null);
         $this->setIfExists('additionalVoluntaryContribution', $data ?? [], null);
         $this->setIfExists('assumedPensionablePay', $data ?? [], null);
+        $this->setIfExists('isPreviousTaxYearRefund', $data ?? [], null);
         $this->setIfExists('tierName', $data ?? [], null);
         $this->setIfExists('tierRate', $data ?? [], null);
         $this->setIfExists('employee', $data ?? [], null);
@@ -382,6 +389,9 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
         }
         if ($this->container['assumedPensionablePay'] === null) {
             $invalidProperties[] = "'assumedPensionablePay' can't be null";
+        }
+        if ($this->container['isPreviousTaxYearRefund'] === null) {
+            $invalidProperties[] = "'isPreviousTaxYearRefund' can't be null";
         }
         if (!is_null($this->container['tierName']) && (mb_strlen($this->container['tierName']) < 1)) {
             $invalidProperties[] = "invalid value for 'tierName', the character length must be bigger than or equal to 1.";
@@ -676,6 +686,33 @@ class PensionRefund implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable assumedPensionablePay cannot be null');
         }
         $this->container['assumedPensionablePay'] = $assumedPensionablePay;
+
+        return $this;
+    }
+
+    /**
+     * Gets isPreviousTaxYearRefund
+     *
+     * @return bool
+     */
+    public function getIsPreviousTaxYearRefund(): bool
+    {
+        return $this->container['isPreviousTaxYearRefund'];
+    }
+
+    /**
+     * Sets isPreviousTaxYearRefund
+     *
+     * @param bool $isPreviousTaxYearRefund isPreviousTaxYearRefund
+     *
+     * @return $this
+     */
+    public function setIsPreviousTaxYearRefund(bool $isPreviousTaxYearRefund): static
+    {
+        if (is_null($isPreviousTaxYearRefund)) {
+            throw new InvalidArgumentException('non-nullable isPreviousTaxYearRefund cannot be null');
+        }
+        $this->container['isPreviousTaxYearRefund'] = $isPreviousTaxYearRefund;
 
         return $this;
     }

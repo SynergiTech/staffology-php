@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **flexiblyAccessingPensionRights** | **string** |  | [optional]
 **pensionDeathBenefit** | **string** |  | [optional]
 **seriousIllHealthLumpSum** | **string** |  | [optional]
+**standAloneLumpSum** | **string** |  | [optional]
+**pensionCommencementExcess** | **string** |  | [optional]
 **taxablePayment** | **string** |  | [optional]
 **nontaxablePayment** | **string** |  | [optional]
 

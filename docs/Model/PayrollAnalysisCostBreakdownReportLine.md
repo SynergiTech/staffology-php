@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payrollCode** | **string** |  | [optional]
 **lastName** | **string** |  | [optional]
-**department** | [**\SynergiTech\Staffology\Model\StringDecimalKeyValuePair**](StringDecimalKeyValuePair.md) |  | [optional]
-**costCentre** | [**\SynergiTech\Staffology\Model\StringDecimalKeyValuePair**](StringDecimalKeyValuePair.md) |  | [optional]
+**department** | [**\SynergiTech\Staffology\Model\StringStringDecimalValueTuple**](StringStringDecimalValueTuple.md) |  | [optional]
+**costCentre** | [**\SynergiTech\Staffology\Model\StringStringDecimalValueTuple**](StringStringDecimalValueTuple.md) |  | [optional]
 **employeeRoleAnalysisCategory** | [**array<string,\SynergiTech\Staffology\Model\StringDecimalKeyValuePair>**](StringDecimalKeyValuePair.md) |  | [optional]
 **lines** | [**\SynergiTech\Staffology\Model\PayrollAnalysisCostBreakdownReportValue[]**](PayrollAnalysisCostBreakdownReportValue.md) |  | [optional]
 **totalPay** | **float** |  | [optional]

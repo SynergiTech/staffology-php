@@ -64,11 +64,13 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
         'sapRecovered' => 'float',
         'shPPRecovered' => 'float',
         'spbpRecovered' => 'float',
+        'sncpRecovered' => 'float',
         'nicCompensationOnSMP' => 'float',
         'nicCompensationOnSPP' => 'float',
         'nicCompensationOnSAP' => 'float',
         'nicCompensationOnShPP' => 'float',
         'nicCompensationOnSPBP' => 'float',
+        'nicCompensationOnSNCP' => 'float',
         'cisDeductionsSuffered' => 'float',
         'apprenticeshipLevy' => 'float',
         'employmentAllowance' => 'float'
@@ -85,11 +87,13 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
         'sapRecovered' => 'double',
         'shPPRecovered' => 'double',
         'spbpRecovered' => 'double',
+        'sncpRecovered' => 'double',
         'nicCompensationOnSMP' => 'double',
         'nicCompensationOnSPP' => 'double',
         'nicCompensationOnSAP' => 'double',
         'nicCompensationOnShPP' => 'double',
         'nicCompensationOnSPBP' => 'double',
+        'nicCompensationOnSNCP' => 'double',
         'cisDeductionsSuffered' => 'double',
         'apprenticeshipLevy' => 'double',
         'employmentAllowance' => 'double'
@@ -106,11 +110,13 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
         'sapRecovered' => false,
         'shPPRecovered' => false,
         'spbpRecovered' => false,
+        'sncpRecovered' => false,
         'nicCompensationOnSMP' => false,
         'nicCompensationOnSPP' => false,
         'nicCompensationOnSAP' => false,
         'nicCompensationOnShPP' => false,
         'nicCompensationOnSPBP' => false,
+        'nicCompensationOnSNCP' => false,
         'cisDeductionsSuffered' => false,
         'apprenticeshipLevy' => false,
         'employmentAllowance' => false
@@ -207,11 +213,13 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
         'sapRecovered' => 'sapRecovered',
         'shPPRecovered' => 'shPPRecovered',
         'spbpRecovered' => 'spbpRecovered',
+        'sncpRecovered' => 'sncpRecovered',
         'nicCompensationOnSMP' => 'nicCompensationOnSMP',
         'nicCompensationOnSPP' => 'nicCompensationOnSPP',
         'nicCompensationOnSAP' => 'nicCompensationOnSAP',
         'nicCompensationOnShPP' => 'nicCompensationOnShPP',
         'nicCompensationOnSPBP' => 'nicCompensationOnSPBP',
+        'nicCompensationOnSNCP' => 'nicCompensationOnSNCP',
         'cisDeductionsSuffered' => 'cisDeductionsSuffered',
         'apprenticeshipLevy' => 'apprenticeshipLevy',
         'employmentAllowance' => 'employmentAllowance'
@@ -228,11 +236,13 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
         'sapRecovered' => 'setSapRecovered',
         'shPPRecovered' => 'setShPPRecovered',
         'spbpRecovered' => 'setSpbpRecovered',
+        'sncpRecovered' => 'setSncpRecovered',
         'nicCompensationOnSMP' => 'setNicCompensationOnSMP',
         'nicCompensationOnSPP' => 'setNicCompensationOnSPP',
         'nicCompensationOnSAP' => 'setNicCompensationOnSAP',
         'nicCompensationOnShPP' => 'setNicCompensationOnShPP',
         'nicCompensationOnSPBP' => 'setNicCompensationOnSPBP',
+        'nicCompensationOnSNCP' => 'setNicCompensationOnSNCP',
         'cisDeductionsSuffered' => 'setCisDeductionsSuffered',
         'apprenticeshipLevy' => 'setApprenticeshipLevy',
         'employmentAllowance' => 'setEmploymentAllowance'
@@ -249,11 +259,13 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
         'sapRecovered' => 'getSapRecovered',
         'shPPRecovered' => 'getShPPRecovered',
         'spbpRecovered' => 'getSpbpRecovered',
+        'sncpRecovered' => 'getSncpRecovered',
         'nicCompensationOnSMP' => 'getNicCompensationOnSMP',
         'nicCompensationOnSPP' => 'getNicCompensationOnSPP',
         'nicCompensationOnSAP' => 'getNicCompensationOnSAP',
         'nicCompensationOnShPP' => 'getNicCompensationOnShPP',
         'nicCompensationOnSPBP' => 'getNicCompensationOnSPBP',
+        'nicCompensationOnSNCP' => 'getNicCompensationOnSNCP',
         'cisDeductionsSuffered' => 'getCisDeductionsSuffered',
         'apprenticeshipLevy' => 'getApprenticeshipLevy',
         'employmentAllowance' => 'getEmploymentAllowance'
@@ -320,11 +332,13 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
         $this->setIfExists('sapRecovered', $data ?? [], null);
         $this->setIfExists('shPPRecovered', $data ?? [], null);
         $this->setIfExists('spbpRecovered', $data ?? [], null);
+        $this->setIfExists('sncpRecovered', $data ?? [], null);
         $this->setIfExists('nicCompensationOnSMP', $data ?? [], null);
         $this->setIfExists('nicCompensationOnSPP', $data ?? [], null);
         $this->setIfExists('nicCompensationOnSAP', $data ?? [], null);
         $this->setIfExists('nicCompensationOnShPP', $data ?? [], null);
         $this->setIfExists('nicCompensationOnSPBP', $data ?? [], null);
+        $this->setIfExists('nicCompensationOnSNCP', $data ?? [], null);
         $this->setIfExists('cisDeductionsSuffered', $data ?? [], null);
         $this->setIfExists('apprenticeshipLevy', $data ?? [], null);
         $this->setIfExists('employmentAllowance', $data ?? [], null);
@@ -508,6 +522,33 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
     }
 
     /**
+     * Gets sncpRecovered
+     *
+     * @return float|null
+     */
+    public function getSncpRecovered(): ?float
+    {
+        return $this->container['sncpRecovered'];
+    }
+
+    /**
+     * Sets sncpRecovered
+     *
+     * @param float|null $sncpRecovered Value of Statutory Neonatal Care Pay recovered year to date
+     *
+     * @return $this
+     */
+    public function setSncpRecovered(?float $sncpRecovered): static
+    {
+        if (is_null($sncpRecovered)) {
+            throw new InvalidArgumentException('non-nullable sncpRecovered cannot be null');
+        }
+        $this->container['sncpRecovered'] = $sncpRecovered;
+
+        return $this;
+    }
+
+    /**
      * Gets nicCompensationOnSMP
      *
      * @return float|null
@@ -638,6 +679,33 @@ class EmployerOpeningBalances implements ModelInterface, ArrayAccess, JsonSerial
             throw new InvalidArgumentException('non-nullable nicCompensationOnSPBP cannot be null');
         }
         $this->container['nicCompensationOnSPBP'] = $nicCompensationOnSPBP;
+
+        return $this;
+    }
+
+    /**
+     * Gets nicCompensationOnSNCP
+     *
+     * @return float|null
+     */
+    public function getNicCompensationOnSNCP(): ?float
+    {
+        return $this->container['nicCompensationOnSNCP'];
+    }
+
+    /**
+     * Sets nicCompensationOnSNCP
+     *
+     * @param float|null $nicCompensationOnSNCP Value of NIC compensation on Statutory Neonatal Care Pay year to date
+     *
+     * @return $this
+     */
+    public function setNicCompensationOnSNCP(?float $nicCompensationOnSNCP): static
+    {
+        if (is_null($nicCompensationOnSNCP)) {
+            throw new InvalidArgumentException('non-nullable nicCompensationOnSNCP cannot be null');
+        }
+        $this->container['nicCompensationOnSNCP'] = $nicCompensationOnSNCP;
 
         return $this;
     }

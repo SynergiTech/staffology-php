@@ -167,7 +167,7 @@ void (empty response body)
 ## `averageWeeklyEarningsEmployee()`
 
 ```php
-averageWeeklyEarningsEmployee($employerId, $id, $date, $leaveType): \SynergiTech\Staffology\Model\AverageWeeklyEarnings
+averageWeeklyEarningsEmployee($employerId, $id, $date, $leaveType, $secondaryDate, $tertiaryDate): \SynergiTech\Staffology\Model\AverageWeeklyEarnings
 ```
 
 Average Weekly Earnings
@@ -197,9 +197,11 @@ $employerId = 'employerId_example'; // string | The Id of the Employer
 $id = 'id_example'; // string | The Employee Id.
 $date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The date at which you want to calculate the earnings from.
 $leaveType = new \SynergiTech\Staffology\Model\\SynergiTech\Staffology\Model\LeaveType(); // \SynergiTech\Staffology\Model\LeaveType | 
+$secondaryDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | 
+$tertiaryDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | 
 
 try {
-    $result = $apiInstance->averageWeeklyEarningsEmployee($employerId, $id, $date, $leaveType);
+    $result = $apiInstance->averageWeeklyEarningsEmployee($employerId, $id, $date, $leaveType, $secondaryDate, $tertiaryDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmployeeApi->averageWeeklyEarningsEmployee: ', $e->getMessage(), PHP_EOL;
@@ -214,6 +216,8 @@ try {
 | **id** | **string**| The Employee Id. | |
 | **date** | **\DateTime**| The date at which you want to calculate the earnings from. | [optional] |
 | **leaveType** | [**\SynergiTech\Staffology\Model\LeaveType**](../Model/.md)|  | [optional] |
+| **secondaryDate** | **\DateTime**|  | [optional] |
+| **tertiaryDate** | **\DateTime**|  | [optional] |
 
 ### Return type
 

@@ -102,6 +102,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
         'customProRataRules' => '\SynergiTech\Staffology\Model\LeaveCustomProRataRule[]',
         'lastProcessedFrom' => '\DateTime',
         'isReversed' => 'bool',
+        'paymentTier' => '\SynergiTech\Staffology\Model\NeonatalCarePaymentTier',
         'documentCount' => 'int',
         'documents' => '\SynergiTech\Staffology\Model\Item[]',
         'employee' => '\SynergiTech\Staffology\Model\Item',
@@ -156,6 +157,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
         'customProRataRules' => null,
         'lastProcessedFrom' => 'date',
         'isReversed' => null,
+        'paymentTier' => null,
         'documentCount' => 'int32',
         'documents' => null,
         'employee' => null,
@@ -210,6 +212,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
         'customProRataRules' => true,
         'lastProcessedFrom' => true,
         'isReversed' => false,
+        'paymentTier' => false,
         'documentCount' => false,
         'documents' => true,
         'employee' => false,
@@ -344,6 +347,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
         'customProRataRules' => 'customProRataRules',
         'lastProcessedFrom' => 'lastProcessedFrom',
         'isReversed' => 'isReversed',
+        'paymentTier' => 'paymentTier',
         'documentCount' => 'documentCount',
         'documents' => 'documents',
         'employee' => 'employee',
@@ -398,6 +402,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
         'customProRataRules' => 'setCustomProRataRules',
         'lastProcessedFrom' => 'setLastProcessedFrom',
         'isReversed' => 'setIsReversed',
+        'paymentTier' => 'setPaymentTier',
         'documentCount' => 'setDocumentCount',
         'documents' => 'setDocuments',
         'employee' => 'setEmployee',
@@ -452,6 +457,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
         'customProRataRules' => 'getCustomProRataRules',
         'lastProcessedFrom' => 'getLastProcessedFrom',
         'isReversed' => 'getIsReversed',
+        'paymentTier' => 'getPaymentTier',
         'documentCount' => 'getDocumentCount',
         'documents' => 'getDocuments',
         'employee' => 'getEmployee',
@@ -556,6 +562,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('customProRataRules', $data ?? [], null);
         $this->setIfExists('lastProcessedFrom', $data ?? [], null);
         $this->setIfExists('isReversed', $data ?? [], null);
+        $this->setIfExists('paymentTier', $data ?? [], null);
         $this->setIfExists('documentCount', $data ?? [], null);
         $this->setIfExists('documents', $data ?? [], null);
         $this->setIfExists('employee', $data ?? [], null);
@@ -948,7 +955,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets babyDate
      *
-     * @param \DateTime|null $babyDate Only required for Parental Leave with Statutory Pay  If Type is Maternity or Paternity then this is the date the baby is due.  For Adoption this is the Matching Date.
+     * @param \DateTime|null $babyDate Only required for Parental Leave with Statutory Pay  If Type is Maternity or Paternity then this is the date the baby is due.  For Adoption this is the Matching Date.  For Neonatal Care is the Baby Due / Matching / Placement Date
      *
      * @return $this
      */
@@ -1016,7 +1023,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets tertiaryBabyDate
      *
-     * @param \DateTime|null $tertiaryBabyDate Only used for Parental Leave with Statutory Pay  If Type is Adoption this is the Placement Date.
+     * @param \DateTime|null $tertiaryBabyDate Only used for Parental Leave with Statutory Pay  If Type is Adoption this is the Placement Date.  If Type is Neonatal Care is the Date Baby Entered Neonatal Care Date
      *
      * @return $this
      */
@@ -1877,6 +1884,33 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable isReversed cannot be null');
         }
         $this->container['isReversed'] = $isReversed;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentTier
+     *
+     * @return \SynergiTech\Staffology\Model\NeonatalCarePaymentTier|null
+     */
+    public function getPaymentTier(): ?\SynergiTech\Staffology\Model\NeonatalCarePaymentTier
+    {
+        return $this->container['paymentTier'];
+    }
+
+    /**
+     * Sets paymentTier
+     *
+     * @param \SynergiTech\Staffology\Model\NeonatalCarePaymentTier|null $paymentTier paymentTier
+     *
+     * @return $this
+     */
+    public function setPaymentTier(?\SynergiTech\Staffology\Model\NeonatalCarePaymentTier $paymentTier): static
+    {
+        if (is_null($paymentTier)) {
+            throw new InvalidArgumentException('non-nullable paymentTier cannot be null');
+        }
+        $this->container['paymentTier'] = $paymentTier;
 
         return $this;
     }

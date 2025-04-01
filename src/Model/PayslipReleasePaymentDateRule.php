@@ -1,6 +1,6 @@
 <?php
 /**
- * FlexibleDrawdown
+ * PayslipReleasePaymentDateRule
  *
  * PHP version 8.1
  *
@@ -29,25 +29,17 @@
 namespace SynergiTech\Staffology\Model;
 
 /**
- * FlexibleDrawdown Class Doc Comment
+ * PayslipReleasePaymentDateRule Class Doc Comment
  *
  * @package  SynergiTech\Staffology
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-enum FlexibleDrawdown: string
+enum PayslipReleasePaymentDateRule: string
 {
-    case NONE = 'None';
+    case WORKING_DAYS = 'WorkingDays';
 
-    case DEATH_BENEFIT = 'DeathBenefit';
-
-    case PENSION = 'Pension';
-
-    case SERIOUS_ILL_HEALTH = 'SeriousIllHealth';
-
-    case STAND_ALONE_LUMP_SUM = 'StandAloneLumpSum';
-
-    case PENSION_COMMENCEMENT_EXCESS = 'PensionCommencementExcess';
+    case CALENDAR_DAYS = 'CalendarDays';
 }
 
 

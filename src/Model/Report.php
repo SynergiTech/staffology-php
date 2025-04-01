@@ -142,6 +142,8 @@ enum Report: string
     case EMPLOYEE_LEAVE = 'EmployeeLeave';
 
     case ADVANCED_VARIANCE_REPORT = 'AdvancedVarianceReport';
+
+    case EMPLOYEE_PAYMENTS = 'EmployeePayments';
 }
 
 

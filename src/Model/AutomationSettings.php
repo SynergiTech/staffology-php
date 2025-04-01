@@ -74,6 +74,10 @@ class AutomationSettings implements ModelInterface, ArrayAccess, JsonSerializabl
         'autoSubmitPaymentsDeductions' => 'bool',
         'autoSubmitPaymentsAeos' => 'bool',
         'autoSubmitPaymentsPensions' => 'bool',
+        'payslipReleaseType' => '\SynergiTech\Staffology\Model\PayslipReleaseType',
+        'autoSubmitPayslipsDaysBeforePayday' => '\SynergiTech\Staffology\Model\DaysBeforePayday',
+        'autoSubmitPayslipsPaymentDateRule' => '\SynergiTech\Staffology\Model\PayslipReleasePaymentDateRule',
+        'autoSubmitPayslipsPayslipReleaseTime' => '\SynergiTech\Staffology\Model\PayslipReleaseTime',
         'employeesWithoutEmailAddress' => 'int',
         'employeesWithEmailAddressButNotAutoSending' => 'int',
         'subcontractorsNotAutoSendingStatement' => 'int',
@@ -103,6 +107,10 @@ class AutomationSettings implements ModelInterface, ArrayAccess, JsonSerializabl
         'autoSubmitPaymentsDeductions' => null,
         'autoSubmitPaymentsAeos' => null,
         'autoSubmitPaymentsPensions' => null,
+        'payslipReleaseType' => null,
+        'autoSubmitPayslipsDaysBeforePayday' => null,
+        'autoSubmitPayslipsPaymentDateRule' => null,
+        'autoSubmitPayslipsPayslipReleaseTime' => null,
         'employeesWithoutEmailAddress' => 'int32',
         'employeesWithEmailAddressButNotAutoSending' => 'int32',
         'subcontractorsNotAutoSendingStatement' => 'int32',
@@ -132,6 +140,10 @@ class AutomationSettings implements ModelInterface, ArrayAccess, JsonSerializabl
         'autoSubmitPaymentsDeductions' => false,
         'autoSubmitPaymentsAeos' => false,
         'autoSubmitPaymentsPensions' => false,
+        'payslipReleaseType' => false,
+        'autoSubmitPayslipsDaysBeforePayday' => false,
+        'autoSubmitPayslipsPaymentDateRule' => false,
+        'autoSubmitPayslipsPayslipReleaseTime' => false,
         'employeesWithoutEmailAddress' => false,
         'employeesWithEmailAddressButNotAutoSending' => false,
         'subcontractorsNotAutoSendingStatement' => false,
@@ -241,6 +253,10 @@ class AutomationSettings implements ModelInterface, ArrayAccess, JsonSerializabl
         'autoSubmitPaymentsDeductions' => 'autoSubmitPayments_Deductions',
         'autoSubmitPaymentsAeos' => 'autoSubmitPayments_Aeos',
         'autoSubmitPaymentsPensions' => 'autoSubmitPayments_Pensions',
+        'payslipReleaseType' => 'payslipReleaseType',
+        'autoSubmitPayslipsDaysBeforePayday' => 'autoSubmitPayslips_DaysBeforePayday',
+        'autoSubmitPayslipsPaymentDateRule' => 'autoSubmitPayslips_PaymentDateRule',
+        'autoSubmitPayslipsPayslipReleaseTime' => 'autoSubmitPayslips_PayslipReleaseTime',
         'employeesWithoutEmailAddress' => 'employeesWithoutEmailAddress',
         'employeesWithEmailAddressButNotAutoSending' => 'employeesWithEmailAddressButNotAutoSending',
         'subcontractorsNotAutoSendingStatement' => 'subcontractorsNotAutoSendingStatement',
@@ -270,6 +286,10 @@ class AutomationSettings implements ModelInterface, ArrayAccess, JsonSerializabl
         'autoSubmitPaymentsDeductions' => 'setAutoSubmitPaymentsDeductions',
         'autoSubmitPaymentsAeos' => 'setAutoSubmitPaymentsAeos',
         'autoSubmitPaymentsPensions' => 'setAutoSubmitPaymentsPensions',
+        'payslipReleaseType' => 'setPayslipReleaseType',
+        'autoSubmitPayslipsDaysBeforePayday' => 'setAutoSubmitPayslipsDaysBeforePayday',
+        'autoSubmitPayslipsPaymentDateRule' => 'setAutoSubmitPayslipsPaymentDateRule',
+        'autoSubmitPayslipsPayslipReleaseTime' => 'setAutoSubmitPayslipsPayslipReleaseTime',
         'employeesWithoutEmailAddress' => 'setEmployeesWithoutEmailAddress',
         'employeesWithEmailAddressButNotAutoSending' => 'setEmployeesWithEmailAddressButNotAutoSending',
         'subcontractorsNotAutoSendingStatement' => 'setSubcontractorsNotAutoSendingStatement',
@@ -299,6 +319,10 @@ class AutomationSettings implements ModelInterface, ArrayAccess, JsonSerializabl
         'autoSubmitPaymentsDeductions' => 'getAutoSubmitPaymentsDeductions',
         'autoSubmitPaymentsAeos' => 'getAutoSubmitPaymentsAeos',
         'autoSubmitPaymentsPensions' => 'getAutoSubmitPaymentsPensions',
+        'payslipReleaseType' => 'getPayslipReleaseType',
+        'autoSubmitPayslipsDaysBeforePayday' => 'getAutoSubmitPayslipsDaysBeforePayday',
+        'autoSubmitPayslipsPaymentDateRule' => 'getAutoSubmitPayslipsPaymentDateRule',
+        'autoSubmitPayslipsPayslipReleaseTime' => 'getAutoSubmitPayslipsPayslipReleaseTime',
         'employeesWithoutEmailAddress' => 'getEmployeesWithoutEmailAddress',
         'employeesWithEmailAddressButNotAutoSending' => 'getEmployeesWithEmailAddressButNotAutoSending',
         'subcontractorsNotAutoSendingStatement' => 'getSubcontractorsNotAutoSendingStatement',
@@ -378,6 +402,10 @@ class AutomationSettings implements ModelInterface, ArrayAccess, JsonSerializabl
         $this->setIfExists('autoSubmitPaymentsDeductions', $data ?? [], null);
         $this->setIfExists('autoSubmitPaymentsAeos', $data ?? [], null);
         $this->setIfExists('autoSubmitPaymentsPensions', $data ?? [], null);
+        $this->setIfExists('payslipReleaseType', $data ?? [], null);
+        $this->setIfExists('autoSubmitPayslipsDaysBeforePayday', $data ?? [], null);
+        $this->setIfExists('autoSubmitPayslipsPaymentDateRule', $data ?? [], null);
+        $this->setIfExists('autoSubmitPayslipsPayslipReleaseTime', $data ?? [], null);
         $this->setIfExists('employeesWithoutEmailAddress', $data ?? [], null);
         $this->setIfExists('employeesWithEmailAddressButNotAutoSending', $data ?? [], null);
         $this->setIfExists('subcontractorsNotAutoSendingStatement', $data ?? [], null);
@@ -819,6 +847,114 @@ class AutomationSettings implements ModelInterface, ArrayAccess, JsonSerializabl
             throw new InvalidArgumentException('non-nullable autoSubmitPaymentsPensions cannot be null');
         }
         $this->container['autoSubmitPaymentsPensions'] = $autoSubmitPaymentsPensions;
+
+        return $this;
+    }
+
+    /**
+     * Gets payslipReleaseType
+     *
+     * @return \SynergiTech\Staffology\Model\PayslipReleaseType|null
+     */
+    public function getPayslipReleaseType(): ?\SynergiTech\Staffology\Model\PayslipReleaseType
+    {
+        return $this->container['payslipReleaseType'];
+    }
+
+    /**
+     * Sets payslipReleaseType
+     *
+     * @param \SynergiTech\Staffology\Model\PayslipReleaseType|null $payslipReleaseType payslipReleaseType
+     *
+     * @return $this
+     */
+    public function setPayslipReleaseType(?\SynergiTech\Staffology\Model\PayslipReleaseType $payslipReleaseType): static
+    {
+        if (is_null($payslipReleaseType)) {
+            throw new InvalidArgumentException('non-nullable payslipReleaseType cannot be null');
+        }
+        $this->container['payslipReleaseType'] = $payslipReleaseType;
+
+        return $this;
+    }
+
+    /**
+     * Gets autoSubmitPayslipsDaysBeforePayday
+     *
+     * @return \SynergiTech\Staffology\Model\DaysBeforePayday|null
+     */
+    public function getAutoSubmitPayslipsDaysBeforePayday(): ?\SynergiTech\Staffology\Model\DaysBeforePayday
+    {
+        return $this->container['autoSubmitPayslipsDaysBeforePayday'];
+    }
+
+    /**
+     * Sets autoSubmitPayslipsDaysBeforePayday
+     *
+     * @param \SynergiTech\Staffology\Model\DaysBeforePayday|null $autoSubmitPayslipsDaysBeforePayday autoSubmitPayslipsDaysBeforePayday
+     *
+     * @return $this
+     */
+    public function setAutoSubmitPayslipsDaysBeforePayday(?\SynergiTech\Staffology\Model\DaysBeforePayday $autoSubmitPayslipsDaysBeforePayday): static
+    {
+        if (is_null($autoSubmitPayslipsDaysBeforePayday)) {
+            throw new InvalidArgumentException('non-nullable autoSubmitPayslipsDaysBeforePayday cannot be null');
+        }
+        $this->container['autoSubmitPayslipsDaysBeforePayday'] = $autoSubmitPayslipsDaysBeforePayday;
+
+        return $this;
+    }
+
+    /**
+     * Gets autoSubmitPayslipsPaymentDateRule
+     *
+     * @return \SynergiTech\Staffology\Model\PayslipReleasePaymentDateRule|null
+     */
+    public function getAutoSubmitPayslipsPaymentDateRule(): ?\SynergiTech\Staffology\Model\PayslipReleasePaymentDateRule
+    {
+        return $this->container['autoSubmitPayslipsPaymentDateRule'];
+    }
+
+    /**
+     * Sets autoSubmitPayslipsPaymentDateRule
+     *
+     * @param \SynergiTech\Staffology\Model\PayslipReleasePaymentDateRule|null $autoSubmitPayslipsPaymentDateRule autoSubmitPayslipsPaymentDateRule
+     *
+     * @return $this
+     */
+    public function setAutoSubmitPayslipsPaymentDateRule(?\SynergiTech\Staffology\Model\PayslipReleasePaymentDateRule $autoSubmitPayslipsPaymentDateRule): static
+    {
+        if (is_null($autoSubmitPayslipsPaymentDateRule)) {
+            throw new InvalidArgumentException('non-nullable autoSubmitPayslipsPaymentDateRule cannot be null');
+        }
+        $this->container['autoSubmitPayslipsPaymentDateRule'] = $autoSubmitPayslipsPaymentDateRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets autoSubmitPayslipsPayslipReleaseTime
+     *
+     * @return \SynergiTech\Staffology\Model\PayslipReleaseTime|null
+     */
+    public function getAutoSubmitPayslipsPayslipReleaseTime(): ?\SynergiTech\Staffology\Model\PayslipReleaseTime
+    {
+        return $this->container['autoSubmitPayslipsPayslipReleaseTime'];
+    }
+
+    /**
+     * Sets autoSubmitPayslipsPayslipReleaseTime
+     *
+     * @param \SynergiTech\Staffology\Model\PayslipReleaseTime|null $autoSubmitPayslipsPayslipReleaseTime autoSubmitPayslipsPayslipReleaseTime
+     *
+     * @return $this
+     */
+    public function setAutoSubmitPayslipsPayslipReleaseTime(?\SynergiTech\Staffology\Model\PayslipReleaseTime $autoSubmitPayslipsPayslipReleaseTime): static
+    {
+        if (is_null($autoSubmitPayslipsPayslipReleaseTime)) {
+            throw new InvalidArgumentException('non-nullable autoSubmitPayslipsPayslipReleaseTime cannot be null');
+        }
+        $this->container['autoSubmitPayslipsPayslipReleaseTime'] = $autoSubmitPayslipsPayslipReleaseTime;
 
         return $this;
     }

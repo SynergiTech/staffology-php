@@ -105,7 +105,11 @@ class TaxYearConfig implements ModelInterface, ArrayAccess, JsonSerializable
         'carCharge' => '\SynergiTech\Staffology\Model\CarCharge',
         'govTalk' => '\SynergiTech\Staffology\Model\GovTalk',
         'mileageAllowancePaymentsRates' => '\SynergiTech\Staffology\Model\MileageAllowancePaymentsRate[]',
-        'tieredPensions' => '\SynergiTech\Staffology\Model\TieredPension[]'
+        'tieredPensions' => '\SynergiTech\Staffology\Model\TieredPension[]',
+        'nicRecoverableNormalEmployerRate' => 'float',
+        'nicRecoverableSmallEmployerRate' => 'float',
+        'nicCompensationNormalEmployerRate' => 'float',
+        'nicCompensationSmallEmployerRate' => 'float'
     ];
 
     /**
@@ -159,7 +163,11 @@ class TaxYearConfig implements ModelInterface, ArrayAccess, JsonSerializable
         'carCharge' => null,
         'govTalk' => null,
         'mileageAllowancePaymentsRates' => null,
-        'tieredPensions' => null
+        'tieredPensions' => null,
+        'nicRecoverableNormalEmployerRate' => 'double',
+        'nicRecoverableSmallEmployerRate' => 'double',
+        'nicCompensationNormalEmployerRate' => 'double',
+        'nicCompensationSmallEmployerRate' => 'double'
     ];
 
     /**
@@ -213,7 +221,11 @@ class TaxYearConfig implements ModelInterface, ArrayAccess, JsonSerializable
         'carCharge' => false,
         'govTalk' => false,
         'mileageAllowancePaymentsRates' => true,
-        'tieredPensions' => true
+        'tieredPensions' => true,
+        'nicRecoverableNormalEmployerRate' => false,
+        'nicRecoverableSmallEmployerRate' => false,
+        'nicCompensationNormalEmployerRate' => false,
+        'nicCompensationSmallEmployerRate' => false
     ];
 
     /**
@@ -347,7 +359,11 @@ class TaxYearConfig implements ModelInterface, ArrayAccess, JsonSerializable
         'carCharge' => 'carCharge',
         'govTalk' => 'govTalk',
         'mileageAllowancePaymentsRates' => 'mileageAllowancePaymentsRates',
-        'tieredPensions' => 'tieredPensions'
+        'tieredPensions' => 'tieredPensions',
+        'nicRecoverableNormalEmployerRate' => 'nicRecoverableNormalEmployerRate',
+        'nicRecoverableSmallEmployerRate' => 'nicRecoverableSmallEmployerRate',
+        'nicCompensationNormalEmployerRate' => 'nicCompensationNormalEmployerRate',
+        'nicCompensationSmallEmployerRate' => 'nicCompensationSmallEmployerRate'
     ];
 
     /**
@@ -401,7 +417,11 @@ class TaxYearConfig implements ModelInterface, ArrayAccess, JsonSerializable
         'carCharge' => 'setCarCharge',
         'govTalk' => 'setGovTalk',
         'mileageAllowancePaymentsRates' => 'setMileageAllowancePaymentsRates',
-        'tieredPensions' => 'setTieredPensions'
+        'tieredPensions' => 'setTieredPensions',
+        'nicRecoverableNormalEmployerRate' => 'setNicRecoverableNormalEmployerRate',
+        'nicRecoverableSmallEmployerRate' => 'setNicRecoverableSmallEmployerRate',
+        'nicCompensationNormalEmployerRate' => 'setNicCompensationNormalEmployerRate',
+        'nicCompensationSmallEmployerRate' => 'setNicCompensationSmallEmployerRate'
     ];
 
     /**
@@ -455,7 +475,11 @@ class TaxYearConfig implements ModelInterface, ArrayAccess, JsonSerializable
         'carCharge' => 'getCarCharge',
         'govTalk' => 'getGovTalk',
         'mileageAllowancePaymentsRates' => 'getMileageAllowancePaymentsRates',
-        'tieredPensions' => 'getTieredPensions'
+        'tieredPensions' => 'getTieredPensions',
+        'nicRecoverableNormalEmployerRate' => 'getNicRecoverableNormalEmployerRate',
+        'nicRecoverableSmallEmployerRate' => 'getNicRecoverableSmallEmployerRate',
+        'nicCompensationNormalEmployerRate' => 'getNicCompensationNormalEmployerRate',
+        'nicCompensationSmallEmployerRate' => 'getNicCompensationSmallEmployerRate'
     ];
 
     /**
@@ -560,6 +584,10 @@ class TaxYearConfig implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('govTalk', $data ?? [], null);
         $this->setIfExists('mileageAllowancePaymentsRates', $data ?? [], null);
         $this->setIfExists('tieredPensions', $data ?? [], null);
+        $this->setIfExists('nicRecoverableNormalEmployerRate', $data ?? [], null);
+        $this->setIfExists('nicRecoverableSmallEmployerRate', $data ?? [], null);
+        $this->setIfExists('nicCompensationNormalEmployerRate', $data ?? [], null);
+        $this->setIfExists('nicCompensationSmallEmployerRate', $data ?? [], null);
     }
 
     /**
@@ -1933,6 +1961,114 @@ class TaxYearConfig implements ModelInterface, ArrayAccess, JsonSerializable
             }
         }
         $this->container['tieredPensions'] = $tieredPensions;
+
+        return $this;
+    }
+
+    /**
+     * Gets nicRecoverableNormalEmployerRate
+     *
+     * @return float|null
+     */
+    public function getNicRecoverableNormalEmployerRate(): ?float
+    {
+        return $this->container['nicRecoverableNormalEmployerRate'];
+    }
+
+    /**
+     * Sets nicRecoverableNormalEmployerRate
+     *
+     * @param float|null $nicRecoverableNormalEmployerRate [readonly]
+     *
+     * @return $this
+     */
+    public function setNicRecoverableNormalEmployerRate(?float $nicRecoverableNormalEmployerRate): static
+    {
+        if (is_null($nicRecoverableNormalEmployerRate)) {
+            throw new InvalidArgumentException('non-nullable nicRecoverableNormalEmployerRate cannot be null');
+        }
+        $this->container['nicRecoverableNormalEmployerRate'] = $nicRecoverableNormalEmployerRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets nicRecoverableSmallEmployerRate
+     *
+     * @return float|null
+     */
+    public function getNicRecoverableSmallEmployerRate(): ?float
+    {
+        return $this->container['nicRecoverableSmallEmployerRate'];
+    }
+
+    /**
+     * Sets nicRecoverableSmallEmployerRate
+     *
+     * @param float|null $nicRecoverableSmallEmployerRate [readonly]
+     *
+     * @return $this
+     */
+    public function setNicRecoverableSmallEmployerRate(?float $nicRecoverableSmallEmployerRate): static
+    {
+        if (is_null($nicRecoverableSmallEmployerRate)) {
+            throw new InvalidArgumentException('non-nullable nicRecoverableSmallEmployerRate cannot be null');
+        }
+        $this->container['nicRecoverableSmallEmployerRate'] = $nicRecoverableSmallEmployerRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets nicCompensationNormalEmployerRate
+     *
+     * @return float|null
+     */
+    public function getNicCompensationNormalEmployerRate(): ?float
+    {
+        return $this->container['nicCompensationNormalEmployerRate'];
+    }
+
+    /**
+     * Sets nicCompensationNormalEmployerRate
+     *
+     * @param float|null $nicCompensationNormalEmployerRate [readonly]
+     *
+     * @return $this
+     */
+    public function setNicCompensationNormalEmployerRate(?float $nicCompensationNormalEmployerRate): static
+    {
+        if (is_null($nicCompensationNormalEmployerRate)) {
+            throw new InvalidArgumentException('non-nullable nicCompensationNormalEmployerRate cannot be null');
+        }
+        $this->container['nicCompensationNormalEmployerRate'] = $nicCompensationNormalEmployerRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets nicCompensationSmallEmployerRate
+     *
+     * @return float|null
+     */
+    public function getNicCompensationSmallEmployerRate(): ?float
+    {
+        return $this->container['nicCompensationSmallEmployerRate'];
+    }
+
+    /**
+     * Sets nicCompensationSmallEmployerRate
+     *
+     * @param float|null $nicCompensationSmallEmployerRate [readonly]
+     *
+     * @return $this
+     */
+    public function setNicCompensationSmallEmployerRate(?float $nicCompensationSmallEmployerRate): static
+    {
+        if (is_null($nicCompensationSmallEmployerRate)) {
+            throw new InvalidArgumentException('non-nullable nicCompensationSmallEmployerRate cannot be null');
+        }
+        $this->container['nicCompensationSmallEmployerRate'] = $nicCompensationSmallEmployerRate;
 
         return $this;
     }
