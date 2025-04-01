@@ -7388,6 +7388,24 @@
             "schema": {
               "$ref": "#/components/schemas/LeaveType"
             }
+          },
+          {
+            "name": "secondaryDate",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "tertiaryDate",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
           }
         ],
         "responses": {
@@ -37614,6 +37632,83 @@
         }
       }
     },
+    "/employers/{employerId}/reports/{payPeriod}/employeepayments": {
+      "post": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Employee Payments Report",
+        "description": "Returns a payments report for all employees for given pay schedule.",
+        "operationId": "EmployeePaymentsReportReports",
+        "parameters": [
+          {
+            "name": "employerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "payPeriod",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/PayPeriods"
+            }
+          },
+          {
+            "name": "accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Contract.EmployeePaymentsReportRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Contract.EmployeePaymentsReportRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Contract.EmployeePaymentsReportRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Contract.EmployeePaymentsReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeePaymentsReportReportResponse"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeePaymentsReportReportResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/employers/{employerId}/reports-async/{templateId}": {
       "post": {
         "tags": [
@@ -44291,6 +44386,18 @@
             "type": "boolean",
             "description": "Used in conjunction with AutoSubmitPayments."
           },
+          "payslipReleaseType": {
+            "$ref": "#/components/schemas/PayslipReleaseType"
+          },
+          "autoSubmitPayslips_DaysBeforePayday": {
+            "$ref": "#/components/schemas/DaysBeforePayday"
+          },
+          "autoSubmitPayslips_PaymentDateRule": {
+            "$ref": "#/components/schemas/PayslipReleasePaymentDateRule"
+          },
+          "autoSubmitPayslips_PayslipReleaseTime": {
+            "$ref": "#/components/schemas/PayslipReleaseTime"
+          },
           "employeesWithoutEmailAddress": {
             "type": "integer",
             "description": "[readonly] A count of how many employees or subcontractors for this employer do not have email addresses",
@@ -44557,7 +44664,9 @@
           "Success",
           "EarningsBelowThreshold",
           "NotEnoughPayrollData",
-          "TaxYearNotSupported"
+          "TaxYearNotSupported",
+          "TwoRelatedSchemes",
+          "NeonatalCareDateMissing"
         ],
         "type": "string"
       },
@@ -47595,6 +47704,22 @@
           "useDefaultHolidayAccrualDefaultRateType": {
             "type": "boolean",
             "description": "If true then the value for HolidayAccrualDefaultRateType comes from the Employer record.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Contract.EmployeePaymentsReportRequest": {
+        "type": "object",
+        "properties": {
+          "ordinal": {
+            "type": "integer",
+            "description": "Ordinal number for the Pay Schedule.",
+            "format": "int32"
+          },
+          "payCodes": {
+            "type": "string",
+            "description": "Comma-separated list of Pay Codes.",
             "nullable": true
           }
         },
@@ -55140,6 +55265,37 @@
         ],
         "type": "string"
       },
+      "DaysBeforePayday": {
+        "enum": [
+          "ZeroDayBeforePayday",
+          "OneDayBeforePayday",
+          "TwoDaysBeforePayday",
+          "ThreeDaysBeforePayday",
+          "FourDaysBeforePayday",
+          "FiveDaysBeforePayday"
+        ],
+        "type": "string"
+      },
+      "DecimalDecimalBooleanPensionRuleValueTuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "number",
+            "format": "double"
+          },
+          "item2": {
+            "type": "number",
+            "format": "double"
+          },
+          "item3": {
+            "type": "boolean"
+          },
+          "item4": {
+            "$ref": "#/components/schemas/PensionRule"
+          }
+        },
+        "additionalProperties": false
+      },
       "DecimalTaxYearConfigPrimitiveValue": {
         "type": "object",
         "properties": {
@@ -55923,6 +56079,211 @@
         "additionalProperties": false,
         "description": "EmployeePayRunTotal is used to calculte the employee pay run total"
       },
+      "EmployeePaymentsReport": {
+        "type": "object",
+        "properties": {
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeePaymentsReportLine"
+            },
+            "nullable": true
+          },
+          "isEducationSettingsEnabled": {
+            "type": "boolean"
+          },
+          "report": {
+            "$ref": "#/components/schemas/Report"
+          },
+          "taxYear": {
+            "$ref": "#/components/schemas/TaxYear"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDraft": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeePaymentsReportLine": {
+        "type": "object",
+        "properties": {
+          "payrollCode": {
+            "type": "string",
+            "description": "Payroll Code for exported pay line",
+            "nullable": true
+          },
+          "uniqueIdentifier": {
+            "type": "string",
+            "description": "Unique Id for exported pay line",
+            "format": "uuid"
+          },
+          "amount": {
+            "type": "number",
+            "description": "Amount for exported pay line",
+            "format": "double"
+          },
+          "multiplierType": {
+            "type": "integer",
+            "description": "MultiplierType of exported pay line",
+            "format": "int32"
+          },
+          "multiplier": {
+            "type": "number",
+            "description": "Multiplier for exported pay line",
+            "format": "double",
+            "nullable": true
+          },
+          "hours": {
+            "type": "number",
+            "description": "Number of Hours for exported pay line",
+            "format": "double",
+            "nullable": true
+          },
+          "days": {
+            "type": "number",
+            "description": "Number of Days for exported pay line",
+            "format": "double",
+            "nullable": true
+          },
+          "payCode": {
+            "type": "string",
+            "description": "Pay code for exported pay line",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Note for exported pay line",
+            "nullable": true
+          },
+          "effectiveFrom": {
+            "type": "string",
+            "description": "Effective From date for exported pay line",
+            "format": "date",
+            "nullable": true
+          },
+          "effectiveTo": {
+            "type": "string",
+            "description": "Effective To date for exported pay line",
+            "format": "date",
+            "nullable": true
+          },
+          "isNetToGross": {
+            "type": "boolean",
+            "description": "Indicates Gross To Net value for exported pay line"
+          },
+          "department": {
+            "type": "string",
+            "description": "Department for exported pay line",
+            "nullable": true
+          },
+          "costCentre": {
+            "type": "string",
+            "description": "Cost Centre for exported pay line",
+            "nullable": true
+          },
+          "isAutomaticBackPay": {
+            "type": "boolean",
+            "description": "Indicates Automatic Back Pay value for exported pay line"
+          },
+          "ignoreInitialBackPay": {
+            "type": "boolean",
+            "description": "Indicates Ignore Initial Back Pay value for exported pay line"
+          },
+          "contributesToBasicPay": {
+            "type": "boolean",
+            "description": "Indicates Contributes To Basic Pay value for exported pay line"
+          },
+          "autoAdjustForLeave": {
+            "type": "boolean",
+            "description": "Indicates Auto Adjust For Leave value for exported pay line"
+          },
+          "roleReference": {
+            "type": "string",
+            "description": "Employee Role Reference for exported pay line",
+            "nullable": true
+          },
+          "paySpine": {
+            "type": "string",
+            "description": "Pay Spine for exported pay line",
+            "nullable": true
+          },
+          "payGrade": {
+            "type": "string",
+            "description": "Pay Grade for exported pay line",
+            "nullable": true
+          },
+          "spinePoint": {
+            "type": "string",
+            "description": "Spine Point for exported pay line",
+            "nullable": true
+          },
+          "londonAllowanceType": {
+            "type": "string",
+            "description": "London Allowance type for exported pay line",
+            "nullable": true
+          },
+          "calculateAsWhenPaid": {
+            "type": "boolean",
+            "description": "Indicates whether this pay line should be treated as When Paid rather than When Earned"
+          },
+          "departmentId": {
+            "type": "string",
+            "description": "Department ID associated with the exported payline",
+            "format": "uuid"
+          },
+          "costCentreId": {
+            "type": "string",
+            "description": "Cost Centre ID associated with the exported payline",
+            "format": "uuid"
+          },
+          "paySpineId": {
+            "type": "string",
+            "description": "Pay Spine ID associated with the exported payline",
+            "format": "uuid"
+          },
+          "spinalPointId": {
+            "type": "string",
+            "description": "Spinal Point ID associated with the exported payline",
+            "format": "uuid"
+          },
+          "paySpineGradeId": {
+            "type": "string",
+            "description": "Pay Spine Grade ID associated with the exported payline",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeePaymentsReportReportResponse": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "[readonly] The content-type, this would usually be the same as the accept header you provided when you requested the report",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "description": "[readonly] This could contain a link to a PDF file, HTML content or other content, depending on the Type value.",
+            "nullable": true
+          },
+          "model": {
+            "$ref": "#/components/schemas/EmployeePaymentsReport"
+          },
+          "stream": {
+            "type": "string",
+            "description": "byte array",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Used to encapsulate a response for any of the reports.\r\nSee the Introduction Guide for Reports for more details"
+      },
       "EmployeeRole": {
         "type": "object",
         "properties": {
@@ -56473,6 +56834,11 @@
             "description": "Value of Statutory Parental Bereavment Pay recovered year to date",
             "format": "double"
           },
+          "sncpRecovered": {
+            "type": "number",
+            "description": "Value of Statutory Neonatal Care Pay recovered year to date",
+            "format": "double"
+          },
           "nicCompensationOnSMP": {
             "type": "number",
             "description": "Value of NIC compensation on SMP year to date",
@@ -56496,6 +56862,11 @@
           "nicCompensationOnSPBP": {
             "type": "number",
             "description": "Value of NIC compensation on Statutory Parental Bereavement Pay year to date",
+            "format": "double"
+          },
+          "nicCompensationOnSNCP": {
+            "type": "number",
+            "description": "Value of NIC compensation on Statutory Neonatal Care Pay year to date",
             "format": "double"
           },
           "cisDeductionsSuffered": {
@@ -57563,7 +57934,9 @@
           "None",
           "DeathBenefit",
           "Pension",
-          "SeriousIllHealth"
+          "SeriousIllHealth",
+          "StandAloneLumpSum",
+          "PensionCommencementExcess"
         ],
         "type": "string"
       },
@@ -57851,6 +58224,10 @@
             "type": "string",
             "nullable": true
           },
+          "sncpytd": {
+            "type": "string",
+            "nullable": true
+          },
           "sspytd": {
             "type": "string",
             "nullable": true
@@ -57938,6 +58315,14 @@
             "nullable": true
           },
           "seriousIllHealthLumpSum": {
+            "type": "string",
+            "nullable": true
+          },
+          "standAloneLumpSum": {
+            "type": "string",
+            "nullable": true
+          },
+          "pensionCommencementExcess": {
             "type": "string",
             "nullable": true
           },
@@ -58122,6 +58507,10 @@
             "type": "string",
             "nullable": true
           },
+          "sncpytd": {
+            "type": "string",
+            "nullable": true
+          },
           "trivialCommutationPayment": {
             "type": "array",
             "items": {
@@ -58274,6 +58663,10 @@
           },
           "starter": {
             "$ref": "#/components/schemas/FpsEmployeeStarter"
+          },
+          "employeeWorkplacePostcode": {
+            "type": "string",
+            "nullable": true
           },
           "payId": {
             "type": "string",
@@ -60122,7 +60515,7 @@
           },
           "babyDate": {
             "type": "string",
-            "description": "Only required for Parental Leave with Statutory Pay\r\nIf Type is Maternity or Paternity then this is the date the baby is due.\r\nFor Adoption this is the Matching Date.",
+            "description": "Only required for Parental Leave with Statutory Pay\r\nIf Type is Maternity or Paternity then this is the date the baby is due.\r\nFor Adoption this is the Matching Date.\r\nFor Neonatal Care is the Baby Due / Matching / Placement Date",
             "format": "date",
             "nullable": true
           },
@@ -60134,7 +60527,7 @@
           },
           "tertiaryBabyDate": {
             "type": "string",
-            "description": "Only used for Parental Leave with Statutory Pay\r\nIf Type is Adoption this is the Placement Date.",
+            "description": "Only used for Parental Leave with Statutory Pay\r\nIf Type is Adoption this is the Placement Date.\r\nIf Type is Neonatal Care is the Date Baby Entered Neonatal Care Date",
             "format": "date",
             "nullable": true
           },
@@ -60282,6 +60675,9 @@
           "isReversed": {
             "type": "boolean",
             "description": "If the reversal of this Leave has already been processed,\r\nthis will be set to true"
+          },
+          "paymentTier": {
+            "$ref": "#/components/schemas/NeonatalCarePaymentTier"
           },
           "documentCount": {
             "type": "integer",
@@ -60635,7 +61031,8 @@
           "Bereavement",
           "SharedParentalAdoption",
           "PaternityAdoption",
-          "StrikeAction"
+          "StrikeAction",
+          "NeonatalCare"
         ],
         "type": "string"
       },
@@ -61596,6 +61993,14 @@
         "additionalProperties": false,
         "description": "Part of the TaxYearConfig that our engine uses to calculate National Minimum Wage.\r\nIt is used internally when our engine performs calculations.\r\nYou do not need to do anything with this model, it's provided purely for informational purposes."
       },
+      "NeonatalCarePaymentTier": {
+        "enum": [
+          "None",
+          "FirstTier",
+          "SecondTier"
+        ],
+        "type": "string"
+      },
       "NiLetterError": {
         "enum": [
           "XNotUsedForPensionersPayroll",
@@ -62281,6 +62686,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "payRunId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "roleReference": {
             "type": "string",
             "nullable": true
@@ -62360,6 +62769,10 @@
             "format": "double"
           },
           "spbp": {
+            "type": "number",
+            "format": "double"
+          },
+          "sncp": {
             "type": "number",
             "format": "double"
           },
@@ -62463,6 +62876,10 @@
             "format": "double"
           },
           "spbp": {
+            "type": "number",
+            "format": "double"
+          },
+          "sncp": {
             "type": "number",
             "format": "double"
           },
@@ -64972,7 +65389,15 @@
             "type": "string",
             "nullable": true
           },
+          "departmentTitle": {
+            "type": "string",
+            "nullable": true
+          },
           "costCentre": {
+            "type": "string",
+            "nullable": true
+          },
+          "costCentreTitle": {
             "type": "string",
             "nullable": true
           },
@@ -66262,6 +66687,26 @@
             "description": "[readonly] Value of payments marked as flexibly accessing serious ill health lump sum (non taxable)",
             "format": "double"
           },
+          "flexiDd_StandAloneLumpSum": {
+            "type": "number",
+            "description": "[readonly] Value of payments marked as flexibly accessing stand alone lump sum (taxable)",
+            "format": "double"
+          },
+          "flexiDd_StandAloneLumpSum_NonTax": {
+            "type": "number",
+            "description": "[readonly] Value of payments marked as flexibly accessing stand alone lump sum (non taxable)",
+            "format": "double"
+          },
+          "flexiDd_PensionCommencementExcess": {
+            "type": "number",
+            "description": "[readonly] Value of payments marked as flexibly accessing pension commencement excess lump sum (taxable)",
+            "format": "double"
+          },
+          "flexiDd_PensionCommencementExcess_NonTax": {
+            "type": "number",
+            "description": "[readonly] Value of payments marked as flexibly accessing pension commencement excess lump sum (non taxable)",
+            "format": "double"
+          },
           "smp": {
             "type": "number",
             "description": "[readonly] Statutory Maternity Pay",
@@ -66310,6 +66755,16 @@
           "spbpNonRti": {
             "type": "number",
             "description": "[readonly] Statutory Parental Bereavement Pay excluded from RTI",
+            "format": "double"
+          },
+          "sncp": {
+            "type": "number",
+            "description": "[readonly] Statutory Neonatal Care Pay",
+            "format": "double"
+          },
+          "sncpNonRti": {
+            "type": "number",
+            "description": "[readonly] Statutory Neonatal Care Pay excluded from RTI",
             "format": "double"
           },
           "ssp": {
@@ -67249,10 +67704,10 @@
             "nullable": true
           },
           "department": {
-            "$ref": "#/components/schemas/StringDecimalKeyValuePair"
+            "$ref": "#/components/schemas/StringStringDecimalValueTuple"
           },
           "costCentre": {
-            "$ref": "#/components/schemas/StringDecimalKeyValuePair"
+            "$ref": "#/components/schemas/StringStringDecimalValueTuple"
           },
           "employeeRoleAnalysisCategory": {
             "type": "object",
@@ -67626,7 +68081,12 @@
           "ForeignTaxReclaimed",
           "AverageHolidayPay",
           "P45Gross",
-          "P45Tax"
+          "P45Tax",
+          "Sncp",
+          "FlexiDd_StandAloneLumpSum",
+          "FlexiDd_StandAloneLumpSum_NonTax",
+          "FlexiDd_PensionCommencementExcess",
+          "FlexiDd_PensionCommencementExcess_NonTax"
         ],
         "type": "string"
       },
@@ -67993,6 +68453,14 @@
             },
             "description": "[readonly] The list of Employer Pension Contribution(s)",
             "nullable": true
+          },
+          "employeePensionContributions": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/DecimalDecimalBooleanPensionRuleValueTuple"
+            },
+            "description": "Dictionary of Pension Contributions(s) Keyed on PensionId containing Employee Pension and AVC Contribution(s) Bfd, AVC indicator and pension rule",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -68045,6 +68513,10 @@
           "includeBenefits": {
             "type": "boolean",
             "description": "Whether or not to include any payrolled benefits"
+          },
+          "removePensionYtd": {
+            "type": "boolean",
+            "description": "Whether or not to remove the pension YTD column"
           },
           "paperSize": {
             "$ref": "#/components/schemas/PdfPaperSize"
@@ -68169,6 +68641,43 @@
           "Nic",
           "Tax",
           "Cis"
+        ],
+        "type": "string"
+      },
+      "PayslipReleasePaymentDateRule": {
+        "enum": [
+          "WorkingDays",
+          "CalendarDays"
+        ],
+        "type": "string"
+      },
+      "PayslipReleaseTime": {
+        "enum": [
+          "OneMinutePastMidnight",
+          "OneAm",
+          "TwoAm",
+          "ThreeAm",
+          "FourAm",
+          "FiveAm",
+          "SixAm",
+          "SevenAm",
+          "EightAm",
+          "NineAm",
+          "TenAm",
+          "ElevenAm",
+          "TwelveNoon",
+          "OnePm",
+          "TwoPm",
+          "ThreePm",
+          "FourPm",
+          "FivePm",
+          "SixPm",
+          "SevenPm",
+          "EightPm",
+          "NinePm",
+          "TenPm",
+          "ElevenPm",
+          "OneMinuteToMidnight"
         ],
         "type": "string"
       },
@@ -68992,6 +69501,7 @@
           "assumedPensionablePay",
           "employeeRefund",
           "employerRefund",
+          "isPreviousTaxYearRefund",
           "pensionableEarning",
           "pensionablePay"
         ],
@@ -69034,6 +69544,9 @@
           "assumedPensionablePay": {
             "type": "number",
             "format": "double"
+          },
+          "isPreviousTaxYearRefund": {
+            "type": "boolean"
           },
           "tierName": {
             "minLength": 1,
@@ -70049,6 +70562,11 @@
             "description": "Value of Statutory Parental Bereavement Pay recovered year to date",
             "format": "double"
           },
+          "sncpRecovered": {
+            "type": "number",
+            "description": "Value of Statutory Neonatal Care Pay recovered year to date",
+            "format": "double"
+          },
           "nicCompensationOnSMP": {
             "type": "number",
             "description": "Value of NIC compensation on SMP year to date",
@@ -70072,6 +70590,11 @@
           "nicCompensationOnSPBP": {
             "type": "number",
             "description": "Value of NIC compensation on Statutory Parental Bereavement Pay year to date",
+            "format": "double"
+          },
+          "nicCompensationOnSNCP": {
+            "type": "number",
+            "description": "Value of NIC compensation on Statutory Neonatal Care Pay year to date",
             "format": "double"
           },
           "cisDeductionsSuffered": {
@@ -70142,7 +70665,8 @@
           "PayElement",
           "LoanBalances",
           "EmployeeLeave",
-          "AdvancedVarianceReport"
+          "AdvancedVarianceReport",
+          "EmployeePayments"
         ],
         "type": "string"
       },
@@ -71014,6 +71538,24 @@
         },
         "additionalProperties": false
       },
+      "StringStringDecimalValueTuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "string",
+            "nullable": true
+          },
+          "item2": {
+            "type": "string",
+            "nullable": true
+          },
+          "item3": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "StringStringKeyValuePair": {
         "type": "object",
         "properties": {
@@ -71286,7 +71828,8 @@
           "Year2021",
           "Year2022",
           "Year2023",
-          "Year2024"
+          "Year2024",
+          "Year2025"
         ],
         "type": "string"
       },
@@ -71521,6 +72064,26 @@
             },
             "description": "[readonly]",
             "nullable": true
+          },
+          "nicRecoverableNormalEmployerRate": {
+            "type": "number",
+            "description": "[readonly]",
+            "format": "double"
+          },
+          "nicRecoverableSmallEmployerRate": {
+            "type": "number",
+            "description": "[readonly]",
+            "format": "double"
+          },
+          "nicCompensationNormalEmployerRate": {
+            "type": "number",
+            "description": "[readonly]",
+            "format": "double"
+          },
+          "nicCompensationSmallEmployerRate": {
+            "type": "number",
+            "description": "[readonly]",
+            "format": "double"
           }
         },
         "additionalProperties": false,
