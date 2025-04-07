@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **automaticAWECalculation** | **bool** | If set to True then we&#39;ll automatically calculate the AverageWeeklyEarnings.   Set it to false if you want to manually provide a figure that overrides our calculations | [optional]
 **babyDate** | **\DateTime** | Only required for Parental Leave with Statutory Pay  If Type is Maternity or Paternity then this is the date the baby is due.  For Adoption this is the Matching Date.  For Neonatal Care is the Baby Due / Matching / Placement Date | [optional]
 **secondaryBabyDate** | **\DateTime** | Only used for Parental Leave with Statutory Pay  If Type is Maternity, Paternity, SharedParental (Birth) then this is the the Baby Born Date.  For Adoption or SharedParental (Adoption) this is the Expected Placement Date. | [optional]
-**tertiaryBabyDate** | **\DateTime** | Only used for Parental Leave with Statutory Pay  If Type is Adoption this is the Placement Date.  If Type is Neonatal Care is the Date Baby Entered Neonatal Care Date | [optional]
+**tertiaryBabyDate** | **\DateTime** | Only used for Parental Leave with Statutory Pay  If Type is Adoption this is the Placement Date.  If Type is Neonatal Care is the Date Baby Entered Neonatal Care | [optional]
 **overridePaymentDescription** | **bool** | If Pay is StatutoryPay and you want to override our description that goes with the payment then set this to true | [optional]
 **overridenPaymentDescription** | **string** | If OverridePaymentDescription is true and Pay is set to StatutoryPay then we&#39;ll use this as the description for the payment amount. | [optional]
 **workingDays** | **float** | [readonly] The number of working days covered by this leave.  This is calculated based on the employees Working Pattern. | [optional]

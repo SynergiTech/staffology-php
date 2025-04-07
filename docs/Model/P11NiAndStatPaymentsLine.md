@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **shpp** | **float** | [readonly] | [optional]
 **ssp** | **float** | [readonly] | [optional]
 **spbp** | **float** | [readonly] | [optional]
+**sncp** | **float** | [readonly] | [optional]
 **class1a** | **float** | [readonly] | [optional]
 **niValues** | [**\SynergiTech\Staffology\Model\P11DetailedNiValues**](P11DetailedNiValues.md) |  | [optional]
 **taxCode** | **string** | [readonly] | [optional]

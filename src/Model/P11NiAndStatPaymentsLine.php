@@ -70,6 +70,7 @@ class P11NiAndStatPaymentsLine implements ModelInterface, ArrayAccess, JsonSeria
         'shpp' => 'float',
         'ssp' => 'float',
         'spbp' => 'float',
+        'sncp' => 'float',
         'class1a' => 'float',
         'niValues' => '\SynergiTech\Staffology\Model\P11DetailedNiValues',
         'taxCode' => 'string'
@@ -91,6 +92,7 @@ class P11NiAndStatPaymentsLine implements ModelInterface, ArrayAccess, JsonSeria
         'shpp' => 'double',
         'ssp' => 'double',
         'spbp' => 'double',
+        'sncp' => 'double',
         'class1a' => 'double',
         'niValues' => null,
         'taxCode' => null
@@ -112,6 +114,7 @@ class P11NiAndStatPaymentsLine implements ModelInterface, ArrayAccess, JsonSeria
         'shpp' => false,
         'ssp' => false,
         'spbp' => false,
+        'sncp' => false,
         'class1a' => false,
         'niValues' => false,
         'taxCode' => true
@@ -213,6 +216,7 @@ class P11NiAndStatPaymentsLine implements ModelInterface, ArrayAccess, JsonSeria
         'shpp' => 'shpp',
         'ssp' => 'ssp',
         'spbp' => 'spbp',
+        'sncp' => 'sncp',
         'class1a' => 'class1a',
         'niValues' => 'niValues',
         'taxCode' => 'taxCode'
@@ -234,6 +238,7 @@ class P11NiAndStatPaymentsLine implements ModelInterface, ArrayAccess, JsonSeria
         'shpp' => 'setShpp',
         'ssp' => 'setSsp',
         'spbp' => 'setSpbp',
+        'sncp' => 'setSncp',
         'class1a' => 'setClass1a',
         'niValues' => 'setNiValues',
         'taxCode' => 'setTaxCode'
@@ -255,6 +260,7 @@ class P11NiAndStatPaymentsLine implements ModelInterface, ArrayAccess, JsonSeria
         'shpp' => 'getShpp',
         'ssp' => 'getSsp',
         'spbp' => 'getSpbp',
+        'sncp' => 'getSncp',
         'class1a' => 'getClass1a',
         'niValues' => 'getNiValues',
         'taxCode' => 'getTaxCode'
@@ -326,6 +332,7 @@ class P11NiAndStatPaymentsLine implements ModelInterface, ArrayAccess, JsonSeria
         $this->setIfExists('shpp', $data ?? [], null);
         $this->setIfExists('ssp', $data ?? [], null);
         $this->setIfExists('spbp', $data ?? [], null);
+        $this->setIfExists('sncp', $data ?? [], null);
         $this->setIfExists('class1a', $data ?? [], null);
         $this->setIfExists('niValues', $data ?? [], null);
         $this->setIfExists('taxCode', $data ?? [], null);
@@ -660,6 +667,33 @@ class P11NiAndStatPaymentsLine implements ModelInterface, ArrayAccess, JsonSeria
             throw new InvalidArgumentException('non-nullable spbp cannot be null');
         }
         $this->container['spbp'] = $spbp;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncp
+     *
+     * @return float|null
+     */
+    public function getSncp(): ?float
+    {
+        return $this->container['sncp'];
+    }
+
+    /**
+     * Sets sncp
+     *
+     * @param float|null $sncp [readonly]
+     *
+     * @return $this
+     */
+    public function setSncp(?float $sncp): static
+    {
+        if (is_null($sncp)) {
+            throw new InvalidArgumentException('non-nullable sncp cannot be null');
+        }
+        $this->container['sncp'] = $sncp;
 
         return $this;
     }

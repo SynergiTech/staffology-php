@@ -1023,7 +1023,7 @@ class Leave implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Sets tertiaryBabyDate
      *
-     * @param \DateTime|null $tertiaryBabyDate Only used for Parental Leave with Statutory Pay  If Type is Adoption this is the Placement Date.  If Type is Neonatal Care is the Date Baby Entered Neonatal Care Date
+     * @param \DateTime|null $tertiaryBabyDate Only used for Parental Leave with Statutory Pay  If Type is Adoption this is the Placement Date.  If Type is Neonatal Care is the Date Baby Entered Neonatal Care
      *
      * @return $this
      */

@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **shpp** | **float** | [readonly] | [optional]
 **sap** | **float** | [readonly] | [optional]
 **spbp** | **float** | [readonly] | [optional]
+**sncp** | **float** | [readonly] | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -71,6 +71,7 @@ class P11Line implements ModelInterface, ArrayAccess, JsonSerializable
         'sapYTD' => 'float',
         'shppYTD' => 'float',
         'spbpYTD' => 'float',
+        'sncpYTD' => 'float',
         'studentLoanYTD' => 'float',
         'postgradLoanYTD' => 'float',
         'niValues' => '\SynergiTech\Staffology\Model\P11NiValues[]'
@@ -93,6 +94,7 @@ class P11Line implements ModelInterface, ArrayAccess, JsonSerializable
         'sapYTD' => 'double',
         'shppYTD' => 'double',
         'spbpYTD' => 'double',
+        'sncpYTD' => 'double',
         'studentLoanYTD' => 'double',
         'postgradLoanYTD' => 'double',
         'niValues' => null
@@ -115,6 +117,7 @@ class P11Line implements ModelInterface, ArrayAccess, JsonSerializable
         'sapYTD' => false,
         'shppYTD' => false,
         'spbpYTD' => false,
+        'sncpYTD' => false,
         'studentLoanYTD' => false,
         'postgradLoanYTD' => false,
         'niValues' => true
@@ -217,6 +220,7 @@ class P11Line implements ModelInterface, ArrayAccess, JsonSerializable
         'sapYTD' => 'sapYTD',
         'shppYTD' => 'shppYTD',
         'spbpYTD' => 'spbpYTD',
+        'sncpYTD' => 'sncpYTD',
         'studentLoanYTD' => 'studentLoanYTD',
         'postgradLoanYTD' => 'postgradLoanYTD',
         'niValues' => 'niValues'
@@ -239,6 +243,7 @@ class P11Line implements ModelInterface, ArrayAccess, JsonSerializable
         'sapYTD' => 'setSapYTD',
         'shppYTD' => 'setShppYTD',
         'spbpYTD' => 'setSpbpYTD',
+        'sncpYTD' => 'setSncpYTD',
         'studentLoanYTD' => 'setStudentLoanYTD',
         'postgradLoanYTD' => 'setPostgradLoanYTD',
         'niValues' => 'setNiValues'
@@ -261,6 +266,7 @@ class P11Line implements ModelInterface, ArrayAccess, JsonSerializable
         'sapYTD' => 'getSapYTD',
         'shppYTD' => 'getShppYTD',
         'spbpYTD' => 'getSpbpYTD',
+        'sncpYTD' => 'getSncpYTD',
         'studentLoanYTD' => 'getStudentLoanYTD',
         'postgradLoanYTD' => 'getPostgradLoanYTD',
         'niValues' => 'getNiValues'
@@ -333,6 +339,7 @@ class P11Line implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('sapYTD', $data ?? [], null);
         $this->setIfExists('shppYTD', $data ?? [], null);
         $this->setIfExists('spbpYTD', $data ?? [], null);
+        $this->setIfExists('sncpYTD', $data ?? [], null);
         $this->setIfExists('studentLoanYTD', $data ?? [], null);
         $this->setIfExists('postgradLoanYTD', $data ?? [], null);
         $this->setIfExists('niValues', $data ?? [], null);
@@ -680,6 +687,33 @@ class P11Line implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable spbpYTD cannot be null');
         }
         $this->container['spbpYTD'] = $spbpYTD;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncpYTD
+     *
+     * @return float|null
+     */
+    public function getSncpYTD(): ?float
+    {
+        return $this->container['sncpYTD'];
+    }
+
+    /**
+     * Sets sncpYTD
+     *
+     * @param float|null $sncpYTD [readonly]
+     *
+     * @return $this
+     */
+    public function setSncpYTD(?float $sncpYTD): static
+    {
+        if (is_null($sncpYTD)) {
+            throw new InvalidArgumentException('non-nullable sncpYTD cannot be null');
+        }
+        $this->container['sncpYTD'] = $sncpYTD;
 
         return $this;
     }

@@ -83,6 +83,8 @@ class HmrcLiability implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNic' => 'float',
         'spbp' => 'float',
         'spbpNic' => 'float',
+        'sncp' => 'float',
+        'sncpNic' => 'float',
         'eligibleForEmploymentAllowance' => 'bool',
         'employmentAllowanceClaim' => 'float',
         'employmentAllowanceClaimAuto' => 'bool',
@@ -135,6 +137,8 @@ class HmrcLiability implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNic' => 'double',
         'spbp' => 'double',
         'spbpNic' => 'double',
+        'sncp' => 'double',
+        'sncpNic' => 'double',
         'eligibleForEmploymentAllowance' => null,
         'employmentAllowanceClaim' => 'double',
         'employmentAllowanceClaimAuto' => null,
@@ -187,6 +191,8 @@ class HmrcLiability implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNic' => false,
         'spbp' => false,
         'spbpNic' => false,
+        'sncp' => false,
+        'sncpNic' => false,
         'eligibleForEmploymentAllowance' => false,
         'employmentAllowanceClaim' => false,
         'employmentAllowanceClaimAuto' => false,
@@ -319,6 +325,8 @@ class HmrcLiability implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNic' => 'shppNic',
         'spbp' => 'spbp',
         'spbpNic' => 'spbpNic',
+        'sncp' => 'sncp',
+        'sncpNic' => 'sncpNic',
         'eligibleForEmploymentAllowance' => 'eligibleForEmploymentAllowance',
         'employmentAllowanceClaim' => 'employmentAllowanceClaim',
         'employmentAllowanceClaimAuto' => 'employmentAllowanceClaimAuto',
@@ -371,6 +379,8 @@ class HmrcLiability implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNic' => 'setShppNic',
         'spbp' => 'setSpbp',
         'spbpNic' => 'setSpbpNic',
+        'sncp' => 'setSncp',
+        'sncpNic' => 'setSncpNic',
         'eligibleForEmploymentAllowance' => 'setEligibleForEmploymentAllowance',
         'employmentAllowanceClaim' => 'setEmploymentAllowanceClaim',
         'employmentAllowanceClaimAuto' => 'setEmploymentAllowanceClaimAuto',
@@ -423,6 +433,8 @@ class HmrcLiability implements ModelInterface, ArrayAccess, JsonSerializable
         'shppNic' => 'getShppNic',
         'spbp' => 'getSpbp',
         'spbpNic' => 'getSpbpNic',
+        'sncp' => 'getSncp',
+        'sncpNic' => 'getSncpNic',
         'eligibleForEmploymentAllowance' => 'getEligibleForEmploymentAllowance',
         'employmentAllowanceClaim' => 'getEmploymentAllowanceClaim',
         'employmentAllowanceClaimAuto' => 'getEmploymentAllowanceClaimAuto',
@@ -525,6 +537,8 @@ class HmrcLiability implements ModelInterface, ArrayAccess, JsonSerializable
         $this->setIfExists('shppNic', $data ?? [], null);
         $this->setIfExists('spbp', $data ?? [], null);
         $this->setIfExists('spbpNic', $data ?? [], null);
+        $this->setIfExists('sncp', $data ?? [], null);
+        $this->setIfExists('sncpNic', $data ?? [], null);
         $this->setIfExists('eligibleForEmploymentAllowance', $data ?? [], null);
         $this->setIfExists('employmentAllowanceClaim', $data ?? [], null);
         $this->setIfExists('employmentAllowanceClaimAuto', $data ?? [], null);
@@ -1247,6 +1261,60 @@ class HmrcLiability implements ModelInterface, ArrayAccess, JsonSerializable
             throw new InvalidArgumentException('non-nullable spbpNic cannot be null');
         }
         $this->container['spbpNic'] = $spbpNic;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncp
+     *
+     * @return float|null
+     */
+    public function getSncp(): ?float
+    {
+        return $this->container['sncp'];
+    }
+
+    /**
+     * Sets sncp
+     *
+     * @param float|null $sncp [readonly] SNCP recovered from payments in period
+     *
+     * @return $this
+     */
+    public function setSncp(?float $sncp): static
+    {
+        if (is_null($sncp)) {
+            throw new InvalidArgumentException('non-nullable sncp cannot be null');
+        }
+        $this->container['sncp'] = $sncp;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncpNic
+     *
+     * @return float|null
+     */
+    public function getSncpNic(): ?float
+    {
+        return $this->container['sncpNic'];
+    }
+
+    /**
+     * Sets sncpNic
+     *
+     * @param float|null $sncpNic [readonly] SNCP Nic Compensation for period
+     *
+     * @return $this
+     */
+    public function setSncpNic(?float $sncpNic): static
+    {
+        if (is_null($sncpNic)) {
+            throw new InvalidArgumentException('non-nullable sncpNic cannot be null');
+        }
+        $this->container['sncpNic'] = $sncpNic;
 
         return $this;
     }

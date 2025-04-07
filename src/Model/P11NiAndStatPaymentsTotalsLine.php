@@ -71,7 +71,8 @@ class P11NiAndStatPaymentsTotalsLine implements ModelInterface, ArrayAccess, Jso
         'spp' => 'float',
         'shpp' => 'float',
         'sap' => 'float',
-        'spbp' => 'float'
+        'spbp' => 'float',
+        'sncp' => 'float'
     ];
 
     /**
@@ -91,7 +92,8 @@ class P11NiAndStatPaymentsTotalsLine implements ModelInterface, ArrayAccess, Jso
         'spp' => 'double',
         'shpp' => 'double',
         'sap' => 'double',
-        'spbp' => 'double'
+        'spbp' => 'double',
+        'sncp' => 'double'
     ];
 
     /**
@@ -111,7 +113,8 @@ class P11NiAndStatPaymentsTotalsLine implements ModelInterface, ArrayAccess, Jso
         'spp' => false,
         'shpp' => false,
         'sap' => false,
-        'spbp' => false
+        'spbp' => false,
+        'sncp' => false
     ];
 
     /**
@@ -211,7 +214,8 @@ class P11NiAndStatPaymentsTotalsLine implements ModelInterface, ArrayAccess, Jso
         'spp' => 'spp',
         'shpp' => 'shpp',
         'sap' => 'sap',
-        'spbp' => 'spbp'
+        'spbp' => 'spbp',
+        'sncp' => 'sncp'
     ];
 
     /**
@@ -231,7 +235,8 @@ class P11NiAndStatPaymentsTotalsLine implements ModelInterface, ArrayAccess, Jso
         'spp' => 'setSpp',
         'shpp' => 'setShpp',
         'sap' => 'setSap',
-        'spbp' => 'setSpbp'
+        'spbp' => 'setSpbp',
+        'sncp' => 'setSncp'
     ];
 
     /**
@@ -251,7 +256,8 @@ class P11NiAndStatPaymentsTotalsLine implements ModelInterface, ArrayAccess, Jso
         'spp' => 'getSpp',
         'shpp' => 'getShpp',
         'sap' => 'getSap',
-        'spbp' => 'getSpbp'
+        'spbp' => 'getSpbp',
+        'sncp' => 'getSncp'
     ];
 
     /**
@@ -322,6 +328,7 @@ class P11NiAndStatPaymentsTotalsLine implements ModelInterface, ArrayAccess, Jso
         $this->setIfExists('shpp', $data ?? [], null);
         $this->setIfExists('sap', $data ?? [], null);
         $this->setIfExists('spbp', $data ?? [], null);
+        $this->setIfExists('sncp', $data ?? [], null);
     }
 
     /**
@@ -686,6 +693,33 @@ class P11NiAndStatPaymentsTotalsLine implements ModelInterface, ArrayAccess, Jso
             throw new InvalidArgumentException('non-nullable spbp cannot be null');
         }
         $this->container['spbp'] = $spbp;
+
+        return $this;
+    }
+
+    /**
+     * Gets sncp
+     *
+     * @return float|null
+     */
+    public function getSncp(): ?float
+    {
+        return $this->container['sncp'];
+    }
+
+    /**
+     * Sets sncp
+     *
+     * @param float|null $sncp [readonly]
+     *
+     * @return $this
+     */
+    public function setSncp(?float $sncp): static
+    {
+        if (is_null($sncp)) {
+            throw new InvalidArgumentException('non-nullable sncp cannot be null');
+        }
+        $this->container['sncp'] = $sncp;
 
         return $this;
     }

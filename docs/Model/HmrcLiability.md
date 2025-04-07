@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 **shppNic** | **float** | [readonly] ShPP Nic Compensation for period | [optional]
 **spbp** | **float** | [readonly] SPBP recovered from payments in period | [optional]
 **spbpNic** | **float** | [readonly] SPBP Nic Compensation for period | [optional]
+**sncp** | **float** | [readonly] SNCP recovered from payments in period | [optional]
+**sncpNic** | **float** | [readonly] SNCP Nic Compensation for period | [optional]
 **eligibleForEmploymentAllowance** | **bool** | [readonly] Indicates whether the Employer settings say the Employer is eligible for Employment Allowance | [optional]
 **employmentAllowanceClaim** | **float** | Amount to claim with respect to the Employment Allowance | [optional]
 **employmentAllowanceClaimAuto** | **bool** | If set to true, we&#39;ll automatically claim the maximum allowed.  If set to false then you can enter your own value.  If EligibleForEmploymentAllowance is false then the EmploymentAllowanceClaim will   always be overwritten with a zero value regardless of this property | [optional]
