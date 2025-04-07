@@ -59891,6 +59891,16 @@
             "description": "[readonly] SPBP Nic Compensation for period",
             "format": "double"
           },
+          "sncp": {
+            "type": "number",
+            "description": "[readonly] SNCP recovered from payments in period",
+            "format": "double"
+          },
+          "sncpNic": {
+            "type": "number",
+            "description": "[readonly] SNCP Nic Compensation for period",
+            "format": "double"
+          },
           "eligibleForEmploymentAllowance": {
             "type": "boolean",
             "description": "[readonly] Indicates whether the Employer settings say the Employer is eligible for Employment Allowance"
@@ -60527,7 +60537,7 @@
           },
           "tertiaryBabyDate": {
             "type": "string",
-            "description": "Only used for Parental Leave with Statutory Pay\r\nIf Type is Adoption this is the Placement Date.\r\nIf Type is Neonatal Care is the Date Baby Entered Neonatal Care Date",
+            "description": "Only used for Parental Leave with Statutory Pay\r\nIf Type is Adoption this is the Placement Date.\r\nIf Type is Neonatal Care is the Date Baby Entered Neonatal Care",
             "format": "date",
             "nullable": true
           },
@@ -63639,6 +63649,11 @@
             "description": "[readonly]",
             "format": "double"
           },
+          "sncpYTD": {
+            "type": "number",
+            "description": "[readonly]",
+            "format": "double"
+          },
           "studentLoanYTD": {
             "type": "number",
             "description": "[readonly]",
@@ -63710,6 +63725,11 @@
             "format": "double"
           },
           "spbp": {
+            "type": "number",
+            "description": "[readonly]",
+            "format": "double"
+          },
+          "sncp": {
             "type": "number",
             "description": "[readonly]",
             "format": "double"
@@ -63790,6 +63810,11 @@
             "format": "double"
           },
           "spbp": {
+            "type": "number",
+            "description": "[readonly]",
+            "format": "double"
+          },
+          "sncp": {
             "type": "number",
             "description": "[readonly]",
             "format": "double"
